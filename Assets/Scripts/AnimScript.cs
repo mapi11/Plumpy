@@ -21,5 +21,6 @@ public class AnimScript : MonoBehaviour
 
         _anim.SetBool("Run", PSHorSpeed > 0 || PSHorSpeed < 0);
 
+        _anim.SetBool("Jump", );
     }
 }

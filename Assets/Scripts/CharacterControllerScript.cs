@@ -25,11 +25,13 @@ public class CharacterControllerScript : MonoBehaviour
     public GameObject player1D;
     public GameObject camera1D;
 
+    Animator _anim;
     private Rigidbody rb;
     private bool _facingRight = true;
 
     void Start()
     {
+        _anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -39,17 +41,6 @@ public class CharacterControllerScript : MonoBehaviour
         transform.Translate(_horSpeed, 0, 0);
 
         IsGrounded = Physics.CheckSphere(_groundCheck.position, _checkRadiusGround, _whatIsGround);
-
-        //if (_facingRight == true && _horSpeed < 0)
-        //{
-        //    Flip();
-        //}
-        //else if (_facingRight == false && _horSpeed > 0)
-        //{
-        //    Flip();
-        //}
-
-        
     }
 
     public void Update()
@@ -92,6 +83,7 @@ public class CharacterControllerScript : MonoBehaviour
         if (IsGrounded == true)
         {
             rb.velocity = Vector3.up * _jump * 1.2f;
+            //_anim.SetBool("Jump",true);
         }
     }
     public void ButtonStop()
