@@ -10,11 +10,9 @@ public class ModelFlipScript : MonoBehaviour
 
     //public Animator anim1D;
     public Animator anim2D;
-    public Animator anim3D;
 
-    public SpriteRenderer SR1D;
     public SpriteRenderer SR2D;
-    public SpriteRenderer SR3D;
+
 
 
     void Start()
@@ -29,16 +27,11 @@ public class ModelFlipScript : MonoBehaviour
 
         if (PSHorSpeed < 0)
         {
-            SR1D.flipX = true;
             SR2D.flipX = true;
-            SR3D.flipX = true;
         }
         else if (PSHorSpeed > 0)
         {
-
-            SR1D.flipX = false;
             SR2D.flipX = false;
-            SR3D.flipX = false;
         }
 
         //if (PSHorSpeed != 0)

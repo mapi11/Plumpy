@@ -16,18 +16,18 @@ public class CharacterControllerScript : MonoBehaviour
     private bool IsGrounded;
 
     [Header("Player`s active")]
-    public GameObject player3D;
-    public GameObject camera3D;
+    public GameObject camera1D;
     [Header(" ")]
     public GameObject player2D;
     public GameObject camera2D;
     [Header(" ")]
-    public GameObject player1D;
-    public GameObject camera1D;
+    public GameObject camera3D;
+
 
     Animator _anim;
     private Rigidbody rb;
     private bool _facingRight = true;
+    private bool _rotate = true;
 
     void Start()
     {
@@ -46,18 +46,29 @@ public class CharacterControllerScript : MonoBehaviour
     public void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A)) //Left
         {
-            ButtonLeft();
+            _horSpeed = -_speed;
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.A))
         {
-            ButtonRight();
+            _horSpeed = 0.0f;
         }
+
+        if (Input.GetKeyDown(KeyCode.D)) //Right
+        {
+            _horSpeed = _speed;
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            _horSpeed = 0.0f;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ButtonJump();
         }
+        
     }
 
     public void Flip()
@@ -91,31 +102,62 @@ public class CharacterControllerScript : MonoBehaviour
         _horSpeed = 0.0f;
     }
 
-    public void PlayerActive3D()
+    public void CharacterRotation()
     {
-        player3D.SetActive(true);
-        camera3D.SetActive(true);
-        player2D.SetActive(false);
+
+        if (_rotate == true)
+        {
+            transform.Rotate(0, 90, 0);
+            _rotate = false;
+        }
+
+        else if (_rotate == false)
+        {
+            transform.Rotate(0, 0, 0);
+            _rotate = true;
+        }
+    }
+
+    public void PlayerActive1D()
+    {
+        //player1D.SetActive(true);
+        camera1D.SetActive(true);
+        //player2D.SetActive(false);
         camera2D.SetActive(false);
-        player1D.SetActive(false);
-        camera1D.SetActive(false);
+        //player3D.SetActive(false);
+        camera3D.SetActive(false);
+        if (_rotate == true)
+        {
+            player2D.transform.Rotate(0, 90, 0);
+        }
+        _rotate = false;
     }
     public void PlayerActive2D()
     {
-        player2D.SetActive(true);
+        //player2D.SetActive(true);
         camera2D.SetActive(true);
-        player3D.SetActive(false);
+        //player3D.SetActive(false);
         camera3D.SetActive(false);
-        player1D.SetActive(false);
+        //player1D.SetActive(false);
         camera1D.SetActive(false);
+        if (_rotate == false)
+        {
+            player2D.transform.Rotate(0, -90, 0);
+        }
+        _rotate = true;
     }
-    public void PlayerActive1D()
+    public void PlayerActive3D()
     {
-        player1D.SetActive(true);
-        camera1D.SetActive(true);
-        player2D.SetActive(false);
+        //player3D.SetActive(true);
+        camera3D.SetActive(true);
+        //player2D.SetActive(false);
         camera2D.SetActive(false);
-        player3D.SetActive(false);
-        camera3D.SetActive(false);
+        //player1D.SetActive(false);
+        camera1D.SetActive(false);
+        if (_rotate == false)
+        {
+            player2D.transform.Rotate(0, -90, 0);
+        }
+        _rotate = true;
     }
 }
