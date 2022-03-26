@@ -305,6 +305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 307228725596911378, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
+      propertyPath: _checkRadiusGround
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6827021057825635326, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
