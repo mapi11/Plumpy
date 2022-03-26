@@ -6,6 +6,8 @@ public class AnimScript : MonoBehaviour
 {
     CharacterControllerScript HorSpeed;
     private float PSHorSpeed;
+    private bool PSBoolJump;
+    private bool PSIsGrounded;
     Animator _anim;
 
     private bool _rotate = true;
@@ -14,16 +16,25 @@ public class AnimScript : MonoBehaviour
     {
         HorSpeed = FindObjectOfType<CharacterControllerScript>();
         _anim = GetComponent<Animator>();
+
     }
 
 
     void Update()
     {
-        PSHorSpeed = HorSpeed._horSpeed;
+        PSHorSpeed   = HorSpeed._horSpeed; // из скрипта CharacterController
+        PSBoolJump   = HorSpeed._boolJump;
+        PSIsGrounded = HorSpeed.IsGrounded;
+
 
         _anim.SetBool("Run", PSHorSpeed > 0 || PSHorSpeed < 0);
 
-        //_anim.SetBool("Jump", );
+        if (PSBoolJump == true)
+        {
+            _anim.SetBool("Jump", true);
+        }
+
+        _anim.SetBool("Jump", !PSIsGrounded);
     }
 
     public void CharacterRotation()

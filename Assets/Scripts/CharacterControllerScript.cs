@@ -8,12 +8,13 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] private float _speed = 0.1f;
     [SerializeField] private float _jump = 4f;
     public float _horSpeed;
+    public bool _boolJump = false;
 
     [Header("Jump")]
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _whatIsGround;
     [SerializeField] private float _checkRadiusGround = 0.3f;
-    private bool IsGrounded;
+    public bool IsGrounded;
 
     [Header("Player`s active")]
     public GameObject camera1D;
@@ -64,11 +65,10 @@ public class CharacterControllerScript : MonoBehaviour
             _horSpeed = 0.0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) //Jump
         {
             ButtonJump();
         }
-        
     }
 
     public void Flip()
@@ -91,6 +91,7 @@ public class CharacterControllerScript : MonoBehaviour
     }
     public void ButtonJump()
     {
+        _boolJump = true;
         if (IsGrounded == true)
         {
             rb.velocity = Vector3.up * _jump * 1.2f;
