@@ -6,16 +6,16 @@ public class HealthsScript : MonoBehaviour
 {
     //public GameObject RestartButton;
     //public GameObject Player;
-    public GameObject DeathCanvas;
-    public GameObject HPCanvas;
-    public int Health = 3;
+    [SerializeField] private GameObject DeathCanvas;
+    [SerializeField] private GameObject HPCanvas;
+    [SerializeField] private int Health = 3;
     private int MaxHP = 3;
-    public Text textHP;
+    [SerializeField] private Text textHP;
 
-    public Image[] lives;
+    [SerializeField] private Image[] lives;
 
-    public Sprite FullHP;
-    public Sprite EmptyHP;
+    [SerializeField] private Sprite FullHP;
+    [SerializeField] private Sprite EmptyHP;
 
     private float delay = 5.0f;
 
@@ -41,15 +41,6 @@ public class HealthsScript : MonoBehaviour
                 lives[i].sprite = EmptyHP;
                 
             }
-
-            //if (i < MaxHP)
-            //{
-            //    lives[i].enabled = true;
-            //}
-            //else
-            //{
-            //    lives[i].enabled = false;
-            //}
         }
     }
     public void Damage()
@@ -73,7 +64,15 @@ public class HealthsScript : MonoBehaviour
     }  
     public void Healthcanvas()
     {
-        HPCanvas.SetActive(false);
+        if (Health == 1)
+        {
+            HPCanvas.SetActive(true);
+        }
+        else
+        {
+            HPCanvas.SetActive(false);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)

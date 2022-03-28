@@ -10,6 +10,7 @@ TagManager:
   - Block 1D
   - Stairs
   - MBWblock
+  - ViewZone
   layers:
   - Default
   - TransparentFX

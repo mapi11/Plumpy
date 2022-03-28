@@ -23,7 +23,9 @@ public class CharacterControllerScript : MonoBehaviour
     public GameObject camera2D;
     [Header(" ")]
     public GameObject camera3D;
-
+    public bool Active1D;
+    public bool Active2D;
+    public bool Active3D;
 
     Animator _anim;
     private Rigidbody rb;
@@ -36,7 +38,6 @@ public class CharacterControllerScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    
     private void FixedUpdate()
     {
         transform.Translate(_horSpeed, 0, 0);
@@ -70,6 +71,13 @@ public class CharacterControllerScript : MonoBehaviour
             ButtonJump();
         }
     }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject.tag == "ViewZone")
+    //    {
+    //        PlayerActive2D();
+    //    }
+    //}
 
     public void Flip()
     {
@@ -121,44 +129,47 @@ public class CharacterControllerScript : MonoBehaviour
 
     public void PlayerActive1D()
     {
-        //player1D.SetActive(true);
         camera1D.SetActive(true);
-        //player2D.SetActive(false);
         camera2D.SetActive(false);
-        //player3D.SetActive(false);
         camera3D.SetActive(false);
         if (_rotate == true)
         {
             player2D.transform.Rotate(0, 90, 0);
         }
         _rotate = false;
+
+        Active1D = true;
+        Active2D = false;
+        Active3D = false;
     }
     public void PlayerActive2D()
     {
-        //player2D.SetActive(true);
         camera2D.SetActive(true);
-        //player3D.SetActive(false);
         camera3D.SetActive(false);
-        //player1D.SetActive(false);
         camera1D.SetActive(false);
         if (_rotate == false)
         {
             player2D.transform.Rotate(0, -90, 0);
         }
         _rotate = true;
+
+        Active1D = false;
+        Active2D = true;
+        Active3D = false;
     }
     public void PlayerActive3D()
     {
-        //player3D.SetActive(true);
         camera3D.SetActive(true);
-        //player2D.SetActive(false);
         camera2D.SetActive(false);
-        //player1D.SetActive(false);
         camera1D.SetActive(false);
         if (_rotate == false)
         {
             player2D.transform.Rotate(0, -90, 0);
         }
         _rotate = true;
+
+        Active1D = false;
+        Active2D = false;
+        Active3D = true;
     }
 }

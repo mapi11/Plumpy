@@ -16,16 +16,13 @@ public class AnimScript : MonoBehaviour
     {
         HorSpeed = FindObjectOfType<CharacterControllerScript>();
         _anim = GetComponent<Animator>();
-
     }
-
 
     void Update()
     {
         PSHorSpeed   = HorSpeed._horSpeed; // из скрипта CharacterController
         PSBoolJump   = HorSpeed._boolJump;
         PSIsGrounded = HorSpeed.IsGrounded;
-
 
         _anim.SetBool("Run", PSHorSpeed > 0 || PSHorSpeed < 0);
 
@@ -39,7 +36,6 @@ public class AnimScript : MonoBehaviour
 
     public void CharacterRotation()
     {
-        
         if (_rotate == true)
         {
             transform.Rotate(0,90, 0);
