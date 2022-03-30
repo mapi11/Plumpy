@@ -427,6 +427,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 307228725596911378, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
+      propertyPath: btn1D
+      value: 
+      objectReference: {fileID: 2097044362}
+    - target: {fileID: 307228725596911378, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
+      propertyPath: btn2_3D
+      value: 
+      objectReference: {fileID: 1132218723}
     - target: {fileID: 882314073676222458, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -909,6 +917,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1966625078}
   Parallax: -0.12
+--- !u!1 &1132218723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4181849697262521291, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
+  m_PrefabInstance: {fileID: 612356570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1214294724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1539,6 +1552,11 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3422221682391064761, guid: a100ed36d3e2d194fa9206b132619548, type: 3}
   m_PrefabInstance: {fileID: 1895160497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2097044362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4802857004805729900, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
+  m_PrefabInstance: {fileID: 612356570}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2139055048 stripped
 Transform:
