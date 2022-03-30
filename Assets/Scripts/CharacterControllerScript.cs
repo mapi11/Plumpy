@@ -26,6 +26,9 @@ public class CharacterControllerScript : MonoBehaviour
     public bool Active1D;
     public bool Active2D;
     public bool Active3D;
+    [SerializeField] private GameObject btn1D;
+    [SerializeField] private GameObject btn2_3D;
+
 
     Animator _anim;
     private Rigidbody rb;
@@ -136,6 +139,9 @@ public class CharacterControllerScript : MonoBehaviour
         {
             player2D.transform.Rotate(0, 90, 0);
         }
+        btn1D.SetActive(true);
+        btn2_3D.SetActive(false);
+
         _rotate = false;
 
         Active1D = true;
@@ -151,6 +157,9 @@ public class CharacterControllerScript : MonoBehaviour
         {
             player2D.transform.Rotate(0, -90, 0);
         }
+        btn1D.SetActive(false);
+        btn2_3D.SetActive(true);
+
         _rotate = true;
 
         Active1D = false;
@@ -166,6 +175,9 @@ public class CharacterControllerScript : MonoBehaviour
         {
             player2D.transform.Rotate(0, -90, 0);
         }
+        btn1D.SetActive(false);
+        btn2_3D.SetActive(true);
+
         _rotate = true;
 
         Active1D = false;

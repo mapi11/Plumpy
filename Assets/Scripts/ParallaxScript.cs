@@ -19,6 +19,6 @@ public class ParallaxScript : MonoBehaviour
     {
         float distX = (cam.transform.position.x * (1 - Parallax));
         float distY = (cam.transform.position.y * (1 - Parallax));
-        transform.position = new Vector3(startPosX + distX, startPosY + distY, transform.position.z);
+        transform.position = new Vector3(distX, startPosY + distY, transform.position.z);
     }
 }
