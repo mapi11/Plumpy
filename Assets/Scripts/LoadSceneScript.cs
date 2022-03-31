@@ -15,11 +15,27 @@ public class LoadSceneScript : MonoBehaviour
         SceneManager.LoadScene("Main menu");
         Time.timeScale = 1f;
     }
+    public void Test()
+    {
+        SceneManager.LoadScene("Test");
+        Time.timeScale = 1f;
+    }
 
     public void QuitGame()
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+    }
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        Time.timeScale = 1f;
     }
 
     public void Pause()
@@ -30,4 +46,6 @@ public class LoadSceneScript : MonoBehaviour
     {
         Time.timeScale = 1f;
     }
+
+
 }

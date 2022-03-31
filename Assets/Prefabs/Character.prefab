@@ -125,7 +125,7 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  _checkRadiusGround: 0.4
+  _checkRadiusGround: 0.25
   IsGrounded: 0
   camera1D: {fileID: 3330168273204076443}
   player2D: {fileID: 307228725488265871}
@@ -134,8 +134,8 @@ MonoBehaviour:
   Active1D: 0
   Active2D: 1
   Active3D: 0
-  btn1D: {fileID: 8538452479617989166}
-  btn2_3D: {fileID: 2215330192294672041}
+  btn1D: {fileID: 4802857004805729900}
+  btn2_3D: {fileID: 4181849697262521291}
 --- !u!1 &307228724905468455
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +266,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.83, y: 1.92, z: 0.1}
+  m_Size: {x: 0.83, y: 1.92, z: 0.8}
   m_Center: {x: 0, y: -0.04, z: 0}
 --- !u!95 &1305663336
 Animator:
@@ -766,13 +766,13 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6725280768945326394, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
   m_PrefabInstance: {fileID: 6827021058684475797}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2215330192294672041 stripped
+--- !u!1 &4181849697262521291 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4611717259064520508, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7257156487042536030, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
   m_PrefabInstance: {fileID: 6827021058684475797}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8538452479617989166 stripped
+--- !u!1 &4802857004805729900 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2936591263238005691, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2024754530613131257, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
   m_PrefabInstance: {fileID: 6827021058684475797}
   m_PrefabAsset: {fileID: 0}

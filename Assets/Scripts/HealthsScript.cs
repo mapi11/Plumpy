@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class HealthsScript : MonoBehaviour
 {
     //public GameObject RestartButton;
@@ -49,7 +50,7 @@ public class HealthsScript : MonoBehaviour
         HPCanvas.SetActive(true);
         Invoke("Healthcanvas", delay);
 
-        if (Health <= 0)
+        if (Health <= 0) //Death
         {
             Time.timeScale = 0f;
             DeathCanvas.SetActive(true);

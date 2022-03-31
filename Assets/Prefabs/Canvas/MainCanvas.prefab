@@ -747,6 +747,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasDeath
       objectReference: {fileID: 0}
+    - target: {fileID: 4952690972406567156, guid: 721b6c178e29bee479ec528b612148ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772141174519455555, guid: 721b6c178e29bee479ec528b612148ac, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 721b6c178e29bee479ec528b612148ac, type: 3}
 --- !u!224 &1010235611167773318 stripped

@@ -18,7 +18,9 @@ public class ViewZoneScript : MonoBehaviour
         {
             Active.PlayerActive3D();
             CanvasCheckMark.SetActive(false);
-        }        
+        }
+
+        Active.ButtonStop();
     }
 
     private void OnTriggerExit(Collider other)
