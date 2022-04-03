@@ -7,6 +7,7 @@ public class ViewZoneScript : MonoBehaviour
     CharacterControllerScript Active;
     [SerializeField] private GameObject CanvasCheckMark;
 
+
     private void Start()
     {
         Active = FindObjectOfType<CharacterControllerScript>();
@@ -16,16 +17,16 @@ public class ViewZoneScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Active.PlayerActive3D();
+            Active.PlayerActive2D();
             CanvasCheckMark.SetActive(false);
         }
-
         Active.ButtonStop();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Active.PlayerActive3D();
+        Active.PlayerActive2D();
         CanvasCheckMark.SetActive(true);
     }
+
 }

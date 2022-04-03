@@ -50,11 +50,11 @@ public class HealthsScript : MonoBehaviour
         HPCanvas.SetActive(true);
         Invoke("Healthcanvas", delay);
 
-        if (Health <= 0) //Death
+        if (Health <= 0)                         //Death
         {
             Time.timeScale = 0f;
             DeathCanvas.SetActive(true);
-            //Debug.Log("You Dead");
+            //Debug.Log("You Dead");nn
         }
     }
     public void Heal()
