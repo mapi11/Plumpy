@@ -21,6 +21,8 @@ public class ViewZoneScript : MonoBehaviour
             CanvasCheckMark.SetActive(false);
         }
         Active.ButtonStop();
+
+        Active.PlayerActive2D();
     }
 
     private void OnTriggerExit(Collider other)
@@ -28,5 +30,4 @@ public class ViewZoneScript : MonoBehaviour
         Active.PlayerActive2D();
         CanvasCheckMark.SetActive(true);
     }
-
 }

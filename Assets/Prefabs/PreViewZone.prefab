@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9203204886278720332}
   m_Layer: 0
-  m_Name: ViewZone
+  m_Name: PreViewZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -59,7 +59,6 @@ public class CharacterControllerScript : MonoBehaviour
         {
             _horSpeed = 0.0f;
         }
-
         if (Input.GetKeyDown(KeyCode.D)) //Right
         {
             _horSpeed = _speed;
@@ -68,10 +67,28 @@ public class CharacterControllerScript : MonoBehaviour
         {
             _horSpeed = 0.0f;
         }
-
         if (Input.GetKeyDown(KeyCode.Space)) //Jump
         {
             ButtonJump();
+        }
+
+        if (Active1D == true)
+        {
+            Active2D = false;
+            Active3D = false;
+            PlayerActive1D();
+        }
+        if (Active2D == true)
+        {
+            Active1D = false;
+            Active3D = false;
+            PlayerActive2D();
+        }
+        if (Active3D == true)
+        {
+            Active1D = false;
+            Active2D = false;
+            PlayerActive3D();
         }
     }
     //private void OnTriggerStay(Collider other)
