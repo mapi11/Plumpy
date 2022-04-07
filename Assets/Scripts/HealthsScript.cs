@@ -95,5 +95,10 @@ public class HealthsScript : MonoBehaviour
             }
 
         }
+
+        if (other.gameObject.tag.Equals("Enemy"))
+        {
+            Damage();
+        }
     }
 }
