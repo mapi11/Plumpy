@@ -29,6 +29,10 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] private GameObject btn1D;
     [SerializeField] private GameObject btn2_3D;
 
+    [Header("Block`s active")]
+    [SerializeField] private GameObject Objects1D;
+    [SerializeField] private GameObject Objects2D;
+
 
     Animator _anim;
     private Rigidbody rb;
@@ -159,6 +163,9 @@ public class CharacterControllerScript : MonoBehaviour
         btn1D.SetActive(true);
         btn2_3D.SetActive(false);
 
+        Objects1D.SetActive(true);
+        Objects2D.SetActive(false);
+
         _rotate = false;
 
         Active1D = true;
@@ -177,6 +184,9 @@ public class CharacterControllerScript : MonoBehaviour
         btn1D.SetActive(false);
         btn2_3D.SetActive(true);
 
+        Objects1D.SetActive(false);
+        Objects2D.SetActive(true);
+
         _rotate = true;
 
         Active1D = false;
@@ -194,6 +204,9 @@ public class CharacterControllerScript : MonoBehaviour
         }
         btn1D.SetActive(false);
         btn2_3D.SetActive(true);
+
+        Objects1D.SetActive(true);
+        Objects2D.SetActive(true);
 
         _rotate = true;
 
