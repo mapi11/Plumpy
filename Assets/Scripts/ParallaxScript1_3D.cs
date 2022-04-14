@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParallaxScript : MonoBehaviour
+public class ParallaxScript1_3D : MonoBehaviour
 {
     private float _lenght;
     private float _startPos;

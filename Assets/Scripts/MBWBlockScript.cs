@@ -59,6 +59,8 @@ public class MBWBlockScript : MonoBehaviour
         {
             MBW1D.SetActive(false);
             MBW2D.SetActive(false);
+            _canvas2D.SetActive(false);
+            _canvas1D.SetActive(true);
         }
         if (Active.Active1D && ButtonIsClick == true)
         {
@@ -69,6 +71,13 @@ public class MBWBlockScript : MonoBehaviour
         {
             MBW1D.SetActive(false);
             MBW2D.SetActive(false);
+            _canvas1D.SetActive(false);
+            _canvas2D.SetActive(true);
+        }
+        if (Active.Active3D == true)
+        {
+            _canvas1D.SetActive(false);
+            _canvas2D.SetActive(false);
         }
     }
 }

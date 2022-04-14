@@ -98,7 +98,6 @@ MonoBehaviour:
   DeathCanvas: {fileID: 282192139532587183}
   HPCanvas: {fileID: 5545363680309534252}
   Health: 3
-  textHP: {fileID: 1754758608453345314}
   lives:
   - {fileID: 7574331908135545079}
   - {fileID: 2185851572813989635}
@@ -125,7 +124,7 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  _checkRadiusGround: 0.5
+  _checkRadiusGround: 0.25
   IsGrounded: 0
   camera1D: {fileID: 3330168273204076443}
   player2D: {fileID: 307228725488265871}
@@ -245,7 +244,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: -7951872367350438509, guid: dccfee9e661d64d41a26632177a2ca55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -313,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca4c9c03ea0ddc4ca122d8fbc232d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HorSpeed: {fileID: 0}
   anim2D: {fileID: 1305663336}
   SR2D: {fileID: 307228725488265868}
 --- !u!1 &307228725683767022
@@ -378,7 +378,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3639
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -454,7 +454,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -507,7 +507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3330168273204076443}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4, y: 2, z: 0}
+  m_LocalPosition: {x: -4, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 307228724905468454}
@@ -537,14 +537,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 5687
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -667,9 +667,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1318259026689787833, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2378220468976807278, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3383348625645016348, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
+      propertyPath: m_Color.a
+      value: 0.54509807
       objectReference: {fileID: 0}
     - target: {fileID: 3406552781880554388, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -776,17 +784,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1754758608453345314 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5108301142955424183, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
-  m_PrefabInstance: {fileID: 6827021058684475797}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &282192139532587183 stripped

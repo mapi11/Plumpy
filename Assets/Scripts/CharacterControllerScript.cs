@@ -29,7 +29,11 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] private GameObject btn1D;
     [SerializeField] private GameObject btn2_3D;
 
-    [Header("Block`s active")]
+    [Header("Parallax active")]
+    [SerializeField] private GameObject Parallax2D;
+    [SerializeField] private GameObject Parallax1_3D;
+
+    [Header("Blocks active")]
     [SerializeField] private GameObject Objects1D;
     [SerializeField] private GameObject Objects2D;
 
@@ -54,7 +58,18 @@ public class CharacterControllerScript : MonoBehaviour
 
     public void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.F1)) //1D
+        {
+            PlayerActive1D();
+        }
+        if (Input.GetKeyDown(KeyCode.F2)) //2D
+        {
+            PlayerActive2D();
+        }
+        if (Input.GetKeyDown(KeyCode.F3)) //3D
+        {
+            PlayerActive3D();
+        }
         if (Input.GetKeyDown(KeyCode.A)) //Left
         {
             _horSpeed = -_speed;
@@ -163,6 +178,9 @@ public class CharacterControllerScript : MonoBehaviour
         btn1D.SetActive(true);
         btn2_3D.SetActive(false);
 
+        Parallax2D.SetActive(false);
+        Parallax1_3D.SetActive(true);
+
         Objects1D.SetActive(true);
         Objects2D.SetActive(false);
 
@@ -184,6 +202,9 @@ public class CharacterControllerScript : MonoBehaviour
         btn1D.SetActive(false);
         btn2_3D.SetActive(true);
 
+        Parallax2D.SetActive(true);
+        Parallax1_3D.SetActive(false);
+
         Objects1D.SetActive(false);
         Objects2D.SetActive(true);
 
@@ -204,6 +225,9 @@ public class CharacterControllerScript : MonoBehaviour
         }
         btn1D.SetActive(false);
         btn2_3D.SetActive(true);
+
+        Parallax2D.SetActive(false);
+        Parallax1_3D.SetActive(true);
 
         Objects1D.SetActive(true);
         Objects2D.SetActive(true);

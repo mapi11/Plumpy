@@ -11,7 +11,7 @@ public class HealthsScript : MonoBehaviour
     [SerializeField] private GameObject HPCanvas;
     [SerializeField] private int Health = 3;
     private int MaxHP = 3;
-    [SerializeField] private Text textHP;
+    //[SerializeField] private Text textHP;
 
     [SerializeField] private Image[] lives;
 
@@ -20,10 +20,10 @@ public class HealthsScript : MonoBehaviour
 
     private float delay = 5.0f;
 
-    private void Update()
-    {
-        textHP.text = "HP: " + Health.ToString();
-    }
+    //private void Update()
+    //{
+    //    textHP.text = "HP: " + Health.ToString();
+    //}
     private void FixedUpdate()
     {
         if (Health > MaxHP)
@@ -73,16 +73,15 @@ public class HealthsScript : MonoBehaviour
         {
             HPCanvas.SetActive(false);
         }
-
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag.Equals("Enemy"))
-        {
-            Damage();
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag.Equals("Enemy"))
+    //    {
+    //        Damage();
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

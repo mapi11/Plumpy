@@ -23,8 +23,8 @@ TagManager:
   - 
   - Ground
   - Stairs
-  - 
-  - 
+  - Background2D
+  - Background 1-3D
   - 
   - 
   - 
@@ -45,6 +45,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 4169456695
+    locked: 0
+  - name: Object
+    uniqueID: 3300226697
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Person
+    uniqueID: 2986103247
     locked: 0

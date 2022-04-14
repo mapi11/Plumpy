@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ModelFlipScript : MonoBehaviour
 {
-    CharacterControllerScript HorSpeed;
+    public CharacterControllerScript HorSpeed;
     private float PSHorSpeed;
 
     public Animator anim2D;
