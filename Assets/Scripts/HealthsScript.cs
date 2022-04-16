@@ -5,13 +5,10 @@ using UnityEngine.UI;
 
 public class HealthsScript : MonoBehaviour
 {
-    //public GameObject RestartButton;
-    //public GameObject Player;
     [SerializeField] private GameObject DeathCanvas;
     [SerializeField] private GameObject HPCanvas;
     [SerializeField] private int Health = 3;
     private int MaxHP = 3;
-    //[SerializeField] private Text textHP;
 
     [SerializeField] private Image[] lives;
 
@@ -20,11 +17,7 @@ public class HealthsScript : MonoBehaviour
 
     private float delay = 5.0f;
 
-    //private void Update()
-    //{
-    //    textHP.text = "HP: " + Health.ToString();
-    //}
-    private void FixedUpdate()
+    private void Update()
     {
         if (Health > MaxHP)
         {
@@ -40,7 +33,6 @@ public class HealthsScript : MonoBehaviour
             else
             {
                 lives[i].sprite = EmptyHP;
-                
             }
         }
     }
@@ -50,7 +42,7 @@ public class HealthsScript : MonoBehaviour
         HPCanvas.SetActive(true);
         Invoke("Healthcanvas", delay);
 
-        if (Health <= 0)                         //Death
+        if (Health <= 0)
         {
             Time.timeScale = 0f;
             DeathCanvas.SetActive(true);
@@ -74,15 +66,6 @@ public class HealthsScript : MonoBehaviour
             HPCanvas.SetActive(false);
         }
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.tag.Equals("Enemy"))
-    //    {
-    //        Damage();
-    //    }
-    //}
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Recovery health")
@@ -92,7 +75,6 @@ public class HealthsScript : MonoBehaviour
                 Heal();
                 Destroy(other.gameObject);
             }
-
         }
 
         if (other.gameObject.tag.Equals("Enemy"))

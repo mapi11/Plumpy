@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0.1
-  _jump: 4
+  _jump: 4.25
   _horSpeed: 0
   _boolJump: 0
   _groundCheck: {fileID: 307228723814196908}
@@ -135,6 +135,8 @@ MonoBehaviour:
   Active3D: 0
   btn1D: {fileID: 4802857004805729900}
   btn2_3D: {fileID: 4181849697262521291}
+  Parallax2D: {fileID: 0}
+  Parallax1_3D: {fileID: 0}
   Objects1D: {fileID: 0}
   Objects2D: {fileID: 0}
 --- !u!1 &307228724905468455
@@ -224,7 +226,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e511124a8a75c504dad40cf6f5b19a8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -242,9 +244,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingLayerID: -994740599
+  m_SortingLayer: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -7951872367350438509, guid: dccfee9e661d64d41a26632177a2ca55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -537,7 +539,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 100
+  far clip plane: 45
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -669,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1318259026689787833, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2378220468976807278, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
       propertyPath: m_IsActive

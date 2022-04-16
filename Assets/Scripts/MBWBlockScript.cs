@@ -11,6 +11,7 @@ public class MBWBlockScript : MonoBehaviour
     [SerializeField] private GameObject MBW2D;
 
     public bool ButtonIsClick = false;
+    private bool InsideTrigger = false;
 
     CharacterControllerScript Active;
 
@@ -18,8 +19,6 @@ public class MBWBlockScript : MonoBehaviour
     {
         Active = FindObjectOfType<CharacterControllerScript>();
     }
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (Active.Active2D == true)
@@ -32,13 +31,15 @@ public class MBWBlockScript : MonoBehaviour
             _canvas1D.SetActive(true);
             _canvas2D.SetActive(false);
         }
+        InsideTrigger = true;
     }
     private void OnTriggerExit(Collider other)
     {
         _canvas1D.SetActive(false);
         _canvas2D.SetActive(false);
-    }
 
+        InsideTrigger = false;
+    }
     public void Active2D()
     {
         ButtonIsClick = true;
@@ -47,7 +48,6 @@ public class MBWBlockScript : MonoBehaviour
     {
         ButtonIsClick = false;
     }
-
     private void Update()
     {
         if (Active.Active2D && ButtonIsClick == false)
@@ -59,8 +59,11 @@ public class MBWBlockScript : MonoBehaviour
         {
             MBW1D.SetActive(false);
             MBW2D.SetActive(false);
-            _canvas2D.SetActive(false);
-            _canvas1D.SetActive(true);
+            if (InsideTrigger == true)
+            {
+                _canvas2D.SetActive(false);
+                _canvas1D.SetActive(true);
+            }
         }
         if (Active.Active1D && ButtonIsClick == true)
         {
@@ -71,8 +74,11 @@ public class MBWBlockScript : MonoBehaviour
         {
             MBW1D.SetActive(false);
             MBW2D.SetActive(false);
-            _canvas1D.SetActive(false);
-            _canvas2D.SetActive(true);
+            if (InsideTrigger == true)
+            {
+                _canvas1D.SetActive(false);
+                _canvas2D.SetActive(true);
+            }
         }
         if (Active.Active3D == true)
         {

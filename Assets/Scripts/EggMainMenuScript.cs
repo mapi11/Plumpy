@@ -11,7 +11,6 @@ public class EggMainMenuScript : MonoBehaviour
     {
         TapCount++;
     }
-
     private void FixedUpdate()
     {
         if (TapCount == 5)

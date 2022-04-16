@@ -20,13 +20,11 @@ public class LoadSceneScript : MonoBehaviour
         SceneManager.LoadScene("Test");
         Time.timeScale = 1f;
     }
-
     public void QuitGame()
     {
         Debug.Log("Quit");
         Application.Quit();
     }
-
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -46,6 +44,4 @@ public class LoadSceneScript : MonoBehaviour
     {
         Time.timeScale = 1f;
     }
-
-
 }
