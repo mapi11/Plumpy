@@ -54,6 +54,10 @@ public class MBWBlockScript : MonoBehaviour
         {
             MBW1D.SetActive(false);
             MBW2D.SetActive(true);
+            if (InsideTrigger == true)
+            {
+                _canvas2D.SetActive(true);
+            }
         }
         if (Active.Active2D && ButtonIsClick == true)
         {
@@ -62,13 +66,16 @@ public class MBWBlockScript : MonoBehaviour
             if (InsideTrigger == true)
             {
                 _canvas2D.SetActive(false);
-                _canvas1D.SetActive(true);
             }
         }
         if (Active.Active1D && ButtonIsClick == true)
         {
             MBW1D.SetActive(true);
             MBW2D.SetActive(false);
+            if (InsideTrigger == true)
+            {
+                _canvas1D.SetActive(true);
+            }
         }
         if (Active.Active1D && ButtonIsClick == false)
         {
@@ -77,7 +84,6 @@ public class MBWBlockScript : MonoBehaviour
             if (InsideTrigger == true)
             {
                 _canvas1D.SetActive(false);
-                _canvas2D.SetActive(true);
             }
         }
         if (Active.Active3D == true)

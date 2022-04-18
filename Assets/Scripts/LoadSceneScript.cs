@@ -7,17 +7,27 @@ public class LoadSceneScript : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Main");
-        Time.timeScale = 1f;
+        //SceneManager.LoadScene("SC_Main");
+        //Time.timeScale = 1f;
     }
     public void MainMenu()
     {
-        SceneManager.LoadScene("Main menu");
+        SceneManager.LoadScene("SC_Main menu");
         Time.timeScale = 1f;
     }
     public void Test()
     {
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("SC_Test");
+        Time.timeScale = 1f;
+    }
+    public void TestLight()
+    {
+        SceneManager.LoadScene("SC_Test light");
+        Time.timeScale = 1f;
+    }
+    public void TestBlock()
+    {
+        SceneManager.LoadScene("SC_Test block");
         Time.timeScale = 1f;
     }
     public void QuitGame()
