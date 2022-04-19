@@ -4,16 +4,16 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2214616593562936413
-    second: Vending machine_0
+    second: Vending machine2D_blue
   - first:
       213: 7095343260130481429
-    second: Vending machine_1
+    second: Vending machine2D_green
   - first:
       213: -8400624834490237205
-    second: Vending machine_0
+    second: Vending machine2D_blue
   - first:
       213: 2062175023706949920
-    second: Vending machine_1
+    second: Vending machine2D_green
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vending machine_2
+      name: Vending machine2D_red
       rect:
         serializedVersion: 2
         x: 13
@@ -136,7 +136,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vending machine_3
+      name: Vending machine2D_yellow
       rect:
         serializedVersion: 2
         x: 81
@@ -157,7 +157,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vending machine_0
+      name: Vending machine2D_blue
       rect:
         serializedVersion: 2
         x: 12
@@ -178,7 +178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vending machine_1
+      name: Vending machine2D_green
       rect:
         serializedVersion: 2
         x: 78
