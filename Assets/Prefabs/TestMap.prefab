@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3832211223473383488}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &8572325752793541398
 AudioSource:
@@ -490,8 +490,8 @@ Transform:
   - {fileID: 3832211223243070890}
   - {fileID: 3832211222316529852}
   - {fileID: 3832211223112112376}
-  - {fileID: 3832211222320972488}
   - {fileID: 8823277769069612663}
+  - {fileID: 3832211222320972488}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -795,7 +795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5870256297366129340, guid: 093a2f4a245b4c3449a63ad67fca3846, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5870256297366129340, guid: 093a2f4a245b4c3449a63ad67fca3846, type: 3}
       propertyPath: m_LocalPosition.x

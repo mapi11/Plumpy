@@ -468,6 +468,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 994110886}
     m_Modifications:
+    - target: {fileID: 1415735662, guid: 8981d1cfd610be049b94e7d60849379f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4154536266228491906, guid: 8981d1cfd610be049b94e7d60849379f, type: 3}
       propertyPath: m_Name
       value: BlockMBW
