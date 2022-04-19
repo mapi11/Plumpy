@@ -30,6 +30,11 @@ public class LoadSceneScript : MonoBehaviour
         SceneManager.LoadScene("SC_Test block");
         Time.timeScale = 1f;
     }
+    public void TestHealth()
+    {
+        SceneManager.LoadScene("SC_Test health");
+        Time.timeScale = 1f;
+    }
     public void QuitGame()
     {
         Debug.Log("Quit");
