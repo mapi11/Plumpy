@@ -54,7 +54,7 @@ public class HealthsScript : MonoBehaviour
         Health++;
         HPCanvas.SetActive(true);
         Invoke("Healthcanvas", delay);
-    }  
+    }
     public void Healthcanvas()
     {
         if (Health == 1)

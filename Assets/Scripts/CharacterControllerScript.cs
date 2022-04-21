@@ -41,7 +41,8 @@ public class CharacterControllerScript : MonoBehaviour
     Animator _anim;
     private Rigidbody rb;
     private bool _facingRight = true;
-    private bool _rotate = true;
+    public bool _rotate = true;
+    public bool _check = false;
 
     void Start()
     {
@@ -150,21 +151,21 @@ public class CharacterControllerScript : MonoBehaviour
         _horSpeed = 0.0f;
     }
 
-    public void CharacterRotation()
-    {
+    //public void CharacterRotation()
+    //{
 
-        if (_rotate == true)
-        {
-            transform.Rotate(0, 90, 0);
-            _rotate = false;
-        }
+    //    if (_rotate == true)
+    //    {
+    //        transform.Rotate(0, 90, 0);
+    //        _rotate = false;
+    //    }
 
-        else if (_rotate == false)
-        {
-            transform.Rotate(0, 0, 0);
-            _rotate = true;
-        }
-    }
+    //    else if (_rotate == false)
+    //    {
+    //        transform.Rotate(0, 0, 0);
+    //        _rotate = true;
+    //    }
+    //}
 
     public void PlayerActive1D()
     {
@@ -174,6 +175,7 @@ public class CharacterControllerScript : MonoBehaviour
         if (_rotate == true)
         {
             player2D.transform.Rotate(0, 90, 0);
+            _check = true;
         }
         btn1D.SetActive(true);
         btn2_3D.SetActive(false);
@@ -198,6 +200,7 @@ public class CharacterControllerScript : MonoBehaviour
         if (_rotate == false)
         {
             player2D.transform.Rotate(0, -90, 0);
+            _check = false;
         }
         btn1D.SetActive(false);
         btn2_3D.SetActive(true);
@@ -222,6 +225,7 @@ public class CharacterControllerScript : MonoBehaviour
         if (_rotate == false)
         {
             player2D.transform.Rotate(0, -90, 0);
+            _check = false;
         }
         btn1D.SetActive(false);
         btn2_3D.SetActive(true);
@@ -237,5 +241,18 @@ public class CharacterControllerScript : MonoBehaviour
         Active1D = false;
         Active2D = false;
         Active3D = true;
+    }
+
+    public void Rotate1D()
+    {
+
+    }
+    public void Rotate2D()
+    {
+        if (_rotate == false)
+        {
+            player2D.transform.Rotate(0, -90, 0);
+            _check = false;
+        }
     }
 }
