@@ -7,6 +7,9 @@ public class VendingMachineScript : MonoBehaviour
     //[SerializeField] private GameObject VendingMachine;
     [SerializeField] private GameObject water;
     [SerializeField] private GameObject canvas;
+    [Header("Random range")]
+    [SerializeField] private int Min_int=1;
+    [SerializeField] private int Max_int=3;
 
     private int _int;
 
@@ -14,7 +17,7 @@ public class VendingMachineScript : MonoBehaviour
 
     private void Start()
     {
-        _int = Random.Range(0, 4);
+        _int = Random.Range(Min_int, Max_int);
         Active = FindObjectOfType<CharacterControllerScript>();
     }
 
@@ -30,7 +33,7 @@ public class VendingMachineScript : MonoBehaviour
         //}
 
 
-        if (_int == 0)
+        if (_int <= 0)
         {
             gameObject.SetActive(false);
             Destroy(canvas);
