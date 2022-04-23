@@ -152,6 +152,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8166120439429119508}
     m_Modifications:
+    - target: {fileID: 2861715216524446660, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861715216524446660, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861715216524446660, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3602675800348346338}
+    - target: {fileID: 2861715216524446660, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861715216524446660, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Spawn_water
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861715216524446660, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VendingMachineScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861715216524446660, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3530288734466003999, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
       propertyPath: m_Name
       value: btn scene Canvas
@@ -169,16 +197,20 @@ PrefabInstance:
       value: Spawn_water
       objectReference: {fileID: 0}
     - target: {fileID: 7052785752780225916, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052785752780225916, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92387956
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7052785752780225916, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.38268343
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7052785752780225916, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7707010153228714304, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
       propertyPath: m_Pivot.x
@@ -263,6 +295,26 @@ PrefabInstance:
     - target: {fileID: 7707010153228714304, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307369768947950627, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.953717
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307369768947950627, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.30070576
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307369768947950627, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313641334327457, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337313641334327457, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}

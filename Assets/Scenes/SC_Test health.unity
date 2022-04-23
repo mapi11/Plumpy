@@ -371,6 +371,14 @@ PrefabInstance:
       propertyPath: Parallax1_3D
       value: 
       objectReference: {fileID: 2044768401}
+    - target: {fileID: 2118036128736225515, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118036128736225515, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7e82f31af0e9c0a4f9a6fc7543bade92, type: 2}
     - target: {fileID: 4513816956990794451, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0.28235295
