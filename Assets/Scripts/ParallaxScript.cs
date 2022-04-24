@@ -6,11 +6,13 @@ public class ParallaxScript : MonoBehaviour
 {
     private float _lenght;
     private float _startPos;
-    [SerializeField] private GameObject _cam;
+    private GameObject _cam;
     [SerializeField] float _speed;
 
     private void Start()
     {
+        _cam = GameObject.Find("Camera-2D");
+
         _startPos = transform.position.x;
         _lenght = GetComponent<SpriteRenderer>().bounds.size.x;
     }

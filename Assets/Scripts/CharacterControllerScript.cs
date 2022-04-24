@@ -30,8 +30,8 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] private GameObject btn2_3D;
 
     [Header("Parallax active")]
-    [SerializeField] private GameObject Parallax2D;
-    [SerializeField] private GameObject Parallax1_3D;
+    [SerializeField] private GameObject Background2D;
+    [SerializeField] private GameObject Background1_3D;
 
     [Header("Blocks active")]
     [SerializeField] private GameObject Objects1D;
@@ -178,8 +178,8 @@ public class CharacterControllerScript : MonoBehaviour
         btn1D.SetActive(true);
         btn2_3D.SetActive(false);
 
-        Parallax2D.SetActive(false);
-        Parallax1_3D.SetActive(true);
+        Background2D.SetActive(false);
+        Background1_3D.SetActive(true);
 
         Objects1D.SetActive(true);
         Objects2D.SetActive(false);
@@ -202,8 +202,8 @@ public class CharacterControllerScript : MonoBehaviour
         btn1D.SetActive(false);
         btn2_3D.SetActive(true);
 
-        Parallax2D.SetActive(true);
-        Parallax1_3D.SetActive(false);
+        Background2D.SetActive(true);
+        Background1_3D.SetActive(false);
 
         Objects1D.SetActive(false);
         Objects2D.SetActive(true);
@@ -226,8 +226,8 @@ public class CharacterControllerScript : MonoBehaviour
         btn1D.SetActive(false);
         btn2_3D.SetActive(true);
 
-        Parallax2D.SetActive(false);
-        Parallax1_3D.SetActive(true);
+        Background2D.SetActive(false);
+        Background1_3D.SetActive(true);
 
         Objects1D.SetActive(true);
         Objects2D.SetActive(true);
