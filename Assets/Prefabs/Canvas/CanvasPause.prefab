@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7654668713357333956}
   - component: {fileID: 6897799741119042245}
   - component: {fileID: 8691177045919151997}
-  - component: {fileID: 1601206597153902555}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -79,18 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1601206597153902555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760275333798861742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80aa5e013030cc741814342b24d93502, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1167991705426689735
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,8 +257,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1601206597153902555}
-          m_TargetAssemblyTypeName: LoadSceneScript, Assembly-CSharp
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: ManagerSceneScript, Assembly-CSharp
           m_MethodName: Resume
           m_Mode: 1
           m_Arguments:
@@ -493,9 +480,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 7654668713357333956}
     m_Modifications:
     - target: {fileID: 1779342182097686913, guid: 1299dac78424b344b9930e1e92411387, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779342182097686913, guid: 1299dac78424b344b9930e1e92411387, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1601206597153902555}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779342182097686913, guid: 1299dac78424b344b9930e1e92411387, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779342182097686913, guid: 1299dac78424b344b9930e1e92411387, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerSceneScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779342182097686913, guid: 1299dac78424b344b9930e1e92411387, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: SC_Main menu
+      objectReference: {fileID: 0}
     - target: {fileID: 2611706349817354609, guid: 1299dac78424b344b9930e1e92411387, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -582,7 +585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3935275345343222499, guid: 1299dac78424b344b9930e1e92411387, type: 3}
       propertyPath: m_Name
-      value: btnMainCanvasRed
+      value: btnMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 4181538828143666867, guid: 1299dac78424b344b9930e1e92411387, type: 3}
       propertyPath: m_Text
@@ -608,12 +611,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2864204532645580692, guid: 7eaf61926b4a99446a5db0582bc3b6f0, type: 3}
       propertyPath: m_Name
-      value: btnMainCanvasGreen
+      value: btnRestart
       objectReference: {fileID: 0}
     - target: {fileID: 5215782701154531310, guid: 7eaf61926b4a99446a5db0582bc3b6f0, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1601206597153902555}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215782701154531310, guid: 7eaf61926b4a99446a5db0582bc3b6f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215782701154531310, guid: 7eaf61926b4a99446a5db0582bc3b6f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManagerSceneScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5744924435296948419, guid: 7eaf61926b4a99446a5db0582bc3b6f0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

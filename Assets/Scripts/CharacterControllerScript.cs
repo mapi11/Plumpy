@@ -30,8 +30,8 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] private GameObject btn2_3D;
 
     [Header("Parallax active")]
-    [SerializeField] private GameObject Background2D;
     [SerializeField] private GameObject Background1_3D;
+    [SerializeField] private GameObject Background2D;
 
     [Header("Blocks active")]
     [SerializeField] private GameObject Objects1D;
@@ -97,13 +97,13 @@ public class CharacterControllerScript : MonoBehaviour
             Active3D = false;
             PlayerActive1D();
         }
-        if (Active2D == true)
+        else if (Active2D == true)
         {
             Active1D = false;
             Active3D = false;
             PlayerActive2D();
         }
-        if (Active3D == true)
+        else if (Active3D == true)
         {
             Active1D = false;
             Active2D = false;

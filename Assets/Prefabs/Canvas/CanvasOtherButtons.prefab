@@ -656,8 +656,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 6113282482518267863}
-          m_TargetAssemblyTypeName: LoadSceneScript, Assembly-CSharp
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: ManagerSceneScript, Assembly-CSharp
           m_MethodName: Pause
           m_Mode: 1
           m_Arguments:
@@ -692,7 +692,6 @@ GameObject:
   - component: {fileID: 6961242295572000009}
   - component: {fileID: 134865990499572053}
   - component: {fileID: 7158668450667953569}
-  - component: {fileID: 6113282482518267863}
   m_Layer: 5
   m_Name: CanvasOtherButtons
   m_TagString: Untagged
@@ -784,18 +783,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6113282482518267863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5188227364730192740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80aa5e013030cc741814342b24d93502, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6361662692223316392
 GameObject:
   m_ObjectHideFlags: 0
