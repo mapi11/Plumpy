@@ -7,16 +7,16 @@ using UnityEngine.UI;
 public class ManagerSceneScript : MonoBehaviour
 {
     [Header("Loading panel")]
-    public static ManagerSceneScript Instance;
+    [SerializeField] private static ManagerSceneScript Instance;
     [SerializeField] private GameObject LoadingPanel;
     private string targetScene;
     [SerializeField] private Image FadeImage;
     private float FadeTime = 0.3f;
     [Header("Image weel")]
     [SerializeField] private GameObject LoadingWeel;
-    public float WheelSpeed;
+    private float WheelSpeed = 2;
     private bool IsLoading;
-    public float MinLoadTime = 1.5f;
+    private float MinLoadTime = 1.5f;
 
     private void Awake()
     {
