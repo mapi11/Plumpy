@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ManagerSceneScript : MonoBehaviour
 {
+    [Header("Loading panel")]
     public static ManagerSceneScript Instance;
     [SerializeField] private GameObject LoadingPanel;
-
     private string targetScene;
+    [SerializeField] private Image FadeImage;
+    private float FadeTime = 0.3f;
+    [Header("Image weel")]
+    [SerializeField] private GameObject LoadingWeel;
+    public float WheelSpeed;
+    private bool IsLoading;
+    public float MinLoadTime = 1.5f;
 
     private void Awake()
     {
@@ -19,6 +27,7 @@ public class ManagerSceneScript : MonoBehaviour
         //}
 
         LoadingPanel.SetActive(false);
+        FadeImage.gameObject.SetActive(false);
     }
 
     public void LoadScene(string SceneName)
@@ -28,19 +37,74 @@ public class ManagerSceneScript : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-
     private IEnumerator LoadSceneRoutine()
     {
+        IsLoading = true;
+
+        FadeImage.gameObject.SetActive(true);
+        FadeImage.canvasRenderer.SetAlpha(0);
+
+        while (!Fade(1))
+        {
+            yield return null;
+        }
+
         LoadingPanel.SetActive(true);
+        StartCoroutine(SpinWheelRoutine());
+
+        while (!Fade(0))
+        {
+            yield return null;
+        }
 
         AsyncOperation op = SceneManager.LoadSceneAsync(targetScene);
-        while(!op.isDone)
+        float elapsedLoadTime = 0f;
+
+        while (!op.isDone)
+        {
+            elapsedLoadTime += Time.deltaTime;
             yield return null;
+        }
+        while (elapsedLoadTime < MinLoadTime)
+        {
+            elapsedLoadTime += Time.deltaTime;
+            yield return null;
+        }
+
+        while (!Fade(1))
+        {
+            yield return null;
+        }
 
         LoadingPanel.SetActive(false);
+
+        while (!Fade(0))
+        {
+            yield return null;
+        }
+
+        IsLoading = false;
+    }
+    private bool Fade(float target)
+    {
+        FadeImage.CrossFadeAlpha(target, FadeTime, true);
+
+        if (Mathf.Abs(FadeImage.canvasRenderer.GetAlpha() - target) <= 0.05f)
+        {
+            FadeImage.canvasRenderer.SetAlpha(target);
+            return true;
+        }
+        return false;
     }
 
-
+    private IEnumerator SpinWheelRoutine()
+    {
+        while (IsLoading)
+        {
+            LoadingWeel.transform.Rotate(0, 0, -WheelSpeed);
+            yield return null;
+        }
+    }
 
 
     public void QuitGame()
