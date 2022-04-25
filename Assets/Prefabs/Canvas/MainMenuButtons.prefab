@@ -55,7 +55,7 @@ MonoBehaviour:
   FadeImage: {fileID: 8179754644795949941}
   LoadingWeel: {fileID: 293983834388307441}
   WheelSpeed: 2
-  MinLoadTime: 1.5
+  MinLoadTime: 2
 --- !u!1 &6838281013295740194
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +104,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6838281013083608604}
     m_Modifications:
+    - target: {fileID: 2026857923696494705, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026857923696494705, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026857923696494705, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026857923696494705, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026857923696494705, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3576314565342256294, guid: ca76af4a24e29d141893dda363781e71, type: 3}
       propertyPath: m_Name
       value: LoadingPanel
@@ -194,6 +214,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3576314565342256295, guid: ca76af4a24e29d141893dda363781e71, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564466124915059736, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564466124915059736, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564466124915059736, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 99.999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564466124915059736, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564466124915059736, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564466124915059736, guid: ca76af4a24e29d141893dda363781e71, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

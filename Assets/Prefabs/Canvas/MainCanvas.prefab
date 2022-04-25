@@ -674,25 +674,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 99180593014633800}
     m_Modifications:
-    - target: {fileID: 2026857923696494705, guid: ca76af4a24e29d141893dda363781e71, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026857923696494705, guid: ca76af4a24e29d141893dda363781e71, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026857923696494705, guid: ca76af4a24e29d141893dda363781e71, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3576314565342256294, guid: ca76af4a24e29d141893dda363781e71, type: 3}
       propertyPath: m_Name
       value: LoadingPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576314565342256294, guid: ca76af4a24e29d141893dda363781e71, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3576314565342256295, guid: ca76af4a24e29d141893dda363781e71, type: 3}
       propertyPath: m_Pivot.x
@@ -777,14 +761,6 @@ PrefabInstance:
     - target: {fileID: 3576314565342256295, guid: ca76af4a24e29d141893dda363781e71, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6564466124915059736, guid: ca76af4a24e29d141893dda363781e71, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6564466124915059736, guid: ca76af4a24e29d141893dda363781e71, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca76af4a24e29d141893dda363781e71, type: 3}
