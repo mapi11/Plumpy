@@ -9,6 +9,7 @@ public class DoorEntryScript : MonoBehaviour
     //[SerializeField] private GameObject _roomExit;
     [SerializeField] private GameObject canvas;
 
+
     private void Start()
     {
         character = GameObject.Find("Character");
@@ -31,4 +32,6 @@ public class DoorEntryScript : MonoBehaviour
     {
         character.transform.position = _roomEntry.transform.position;
     }
+
+
 }

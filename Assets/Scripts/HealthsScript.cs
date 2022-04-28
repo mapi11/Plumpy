@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HealthsScript : MonoBehaviour
 {
+    [SerializeField] private GameObject PhoneButtons;
     [SerializeField] private GameObject DeathCanvas;
     [SerializeField] private GameObject HPCanvas;
     [SerializeField] private int Health = 3;
@@ -44,9 +45,10 @@ public class HealthsScript : MonoBehaviour
 
         if (Health <= 0)
         {
-            Time.timeScale = 0f;
             DeathCanvas.SetActive(true);
-            //Debug.Log("You Dead");nn
+            PhoneButtons.SetActive(false);
+            HPCanvas.SetActive(false);
+            Time.timeScale = 0f;
         }
     }
     public void Heal()

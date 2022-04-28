@@ -32,13 +32,14 @@ public class ManagerSceneScript : MonoBehaviour
 
     public void LoadScene(string SceneName)
     {
+        Time.timeScale = 1f;
         targetScene = SceneName;
         StartCoroutine(LoadSceneRoutine());
-        Time.timeScale = 1f;
     }
 
     private IEnumerator LoadSceneRoutine()
     {
+        Time.timeScale = 1f;
         IsLoading = true;
 
         FadeImage.gameObject.SetActive(true);
