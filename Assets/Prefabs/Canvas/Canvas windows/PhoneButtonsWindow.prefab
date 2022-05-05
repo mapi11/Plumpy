@@ -144,10 +144,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2109041392936538262, guid: bbca363070fe81f4e8e74b5ba9190703, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5188227364730192740, guid: bbca363070fe81f4e8e74b5ba9190703, type: 3}
       propertyPath: m_Name
       value: CanvasOtherButtons
@@ -355,10 +351,6 @@ PrefabInstance:
     - target: {fileID: 970207137920382167, guid: 8e8bca98f9e25f849871ea6048c5d841, type: 3}
       propertyPath: m_Name
       value: CanvasPhoneButtons
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076607274418378281, guid: 8e8bca98f9e25f849871ea6048c5d841, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 7253801569383991732, guid: 8e8bca98f9e25f849871ea6048c5d841, type: 3}
       propertyPath: m_Pivot.x

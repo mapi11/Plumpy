@@ -130,10 +130,10 @@ TextureImporter:
       name: Character-idle-Sheet_0
       rect:
         serializedVersion: 2
-        x: 24
+        x: 25
         y: 24
-        width: 72
-        height: 93
+        width: 70
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,10 +151,10 @@ TextureImporter:
       name: Character-idle-Sheet_1
       rect:
         serializedVersion: 2
-        x: 152
+        x: 153
         y: 24
-        width: 72
-        height: 93
+        width: 70
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: Character-idle-Sheet_2
       rect:
         serializedVersion: 2
-        x: 280
+        x: 281
         y: 24
-        width: 72
-        height: 93
+        width: 70
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: Character-idle-Sheet_3
       rect:
         serializedVersion: 2
-        x: 408
+        x: 409
         y: 24
-        width: 72
-        height: 93
+        width: 70
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Character-idle-Sheet_4
       rect:
         serializedVersion: 2
-        x: 536
+        x: 537
         y: 24
-        width: 72
-        height: 93
+        width: 70
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +235,10 @@ TextureImporter:
       name: Character-idle-Sheet_5
       rect:
         serializedVersion: 2
-        x: 664
+        x: 665
         y: 24
-        width: 72
-        height: 93
+        width: 70
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Character-idle-Sheet_6
       rect:
         serializedVersion: 2
-        x: 792
+        x: 793
         y: 24
-        width: 72
-        height: 93
+        width: 70
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +277,10 @@ TextureImporter:
       name: Character-idle-Sheet_7
       rect:
         serializedVersion: 2
-        x: 920
+        x: 921
         y: 24
-        width: 72
-        height: 93
+        width: 70
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

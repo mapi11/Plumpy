@@ -96,7 +96,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.14490873
-  m_Center: {x: 0, y: -0.36, z: 0}
+  m_Center: {x: 0, y: -0.35, z: 0}
 --- !u!114 &6263128444742062528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.83, y: 1.92, z: 0.8}
-  m_Center: {x: 0, y: -0.04, z: 0}
+  m_Center: {x: 0, y: -0.03, z: 0}
 --- !u!95 &1305663336
 Animator:
   serializedVersion: 3

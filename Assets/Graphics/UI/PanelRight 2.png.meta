@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 55052118383ba0c4491d0462d97ef6d3
+guid: 87495498a15eb49429b188f515fc1d86
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1014544284467936788
-    second: Character-jumpTest-Sheet_0
-  - first:
-      213: 9037303597881765533
-    second: Character-jumpTest-Sheet_1
+      213: 6618732609341287585
+    second: PanelRight 2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -52,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 46
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,43 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character-jumpTest-Sheet_0
+      name: PanelRight 2
       rect:
         serializedVersion: 2
-        x: 25
-        y: 24
-        width: 70
-        height: 92
+        x: 30
+        y: 30
+        width: 196
+        height: 196
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 50, y: 50, z: 50, w: 50}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41e3d94c6a2641e00800000000000000
-      internalID: 1014544284467936788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character-jumpTest-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 153
-        y: 24
-        width: 70
-        height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9e2a179db3fa6d70800000000000000
-      internalID: 9037303597881765533
+      spriteID: 1ace41b9d367adb50800000000000000
+      internalID: 6618732609341287585
       vertices: []
       indices: 
       edges: []
@@ -153,7 +129,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a09184b67ba23ed4ba8b10d5c6cd74c0
+    spriteID: 27c25ffb49aa84044b721940ebf08433
     internalID: 0
     vertices: []
     indices: 

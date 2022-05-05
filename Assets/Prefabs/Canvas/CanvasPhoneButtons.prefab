@@ -274,11 +274,11 @@ PrefabInstance:
     - target: {fileID: 3261929410120489233, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 297693846147589454, guid: 0deb08bec3a0d8b4fbdaf065d4105d92, type: 3}
+      objectReference: {fileID: 3451835506203746226, guid: 23640b238315e68479dc190c7ddd71f3, type: 3}
     - target: {fileID: 6340233052138728117, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
-      objectReference: {fileID: 1814117964369262723, guid: 2900fda36bc3dfc4e96d35805155dd63, type: 3}
+      objectReference: {fileID: 90779917628911064, guid: 00d90b6bbcf24ba43bbe79c02a055647, type: 3}
     - target: {fileID: 8573117506342553169, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Name
       value: btnLeft
@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 664122796387479331, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -220.29999
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 664122796387479331, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -385,6 +385,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Jump
       objectReference: {fileID: 0}
+    - target: {fileID: 3261929410120489233, guid: 3b811551f5b71624fb1721643645edec, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6618732609341287585, guid: 87495498a15eb49429b188f515fc1d86, type: 3}
     - target: {fileID: 5844808126925767801, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Delegates.Array.size
       value: 1
@@ -405,6 +409,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ButtonLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 6340233052138728117, guid: 3b811551f5b71624fb1721643645edec, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: -1994077905294788710, guid: 24d30786a995f6145a206c183beed44f, type: 3}
     - target: {fileID: 8573117506342553169, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Name
       value: btnJump
@@ -510,11 +518,11 @@ PrefabInstance:
     - target: {fileID: 3261929410120489233, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 297693846147589454, guid: 0deb08bec3a0d8b4fbdaf065d4105d92, type: 3}
+      objectReference: {fileID: 3451835506203746226, guid: 23640b238315e68479dc190c7ddd71f3, type: 3}
     - target: {fileID: 6340233052138728117, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
-      objectReference: {fileID: 1814117964369262723, guid: 2900fda36bc3dfc4e96d35805155dd63, type: 3}
+      objectReference: {fileID: 90779917628911064, guid: 00d90b6bbcf24ba43bbe79c02a055647, type: 3}
     - target: {fileID: 8573117506342553169, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Name
       value: btnLeft
@@ -624,7 +632,7 @@ PrefabInstance:
     - target: {fileID: 3261929410120489233, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 297693846147589454, guid: 0deb08bec3a0d8b4fbdaf065d4105d92, type: 3}
+      objectReference: {fileID: 3451835506203746226, guid: 23640b238315e68479dc190c7ddd71f3, type: 3}
     - target: {fileID: 5844808126925767801, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ButtonRight
@@ -632,7 +640,7 @@ PrefabInstance:
     - target: {fileID: 6340233052138728117, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
-      objectReference: {fileID: 1814117964369262723, guid: 2900fda36bc3dfc4e96d35805155dd63, type: 3}
+      objectReference: {fileID: 90779917628911064, guid: 00d90b6bbcf24ba43bbe79c02a055647, type: 3}
     - target: {fileID: 8573117506342553169, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Name
       value: btnRight
@@ -746,7 +754,7 @@ PrefabInstance:
     - target: {fileID: 3261929410120489233, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 297693846147589454, guid: 0deb08bec3a0d8b4fbdaf065d4105d92, type: 3}
+      objectReference: {fileID: 3451835506203746226, guid: 23640b238315e68479dc190c7ddd71f3, type: 3}
     - target: {fileID: 5844808126925767801, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ButtonRight
@@ -754,7 +762,7 @@ PrefabInstance:
     - target: {fileID: 6340233052138728117, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
-      objectReference: {fileID: 1814117964369262723, guid: 2900fda36bc3dfc4e96d35805155dd63, type: 3}
+      objectReference: {fileID: 90779917628911064, guid: 00d90b6bbcf24ba43bbe79c02a055647, type: 3}
     - target: {fileID: 8573117506342553169, guid: 3b811551f5b71624fb1721643645edec, type: 3}
       propertyPath: m_Name
       value: btnRight

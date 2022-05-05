@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: btnPause
       objectReference: {fileID: 0}
+    - target: {fileID: 4555404829560106718, guid: fc4984b18735bd646b68e90f1adb991c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4681113957146445740, guid: fc4984b18735bd646b68e90f1adb991c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -423,6 +427,14 @@ PrefabInstance:
     - target: {fileID: 1249904470450021117, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
       propertyPath: m_Name
       value: ButtonControlCheckMark 2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249904470450021117, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875532745477594888, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2791991914562628684, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
       propertyPath: m_Pivot.x
