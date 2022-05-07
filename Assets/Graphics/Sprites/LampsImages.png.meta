@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: c4a700ce57796df4ea2957d8ddffa905
+guid: c2d3d0080e2166a4ca18780dcbde1871
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4172031661787985012
-    second: PixelHats 1_0
+      213: 2003465215825209327
+    second: Lamp_1
   - first:
-      213: -1344131628989511143
-    second: PixelHats 1_1
+      213: 3797512308165883946
+    second: Lamp_2
   - first:
-      213: 2477702162926790103
-    second: PixelHats 1_2
+      213: 2265997800083741204
+    second: Lamp_3
   - first:
-      213: -3825328895335996298
-    second: PixelHats 1_3
+      213: 690642778968216023
+    second: Table
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -77,7 +77,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -89,7 +89,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 128
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -101,7 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 128
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -115,13 +115,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PixelHats 1_0
+      name: Lamp_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 68
+        x: 18
+        y: 80
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7ec1dbffcbdcb10800000000000000
+      internalID: 2003465215825209327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamp_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28b66ef25973b430800000000000000
+      internalID: 3797512308165883946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lamp_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41adecf4ef0727f10800000000000000
+      internalID: 2265997800083741204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Table
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 16
         width: 57
-        height: 56
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,71 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4743e8821b806e930800000000000000
-      internalID: 4172031661787985012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PixelHats 1_1
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 75
-        width: 46
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91a86baa76fa85de0800000000000000
-      internalID: -1344131628989511143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PixelHats 1_2
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 12
-        width: 58
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d5e7706df0926220800000000000000
-      internalID: 2477702162926790103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PixelHats 1_3
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 9
-        width: 53
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 674e57c13a3b9eac0800000000000000
-      internalID: -3825328895335996298
+      spriteID: 7d1d613c2f7a59900800000000000000
+      internalID: 690642778968216023
       vertices: []
       indices: 
       edges: []
@@ -201,7 +201,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d3be41d894f65f94aa2780db867a40b8
+    spriteID: 25fb9ae3855bbf74d8eec47fb29df901
     internalID: 0
     vertices: []
     indices: 

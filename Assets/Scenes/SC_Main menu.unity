@@ -157,7 +157,9 @@ MonoBehaviour:
   - {fileID: 8732857778838973880, guid: 8c7e94b731fc3964eaa320c6d8933bda, type: 3}
   - {fileID: 8051255658536674950, guid: 80886e44c5c01cd46a06ee2f597b204c, type: 3}
   - {fileID: 198965833837748621, guid: b7b1b3849428cb84c80b6f4fc472a2fe, type: 3}
-  Raduis: 4
+  - {fileID: 2173358112277075055, guid: ef1555a2773a88943a8a893a4d861d86, type: 3}
+  - {fileID: 8832977560116761187, guid: 3541dc7ffd99afd4696abc84fcd5e1a4, type: 3}
+  Raduis: 6
 --- !u!4 &12814878
 Transform:
   m_ObjectHideFlags: 0
