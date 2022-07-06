@@ -8,8 +8,8 @@ public class HealthsScript : MonoBehaviour
     [SerializeField] private GameObject PhoneButtons;
     [SerializeField] private GameObject DeathCanvas;
     [SerializeField] private GameObject HPCanvas;
-    [SerializeField] private int Health = 3;
-    private int MaxHP = 3;
+    public int Health = 3;
+    public int MaxHP = 3;
 
     [SerializeField] private Image[] lives;
 
@@ -56,7 +56,7 @@ public class HealthsScript : MonoBehaviour
         Health++;
         HPCanvas.SetActive(true);
         Invoke("Healthcanvas", delay);
-    }  
+    }
     public void Healthcanvas()
     {
         if (Health == 1)
@@ -68,20 +68,19 @@ public class HealthsScript : MonoBehaviour
             HPCanvas.SetActive(false);
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Recovery health")
-        {
-            if (Health < MaxHP)
-            {
-                Heal();
-                Destroy(other.gameObject);
-            }
-        }
-
-        if (other.gameObject.tag.Equals("Enemy"))
-        {
-            Damage();
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Recovery health")
+    //    {
+    //        if (Health < MaxHP)
+    //        {
+    //            Heal();
+    //            Destroy(other.gameObject);
+    //        }
+    //    }
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        Damage();
+    //    }
+    //}
 }
