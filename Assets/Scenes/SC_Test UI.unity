@@ -606,6 +606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogWD
       objectReference: {fileID: 0}
+    - target: {fileID: 1248230896285036890, guid: 76d9da695bac11e40b090022fde58dfd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1248230896285036891, guid: 76d9da695bac11e40b090022fde58dfd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1000,7 +1004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4558864908948847331, guid: 5b55d94e3ffcdc54db0d916c87a99932, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b55d94e3ffcdc54db0d916c87a99932, type: 3}
