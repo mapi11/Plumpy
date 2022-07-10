@@ -14,6 +14,7 @@ public class DoorEntryScript : MonoBehaviour
 
     private float delay = 1.0f;
 
+    private bool IsOpen = false;
 
     private void Start()
     {
@@ -39,15 +40,23 @@ public class DoorEntryScript : MonoBehaviour
     }
     public void RoomEntry()
     {
+
         PhoneButtons.SetActive(false);
         Char.ButtonStop();
         Invoke("Teleport", delay);
+
+        IsOpen = true;
     }
 
     public void Teleport()
     {
-        character.transform.position = _roomEntry.transform.position;
-        PhoneButtons.SetActive(true);
-        Char.ButtonStop();
+        if (IsOpen == true)
+        {
+            character.transform.position = _roomEntry.transform.position;
+            PhoneButtons.SetActive(true);
+            Char.ButtonStop();
+
+            IsOpen = false;
+        }
     }
 }
