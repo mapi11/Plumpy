@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -256,6 +257,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      EnemyLonger-Attack-Sheet_2: 1018161564477897837
+      EnemyLonger-Attack-Sheet_4: -1948698305429968318
+      EnemyLonger-Attack-Sheet_5: -7307743696332424501
+      EnemyLonger-Attack-Sheet_0: -2837578806022308059
+      EnemyLonger-Attack-Sheet_1: -1107401604435434299
+      EnemyLonger-Attack-Sheet_3: 6877889603633741669
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

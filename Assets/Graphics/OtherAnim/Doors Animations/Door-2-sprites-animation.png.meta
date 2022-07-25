@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -256,6 +257,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Door-2-sprites-animation_1: 3460142529578947520
+      Door-2-sprites-animation_4: 7449381809314641564
+      Door-2: -5680212517013950831
+      Door-2-sprites-animation_3: 2743521145284991504
+      Door-2-sprites-animation_5: 6383830219467475797
+      Door-2-sprites-animation_2: 8611543919977281673
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

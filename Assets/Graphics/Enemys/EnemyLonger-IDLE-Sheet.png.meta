@@ -36,6 +36,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -208,6 +209,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      EnemyLonger-IDLE-Sheet_3: 1580354216200070110
+      EnemyLonger-IDLE-Sheet_0: 7494274917707777295
+      EnemyLonger-IDLE-Sheet_2: 4132764084556913996
+      EnemyLonger-IDLE-Sheet_1: -4680775117389049057
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
