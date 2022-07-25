@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      EnemyLonger-Walk-Sheet_1: -2370481627723391956
+      EnemyLonger-Walk-Sheet_6: 6059383588168507735
+      EnemyLonger-Walk-Sheet_3: 2495922853736766070
+      EnemyLonger-Walk-Sheet_7: 2896348348727097390
+      EnemyLonger-Walk-Sheet_2: 4519826707950222923
+      EnemyLonger-Walk-Sheet_4: 6790016442047152064
+      EnemyLonger-Walk-Sheet_0: -3491854823180524788
+      EnemyLonger-Walk-Sheet_5: -2641727106705142588
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

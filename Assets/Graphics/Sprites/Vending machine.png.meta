@@ -36,6 +36,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -130,7 +131,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d54210dee06ebbe10800000000000000
-      internalID: 2214616593562936413
+      internalID: 6751531516723134255
       vertices: []
       indices: 
       edges: []
@@ -151,7 +152,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5151a833a19b77260800000000000000
-      internalID: 7095343260130481429
+      internalID: -1500025096391422439
       vertices: []
       indices: 
       edges: []
@@ -172,7 +173,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bee72e0b83cfa6b80800000000000000
-      internalID: -8400624834490237205
+      internalID: 2214616593562936413
       vertices: []
       indices: 
       edges: []
@@ -193,7 +194,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0294cb812415e9c10800000000000000
-      internalID: 2062175023706949920
+      internalID: 7095343260130481429
       vertices: []
       indices: 
       edges: []
@@ -208,6 +209,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Vending machine2D_green: 7095343260130481429
+      Vending machine2D_red: 6751531516723134255
+      Vending machine2D_yellow: -1500025096391422439
+      Vending machine2D_blue: 2214616593562936413
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

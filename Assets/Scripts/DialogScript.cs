@@ -5,19 +5,23 @@ using UnityEngine.UI;
 using TMPro;
 public class DialogScript : MonoBehaviour
 {
-    public GameObject canvas;
-    public TextMeshProUGUI dial;
-    public int count =0;
-    public int finish;
+    private GameObject objdial;
 
-    public string[] prases;
+    private MainDialog mainDialog;
+
+    public GameObject dialogwd;
+    public TextMeshProUGUI textButton;
+
+    public  GameObject load, phone;
 
     public bool talked = false;
-
-
+    public bool spawn = false;
     private void Start()
     {
-        finish = prases.Length;
+        objdial = GameObject.Find("EmptForDial");
+        mainDialog = objdial.GetComponent<MainDialog>();
+        load = GameObject.Find("Load");
+        phone = GameObject.Find("PhoneButtonsWindow");
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -25,24 +29,13 @@ public class DialogScript : MonoBehaviour
         {
             if(other.tag == "Player")
             {
-                canvas.SetActive(true);
-                dial.text = prases[count];
-                count++;
+                textButton.text = mainDialog.phrases[0];
+                load.SetActive(false);
+                phone.SetActive(false);
+                dialogwd.SetActive(true);
+                spawn = true;
+                talked = true;
             }
         }    
-    }
-
-    public void skip()
-    {
-        if(count < finish)
-        {
-            dial.text = prases[count];
-            count++;
-        }
-        else
-        {
-            talked = true;
-            canvas.SetActive(false);
-        }
     }
 }
