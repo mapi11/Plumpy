@@ -225,7 +225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4558864908948847328
 RectTransform:
   m_ObjectHideFlags: 0
@@ -273,6 +273,10 @@ PrefabInstance:
     - target: {fileID: 1249904470450021117, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
       propertyPath: m_Name
       value: btnControlCheckMark
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249904470450021117, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1875532745477594888, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
       propertyPath: m_IsActive
@@ -374,13 +378,42 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5575213614530806136, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2092493838614604125}
+    - target: {fileID: 5575213614530806136, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575213614530806136, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SoundManagerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
+--- !u!1 &353114927114874537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1249904470450021117, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
+  m_PrefabInstance: {fileID: 1566700000909020244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3675267712408215576 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2791991914562628684, guid: 41dc015f8d8494c4aaa7a67d0885773c, type: 3}
   m_PrefabInstance: {fileID: 1566700000909020244}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2092493838614604125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353114927114874537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1bf677a7c354e478d8a0494edbd334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4149211835771854723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -513,6 +546,10 @@ PrefabInstance:
     - target: {fileID: 2876528399198887403, guid: 0e9e5e498a6c869458d83b3e430bd65d, type: 3}
       propertyPath: m_Transition
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386085445897046469, guid: 0e9e5e498a6c869458d83b3e430bd65d, type: 3}
+      propertyPath: m_fontSize
+      value: 62.65
       objectReference: {fileID: 0}
     - target: {fileID: 4483629212503521254, guid: 0e9e5e498a6c869458d83b3e430bd65d, type: 3}
       propertyPath: m_text

@@ -203,6 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8823277769069612663}
   - component: {fileID: 8572325752793541398}
+  - component: {fileID: 2454244676949176054}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -320,6 +321,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2454244676949176054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715683989379562273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1bf677a7c354e478d8a0494edbd334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2753295699143132068
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,8 +388,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3832211222316529848}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12, y: 4.5, z: 0}
-  m_LocalScale: {x: 1, y: 8, z: 4}
+  m_LocalPosition: {x: -12, y: 4.75, z: 0}
+  m_LocalScale: {x: 1, y: 8.5, z: 4}
   m_Children: []
   m_Father: {fileID: 3832211223473383488}
   m_RootOrder: 5
@@ -517,8 +530,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3832211223112112356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: 4.5, z: 0}
-  m_LocalScale: {x: 1, y: 8, z: 4}
+  m_LocalPosition: {x: 12, y: 4.75, z: 0}
+  m_LocalScale: {x: 1, y: 8.5, z: 4}
   m_Children: []
   m_Father: {fileID: 3832211223473383488}
   m_RootOrder: 6

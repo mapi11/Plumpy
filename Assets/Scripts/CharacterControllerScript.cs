@@ -47,6 +47,12 @@ public class CharacterControllerScript : MonoBehaviour
     {
         _anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+
+        Background1_3D = GameObject.Find("BG 1_3D");
+        Background2D = GameObject.Find("BG 2");
+
+        Objects1D = GameObject.Find("Objects-1D");
+        Objects2D = GameObject.Find("Objects-2D");
     }
 
     private void FixedUpdate()
