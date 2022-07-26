@@ -5,23 +5,34 @@ using UnityEngine.UI;
 using TMPro;
 public class DialogScript : MonoBehaviour
 {
-    private GameObject objdial;
-
-    private MainDialog mainDialog;
-
     public GameObject dialogwd;
-    public TextMeshProUGUI textButton;
 
+    public string[] phrases;
+    
+
+    [HideInInspector]
+    public Button botonobj;
+    [HideInInspector]
+    public ButtonDialog buttonDialog;
+
+
+    [HideInInspector]
     public  GameObject load, phone;
-
+    [HideInInspector]
     public bool talked = false;
-    public bool spawn = false;
+    [HideInInspector]
+    public string nameobj;
     private void Start()
     {
-        objdial = GameObject.Find("EmptForDial");
-        mainDialog = objdial.GetComponent<MainDialog>();
+        nameobj = gameObject.name;
+        
+        botonobj = dialogwd.GetComponentInChildren<Button>();
+        
+        buttonDialog = botonobj.GetComponent<ButtonDialog>();
+
         load = GameObject.Find("Load");
         phone = GameObject.Find("PhoneButtonsWindow");
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -29,12 +40,15 @@ public class DialogScript : MonoBehaviour
         {
             if(other.tag == "Player")
             {
-                textButton.text = mainDialog.phrases[0];
+                
+                buttonDialog.text.text = phrases[0];
+
+                buttonDialog.used(name);
                 load.SetActive(false);
                 phone.SetActive(false);
                 dialogwd.SetActive(true);
-                spawn = true;
                 talked = true;
+
             }
         }    
     }

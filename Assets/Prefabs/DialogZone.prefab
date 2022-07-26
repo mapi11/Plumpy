@@ -58,9 +58,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081422ff881bee0448991a6f81fee029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogwd: {fileID: 1248230896285036890, guid: 76d9da695bac11e40b090022fde58dfd, type: 3}
-  prases:
-  - 1
-  - lox
-  - maxs
-  talked: 1
+  phrases: []
+  dialogwd: {fileID: 103208888167567944, guid: f0c8e2764359c524ea361ae58dc2d220, type: 3}
+  butonobj: {fileID: 0}
+  buttonDialog: {fileID: 0}
+  load: {fileID: 0}
+  phone: {fileID: 0}
+  talked: 0
+  nameobj: 

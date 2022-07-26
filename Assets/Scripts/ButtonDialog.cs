@@ -4,42 +4,39 @@ using UnityEngine;
 using TMPro;
 public class ButtonDialog : MonoBehaviour
 {
-    private GameObject objdial;
+    [HideInInspector]
+    public string nameobj;
+
     private GameObject objspwn;
-    private MainDialog mainDialog;
+
     private DialogScript dialogscript;
 
-
     public TextMeshProUGUI text;
-
+    [HideInInspector]
     public int count = 1;
-    
-    public int refinish = 4;
-
-    private void Start()
-    {
-        objspwn = GameObject.Find("DialogZone");
-        objdial = GameObject.Find("EmptForDial");
-        dialogscript = objspwn.GetComponent<DialogScript>();
-        mainDialog = objdial.GetComponent<MainDialog>();
-    }
 
     public void Skip()
     {
-        
+        objspwn = GameObject.Find(nameobj);
+        dialogscript = objspwn.GetComponent<DialogScript>();
 
-        text.text = mainDialog.phrases[count];
-
-        if(count < refinish)
+        if(count < dialogscript.phrases.Length)
         {
-            count ++;
+            text.text = dialogscript.phrases[count];
+            count++;
         }
+
         else
         {
-            refinish += 4;
+            count = 1;
             dialogscript.dialogwd.SetActive(false);
             dialogscript.load.SetActive(true);
             dialogscript.phone.SetActive(true);
         }
+    }
+    public string used(string a)
+    {
+        nameobj = a;
+        return nameobj;
     }
 }
