@@ -192,15 +192,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8758806021355170658, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
       propertyPath: phrases.Array.data[0]
-      value: 1
+      value: Test block number one
       objectReference: {fileID: 0}
     - target: {fileID: 8758806021355170658, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
       propertyPath: phrases.Array.data[1]
-      value: 2
+      value: smth
       objectReference: {fileID: 0}
     - target: {fileID: 8758806021355170658, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
       propertyPath: phrases.Array.data[2]
-      value: 3
+      value: complete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
@@ -588,15 +588,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8758806021355170658, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
       propertyPath: phrases.Array.data[0]
-      value: 4
+      value: Test block number two
       objectReference: {fileID: 0}
     - target: {fileID: 8758806021355170658, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
       propertyPath: phrases.Array.data[1]
-      value: 5
+      value: smth
       objectReference: {fileID: 0}
     - target: {fileID: 8758806021355170658, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
       propertyPath: phrases.Array.data[2]
-      value: 6
+      value: complete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
