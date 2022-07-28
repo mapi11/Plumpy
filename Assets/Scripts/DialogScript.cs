@@ -22,13 +22,17 @@ public class DialogScript : MonoBehaviour
     public bool talked = false;
     [HideInInspector]
     public string nameobj;
+
+    CharacterControllerScript characterControllerScript;
+
     private void Start()
     {
         nameobj = gameObject.name;
         
         botonobj = dialogwd.GetComponentInChildren<Button>();
-        
         buttonDialog = botonobj.GetComponent<ButtonDialog>();
+
+        characterControllerScript = FindObjectOfType<CharacterControllerScript>();
 
         load = GameObject.Find("Load");
         phone = GameObject.Find("PhoneButtonsWindow");
@@ -40,8 +44,9 @@ public class DialogScript : MonoBehaviour
         {
             if(other.tag == "Player")
             {
-                
+
                 buttonDialog.text.text = phrases[0];
+                characterControllerScript.ButtonStop();
 
                 buttonDialog.used(name);
                 load.SetActive(false);
