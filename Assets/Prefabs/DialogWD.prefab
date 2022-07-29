@@ -169,6 +169,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7859919145173187493, guid: fc4984b18735bd646b68e90f1adb991c, type: 3}
+      propertyPath: m_text
+      value: "\u0412\u044B: \u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439\u0442\u0435
+        \u0434\u043E\u043A\u0442\u043E\u0440. \u0412\u044B \u043C\u0435\u043D\u044F
+        \u0438\u0441\u043A\u0430\u043B\u0438."
+      objectReference: {fileID: 0}
     - target: {fileID: 8803434355778797889, guid: fc4984b18735bd646b68e90f1adb991c, type: 3}
       propertyPath: m_Name
       value: Peshatolka
@@ -192,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56aa4336a8b20f040a16d56ea1bf9f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameobj: 
+  nameobj: DialogZone
   text: {fileID: 9037122373518511985}
   count: 1
 --- !u!224 &5803148072943809400 stripped

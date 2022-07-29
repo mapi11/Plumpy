@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class DoorEntryScript : MonoBehaviour
 {
     CharacterControllerScript Char;
+    public bool teleport = false;
+    public string scene;
     private GameObject character;
     [SerializeField] private GameObject _roomEntry;
     //[SerializeField] private GameObject _roomExit;
@@ -40,10 +42,16 @@ public class DoorEntryScript : MonoBehaviour
     }
     public void RoomEntry()
     {
-
-        PhoneButtons.SetActive(false);
-        Char.ButtonStop();
-        Invoke("Teleport", delay);
+        if(teleport == false)
+        {
+            PhoneButtons.SetActive(false);
+            Char.ButtonStop();
+            Invoke("Teleport", delay);
+        }
+        else
+        {
+            SceneManager.LoadScene(scene);
+        }
 
         IsOpen = true;
     }

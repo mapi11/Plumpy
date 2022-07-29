@@ -7,6 +7,9 @@ public class ButtonDialog : MonoBehaviour
     [HideInInspector]
     public string nameobj;
 
+    private GameObject light_obj;
+    private LightOpened light;
+
     private GameObject objspwn;
 
     private DialogScript dialogscript;
@@ -14,6 +17,12 @@ public class ButtonDialog : MonoBehaviour
     public TextMeshProUGUI text;
     [HideInInspector]
     public int count = 1;
+
+    private void Start()
+    {
+        light_obj = GameObject.Find("Lights_obj");
+        light = light_obj.GetComponent<LightOpened>();
+    }
 
     public void Skip()
     {
@@ -32,6 +41,13 @@ public class ButtonDialog : MonoBehaviour
             dialogscript.dialogwd.SetActive(false);
             dialogscript.load.SetActive(true);
             dialogscript.phone.SetActive(true);
+            if(dialogscript.active_light == true)
+            {
+                for(int i = 0; i < light.liist_light.Length; i++)
+                {
+                    light.liist_light[i].SetActive(true);
+                }
+            }
         }
     }
     public string used(string a)

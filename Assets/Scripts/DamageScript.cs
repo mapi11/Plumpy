@@ -5,6 +5,9 @@ using UnityEngine;
 public class DamageScript : MonoBehaviour
 {
     HealthsScript _healthsScript;
+    public bool test = false;
+    [HideInInspector]
+    public int count = 0;
 
     private void Start()
     {
@@ -15,7 +18,24 @@ public class DamageScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            _healthsScript.Damage();
+            if(test == false)
+            {
+                _healthsScript.Damage();
+            }
+            else
+            {
+                if(count == 0)
+                {
+                    _healthsScript.Damage();
+                    count++;
+                }
+                else
+                {
+
+                }
+            } 
+
+
         }
     }
 }

@@ -5,10 +5,17 @@ using UnityEngine.UI;
 using TMPro;
 public class DialogScript : MonoBehaviour
 {
+    
+
     public GameObject dialogwd;
 
+    public bool active_light = false;
+    public bool test_our = false;
+
     public string[] phrases;
-    
+
+    public GameObject enemy;
+    private DamageScript _damageSc;
 
     [HideInInspector]
     public Button botonobj;
@@ -27,6 +34,11 @@ public class DialogScript : MonoBehaviour
 
     private void Start()
     {
+        if(test_our == true)
+        {
+            _damageSc = enemy.GetComponent<DamageScript>();
+        }
+        
         nameobj = gameObject.name;
         
         botonobj = dialogwd.GetComponentInChildren<Button>();
@@ -42,7 +54,7 @@ public class DialogScript : MonoBehaviour
     {
         if(talked == false)
         {
-            if(other.tag == "Player")
+            if(other.tag == "Player" && test_our == false)
             {
 
                 buttonDialog.text.text = phrases[0];
@@ -56,5 +68,22 @@ public class DialogScript : MonoBehaviour
 
             }
         }    
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (talked == false)
+        {
+            if (test_our == true && _damageSc.test == true && _damageSc.count != 0)
+            {
+                buttonDialog.text.text = phrases[0];
+                characterControllerScript.ButtonStop();
+
+                buttonDialog.used(name);
+                load.SetActive(false);
+                phone.SetActive(false);
+                dialogwd.SetActive(true);
+                talked = true;
+            }
+        }
     }
 }

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SC_Test_dial.unity
     guid: 8a7e0f80201d4d449b11038574ec36f7
+  - enabled: 1
+    path: Assets/Scenes/Levels/SC_Test_demo.unity
+    guid: 937d40919fc081f44a34cb6d6b2a1b8d
   m_configObjects: {}
