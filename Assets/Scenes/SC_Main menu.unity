@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 1b1e07d77a2d5b542937086f35a371a5, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 06c26cde7325a5b45818f84f6406a10b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1155,12 +1155,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6004505109258835502, guid: b0f51fe0a64203548ad0a1e086c99319, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1539.5488
+      objectReference: {fileID: 0}
+    - target: {fileID: 6004505109258835502, guid: b0f51fe0a64203548ad0a1e086c99319, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -903
+      value: -769.7744
       objectReference: {fileID: 0}
     - target: {fileID: 6771038027713153527, guid: b0f51fe0a64203548ad0a1e086c99319, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115796761574052596, guid: b0f51fe0a64203548ad0a1e086c99319, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1398.8892
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115796761574052596, guid: b0f51fe0a64203548ad0a1e086c99319, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20.8386
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0f51fe0a64203548ad0a1e086c99319, type: 3}
@@ -1923,7 +1935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2178845172724859450, guid: fc4984b18735bd646b68e90f1adb991c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: SC_Test_Builder
+      value: SC_Test_demo
       objectReference: {fileID: 0}
     - target: {fileID: 2178845172724859450, guid: fc4984b18735bd646b68e90f1adb991c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
