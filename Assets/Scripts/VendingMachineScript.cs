@@ -10,10 +10,14 @@ public class VendingMachineScript : MonoBehaviour
     [Header("Random range")]
     [SerializeField] private int Min_int=1;
     [SerializeField] private int Max_int=3;
-
     private int _int;
 
     CharacterControllerScript Active;
+
+    public bool test;
+
+    [HideInInspector]
+    public int count = 0;
 
     private void Start()
     {
@@ -59,5 +63,6 @@ public class VendingMachineScript : MonoBehaviour
     {
         _int--;
         Instantiate(water, transform.position, transform.rotation);
+        count++;
     }
 }

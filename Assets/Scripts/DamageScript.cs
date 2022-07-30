@@ -29,10 +29,6 @@ public class DamageScript : MonoBehaviour
                     _healthsScript.Damage();
                     count++;
                 }
-                else
-                {
-
-                }
             } 
 
 

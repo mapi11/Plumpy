@@ -10,12 +10,15 @@ public class DialogScript : MonoBehaviour
     public GameObject dialogwd;
 
     public bool active_light = false;
-    public bool test_our = false;
+    public bool test_enem = false, test_vend = false;
 
     public string[] phrases;
 
     public GameObject enemy;
     private DamageScript _damageSc;
+
+    public GameObject vendingmashine;
+    private VendingMachineScript _vendingmashine_;
 
     [HideInInspector]
     public Button botonobj;
@@ -34,9 +37,13 @@ public class DialogScript : MonoBehaviour
 
     private void Start()
     {
-        if(test_our == true)
+        if(test_enem == true)
         {
             _damageSc = enemy.GetComponent<DamageScript>();
+        }
+        else if(test_vend == true)
+        {
+            _vendingmashine_ = vendingmashine.GetComponent<VendingMachineScript>();
         }
         
         nameobj = gameObject.name;
@@ -54,7 +61,7 @@ public class DialogScript : MonoBehaviour
     {
         if(talked == false)
         {
-            if(other.tag == "Player" && test_our == false)
+            if(other.tag == "Player" && test_enem == false && test_vend == false)
             {
 
                 buttonDialog.text.text = phrases[0];
@@ -73,7 +80,7 @@ public class DialogScript : MonoBehaviour
     {
         if (talked == false)
         {
-            if (test_our == true && _damageSc.test == true && _damageSc.count != 0)
+            if (test_enem == true && _damageSc.test == true && _damageSc.count != 0 || test_vend == true && _vendingmashine_.test == true && _vendingmashine_.count != 0)
             {
                 buttonDialog.text.text = phrases[0];
                 characterControllerScript.ButtonStop();
