@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SC_Test_demo.unity
     guid: 937d40919fc081f44a34cb6d6b2a1b8d
+  - enabled: 1
+    path: Assets/Scenes/Levels/SC_Test_demo2.unity
+    guid: 9a96cb1104f882b45b493aa8bd382956
   m_configObjects: {}

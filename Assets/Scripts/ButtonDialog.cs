@@ -9,6 +9,7 @@ public class ButtonDialog : MonoBehaviour
 
     private GameObject light_obj;
     private LightOpened light;
+    private bool cheked = false;
 
     private GameObject objspwn;
 
@@ -20,8 +21,7 @@ public class ButtonDialog : MonoBehaviour
 
     private void Start()
     {
-        light_obj = GameObject.Find("Lights_obj");
-        light = light_obj.GetComponent<LightOpened>();
+        
     }
 
     public void Skip()
@@ -29,7 +29,14 @@ public class ButtonDialog : MonoBehaviour
         objspwn = GameObject.Find(nameobj);
         dialogscript = objspwn.GetComponent<DialogScript>();
 
-        if(count < dialogscript.phrases.Length)
+        if(dialogscript.active_light == true && cheked == false)
+        {
+            light_obj = GameObject.Find("Lights_obj");
+            light = light_obj.GetComponent<LightOpened>();
+            cheked = true;
+        }    
+
+        else if(count < dialogscript.phrases.Length)
         {
             text.text = dialogscript.phrases[count];
             count++;
