@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.57, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1757463792523717773}
   - {fileID: 5853527375570096064}
@@ -44,6 +45,7 @@ SpriteRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -70,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -125510601
-  m_SortingLayer: -2
-  m_SortingOrder: 50
+  m_SortingLayerID: -994740599
+  m_SortingLayer: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7095343260130481429, guid: da6430291341b08459ee4aa2108889b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -112,6 +114,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.6, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4681242540064864172}
   m_RootOrder: 0
@@ -145,6 +148,8 @@ MonoBehaviour:
   canvas: {fileID: 806494127046744735}
   Min_int: 1
   Max_int: 3
+  test: 0
+  count: 0
 --- !u!1001 &4309703796413927040
 PrefabInstance:
   m_ObjectHideFlags: 0

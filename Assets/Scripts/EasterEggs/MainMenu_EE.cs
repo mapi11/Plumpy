@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EggMainMenuScript : MonoBehaviour
+public class MainMenu_EE : MonoBehaviour
 {
     private int TapCount;
     [SerializeField] private GameObject _image;
+    [SerializeField] private GameObject Music;
 
     public void Taps()
     {
@@ -13,13 +14,15 @@ public class EggMainMenuScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (TapCount == 5)
+        if (TapCount == 3)
         {
             _image.SetActive(true);
+            Music.SetActive(false);
         }
-        if (TapCount == 6)
+        if (TapCount == 4)
         {
             _image.SetActive(false);
+            Music.SetActive(true);
             Destroy(gameObject);
         }
     }

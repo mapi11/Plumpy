@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 286f6d7777d2ad44e95543a6144c9f9b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -186,6 +186,18 @@ PrefabInstance:
       propertyPath: dialogwd
       value: 
       objectReference: {fileID: 1261364071}
+    - target: {fileID: 8758806021355170658, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
+      propertyPath: test_enem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758806021355170658, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
+      propertyPath: test_vend
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758806021355170658, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
+      propertyPath: active_light
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8758806021355170658, guid: 36d83ae87ae2c874586f32e58882aabc, type: 3}
       propertyPath: phrases.Array.size
       value: 3

@@ -5,11 +5,12 @@ using UnityEngine;
 public class ViewZoneScript : MonoBehaviour
 {
     CharacterControllerScript Active;
-    [SerializeField] private GameObject CanvasCheckMark;
+    private GameObject CanvasCheckMark;
 
 
     private void Start()
     {
+        CanvasCheckMark = GameObject.Find("CanvasOtherButtons");
         Active = FindObjectOfType<CharacterControllerScript>();
     }
 
@@ -30,4 +31,16 @@ public class ViewZoneScript : MonoBehaviour
         Active.PlayerActive2D();
         CanvasCheckMark.SetActive(true);
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        Active.PlayerActive2D();
+    //        CanvasCheckMark.SetActive(false);
+    //    }
+    //    Active.ButtonStop();
+
+    //    Active.PlayerActive2D();
+    //}
 }
