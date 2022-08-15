@@ -6,10 +6,10 @@ public class SpawnPrefabScript : MonoBehaviour
 {
     [SerializeField] private GameObject[] _prefab;
     private int _int;
-    [SerializeField] private int Raduis;
+    //[SerializeField] private int Raduis;
     private void Start()
     {
-        _int = Random.Range(0, Raduis);
+        _int = Random.Range(0, _prefab.Length);
         Instantiate(_prefab[_int],transform.position,transform.rotation);
     }
 }
