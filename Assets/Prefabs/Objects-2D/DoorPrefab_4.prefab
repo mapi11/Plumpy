@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4482561150156684232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 1, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7628785484091531141}
@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e11932842f978041a888a2d9f6d96ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleport: 0
+  scene: 
   _roomEntry: {fileID: 0}
   canvas: {fileID: 8337114031417629429}
 --- !u!1001 &4849668629219397354
