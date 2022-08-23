@@ -5,7 +5,8 @@ using UnityEngine;
 public class PreassurePlateScript : MonoBehaviour
 {
     [SerializeField] private Vector3 _originalPos;
-    bool _moveBack = false;
+    [SerializeField] private GameObject _obj;
+
 
     private void Start()
     {
@@ -14,42 +15,31 @@ public class PreassurePlateScript : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.transform.name == "Player")
+        if (collision.transform.name == "PlateBlock")
         {
-            transform.Translate(0, -0.1f, 0);
-            _moveBack = false;
+            Debug.Log("stay");
+
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.name == "Player")
+        if (collision.transform.name == "PlateBlock")
         {
-            collision.transform.parent = transform;
-            GetComponent<SpriteRenderer>().color = Color.green;
+            Debug.Log("Enter");
+            _obj.SetActive(true);
         }
     }
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.transform.name == "Player")
+        if (collision.transform.name == "PlateBlock")
         {
-            _moveBack = true;
-            collision.transform.parent = null;
-            GetComponent<SpriteRenderer>().color = Color.red;
+            Debug.Log("Exit");
+            _obj.SetActive(false);
         }
     }
 
     private void Update()
     {
-        if (_moveBack)
-        {
-            if (transform.position.y < _originalPos.y)
-            {
-                transform.Translate(0, 0.1f, 0);
-            }
-            else
-            {
-                _moveBack = false;
-            }
-        }
+
     }
 }

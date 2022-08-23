@@ -7,8 +7,8 @@ public class ButtonDialog : MonoBehaviour
     [HideInInspector]
     public string nameobj;
 
-    private GameObject light_obj;
-    private LightOpened light;
+    //private GameObject light_obj;
+    //private LightOpened light;
     private bool cheked = false;
 
     private GameObject objspwn;
@@ -31,8 +31,8 @@ public class ButtonDialog : MonoBehaviour
 
         if(dialogscript.active_light == true && cheked == false)
         {
-            light_obj = GameObject.Find("Lights_obj");
-            light = light_obj.GetComponent<LightOpened>();
+
+            //light = light_obj.GetComponent<LightOpened>();
             cheked = true;
         }    
 
@@ -48,13 +48,13 @@ public class ButtonDialog : MonoBehaviour
             dialogscript.dialogwd.SetActive(false);
             dialogscript.load.SetActive(true);
             dialogscript.phone.SetActive(true);
-            if(dialogscript.active_light == true)
-            {
-                for(int i = 0; i < light.liist_light.Length; i++)
-                {
-                    light.liist_light[i].SetActive(true);
-                }
-            }
+            //if(dialogscript.active_light == true)
+            //{
+            //    for(int i = 0; i < light.liist_light.Length; i++)
+            //    {
+            //        light.liist_light[i].SetActive(true);
+            //    }
+            //}
         }
     }
     public string used(string a)

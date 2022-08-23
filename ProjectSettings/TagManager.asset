@@ -11,6 +11,7 @@ TagManager:
   - Stairs
   - MBWblock
   - ViewZone
+  - PlateBlock
   layers:
   - Default
   - TransparentFX
