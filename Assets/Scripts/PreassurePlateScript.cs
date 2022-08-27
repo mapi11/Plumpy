@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class PreassurePlateScript : MonoBehaviour
 {
-    [SerializeField] private Vector3 _originalPos;
     [SerializeField] private GameObject _obj;
     Animator _anim;
 
 
     private void Start()
     {
-        _originalPos = transform.position;
-
         _anim = GetComponent<Animator>();
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.transform.name == "PlateBlock")
-        {
-            Debug.Log("stay");
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.transform.name == "PlateBlock")
+    //    {
+    //        Debug.Log("stay");
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
