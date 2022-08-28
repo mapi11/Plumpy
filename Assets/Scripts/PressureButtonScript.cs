@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.UIElements;
 
 public class PressureButtonScript : MonoBehaviour
 {
@@ -10,20 +10,20 @@ public class PressureButtonScript : MonoBehaviour
     [SerializeField] private GameObject _canvas;
     Animator _anim;
 
+    [SerializeField] private bool _IsSpawnedBlock;
+
     private void Start()
     {
         _anim = GetComponent<Animator>();
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Enter");
+            //Debug.Log("Enter");
             _canvas.SetActive(true);
-
-            //_anim.SetBool("ButtonDown", true);
-            //_anim.SetBool("ButtonUp", false);
         }
     }
 
@@ -31,17 +31,23 @@ public class PressureButtonScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Exit");
+            //Debug.Log("Exit");
             _canvas.SetActive(false);
-
-            //_anim.SetBool("ButtonUp", true);
-            //_anim.SetBool("ButtonDown", false);
         }
     }
 
     public void PressureButton()
     {
-        Instantiate(_obj, _parentObj.transform.parent);
-        //_anim.SetBool("ButtonDown", true);
+        if (_IsSpawnedBlock == false)
+        {
+            Instantiate(_obj, _parentObj.transform);
+            _IsSpawnedBlock = true;
+        }
+        else
+        {
+            //Destroy(_obj);
+            _IsSpawnedBlock = false;
+        }
+
     }
 }

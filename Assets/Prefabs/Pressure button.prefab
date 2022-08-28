@@ -211,7 +211,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Size: {x: 2.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0.25, z: -0.75}
 --- !u!95 &6871764594460827738
 Animator:
@@ -247,6 +247,7 @@ MonoBehaviour:
   _obj: {fileID: 1960052629218979388, guid: f67a844b562f1b949b12a2e281eb2d4f, type: 3}
   _parentObj: {fileID: 781677573}
   _canvas: {fileID: 8349634670338008506}
+  _IsSpawnedBlock: 0
 --- !u!1001 &4837365834225594789
 PrefabInstance:
   m_ObjectHideFlags: 0

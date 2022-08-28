@@ -23,9 +23,9 @@ public class PreassurePlateScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.name == "PlateBlock")
+        if (other.tag == "PlateBlock")
         {
-            Debug.Log("Enter");
+            //Debug.Log("Enter");
             _obj.SetActive(true);
 
             _anim.SetBool("PlateDown", true);
@@ -35,9 +35,9 @@ public class PreassurePlateScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.name == "PlateBlock")
+        if (other.tag == "PlateBlock")
         {
-            Debug.Log("Exit");
+            //Debug.Log("Exit");
             _obj.SetActive(false);
 
             _anim.SetBool("PlateUp", true);
