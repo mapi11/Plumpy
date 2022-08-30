@@ -38,16 +38,16 @@ public class PressureButtonScript : MonoBehaviour
 
     public void PressureButton()
     {
-        if (_IsSpawnedBlock == false)
-        {
+        //if (_IsSpawnedBlock == false)
+        //{
             Instantiate(_obj, _parentObj.transform);
             _IsSpawnedBlock = true;
-        }
-        else
-        {
-            //Destroy(_obj);
-            _IsSpawnedBlock = false;
-        }
+        //}
+        //else
+        //{
+        //    //Destroy(_obj);
+        //    _IsSpawnedBlock = false;
+        //}
 
     }
 }

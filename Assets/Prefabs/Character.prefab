@@ -600,6 +600,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 307228724402007618}
     m_Modifications:
+    - target: {fileID: 50056841100129534, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 99180593014633796, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
       propertyPath: m_Name
       value: MainCanvas
@@ -764,7 +768,8 @@ PrefabInstance:
       propertyPath: m_text
       value: Dialog
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7232398287406693591, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68d2dd5df5376bf4b92b5332009c44eb, type: 3}
 --- !u!224 &6908010839412845789 stripped
 RectTransform:
