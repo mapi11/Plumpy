@@ -7,6 +7,7 @@ public class VendingMachineScript : MonoBehaviour
     //[SerializeField] private GameObject VendingMachine;
     [SerializeField] private GameObject water;
     [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject _parent;
     [Header("Random range")]
     [SerializeField] private int Min_int=1;
     [SerializeField] private int Max_int=3;
@@ -21,6 +22,7 @@ public class VendingMachineScript : MonoBehaviour
 
     private void Start()
     {
+        _parent = GameObject.Find("Objects-2D");
         _int = Random.Range(Min_int, Max_int);
         Active = FindObjectOfType<CharacterControllerScript>();
     }
@@ -46,9 +48,12 @@ public class VendingMachineScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player");
         {
-            canvas.SetActive(true);
+            if (Active.Active2D == true || Active.Active3D == true)
+            {
+                canvas.SetActive(true);
+            }
         }
     }
     private void OnTriggerExit(Collider other)
@@ -62,7 +67,7 @@ public class VendingMachineScript : MonoBehaviour
     public void Spawn_water()
     {
         _int--;
-        Instantiate(water, transform.position, transform.rotation);
+        Instantiate(water, transform.position, transform.rotation, _parent.transform);
         count++;
     }
 }

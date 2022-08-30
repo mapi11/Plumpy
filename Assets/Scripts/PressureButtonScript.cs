@@ -7,10 +7,11 @@ public class PressureButtonScript : MonoBehaviour
 {
     [SerializeField] private GameObject _obj;
     [SerializeField] private GameObject _parentObj;
+    [SerializeField] private GameObject _boxSpawner;
     [SerializeField] private GameObject _canvas;
     Animator _anim;
 
-    [SerializeField] private bool _IsSpawnedBlock;
+    //[SerializeField] private bool _IsSpawnedBlock;
 
     private void Start()
     {
@@ -40,8 +41,8 @@ public class PressureButtonScript : MonoBehaviour
     {
         //if (_IsSpawnedBlock == false)
         //{
-            Instantiate(_obj, _parentObj.transform);
-            _IsSpawnedBlock = true;
+            Instantiate(_obj, _boxSpawner.transform.position, _boxSpawner.transform.rotation, _parentObj.transform);
+            //_IsSpawnedBlock = true;
         //}
         //else
         //{

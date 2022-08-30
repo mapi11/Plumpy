@@ -13,6 +13,7 @@ public class MBWBlockScript : MonoBehaviour
     public bool ButtonIsClick = false;
     private bool InsideTrigger = false;
 
+
     CharacterControllerScript Active;
 
     private void Start()

@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &116051435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7127502001201129432, guid: 60d1da0a19c935444b0cea35caf11992, type: 3}
+  m_PrefabInstance: {fileID: 1670356267}
+  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &575173414
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -772,6 +777,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ecb0ef7ea581a9408bc556f80a02478, type: 3}
+--- !u!1 &2059381041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 781677573, guid: 462c046475d1f3a42866c226b06663b1, type: 3}
+  m_PrefabInstance: {fileID: 663580329175750316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &663580329175750316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -839,6 +849,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 8713960232261835731, guid: 462c046475d1f3a42866c226b06663b1, type: 3}
+      propertyPath: _parentObj
+      value: 
+      objectReference: {fileID: 116051435}
+    - target: {fileID: 8713960232261835731, guid: 462c046475d1f3a42866c226b06663b1, type: 3}
+      propertyPath: _boxSpawner
+      value: 
+      objectReference: {fileID: 2059381041}
     - target: {fileID: 8713960232261835731, guid: 462c046475d1f3a42866c226b06663b1, type: 3}
       propertyPath: _obj.Array.size
       value: 1
