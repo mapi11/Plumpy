@@ -11,6 +11,8 @@ public class SettingsCharacterScript : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private Button _btnCloseSettings;
 
+    [SerializeField] private Button _btnDelSave;
+
     [Space]
     [Header("Music Buttons")]
     [SerializeField] private Button[] _btnMusic;
@@ -23,8 +25,6 @@ public class SettingsCharacterScript : MonoBehaviour
 
         SetMusic(SavePrefScript.Load(SavePrefScript.PrefTypes.Music));
 
-        _btnCloseSettings.onClick.AddListener(CloseSettings);
-
         _btnMusic[0].onClick.AddListener(() => SetMusic(0));
         _btnMusic[1].onClick.AddListener(() => SetMusic(1));
         _btnMusic[2].onClick.AddListener(() => SetMusic(2));
@@ -33,6 +33,10 @@ public class SettingsCharacterScript : MonoBehaviour
         _btnMusic[5].onClick.AddListener(() => SetMusic(5));
         _btnMusic[6].onClick.AddListener(() => SetMusic(6));
         _btnMusic[7].onClick.AddListener(() => SetMusic(7));
+
+        _btnCloseSettings.onClick.AddListener(CloseSettings);
+
+        _btnDelSave.onClick.AddListener(DelSave);
     }
 
     void CloseSettings()
@@ -59,5 +63,11 @@ public class SettingsCharacterScript : MonoBehaviour
             _btnMusic[6].GetComponent<Image>().color = setMusic == 6 ? Color.gray : Color.white;
             _btnMusic[7].GetComponent<Image>().color = setMusic == 7 ? Color.gray : Color.white;
         }
+    }
+
+    private void DelSave()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("Save deleted");
     }
 }
