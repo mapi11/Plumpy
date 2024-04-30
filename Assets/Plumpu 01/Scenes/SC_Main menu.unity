@@ -1436,6 +1436,73 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!1 &619719089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 619719090}
+  - component: {fileID: 619719092}
+  - component: {fileID: 619719091}
+  m_Layer: 0
+  m_Name: GameMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &619719090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619719089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &619719091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619719089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b38dcfc7a64d74b8a32080890b5ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &619719092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619719089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c584617202ca3d544b443f689f07c9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objects:
+  - {fileID: 4829035614131336345, guid: bce24dbaa1992ad4d9fbb11baad42f3a, type: 3}
+  - {fileID: 4829035614131336345, guid: 1812ffc314bcd58449320b7ab9210957, type: 3}
+  - {fileID: 4829035614131336345, guid: 1d85ff6f0f4ed3b439269f3a21d7e832, type: 3}
+  - {fileID: 4829035614131336345, guid: 6926ca3ff1224ee4c99912b4c1ab974c, type: 3}
+  - {fileID: 4829035614131336345, guid: b025a90cd4d1900418f6ea57c21ea3ce, type: 3}
+  - {fileID: 4829035614131336345, guid: 8342ab011f52ff745b961aecbbff5829, type: 3}
+  - {fileID: 4829035614131336345, guid: 57a1c264634b85a428df7f5fa7268a7a, type: 3}
+  - {fileID: 4829035614131336345, guid: 190f153439207bc479be8ebf86f97cd2, type: 3}
+  _int: 4
 --- !u!1001 &704589364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1854,7 +1921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1117421568
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3207,6 +3274,7 @@ GameObject:
   - component: {fileID: 1832626957}
   - component: {fileID: 1832626956}
   - component: {fileID: 1832626955}
+  - component: {fileID: 1832626959}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3302,6 +3370,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1832626959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832626954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c584617202ca3d544b443f689f07c9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objects:
+  - {fileID: 4829035614131336345, guid: bce24dbaa1992ad4d9fbb11baad42f3a, type: 3}
+  - {fileID: 4829035614131336345, guid: 1812ffc314bcd58449320b7ab9210957, type: 3}
+  - {fileID: 4829035614131336345, guid: 1d85ff6f0f4ed3b439269f3a21d7e832, type: 3}
+  - {fileID: 4829035614131336345, guid: 6926ca3ff1224ee4c99912b4c1ab974c, type: 3}
+  - {fileID: 4829035614131336345, guid: b025a90cd4d1900418f6ea57c21ea3ce, type: 3}
+  - {fileID: 4829035614131336345, guid: 8342ab011f52ff745b961aecbbff5829, type: 3}
+  - {fileID: 4829035614131336345, guid: 57a1c264634b85a428df7f5fa7268a7a, type: 3}
+  - {fileID: 4829035614131336345, guid: 190f153439207bc479be8ebf86f97cd2, type: 3}
+  _int: 10
 --- !u!224 &1923586853 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8207877523234308677, guid: 85b446d0c214ecf4fa8c001824468f43, type: 3}

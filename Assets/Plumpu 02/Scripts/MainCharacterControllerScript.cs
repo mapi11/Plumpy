@@ -24,16 +24,10 @@ public class MainCharacterControllerScript : MonoBehaviour
     private bool _facingRight = true;
     private bool _rotate = true;
 
-    [Space]
-    [Header("Buttons")]
-    [SerializeField] private Button _btnJump;
-
     void Awake()
     {
         _anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-
-        _btnJump.onClick.AddListener(ButtonJump);
     }
 
     private void FixedUpdate()
