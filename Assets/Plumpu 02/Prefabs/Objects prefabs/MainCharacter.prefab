@@ -162,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4005401898869952072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.41, z: 0}
+  m_LocalPosition: {x: 0, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -184,7 +184,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4005401899341333099}
   - component: {fileID: 4005401899341333097}
-  - component: {fileID: 4005401899341333096}
+  - component: {fileID: 5826637944699977437}
   - component: {fileID: 3735020297724542861}
   - component: {fileID: 3735020297724542860}
   - component: {fileID: 1210627094004591331}
@@ -278,8 +278,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &4005401899341333096
-BoxCollider:
+--- !u!136 &5826637944699977437
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -296,9 +296,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.82, y: 1.92, z: 0.8}
-  m_Center: {x: 0, y: -0.03, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.41
+  m_Height: 1.9
+  m_Direction: 1
+  m_Center: {x: -0.05, y: -0.04, z: 0}
 --- !u!95 &3735020297724542861
 Animator:
   serializedVersion: 7
@@ -902,7 +904,7 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  _checkRadiusGround: 0.41
+  _checkRadiusGround: 0.23
   IsGrounded: 0
 --- !u!114 &7497833475301463803
 MonoBehaviour:

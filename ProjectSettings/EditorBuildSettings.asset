@@ -6,31 +6,31 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Plumpu 01/Scenes/SC_Main menu.unity
+    path: Assets/Plumpu 02/Scenes/SC_Main menu.unity
     guid: 5ad52b6acb70ce944a6a6707b2d8e4cb
   - enabled: 1
+    path: Assets/Plumpu 02/Scenes/SC_Test.unity
+    guid: b4631af3270ccb74f9139c13b4d494e8
+  - enabled: 0
     path: Assets/Plumpu 01/Scenes/SC_Test light.unity
     guid: 555a5c3849ad60e4c98a4157e996097d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Plumpu 01/Scenes/SC_Test block.unity
     guid: 2db2be86d606c6a4db45bc2ae291b15a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Plumpu 01/Scenes/SC_Test health.unity
     guid: cb6769e4ed637764f83837f94d1916ec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Plumpu 01/Scenes/SC_Test doors.unity
     guid: a296e2d55beeb6948a62b3fcb1819cae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Plumpu 01/Scenes/SC_Test dial.unity
     guid: 8a7e0f80201d4d449b11038574ec36f7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Plumpu 01/Scenes/SC_Test Pressure plate.unity
     guid: 1ef42e46e20a5794a978786271fb1806
   - enabled: 0
     path: Assets/Plumpu 01/Scenes/Levels/SC_Demo.unity
     guid: 62465e19a15ce7b419686fcd6ff043bf
-  - enabled: 1
-    path: Assets/Plumpu 02/Scenes/SC_Plumpy_02.unity
-    guid: b4631af3270ccb74f9139c13b4d494e8
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
