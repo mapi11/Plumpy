@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _btnPauseOn: {fileID: 2818692730339394282}
   WindowsContent: {fileID: 594642515773465739}
-  Settings: {fileID: 2596152165962709567, guid: 43fafdf018d70c241a445574906d5f56, type: 3}
+  Settings: {fileID: 213387487635601315, guid: 43fafdf018d70c241a445574906d5f56, type: 3}
 --- !u!1 &7785415791875921518
 GameObject:
   m_ObjectHideFlags: 0
