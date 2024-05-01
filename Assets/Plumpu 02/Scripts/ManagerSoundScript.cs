@@ -4,20 +4,32 @@ using UnityEngine.UI;
 
 public class ManagerSoundScript : MonoBehaviour
 {
+    [Space]
+    [Header("Slider")]
     [SerializeField] private GameObject Slider;
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private TextMeshProUGUI volumeText = null;
+
+    [Space]
+    [Header("Music Buttons")]
     [SerializeField] private Button _btnOffMusic;
     [SerializeField] private Button _btnChangeMusic;
+    [SerializeField] private GameObject _windowChangeMusic;
 
+    [Space]
+    [Header("Image Buttons")]
     [SerializeField] private GameObject ImgOn;
     [SerializeField] private GameObject ImgOff;
+
     int muted = 1;
+    bool SettingsBool = true;
 
     private void Awake()
     {
         LoadMusic();
         MusicController();
+
+        _btnChangeMusic.onClick.AddListener(ChangeMusic);
 
         _btnOffMusic.onClick.AddListener(MusicController);
 
@@ -70,6 +82,20 @@ public class ManagerSoundScript : MonoBehaviour
             ImgOn.SetActive(false);
             ImgOff.SetActive(true);
             _btnChangeMusic.gameObject.SetActive(true);
+        }
+    }
+
+    void ChangeMusic()
+    {
+        if (SettingsBool != false)
+        {
+            _windowChangeMusic.gameObject.SetActive(true);
+            SettingsBool = false;
+        }
+        else
+        {
+            _windowChangeMusic.gameObject.SetActive(false);
+            SettingsBool = true;
         }
     }
 }
