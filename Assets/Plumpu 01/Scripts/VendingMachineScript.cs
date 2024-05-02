@@ -1,30 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VendingMachineScript : MonoBehaviour
 {
     //[SerializeField] private GameObject VendingMachine;
     [SerializeField] private GameObject water;
     [SerializeField] private GameObject canvas;
-    [SerializeField] private GameObject _parent;
+
+    [Header("Vending")]
+    [SerializeField] private GameObject _vendingCanvas;
+    [SerializeField] private Button _btnSpawnObj;
+    private GameObject _parent;
+
     [Header("Random range")]
     [SerializeField] private int Min_int=1;
     [SerializeField] private int Max_int=3;
     private int _int;
 
-    CharacterControllerScript Active;
+    MainCharacterControllerScript Active;
 
     public bool test;
 
     [HideInInspector]
     public int count = 0;
 
-    private void Start()
+    private void Awake()
     {
         _parent = GameObject.Find("Objects-2D");
+
+        _btnSpawnObj.onClick.AddListener(Spawn_water);
+
         _int = Random.Range(Min_int, Max_int);
-        Active = FindObjectOfType<CharacterControllerScript>();
+        Active = FindAnyObjectByType<MainCharacterControllerScript>();
     }
 
     private void Update()

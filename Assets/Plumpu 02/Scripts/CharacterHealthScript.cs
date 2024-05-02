@@ -3,29 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthsScript : MonoBehaviour
+public class CharacterHealthScript : MonoBehaviour
 {
-    [SerializeField] private GameObject HPCanvas;
-    public int Health = 3;
-    public int MaxHP = 3;
+    [Space]
+    [SerializeField] private int _health;
+    [SerializeField] private int _maxHp = 3;
 
+    [Space]
+    [Header("Die")]
+    [SerializeField] private GameObject _DieWindow;
+    [SerializeField] private Transform _windowContent;
+
+    [Space]
+    [Header("Health")]
     [SerializeField] private Image[] lives;
+    [SerializeField] private GameObject HPCanvas;
 
     [SerializeField] private Sprite FullHP;
     [SerializeField] private Sprite EmptyHP;
 
     private float delay = 5.0f;
 
+    private void Awake()
+    {
+        _health = _maxHp;
+    }
+
     private void Update()
     {
-        if (Health > MaxHP)
+        if (_health > _maxHp)
         {
-            Health = MaxHP;
+            _health = _maxHp;
         }
 
         for (int i = 0; i < lives.Length; i++)
         {
-            if (i < Mathf.RoundToInt(Health))
+            if (i < Mathf.RoundToInt(_health))
             {
                 lives[i].sprite = FullHP;
             }
@@ -37,11 +50,10 @@ public class HealthsScript : MonoBehaviour
     }
     public void Damage()
     {
-        Health--;
-        HPCanvas.SetActive(true);
+        _health--;
         Invoke("Healthcanvas", delay);
 
-        if (Health <= 0)
+        if (_health <= 0)
         {
             HPCanvas.SetActive(false);
             Time.timeScale = 0f;
@@ -49,13 +61,13 @@ public class HealthsScript : MonoBehaviour
     }
     public void Heal()
     {
-        Health++;
+        _health++;
         HPCanvas.SetActive(true);
         Invoke("Healthcanvas", delay);
     }
     public void Healthcanvas()
     {
-        if (Health == 1)
+        if (_health == 1)
         {
             HPCanvas.SetActive(true);
         }
@@ -64,19 +76,4 @@ public class HealthsScript : MonoBehaviour
             HPCanvas.SetActive(false);
         }
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.tag == "Recovery health")
-    //    {
-    //        if (Health < MaxHP)
-    //        {
-    //            Heal();
-    //            Destroy(other.gameObject);
-    //        }
-    //    }
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        Damage();
-    //    }
-    //}
 }

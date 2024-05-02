@@ -38,10 +38,10 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     [Space]
     [Header("Music Buttons")]
-
     [SerializeField] private GameObject btnForwardBackward;
     [SerializeField] private GameObject btnLeftRight;
-    [Header("Blocks active")]
+
+    [Header("Objects active")]
     [SerializeField] private GameObject Objects1D;
     [SerializeField] private GameObject Objects2D;
 
@@ -55,6 +55,10 @@ public class MainCharacterControllerScript : MonoBehaviour
         _btn1D.onClick.AddListener(PlayerActive1D);
         _btn2D.onClick.AddListener(PlayerActive2D);
         _btn3D.onClick.AddListener(PlayerActive3D);
+
+        Objects1D = GameObject.Find("Objects-1D");
+        Objects2D = GameObject.Find("Objects-2D");
+        Objects1D.SetActive(false);
 
         Application.targetFrameRate = 80;
 
