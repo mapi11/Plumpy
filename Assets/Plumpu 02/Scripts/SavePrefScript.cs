@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SavePrefScript : MonoBehaviour
 {
-    public enum PrefTypes { Music, Languages, Volume };
+    public enum PrefTypes { Music, Languages, Volume, Graphic };
 
     public static void Save(PrefTypes prefTypes, int Value)
     {

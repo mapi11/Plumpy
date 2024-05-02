@@ -17,12 +17,18 @@ public class ManagerSoundScript : MonoBehaviour
     [SerializeField] private GameObject _windowChangeMusic;
 
     [Space]
+    [Header("Music Buttons")]
+    [SerializeField] private Button _btnChangeGraphic;
+    [SerializeField] private GameObject _windowChangeGraphic;
+
+    [Space]
     [Header("Image Buttons")]
     [SerializeField] private GameObject ImgOn;
     [SerializeField] private GameObject ImgOff;
 
     int muted = 1;
-    bool SettingsBool = true;
+    bool MusicBool = true;
+    bool GraphicBool = true;
 
     private void Awake()
     {
@@ -30,6 +36,7 @@ public class ManagerSoundScript : MonoBehaviour
         MusicController();
 
         _btnChangeMusic.onClick.AddListener(ChangeMusic);
+        _btnChangeGraphic.onClick.AddListener(ChangeGraphic);
 
         _btnOffMusic.onClick.AddListener(MusicController);
 
@@ -87,15 +94,32 @@ public class ManagerSoundScript : MonoBehaviour
 
     void ChangeMusic()
     {
-        if (SettingsBool != false)
+        if (MusicBool != false)
         {
             _windowChangeMusic.gameObject.SetActive(true);
-            SettingsBool = false;
+            _windowChangeGraphic.gameObject.SetActive(false);
+            GraphicBool = true;
+            MusicBool = false;
         }
         else
         {
             _windowChangeMusic.gameObject.SetActive(false);
-            SettingsBool = true;
+            MusicBool = true;
+        }
+    }
+    void ChangeGraphic()
+    {
+        if (GraphicBool != false)
+        {
+            _windowChangeGraphic.gameObject.SetActive(true);
+            _windowChangeMusic.gameObject.SetActive(false);
+            GraphicBool = false;
+            MusicBool = true;
+        }
+        else
+        {
+            _windowChangeGraphic.gameObject.SetActive(false);
+            GraphicBool = true;
         }
     }
 }
