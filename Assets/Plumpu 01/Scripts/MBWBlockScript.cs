@@ -14,11 +14,11 @@ public class MBWBlockScript : MonoBehaviour
     private bool InsideTrigger = false;
 
 
-    CharacterControllerScript Active;
+    MainCharacterControllerScript Active;
 
     private void Start()
     {
-        Active = FindObjectOfType<CharacterControllerScript>();
+        Active = FindAnyObjectByType<MainCharacterControllerScript>();
     }
     private void OnTriggerEnter(Collider other)
     {

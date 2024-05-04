@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DamageScript : MonoBehaviour
 {
-    HealthsScript _healthsScript;
+    CharacterHealthScript _healthsScript;
     public bool test = false;
     [HideInInspector]
     public int count = 0;
 
     private void Start()
     {
-        _healthsScript = FindObjectOfType<HealthsScript>();
+        _healthsScript = FindAnyObjectByType<CharacterHealthScript>();
     }
 
     private void OnTriggerEnter(Collider other)

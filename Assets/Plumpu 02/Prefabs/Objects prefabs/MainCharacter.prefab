@@ -912,8 +912,8 @@ RectTransform:
   m_Children:
   - {fileID: 7785415791875921521}
   - {fileID: 7919942014737642884}
-  - {fileID: 594642515773465739}
   - {fileID: 6844160769809077581}
+  - {fileID: 594642515773465739}
   - {fileID: 6107326205388461636}
   - {fileID: 5161609567060802460}
   m_Father: {fileID: 6963222124654833638}
@@ -1134,7 +1134,7 @@ GameObject:
   - component: {fileID: 7058984248094257663}
   - component: {fileID: 4423491520449140087}
   - component: {fileID: 7497833475301463803}
-  - component: {fileID: 7584105792959118472}
+  - component: {fileID: 1794819272816615107}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Player
@@ -1169,7 +1169,7 @@ Rigidbody:
   m_GameObject: {fileID: 8863094768667295753}
   serializedVersion: 4
   m_Mass: 45
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FpsCounter: {fileID: 1375324502119702012}
---- !u!114 &7584105792959118472
+--- !u!114 &1794819272816615107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1245,16 +1245,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8863094768667295753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff7b4a2af32ca547985fd3c0fb5b91f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c51f8b800a1c9d4fa42d2c518bea100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPCanvas: {fileID: 5068000857263578816}
-  Health: 3
-  MaxHP: 3
+  _health: 0
+  _maxHp: 3
+  _DieWindow: {fileID: 4371642066648536199, guid: af414525952d0ee419777f2b6c7f466b, type: 3}
+  _windowContent: {fileID: 594642515773465739}
   lives:
   - {fileID: 7187005799316760603}
   - {fileID: 1510259914477357039}
   - {fileID: 227566806736361481}
+  HPCanvas: {fileID: 5068000857263578816}
   FullHP: {fileID: -4709024909647346614, guid: c04091f3a8afcff48bcb550cb5eb0034, type: 3}
   EmptyHP: {fileID: -6007857137893288414, guid: bbf2ce874d6b74440bc25e0891a99d44, type: 3}
 --- !u!1001 &31302426559355430

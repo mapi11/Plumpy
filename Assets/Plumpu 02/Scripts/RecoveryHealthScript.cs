@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class RecoveryHealthScript : MonoBehaviour
 {
-    HealthsScript _healthsScript;
+    CharacterHealthScript _healthsScript;
     private bool IsHeal;
 
     private void Start()
     {
-        _healthsScript = FindObjectOfType<HealthsScript>();
+        _healthsScript = FindAnyObjectByType<CharacterHealthScript>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_healthsScript.Health < _healthsScript.MaxHP)
+        if (_healthsScript._health < _healthsScript._maxHp)
         {
             if (other.gameObject.tag == "Player")
             {

@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class DoorEntryScript : MonoBehaviour
 {
-    CharacterControllerScript Char;
+    MainCharacterControllerScript Char;
     public bool teleport = false;
     public string scene;
     private GameObject character;
     [SerializeField] private GameObject _roomEntry;
+    [SerializeField] private GameObject _pointSpawn;
     //[SerializeField] private GameObject _roomExit;
 
     [SerializeField] private GameObject canvas;
@@ -21,8 +22,8 @@ public class DoorEntryScript : MonoBehaviour
     private void Start()
     {
         character = GameObject.Find("Character");
-        PhoneButtons = GameObject.Find("PhoneButtonsWindow");
-        Char = FindObjectOfType<CharacterControllerScript>();
+        PhoneButtons = GameObject.Find("ControllerButtons");
+        Char = FindAnyObjectByType<MainCharacterControllerScript>();
     }
     
 

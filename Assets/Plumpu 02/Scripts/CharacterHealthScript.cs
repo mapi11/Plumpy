@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class CharacterHealthScript : MonoBehaviour
 {
     [Space]
-    [SerializeField] private int _health;
-    [SerializeField] private int _maxHp = 3;
+    [SerializeField] public int _health;
+    [SerializeField] public int _maxHp = 3;
 
     [Space]
     [Header("Die")]
@@ -51,12 +51,12 @@ public class CharacterHealthScript : MonoBehaviour
     public void Damage()
     {
         _health--;
+        HPCanvas.SetActive(true);
         Invoke("Healthcanvas", delay);
 
         if (_health <= 0)
         {
-            HPCanvas.SetActive(false);
-            Time.timeScale = 0f;
+            Deadth();
         }
     }
     public void Heal()
@@ -75,5 +75,11 @@ public class CharacterHealthScript : MonoBehaviour
         {
             HPCanvas.SetActive(false);
         }
+    }
+
+    void Deadth()
+    {
+        Instantiate(_DieWindow, _windowContent);
+        Time.timeScale = 0f;
     }
 }

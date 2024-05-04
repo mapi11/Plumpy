@@ -80,7 +80,7 @@ public class DialogScript : MonoBehaviour
     {
         if (talked == false)
         {
-            if (test_enem == true && _damageSc.test == true && _damageSc.count != 0 || test_vend == true && _vendingmashine_.test == true && _vendingmashine_.count != 0)
+            if (test_enem == true && _damageSc.test == true && _damageSc.count != 0 || test_vend == true && /*_vendingmashine_.test == true &&*/ _vendingmashine_.count != 0)
             {
                 buttonDialog.text.text = phrases[0];
                 characterControllerScript.ButtonStop();
