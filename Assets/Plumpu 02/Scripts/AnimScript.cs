@@ -14,7 +14,7 @@ public class AnimScript : MonoBehaviour
 
     void Start()
     {
-        HorSpeed = FindObjectOfType<MainCharacterControllerScript>();
+        HorSpeed = FindAnyObjectByType<MainCharacterControllerScript>();
         _anim = GetComponent<Animator>();
     }
 

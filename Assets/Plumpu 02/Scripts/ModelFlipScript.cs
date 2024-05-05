@@ -13,7 +13,7 @@ public class ModelFlipScript : MonoBehaviour
 
     void Start()
     {
-        HorSpeed = FindObjectOfType<MainCharacterControllerScript>();
+        HorSpeed = FindAnyObjectByType<MainCharacterControllerScript>();
     }
     
     private void Update()

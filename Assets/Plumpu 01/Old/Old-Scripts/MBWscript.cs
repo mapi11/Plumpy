@@ -21,7 +21,7 @@ public class MBWscript : MonoBehaviour
 
     private void Start()
     {
-        MBWPlayer = FindObjectOfType<NewPlayerScript>();
+        MBWPlayer = FindAnyObjectByType<NewPlayerScript>();
     }
 
     void OnTriggerEnter(Collider collision) 

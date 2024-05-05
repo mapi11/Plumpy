@@ -39,7 +39,7 @@ public class VendingMachineScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player");
+        if (other.gameObject.tag == "Player")
         {
             //if (Active.Active2D == true || Active.Active3D == true)
             //{

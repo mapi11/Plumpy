@@ -11,7 +11,7 @@ public class ViewZoneScript : MonoBehaviour
     private void Start()
     {
         CanvasCheckMark = GameObject.Find("CanvasOtherButtons");
-        Active = FindObjectOfType<CharacterControllerScript>();
+        Active = FindAnyObjectByType<CharacterControllerScript>();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -43,7 +43,7 @@ public class NewPlayerScript : MonoBehaviour
     {
         MBWactive2D = true;
         rb = GetComponent<Rigidbody>();
-        MBWS = FindObjectOfType<MBWscript>();
+        MBWS = FindAnyObjectByType<MBWscript>();
     }
 
     private void Update()
