@@ -50,20 +50,33 @@ public class MainCharacterControllerScript : MonoBehaviour
     private bool _facingRight = true;
     private bool _rotate = true;
 
+    ManagerObjectsScript _managerObjectsScript;
+
     void Awake()
     {
+        _managerObjectsScript = FindAnyObjectByType<ManagerObjectsScript>();
+
         _btn1D.onClick.AddListener(PlayerActive1D);
         _btn2D.onClick.AddListener(PlayerActive2D);
         _btn3D.onClick.AddListener(PlayerActive3D);
 
         Objects1D = GameObject.Find("Objects-1D");
         Objects2D = GameObject.Find("Objects-2D");
-        Objects1D.SetActive(false);
 
         Application.targetFrameRate = 80;
 
         _anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        Objects1D.SetActive(false);
+
+        foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Deactivate 1D
+        {
+            obj1d.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
@@ -160,14 +173,27 @@ public class MainCharacterControllerScript : MonoBehaviour
         //Background2D.SetActive(false);
         //Background1_3D.SetActive(true);
 
-        Objects1D.SetActive(true);
-        Objects2D.SetActive(false);
+        //Objects1D.SetActive(true);
+        //Objects2D.SetActive(false);
 
         _rotate = false;
+
+        foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Deactivate 2D
+        {
+            obj2d.SetActive(false);
+        }
+        foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
+        {
+            obj1d.SetActive(true);
+        }
 
         Active1D = true;
         Active2D = false;
         Active3D = false;
+
+        _btn1D.interactable = false;
+        _btn2D.interactable = true;
+        _btn3D.interactable = true;
     }
     public void PlayerActive2D()
     {
@@ -178,20 +204,34 @@ public class MainCharacterControllerScript : MonoBehaviour
         {
             player2D.transform.Rotate(0, -90, 0);
         }
+
         btnForwardBackward.SetActive(false);
         btnLeftRight.SetActive(true);
 
         //Background2D.SetActive(true);
         //Background1_3D.SetActive(false);
 
-        Objects1D.SetActive(false);
-        Objects2D.SetActive(true);
+        //Objects1D.SetActive(false);
+        //Objects2D.SetActive(true);
 
         _rotate = true;
+
+        foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Activate 2D
+        {
+            obj2d.SetActive(true);
+        }
+        foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Deactivate 1D
+        {
+            obj1d.SetActive(false);
+        }
 
         Active1D = false;
         Active2D = true;
         Active3D = false;
+
+        _btn1D.interactable = true;
+        _btn2D.interactable = false;
+        _btn3D.interactable = true;
     }
     public void PlayerActive3D()
     {
@@ -208,13 +248,26 @@ public class MainCharacterControllerScript : MonoBehaviour
         //Background2D.SetActive(false);
         //Background1_3D.SetActive(true);
 
-        Objects1D.SetActive(true);
-        Objects2D.SetActive(true);
+        //Objects1D.SetActive(true);
+        //Objects2D.SetActive(true);
 
         _rotate = true;
+
+        foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Activate 2D
+        {
+            obj2d.SetActive(true);
+        }
+        foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
+        {
+            obj1d.SetActive(true);
+        }
 
         Active1D = false;
         Active2D = false;
         Active3D = true;
+
+        _btn1D.interactable = true;
+        _btn2D.interactable = true;
+        _btn3D.interactable = false;
     }
 }

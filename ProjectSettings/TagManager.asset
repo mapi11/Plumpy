@@ -12,6 +12,9 @@ TagManager:
   - MBWblock
   - ViewZone
   - PlateBlock
+  - Obj1D
+  - Obj2D
+  - Obj3D
   layers:
   - Default
   - TransparentFX

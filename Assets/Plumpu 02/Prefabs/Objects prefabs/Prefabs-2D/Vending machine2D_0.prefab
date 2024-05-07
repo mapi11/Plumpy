@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5601217226809756692}
   m_Layer: 0
   m_Name: Vending machine2D_0
-  m_TagString: Untagged
+  m_TagString: Obj2D
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,6 @@ MonoBehaviour:
   _parent: {fileID: 3221882818783515292}
   Min_int: 1
   Max_int: 3
-  test: 0
   count: 0
 --- !u!1 &7553838429664926271
 GameObject:

@@ -36,24 +36,6 @@ public class DialogScript : MonoBehaviour
 
     MainCharacterControllerScript _mainCharacterControllerScript;
 
-    private void Start()
-    {
-        //_parentDialogwd = GameObject.Find("WindowsContent");
-
-        //if (test_enem == true)
-        //{
-        //    _damageSc = enemy.GetComponent<DamageScript>();
-        //}
-        //else if(test_vend == true)
-        //{
-        //    _vendingmashine_ = vendingmashine.GetComponent<VendingMachineScript>();
-        //}
-        nameobj = gameObject.name;
-        dialogwd.SetActive(false);
-
-    }
-    
-
     private void Awake()
     {
         _mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
@@ -66,6 +48,23 @@ public class DialogScript : MonoBehaviour
 
         nameobj = gameObject.name;
     }
+
+    private void Start()
+    {
+        //_parentDialogwd = GameObject.Find("WindowsContent");
+
+        //if (test_enem == true)
+        //{
+        //    _damageSc = enemy.GetComponent<DamageScript>();
+        //}
+        //else if(test_vend == true)
+        //{
+        //    _vendingmashine_ = vendingmashine.GetComponent<VendingMachineScript>();
+        //}
+
+        dialogwd.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(talked == false)
