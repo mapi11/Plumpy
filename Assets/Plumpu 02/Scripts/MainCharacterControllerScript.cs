@@ -42,8 +42,8 @@ public class MainCharacterControllerScript : MonoBehaviour
     [SerializeField] private GameObject btnLeftRight;
 
     [Header("Objects active")]
-    [SerializeField] private GameObject Objects1D;
-    [SerializeField] private GameObject Objects2D;
+    //[SerializeField] private GameObject Objects1D;
+    //[SerializeField] private GameObject Objects2D;
 
     Animator _anim;
     private Rigidbody rb;
@@ -60,18 +60,20 @@ public class MainCharacterControllerScript : MonoBehaviour
         _btn2D.onClick.AddListener(PlayerActive2D);
         _btn3D.onClick.AddListener(PlayerActive3D);
 
-        Objects1D = GameObject.Find("Objects-1D");
-        Objects2D = GameObject.Find("Objects-2D");
+        //Objects1D = GameObject.Find("Objects-1D");
+        //Objects2D = GameObject.Find("Objects-2D");
 
-        Application.targetFrameRate = 80;
+        Application.targetFrameRate = 165;
 
         _anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+
+        _btn2D.interactable = false;
     }
 
     private void Start()
     {
-        Objects1D.SetActive(false);
+        //Objects1D.SetActive(false);
 
         foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Deactivate 1D
         {

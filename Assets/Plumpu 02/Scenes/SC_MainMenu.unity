@@ -1475,6 +1475,17 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &643922400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5373219749590349196, guid: bd41c5514944efe40a335a0f2af31e87, type: 3}
+  m_PrefabInstance: {fileID: 985344954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &684601957 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8385188295643566063, guid: bd41c5514944efe40a335a0f2af31e87, type: 3}
@@ -2679,7 +2690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fbd7c45c2e98d94ab2b983a5b2a50ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _btnCloseSettings: {fileID: 2017001270}
+  _btnCloseSettings: {fileID: 643922400}
   _btnDelSave: {fileID: 1109840948}
   _btnMusic:
   - {fileID: 1189161476}
@@ -3826,17 +3837,6 @@ RectTransform:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2178845172724859450, guid: fc4984b18735bd646b68e90f1adb991c, type: 3}
   m_PrefabInstance: {fileID: 1967602430}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2017001270 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4656046094483606090, guid: bd41c5514944efe40a335a0f2af31e87, type: 3}
-  m_PrefabInstance: {fileID: 985344954}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

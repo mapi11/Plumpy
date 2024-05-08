@@ -11,6 +11,8 @@ public class ButtonDialog : MonoBehaviour
     //private GameObject light_obj;
     //private LightOpened light;
 
+    [SerializeField] private GameObject _dialogCanvas;
+
     [SerializeField] private Button _btnDialog;
 
     private bool cheked = false;
@@ -28,6 +30,11 @@ public class ButtonDialog : MonoBehaviour
     {
         _btnDialog.onClick.AddListener(Skip);
         count = 1;
+    }
+
+    private void Start()
+    {
+        _dialogCanvas.SetActive(false);
     }
 
     public void Skip()

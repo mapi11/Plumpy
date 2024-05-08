@@ -933,7 +933,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1600, y: 720}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1190,8 +1190,6 @@ MonoBehaviour:
   _btn3D: {fileID: 2103500556591344403}
   btnForwardBackward: {fileID: 7282018529826053739}
   btnLeftRight: {fileID: 7630323174003992600}
-  Objects1D: {fileID: 0}
-  Objects2D: {fileID: 0}
 --- !u!114 &7497833475301463803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,7 +1238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a1f729c44f8cb41a94c42f9591c4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsWithTag: []
+  _objects1D: []
+  _objects2D: []
+  _objects3D: []
 --- !u!1001 &31302426559355430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2199,6 +2199,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7277712581696519876, guid: f0c8e2764359c524ea361ae58dc2d220, type: 3}
+      propertyPath: _dialogCanvas
+      value: 
+      objectReference: {fileID: 3273673246489404408}
     m_RemovedComponents:
     - {fileID: 6073720618433986536, guid: f0c8e2764359c524ea361ae58dc2d220, type: 3}
     m_RemovedGameObjects: []
@@ -2208,6 +2212,11 @@ PrefabInstance:
 --- !u!224 &2164436121460088465 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3605510530526113569, guid: f0c8e2764359c524ea361ae58dc2d220, type: 3}
+  m_PrefabInstance: {fileID: 3170753588139356592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3273673246489404408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 103208888167567944, guid: f0c8e2764359c524ea361ae58dc2d220, type: 3}
   m_PrefabInstance: {fileID: 3170753588139356592}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3661379095736636539
