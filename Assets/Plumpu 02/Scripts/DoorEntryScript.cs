@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 public class DoorEntryScript : MonoBehaviour
 {
     MainCharacterControllerScript Char;
-    public bool teleport = false;
+    public bool ChangeScene = false;
     public string scene;
     private GameObject character;
     [SerializeField] private GameObject _roomEntry;
-    [SerializeField] private GameObject _pointSpawn;
-    //[SerializeField] private GameObject _roomExit;
 
     [SerializeField] private GameObject canvas;
     private GameObject PhoneButtons;
@@ -19,15 +17,18 @@ public class DoorEntryScript : MonoBehaviour
 
     private bool IsOpen = false;
 
+
     private void Start()
     {
         character = GameObject.Find("Character");
         PhoneButtons = GameObject.Find("ControllerButtons");
         Char = FindAnyObjectByType<MainCharacterControllerScript>();
+
+
     }
     
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -43,7 +44,7 @@ public class DoorEntryScript : MonoBehaviour
     }
     public void RoomEntry()
     {
-        if(teleport == false)
+        if(ChangeScene == false)
         {
             PhoneButtons.SetActive(false);
             Char.ButtonStop();

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1613600068933726085}
   m_Layer: 0
   m_Name: Door_image-1
-  m_TagString: Untagged
+  m_TagString: Obj3D
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -994740599
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8507756571462089792, guid: a2285eb90e5c23c4cabf957642c6e80f, type: 3}
+  m_Sprite: {fileID: 334591071, guid: 613f4aa0caedb5c4692b11f8a836c9e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -226,6 +226,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3530288734466003999, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696459663458544840, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}
+      propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7707010153228714304, guid: 3fa2f88d0b1ac9a49b11523b645dd00a, type: 3}

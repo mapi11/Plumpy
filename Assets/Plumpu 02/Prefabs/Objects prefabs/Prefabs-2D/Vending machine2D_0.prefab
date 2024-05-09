@@ -229,6 +229,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6239122958645644023, guid: 5075a1aaf2ce9fa47b97a88930f80aa3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -125510601
+      objectReference: {fileID: 0}
     - target: {fileID: 9028644741661435775, guid: 5075a1aaf2ce9fa47b97a88930f80aa3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

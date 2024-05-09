@@ -62,7 +62,7 @@ public class DialogScript : MonoBehaviour
         //    _vendingmashine_ = vendingmashine.GetComponent<VendingMachineScript>();
         //}
 
-        dialogwd.SetActive(false);
+        //dialogwd.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

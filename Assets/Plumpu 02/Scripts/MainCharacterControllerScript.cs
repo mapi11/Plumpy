@@ -69,6 +69,11 @@ public class MainCharacterControllerScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         _btn2D.interactable = false;
+
+        foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Deactivate 1D
+        {
+            obj1d.SetActive(false);
+        }
     }
 
     private void Start()

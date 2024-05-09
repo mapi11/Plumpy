@@ -72,7 +72,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5687
+    m_Bits: 5943
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -342,7 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4005401898869952073}
-  - component: {fileID: 3258544903057481494}
+  - component: {fileID: 6291797256436642681}
   m_Layer: 0
   m_Name: Ground check
   m_TagString: Untagged
@@ -365,7 +365,7 @@ Transform:
   m_Father: {fileID: 4005401898280240807}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &3258544903057481494
+--- !u!135 &6291797256436642681
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -384,8 +384,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.35
+  m_Center: {x: -0.05, y: 0.245, z: 0}
 --- !u!1 &4005401899341333098
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +617,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3639
+    m_Bits: 3895
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1176,7 +1176,7 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  _checkRadiusGround: 0.23
+  _checkRadiusGround: 0.24
   IsGrounded: 0
   camera1D: {fileID: 261148058391332513}
   player2D: {fileID: 4005401899341333098}
@@ -2094,6 +2094,10 @@ PrefabInstance:
     - target: {fileID: 103208888167567944, guid: f0c8e2764359c524ea361ae58dc2d220, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027546501679658734, guid: f0c8e2764359c524ea361ae58dc2d220, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3605510530526113569, guid: f0c8e2764359c524ea361ae58dc2d220, type: 3}
       propertyPath: m_Pivot.x
