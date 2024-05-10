@@ -23,8 +23,6 @@ public class DoorEntryScript : MonoBehaviour
         character = GameObject.Find("Character");
         PhoneButtons = GameObject.Find("ControllerButtons");
         Char = FindAnyObjectByType<MainCharacterControllerScript>();
-
-
     }
     
 
@@ -42,6 +40,7 @@ public class DoorEntryScript : MonoBehaviour
             canvas.SetActive(false);
         }
     }
+
     public void RoomEntry()
     {
         if(ChangeScene == false)

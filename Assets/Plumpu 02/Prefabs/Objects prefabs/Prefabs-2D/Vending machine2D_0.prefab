@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5601217226809756692}
   m_Layer: 0
   m_Name: Vending machine2D_0
-  m_TagString: Obj2D
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 2895236770807243830}
   m_Layer: 0
   m_Name: VendingSprite
-  m_TagString: Untagged
+  m_TagString: Obj2D
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

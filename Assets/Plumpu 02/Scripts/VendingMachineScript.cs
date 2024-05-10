@@ -37,16 +37,18 @@ public class VendingMachineScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             //if (Active.Active2D == true || Active.Active3D == true)
             //{
                 canvas.SetActive(true);
-
-                
             //}
+        }
+        else
+        {
+            canvas.SetActive(false);
         }
     }
     private void OnTriggerExit(Collider other)

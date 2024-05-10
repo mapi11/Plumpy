@@ -29,9 +29,11 @@ public class MainCharacterControllerScript : MonoBehaviour
     public GameObject camera2D;
     [Header(" ")]
     public GameObject camera3D;
+
     public bool Active1D;
     public bool Active2D;
     public bool Active3D;
+
     [SerializeField] private Button _btn1D;
     [SerializeField] private Button _btn2D;
     [SerializeField] private Button _btn3D;
@@ -69,11 +71,6 @@ public class MainCharacterControllerScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         _btn2D.interactable = false;
-
-        foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Deactivate 1D
-        {
-            obj1d.SetActive(false);
-        }
     }
 
     private void Start()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class ElevatorScript : MonoBehaviour
@@ -46,17 +47,24 @@ public class ElevatorScript : MonoBehaviour
 
     private Transform _character;
     [SerializeField] private Transform _elevator;
-    [SerializeField] private List<Transform> _floors;
+    [SerializeField] private GameObject _elevatorDoor;
+
+    [SerializeField] private Transform[] _floors;
+
+    private GameObject _btnCharJump;
+
+    [SerializeField] private GameObject _canvasBtnFloors;
     [SerializeField] private TextMeshProUGUI _currentFloorText;
 
     private bool isMoving = false;
-    private int currentFloor = 0;
+    [SerializeField] private int currentFloor = 0;
 
     private void Awake()
     {
+        _btnCharJump = GameObject.Find("BtnJump");
         _character = GameObject.Find("MainCharacter").transform;
-        _currentFloorText.text = "Current Floor: " + currentFloor;
 
+        _currentFloorText.text = "Floor: <color=red>" + currentFloor;
     }
 
     void Update()
@@ -75,27 +83,43 @@ public class ElevatorScript : MonoBehaviour
     {
         if (!isMoving)
         {
-            if (floorNumber >= 0 && floorNumber < _floors.Count)
+            if (floorNumber >= 0 && floorNumber < _floors.Length)
             {
                 StartCoroutine(MoveElevator(_floors[floorNumber].position));
                 currentFloor = floorNumber;
 
-                _currentFloorText.text = "Current Floor: " + currentFloor;
+                _currentFloorText.text = "Floor: <color=red>" + currentFloor;
             }
         }
     }
 
     IEnumerator MoveElevator(Vector3 targetPosition)
     {
+        _elevatorDoor.SetActive(true);
         isMoving = true;
-        while (Vector3.Distance(_elevator.position, targetPosition) > 0.1f)
+        while (Vector3.Distance(_elevator.position, targetPosition) > 0.01f)
         {
             _elevator.position = Vector3.MoveTowards(_elevator.position, targetPosition, Time.deltaTime * 3.5f);
             yield return null;
         }
         isMoving = false;
-
-        
+        _elevatorDoor.SetActive(false);
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            _canvasBtnFloors.SetActive(true);
+            _btnCharJump.SetActive(false);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            _canvasBtnFloors.SetActive(false);
+            _btnCharJump.SetActive(true);
+        }
+    }
 }

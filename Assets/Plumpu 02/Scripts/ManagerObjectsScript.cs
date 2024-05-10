@@ -72,7 +72,7 @@ public class ManagerObjectsScript : MonoBehaviour
     public List<GameObject> _objects2D = new List<GameObject>();
     public List<GameObject> _objects3D = new List<GameObject>();
 
-    private void Start()
+    private void Awake()
     {
         GameObject[] allObjects = FindObjectsOfType<GameObject>();
 
@@ -90,6 +90,14 @@ public class ManagerObjectsScript : MonoBehaviour
             {
                 _objects3D.Add(obj);
             }
+        }
+    }
+
+    private void Start()
+    {
+        foreach (GameObject obj1d in _objects1D) //Deactivate 1D
+        {
+            obj1d.SetActive(false);
         }
     }
 
