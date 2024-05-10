@@ -37,22 +37,22 @@ public class MenuBackgroundScript : MonoBehaviour
 
     }
 
-    private void SetBackground(int SetGraph)
+    private void SetBackground(int SetBack)
     {
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
-        Instantiate(_prefabBackground[SetGraph], gameObject.transform);
+        Instantiate(_prefabBackground[SetBack], gameObject.transform);
 
-        _btnBackground[0].GetComponent<Image>().color = SetGraph == 0 ? Color.gray : Color.white;
-        _btnBackground[1].GetComponent<Image>().color = SetGraph == 1 ? Color.gray : Color.white;
-        _btnBackground[2].GetComponent<Image>().color = SetGraph == 2 ? Color.gray : Color.white;
-        _btnBackground[3].GetComponent<Image>().color = SetGraph == 3 ? Color.gray : Color.white;
-        _btnBackground[4].GetComponent<Image>().color = SetGraph == 4 ? Color.gray : Color.white;
-        _btnBackground[5].GetComponent<Image>().color = SetGraph == 5 ? Color.gray : Color.white;
+        _btnBackground[0].GetComponent<Button>().interactable = SetBack == 0 ? false : true;
+        _btnBackground[1].GetComponent<Button>().interactable = SetBack == 1 ? false : true;
+        _btnBackground[2].GetComponent<Button>().interactable = SetBack == 2 ? false : true;
+        _btnBackground[3].GetComponent<Button>().interactable = SetBack == 3 ? false : true;
+        _btnBackground[4].GetComponent<Button>().interactable = SetBack == 4 ? false : true;
+        _btnBackground[5].GetComponent<Button>().interactable = SetBack == 5 ? false : true;
 
-        SavePrefScript.Save(SavePrefScript.PrefTypes.Background, SetGraph);
+        SavePrefScript.Save(SavePrefScript.PrefTypes.Background, SetBack);
     }
 
     void ShowBgWindow()

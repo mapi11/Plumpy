@@ -46,10 +46,6 @@ public class VendingMachineScript : MonoBehaviour
                 canvas.SetActive(true);
             //}
         }
-        else
-        {
-            canvas.SetActive(false);
-        }
     }
     private void OnTriggerExit(Collider other)
     {

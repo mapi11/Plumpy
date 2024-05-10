@@ -120,15 +120,16 @@ public class ManagerObjectsScript : MonoBehaviour
                 _objects3D.Add(obj);
             }
 
-            if ((obj.tag == "Obj1D" && _objects2D.Contains(obj)) || (obj.tag == "Obj1D" && _objects3D.Contains(obj)))
+
+            if ((_objects2D.Contains(obj)) || (obj.tag == "Obj1D" && _objects3D.Contains(obj)))
             {
                 _objects1D.Remove(obj);
             }
-            else if ((obj.tag == "Obj2D" && _objects1D.Contains(obj)) || (obj.tag == "Obj2D" && _objects3D.Contains(obj)))
+            else if ((_objects1D.Contains(obj)) || (obj.tag == "Obj2D" && _objects3D.Contains(obj)))
             {
                 _objects2D.Remove(obj);
             }
-            else if ((obj.tag == "Obj3D" && _objects1D.Contains(obj)) || (obj.tag == "Obj3D" && _objects2D.Contains(obj)))
+            else if ((_objects1D.Contains(obj)) || (obj.tag == "Obj3D" && _objects2D.Contains(obj)))
             {
                 _objects3D.Remove(obj);
             }
