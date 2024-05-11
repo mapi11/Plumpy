@@ -22,6 +22,11 @@ public class ManagerSoundScript : MonoBehaviour
     [SerializeField] private GameObject _windowChangeGraphic;
 
     [Space]
+    [Header("Language Buttons")]
+    [SerializeField] private Button _btnChangeLanguage;
+    [SerializeField] private GameObject _windowChangeLanguag;
+
+    [Space]
     [Header("Image Buttons")]
     [SerializeField] private GameObject ImgOn;
     [SerializeField] private GameObject ImgOff;
@@ -29,6 +34,7 @@ public class ManagerSoundScript : MonoBehaviour
     int muted = 1;
     bool MusicBool = true;
     bool GraphicBool = true;
+    bool LanguageBool = true;
 
     private void Awake()
     {
@@ -37,6 +43,7 @@ public class ManagerSoundScript : MonoBehaviour
 
         _btnChangeMusic.onClick.AddListener(ChangeMusic);
         _btnChangeGraphic.onClick.AddListener(ChangeGraphic);
+        _btnChangeLanguage.onClick.AddListener(ChangeLanguage);
 
         _btnOffMusic.onClick.AddListener(MusicController);
 
@@ -98,8 +105,10 @@ public class ManagerSoundScript : MonoBehaviour
         {
             _windowChangeMusic.gameObject.SetActive(true);
             _windowChangeGraphic.gameObject.SetActive(false);
+            _windowChangeLanguag.gameObject.SetActive(false);
             GraphicBool = true;
             MusicBool = false;
+            LanguageBool = true;
         }
         else
         {
@@ -107,19 +116,40 @@ public class ManagerSoundScript : MonoBehaviour
             MusicBool = true;
         }
     }
+
     void ChangeGraphic()
     {
         if (GraphicBool != false)
         {
             _windowChangeGraphic.gameObject.SetActive(true);
             _windowChangeMusic.gameObject.SetActive(false);
+            _windowChangeLanguag.gameObject.SetActive(false);
             GraphicBool = false;
             MusicBool = true;
+            LanguageBool = true;
         }
         else
         {
             _windowChangeGraphic.gameObject.SetActive(false);
             GraphicBool = true;
+        }
+    }
+
+    void ChangeLanguage()
+    {
+        if (LanguageBool != false)
+        {
+            _windowChangeLanguag.gameObject.SetActive(true);
+            _windowChangeMusic.gameObject.SetActive(false);
+            _windowChangeGraphic.gameObject.SetActive(false);
+            LanguageBool = false;
+            MusicBool = true;
+            GraphicBool = true;
+        }
+        else
+        {
+            _windowChangeLanguag.gameObject.SetActive(false);
+            LanguageBool = true;
         }
     }
 }

@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Text Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI Text
+  m_TableCollectionNameGuidString: ea8d77747e3e71149adddd619e75785e
+  m_Entries:
+  - m_Id: 42563682304
+    m_Key: Title/settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 975431417856
+    m_Key: Btn/TestScene
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1586625396736
+    m_Key: Btn/Background
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2287531343872
+    m_Key: Btn/Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4844609748992
+    m_Key: Btn/ChangeMusic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5008820944896
+    m_Key: Btn/Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5243504836608
+    m_Key: Btn/Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5359938715648
+    m_Key: Btn/Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5483695849472
+    m_Key: Btn/Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5648636854272
+    m_Key: Btn/Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5749837021184
+    m_Key: Btn/Hight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5814131507200
+    m_Key: Btn/Ultra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8322950250496
+    m_Key: Title/Test light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8454437486592
+    m_Key: Title/Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8677394104320
+    m_Key: Title/Blocks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8775024918528
+    m_Key: Title/Dialogs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8863453429760
+    m_Key: Title/Elevator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10444659900416
+    m_Key: Title/TestScene
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2464142145279754344
+  references:
+    version: 2
+    RefIds:
+    - rid: 2464142145279754344
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1715385505267

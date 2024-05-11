@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: ea8d77747e3e71149adddd619e75785e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 42563682304
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 975431417856
+    m_Localized: Test scene
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1586625396736
+    m_Localized: Background
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2287531343872
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4844609748992
+    m_Localized: Change music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5008820944896
+    m_Localized: Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5243504836608
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5359938715648
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5483695849472
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5648636854272
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5749837021184
+    m_Localized: Hight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5814131507200
+    m_Localized: Ultra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8322950250496
+    m_Localized: Test light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8454437486592
+    m_Localized: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8677394104320
+    m_Localized: Blocks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8775024918528
+    m_Localized: Dialogs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8863453429760
+    m_Localized: Elevator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10444659900416
+    m_Localized: Test scene
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

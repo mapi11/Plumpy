@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using TMPro;
 
@@ -17,6 +18,10 @@ public class SettingsCharacterScript : MonoBehaviour
     [Header("Music Buttons")]
     [SerializeField] private Button[] _btnMusic;
     [SerializeField] private Button[] _btnGraphic;
+
+    [Space]
+    [Header("Language")]
+    [SerializeField] private TMP_Dropdown dropdown;
     //private int _intGraphic;
 
     MenuMusicScript _menuMusicScript;
@@ -43,6 +48,7 @@ public class SettingsCharacterScript : MonoBehaviour
 
         SetMusic(SavePrefScript.Load(SavePrefScript.PrefTypes.Music));
         SetGraphic(SavePrefScript.Load(SavePrefScript.PrefTypes.Graphic));
+        LocaleSelected(SavePrefScript.Load(SavePrefScript.PrefTypes.Languages));
 
         _btnMusic[_menuMusicScript._int].interactable = false;
         //_btnGraphic[_intGraphic].interactable = false;
@@ -95,5 +101,32 @@ public class SettingsCharacterScript : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         Debug.Log("Save deleted");
+    }
+
+    IEnumerator Start()
+    {
+        // Wait for the localization system to initialize
+        yield return LocalizationSettings.InitializationOperation;
+
+        // Generate list of available Locales
+        var options = new List<TMP_Dropdown.OptionData>();
+        int selected = 0;
+        for (int i = 0; i < LocalizationSettings.AvailableLocales.Locales.Count; ++i)
+        {
+            var locale = LocalizationSettings.AvailableLocales.Locales[i];
+            if (LocalizationSettings.SelectedLocale == locale)
+                selected = i;
+            options.Add(new TMP_Dropdown.OptionData(locale.name));
+        }
+        dropdown.options = options;
+
+        dropdown.value = selected;
+        dropdown.onValueChanged.AddListener(LocaleSelected);
+    }
+
+    static void LocaleSelected(int index)
+    {
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
+        SavePrefScript.Save(SavePrefScript.PrefTypes.Languages, index);
     }
 }
