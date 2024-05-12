@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading;
 
 public class SettingsCharacterScript : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class SettingsCharacterScript : MonoBehaviour
 
     [Space]
     [Header("Language")]
-    [SerializeField] private TMP_Dropdown dropdown;
+    [SerializeField] private TMP_Dropdown _dropdown;
     //private int _intGraphic;
 
     MenuMusicScript _menuMusicScript;
@@ -29,8 +30,6 @@ public class SettingsCharacterScript : MonoBehaviour
     void Awake()
     {
         _menuMusicScript = FindAnyObjectByType<MenuMusicScript>();
-
-
 
         _btnMusic[0].onClick.AddListener(() => SetMusic(0));
         _btnMusic[1].onClick.AddListener(() => SetMusic(1));
@@ -51,7 +50,6 @@ public class SettingsCharacterScript : MonoBehaviour
         LocaleSelected(SavePrefScript.Load(SavePrefScript.PrefTypes.Languages));
 
         _btnMusic[_menuMusicScript._int].interactable = false;
-        //_btnGraphic[_intGraphic].interactable = false;
 
         _btnCloseSettings.onClick.AddListener(CloseSettings);
 
@@ -105,6 +103,7 @@ public class SettingsCharacterScript : MonoBehaviour
 
     IEnumerator Start()
     {
+
         // Wait for the localization system to initialize
         yield return LocalizationSettings.InitializationOperation;
 
@@ -118,10 +117,10 @@ public class SettingsCharacterScript : MonoBehaviour
                 selected = i;
             options.Add(new TMP_Dropdown.OptionData(locale.name));
         }
-        dropdown.options = options;
+        _dropdown.options = options;
 
-        dropdown.value = selected;
-        dropdown.onValueChanged.AddListener(LocaleSelected);
+        _dropdown.value = selected;
+        _dropdown.onValueChanged.AddListener(LocaleSelected);
     }
 
     static void LocaleSelected(int index)

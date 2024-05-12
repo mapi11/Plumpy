@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class FpsCounterScript : MonoBehaviour
 {
-    [Space]
     [Header("Show FPS")]
+    [SerializeField] private TextMeshProUGUI FpsCounter;
     private float fps;
-    [SerializeField] private TMPro.TextMeshProUGUI FpsCounter;
+
 
     private void Awake()
     {
         InvokeRepeating("GetFps", 0.1f, 0.1f);
     }
+
     void GetFps()
     {
         fps = (int)(1f / Time.unscaledDeltaTime);

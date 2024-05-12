@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,19 @@ public class ManagerSoundScript : MonoBehaviour
     [SerializeField] private Button _btnOffMusic;
     [SerializeField] private Button _btnChangeMusic;
     [SerializeField] private GameObject _windowChangeMusic;
+    [Header("Image Buttons")]
+    [SerializeField] private GameObject ImgOn;
+    [SerializeField] private GameObject ImgOff;
+    int muted = 1;
+
+    [Space]
+    [Header("Fps Buttons")]
+    [SerializeField] private Button _btnShowFps;
+    [SerializeField] private GameObject _thxShowFps;
+    [SerializeField] private GameObject _thxHideFps;
+    [SerializeField] private GameObject _txtFpsPrefab;
+    Transform parentObject = null;
+    public int showFps = -1;
 
     [Space]
     [Header("Music Buttons")]
@@ -26,32 +40,33 @@ public class ManagerSoundScript : MonoBehaviour
     [SerializeField] private Button _btnChangeLanguage;
     [SerializeField] private GameObject _windowChangeLanguag;
 
-    [Space]
-    [Header("Image Buttons")]
-    [SerializeField] private GameObject ImgOn;
-    [SerializeField] private GameObject ImgOff;
-
-    int muted = 1;
     bool MusicBool = true;
     bool GraphicBool = true;
     bool LanguageBool = true;
 
     private void Awake()
     {
+        parentObject = GameObject.Find("ParentFps").transform;
+
         LoadMusic();
         MusicController();
+        //FpsController();
+        LoadFps();
+        FpsAwake();
 
         _btnChangeMusic.onClick.AddListener(ChangeMusic);
         _btnChangeGraphic.onClick.AddListener(ChangeGraphic);
         _btnChangeLanguage.onClick.AddListener(ChangeLanguage);
 
         _btnOffMusic.onClick.AddListener(MusicController);
+        _btnShowFps.onClick.AddListener(FpsController);
 
         volumeSlider.onValueChanged.AddListener((V) =>
         {
             volumeText.text = V.ToString("0.00");
             PlayerPrefs.SetFloat("volumeValue", V);
         });
+
         AudioListener.volume = 0.5f;
         LoadValues();
     }
@@ -75,6 +90,12 @@ public class ManagerSoundScript : MonoBehaviour
         muted = musicBool * -1;
     }
 
+    void LoadFps()
+    {
+        int FpsBool = PlayerPrefs.GetInt("FpsBool");
+        showFps = FpsBool;
+    }
+
     public void MusicController()
     {
         if (muted == 1)
@@ -96,6 +117,57 @@ public class ManagerSoundScript : MonoBehaviour
             ImgOn.SetActive(false);
             ImgOff.SetActive(true);
             _btnChangeMusic.gameObject.SetActive(true);
+        }
+    }
+
+    public void FpsController()
+    {
+        if (parentObject != null)
+        {
+            if (showFps == 1)
+            {
+                showFps = -1;
+
+                _thxShowFps.SetActive(false);
+                _thxHideFps.SetActive(true);
+
+                parentObject.GetChild(0).gameObject.SetActive(true);
+                PlayerPrefs.SetInt("FpsBool", showFps);
+            }
+            else
+            {
+                showFps = 1;
+
+                _thxShowFps.SetActive(true);
+                _thxHideFps.SetActive(false);
+
+                parentObject.GetChild(0).gameObject.SetActive(false);
+                PlayerPrefs.SetInt("FpsBool", showFps);
+
+                //for (int i = 0; i < parentObject.childCount; i++)
+                //{
+                //    parentObject.GetChild(i).gameObject.SetActive(false);
+                //}
+            }
+        }
+    }
+
+    void FpsAwake()
+    {
+        if (parentObject != null)
+        {
+            if (showFps == 1)
+            {
+                _thxShowFps.SetActive(true);
+                _thxHideFps.SetActive(false);
+                parentObject.GetChild(0).gameObject.SetActive(false);
+            }
+            else
+            {
+                _thxShowFps.SetActive(false);
+                _thxHideFps.SetActive(true);
+                parentObject.GetChild(0).gameObject.SetActive(true);
+            }
         }
     }
 
