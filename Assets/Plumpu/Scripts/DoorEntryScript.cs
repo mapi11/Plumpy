@@ -2,31 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class DoorEntryScript : MonoBehaviour
 {
     MainCharacterControllerScript Char;
     public bool ChangeScene = false;
     public string scene;
     private GameObject character;
-    [SerializeField] private GameObject _roomEntry;
 
+    [Space]
+    [Header("Canvas")]
+    [SerializeField] private Button _btnDoor;
+    [SerializeField] private GameObject _roomEntry;
     [SerializeField] private GameObject canvas;
+
     private GameObject PhoneButtons;
 
-    private float delay = 1.0f;
+    [SerializeField] private float _delayOpen = 0.5f;
 
-    private bool IsOpen = false;
-
+    [Space]
+    [Header("Lock")]
+    [SerializeField] private GameObject _txtClosed;
+    [SerializeField] private bool _locked;
+    public int doorID;
 
     private void Start()
     {
         character = GameObject.Find("Character");
         PhoneButtons = GameObject.Find("ControllerButtons");
         Char = FindAnyObjectByType<MainCharacterControllerScript>();
-    }
-    
 
-    private void OnTriggerStay(Collider other)
+        _btnDoor.onClick.AddListener(RoomEntry);
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -43,29 +52,44 @@ public class DoorEntryScript : MonoBehaviour
 
     public void RoomEntry()
     {
-        if(ChangeScene == false)
+        if (_locked == true)
         {
-            PhoneButtons.SetActive(false);
-            Char.ButtonStop();
-            Invoke("Teleport", delay);
+            _txtClosed.SetActive(true);
+            _btnDoor.interactable = false;
+            Invoke("HideCanvas", 3.0f);
         }
         else
         {
-            SceneManager.LoadScene(scene);
+            if (ChangeScene == false)
+            {
+                PhoneButtons.SetActive(false);
+                Char.ButtonStop();
+                Invoke("Teleport", _delayOpen);
+                _btnDoor.interactable = false;
+            }
+            else
+            {
+                SceneManager.LoadScene(scene);
+            }
         }
-
-        IsOpen = true;
     }
 
     public void Teleport()
     {
-        if (IsOpen == true)
-        {
-            character.transform.position = _roomEntry.transform.position;
-            PhoneButtons.SetActive(true);
-            Char.ButtonStop();
+        character.transform.position = _roomEntry.transform.position;
+        PhoneButtons.SetActive(true);
+        Char.ButtonStop();
 
-            IsOpen = false;
-        }
+        _btnDoor.interactable = true;
+    }
+
+    public void OpenDoor()
+    {
+        _locked = false;
+    }
+    public void HideCanvas()
+    {
+        _txtClosed.SetActive(false);
+        _btnDoor.interactable = true;
     }
 }

@@ -87,6 +87,14 @@ MonoBehaviour:
     m_Key: Title/TestScene
     m_Metadata:
       m_Items: []
+  - m_Id: 606126345175040
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 606197157609472
+    m_Key: Title/DoorLocked
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

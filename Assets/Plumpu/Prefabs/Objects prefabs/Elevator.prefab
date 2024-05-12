@@ -413,7 +413,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8168
+  m_VersionIndex: 8171
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3829,6 +3829,7 @@ MonoBehaviour:
   - {fileID: 2999621058898089471}
   _canvasBtnFloors: {fileID: 8366067125558406732}
   _currentFloorText: {fileID: 3446064350504793586}
+  currentFloor: 0
 --- !u!1 &6859713613040091422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4011,7 +4012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1189988850721100373
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4179,11 +4180,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_fontSize
-      value: 0.15
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_fontSizeMin
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7645621342374854226, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 350
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

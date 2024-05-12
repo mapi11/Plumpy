@@ -5,6 +5,7 @@ using UnityEngine;
 public class RecoveryHealthScript : MonoBehaviour
 {
     CharacterHealthScript _healthsScript;
+    [SerializeField] private GameObject _parentObj;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class RecoveryHealthScript : MonoBehaviour
             if (other.gameObject.tag == "Player")
             {
                 _healthsScript.Heal();
-                Destroy(gameObject);
+                Destroy(_parentObj);
             }
         }
 

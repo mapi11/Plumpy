@@ -65,6 +65,8 @@ public class ElevatorScript : MonoBehaviour
         _character = GameObject.Find("MainCharacter").transform;
 
         _currentFloorText.text = "Floor: <color=red>" + currentFloor;
+
+        _canvasBtnFloors.SetActive(false);
     }
 
     void Update()
@@ -106,7 +108,7 @@ public class ElevatorScript : MonoBehaviour
         _elevatorDoor.SetActive(false);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {

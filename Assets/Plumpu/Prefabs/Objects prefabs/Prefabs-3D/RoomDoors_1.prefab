@@ -98,6 +98,10 @@ PrefabInstance:
       value: DoorPrefab_1
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173927, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: _delayOpen
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613600069650173927, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: _roomEntry
       value: 
       objectReference: {fileID: 7785869640482840559}
@@ -183,6 +187,10 @@ PrefabInstance:
     - target: {fileID: 1613600069650173922, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613600069650173927, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: _delayOpen
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173927, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: _roomEntry

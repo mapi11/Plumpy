@@ -1,5 +1,4 @@
 using TMPro;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +27,7 @@ public class ManagerSoundScript : MonoBehaviour
     [SerializeField] private GameObject _thxHideFps;
     [SerializeField] private GameObject _txtFpsPrefab;
     Transform parentObject = null;
-    public int showFps = -1;
+    int showFps = 0;
 
     [Space]
     [Header("Music Buttons")]
@@ -50,7 +49,6 @@ public class ManagerSoundScript : MonoBehaviour
 
         LoadMusic();
         MusicController();
-        //FpsController();
         LoadFps();
         FpsAwake();
 
@@ -126,16 +124,6 @@ public class ManagerSoundScript : MonoBehaviour
         {
             if (showFps == 1)
             {
-                showFps = -1;
-
-                _thxShowFps.SetActive(false);
-                _thxHideFps.SetActive(true);
-
-                parentObject.GetChild(0).gameObject.SetActive(true);
-                PlayerPrefs.SetInt("FpsBool", showFps);
-            }
-            else
-            {
                 showFps = 1;
 
                 _thxShowFps.SetActive(true);
@@ -143,12 +131,19 @@ public class ManagerSoundScript : MonoBehaviour
 
                 parentObject.GetChild(0).gameObject.SetActive(false);
                 PlayerPrefs.SetInt("FpsBool", showFps);
-
-                //for (int i = 0; i < parentObject.childCount; i++)
-                //{
-                //    parentObject.GetChild(i).gameObject.SetActive(false);
-                //}
             }
+            else
+            {
+                showFps = 0;
+
+                _thxShowFps.SetActive(false);
+                _thxHideFps.SetActive(true);
+
+                parentObject.GetChild(0).gameObject.SetActive(true);
+                PlayerPrefs.SetInt("FpsBool", showFps);
+            }
+
+            return;
         }
     }
 
@@ -158,16 +153,18 @@ public class ManagerSoundScript : MonoBehaviour
         {
             if (showFps == 1)
             {
-                _thxShowFps.SetActive(true);
-                _thxHideFps.SetActive(false);
-                parentObject.GetChild(0).gameObject.SetActive(false);
-            }
-            else
-            {
                 _thxShowFps.SetActive(false);
                 _thxHideFps.SetActive(true);
                 parentObject.GetChild(0).gameObject.SetActive(true);
             }
+            else
+            {
+                _thxShowFps.SetActive(true);
+                _thxHideFps.SetActive(false);
+                parentObject.GetChild(0).gameObject.SetActive(false);
+            }
+
+            return;
         }
     }
 

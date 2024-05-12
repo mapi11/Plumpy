@@ -53,28 +53,27 @@ public class CharacterHealthScript : MonoBehaviour
             }
         }
     }
+
     public void Damage()
     {
-        //CheckHp();
-
         _health--;
         HPCanvas.SetActive(true);
-        Invoke("Healthcanvas", delay);
+        Invoke("HideHealthcanvas", delay);
 
         if (_health <= 0)
         {
             Deadth();
         }
     }
+
     public void Heal()
     {
-        //CheckHp();
-
         _health++;
         HPCanvas.SetActive(true);
-        Invoke("Healthcanvas", delay);
+        Invoke("HideHealthcanvas", delay);
     }
-    public void Healthcanvas()
+
+    public void HideHealthcanvas()
     {
         if (_health == 1)
         {
@@ -91,25 +90,4 @@ public class CharacterHealthScript : MonoBehaviour
         Instantiate(_DieWindow, _windowContent);
         Time.timeScale = 0f;
     }
-
-    //public void CheckHp()
-    //{
-    //    for (int i = 1; i < lives.Length; i++)
-    //    {
-    //        Animator animator = lives[i].GetComponent<Animator>();
-    //        //lives[h].GetComponent<Animator>();
-
-    //        if (i < Mathf.RoundToInt(_health))
-    //        {
-    //            lives[i].sprite = FullHP;
-    //            animator.enabled = true;
-    //        }
-    //        else
-    //        {
-    //            lives[i].sprite = EmptyHP;
-    //            animator.enabled = false;
-
-    //        }
-    //    }
-    //}
 }

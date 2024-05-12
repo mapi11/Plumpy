@@ -90,6 +90,10 @@ MonoBehaviour:
     m_Localized: Test scene
     m_Metadata:
       m_Items: []
+  - m_Id: 606197157609472
+    m_Localized: Door locked
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
