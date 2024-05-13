@@ -79,10 +79,10 @@ public class MainCharacterControllerScript : MonoBehaviour
     {
         //Objects1D.SetActive(false);
 
-        foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Deactivate 1D
-        {
-            obj1d.SetActive(false);
-        }
+        //foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Deactivate 1D
+        //{
+        //    obj1d.SetActive(false);
+        //}
     }
 
     private void FixedUpdate()
@@ -95,26 +95,26 @@ public class MainCharacterControllerScript : MonoBehaviour
     public void Update()
     {
         // --------------------------------------------- For PC
-        //if (Input.GetKeyDown(KeyCode.A)) //Left
-        //{
-        //    _horSpeed = -_speed;
-        //}
-        //if (Input.GetKeyUp(KeyCode.A))
-        //{
-        //    _horSpeed = 0.0f;
-        //}
-        //if (Input.GetKeyDown(KeyCode.D)) //Right
-        //{
-        //    _horSpeed = _speed;
-        //}
-        //if (Input.GetKeyUp(KeyCode.D))
-        //{
-        //    _horSpeed = 0.0f;
-        //}
-        //if (Input.GetKeyDown(KeyCode.Space)) //Jump
-        //{
-        //    ButtonJump();
-        //}
+        if (Input.GetKeyDown(KeyCode.A)) //Left
+        {
+            _horSpeed = -_speed;
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            _horSpeed = 0.0f;
+        }
+        if (Input.GetKeyDown(KeyCode.D)) //Right
+        {
+            _horSpeed = _speed;
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            _horSpeed = 0.0f;
+        }
+        if (Input.GetKeyDown(KeyCode.Space)) //Jump
+        {
+            ButtonJump();
+        }
     }
 
     public void Flip()

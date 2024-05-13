@@ -124,22 +124,22 @@ public class ManagerSoundScript : MonoBehaviour
         {
             if (showFps == 1)
             {
-                showFps = 1;
-
-                _thxShowFps.SetActive(true);
-                _thxHideFps.SetActive(false);
-
-                parentObject.GetChild(0).gameObject.SetActive(false);
-                PlayerPrefs.SetInt("FpsBool", showFps);
-            }
-            else
-            {
                 showFps = 0;
 
                 _thxShowFps.SetActive(false);
                 _thxHideFps.SetActive(true);
 
                 parentObject.GetChild(0).gameObject.SetActive(true);
+                PlayerPrefs.SetInt("FpsBool", showFps);
+            }
+            else
+            {
+                showFps = 1;
+
+                _thxShowFps.SetActive(true);
+                _thxHideFps.SetActive(false);
+
+                parentObject.GetChild(0).gameObject.SetActive(false);
                 PlayerPrefs.SetInt("FpsBool", showFps);
             }
 
@@ -153,15 +153,15 @@ public class ManagerSoundScript : MonoBehaviour
         {
             if (showFps == 1)
             {
-                _thxShowFps.SetActive(false);
-                _thxHideFps.SetActive(true);
-                parentObject.GetChild(0).gameObject.SetActive(true);
-            }
-            else
-            {
                 _thxShowFps.SetActive(true);
                 _thxHideFps.SetActive(false);
                 parentObject.GetChild(0).gameObject.SetActive(false);
+            }
+            else
+            {
+                _thxShowFps.SetActive(false);
+                _thxHideFps.SetActive(true);
+                parentObject.GetChild(0).gameObject.SetActive(true);
             }
 
             return;

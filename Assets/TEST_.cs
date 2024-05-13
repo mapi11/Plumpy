@@ -9,7 +9,7 @@ public class TEST_ : MonoBehaviour
     [HideInInspector]
     public List<GameObject> taggedObjects2 = new List<GameObject>();
 
-    void Start()
+    private void Awake()
     {
         GameObject[] objectsWithTag1 = GameObject.FindGameObjectsWithTag("Obj1D");
 
@@ -23,6 +23,14 @@ public class TEST_ : MonoBehaviour
         foreach (GameObject obj in objectsWithTag2)
         {
             taggedObjects2.Add(obj);
+        }
+    }
+
+    void Start()
+    {
+        foreach (GameObject obj2d in taggedObjects1) // Off 1D
+        {
+            obj2d.SetActive(false);
         }
     }
 
