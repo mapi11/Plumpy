@@ -56,7 +56,7 @@ public class ElevatorScript : MonoBehaviour
     [SerializeField] private GameObject _canvasBtnFloors;
     [SerializeField] private TextMeshProUGUI _currentFloorText;
 
-    private bool isMoving = false;
+    public bool isMoving = false;
     [SerializeField] private int currentFloor = 0;
 
     private void Awake()

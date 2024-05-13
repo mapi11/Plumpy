@@ -54,6 +54,7 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     CharacterHealthScript _characterHealthScript;
     ManagerObjectsScript _managerObjectsScript;
+    ElevatorScript _elevatorScript;
     TEST_ _test;
 
     [Space]
@@ -68,6 +69,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         _managerObjectsScript = FindAnyObjectByType<ManagerObjectsScript>();
         _test = FindAnyObjectByType<TEST_>();
         _characterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
+        _elevatorScript = FindAnyObjectByType<ElevatorScript>();
 
         _btn1D.onClick.AddListener(PlayerActive1D);
         _btn2D.onClick.AddListener(PlayerActive2D);
@@ -138,7 +140,7 @@ public class MainCharacterControllerScript : MonoBehaviour
             if (fallDistance >= fallHeight) // Проверяем, с какой высоты падает персонаж
             {
                 float damage = (fallDistance / fallHeight); // Вычисляем урон от падения
-                TakeDamage(damage);
+                FallDamage(damage);
             }
 
             isFalling = false;
@@ -146,26 +148,28 @@ public class MainCharacterControllerScript : MonoBehaviour
         }
     }
 
-    void TakeDamage(float damage)
+    void FallDamage(float damage)
     {
-
-        if (damage >= 3.0f)
+        if (_elevatorScript.isMoving != true)
         {
-            // Реализация нанесения урона персонажу
-            Debug.Log("-3 health " + damage);
-            _characterHealthScript.Damage(3);
-        }
-        else if (damage >= 2.0f)
-        {
-            // Реализация нанесения урона персонажу
-            Debug.Log("-2 health " + damage);
-            _characterHealthScript.Damage(2);
-        }
-        else if (damage >= 1.0f)
-        {
-            // Реализация нанесения урона персонажу
-            Debug.Log("-1 health " + damage);
-            _characterHealthScript.Damage(1);
+            if (damage >= 3.0f)
+            {
+                // Реализация нанесения урона персонажу
+                Debug.Log("-3 health " + damage);
+                _characterHealthScript.Damage(3);
+            }
+            else if (damage >= 2.0f)
+            {
+                // Реализация нанесения урона персонажу
+                Debug.Log("-2 health " + damage);
+                _characterHealthScript.Damage(2);
+            }
+            else if (damage >= 1.0f)
+            {
+                // Реализация нанесения урона персонажу
+                Debug.Log("-1 health " + damage);
+                _characterHealthScript.Damage(1);
+            }
         }
     }
 
