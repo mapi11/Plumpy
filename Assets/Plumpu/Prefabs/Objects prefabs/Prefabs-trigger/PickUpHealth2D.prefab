@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3549744696989148700}
   - component: {fileID: 3198890866304194834}
-  m_Layer: 0
-  m_Name: btnSceneCanvas
+  m_Layer: 5
+  m_Name: RotateCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 6506106786147782782}
   - component: {fileID: 8832893173632811099}
   - component: {fileID: 317690715634161222}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2937834667174564417}
   - component: {fileID: 4905989441103441310}
-  - component: {fileID: 6634538560892132857}
+  - component: {fileID: 6259361194520668152}
   m_Layer: 9
   m_Name: Health
   m_TagString: Obj2D
@@ -218,14 +218,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!136 &6634538560892132857
+--- !u!136 &6259361194520668152
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718482862055374230}
-  m_Material: {fileID: 13400000, guid: 7e82f31af0e9c0a4f9a6fc7543bade92, type: 2}
+  m_Material: {fileID: 13400000, guid: 70900a07b3dfcee4abd6af882fea7e1d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -238,7 +238,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.13
-  m_Height: 0.48
+  m_Height: 0.52
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2704298138624333473
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 9209441192446980896}
   - component: {fileID: 1025012540313243301}
   - component: {fileID: 1636784290274898213}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BtnPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 3127362200315343267}
   - component: {fileID: 6438784763331403411}
   - component: {fileID: 3211958323728405918}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,11 +520,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3808044111758932212}
-  - component: {fileID: 7482968342633403127}
-  - component: {fileID: 6167911453591974792}
-  - component: {fileID: 2076190811384793613}
+  - component: {fileID: 4162148924395310720}
+  - component: {fileID: 1967639189906600970}
+  - component: {fileID: 6313311445230055900}
   - component: {fileID: 936385300097957318}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: PickUpHealth2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7482968342633403127
+--- !u!54 &4162148924395310720
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -555,10 +555,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5257831128793222570}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 7.5
+  m_Drag: 1
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_CenterOfMass: {x: 0, y: -0.1, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -567,14 +567,14 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 56
   m_CollisionDetection: 0
---- !u!65 &6167911453591974792
+--- !u!65 &1967639189906600970
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -593,16 +593,16 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.75, y: 1.75, z: 1.75}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &2076190811384793613
+--- !u!136 &6313311445230055900
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5257831128793222570}
-  m_Material: {fileID: 13400000, guid: 7e82f31af0e9c0a4f9a6fc7543bade92, type: 2}
+  m_Material: {fileID: 13400000, guid: 70900a07b3dfcee4abd6af882fea7e1d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -615,7 +615,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.13
-  m_Height: 0.48
+  m_Height: 0.52
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &936385300097957318
@@ -630,6 +630,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d364e777e0588047924065aa2ff1dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parent: {fileID: 718482862055374230}
   _canvas: {fileID: 4370364027348797761}
   _btnCanvas: {fileID: 1636784290274898213}

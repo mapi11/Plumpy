@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1753349468063342307}
   - component: {fileID: 1076178046956969733}
   - component: {fileID: 7080567691493861630}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ActiveImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1613600068933726085}
   m_Layer: 0
   m_Name: Door_image-1
-  m_TagString: Obj3D
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,8 +106,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4876172196711768022}
-  m_Father: {fileID: 1613600069650173920}
-  m_RootOrder: 0
+  m_Father: {fileID: 5137064578455606161}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1613600068933726085
 SpriteRenderer:
@@ -191,7 +191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1613600068933726086}
+  - {fileID: 5137064578455606161}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 1510591808421322867}
   - component: {fileID: 5565983925632214106}
   - component: {fileID: 6420337793222704796}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ClosedDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 8880728733002966359}
   - component: {fileID: 840739152767834415}
   - component: {fileID: 1429588016277538455}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,6 +493,38 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Button
+--- !u!1 &4289955840062221627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5137064578455606161}
+  m_Layer: 0
+  m_Name: DoorContent
+  m_TagString: Obj3D
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5137064578455606161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4289955840062221627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1613600068933726086}
+  m_Father: {fileID: 1613600069650173920}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4502945533640059757
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +537,7 @@ GameObject:
   - component: {fileID: 870770901661781033}
   - component: {fileID: 7173978065889665737}
   - component: {fileID: 267223677709989791}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TitleDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +552,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4502945533640059757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -680,7 +712,7 @@ GameObject:
   - component: {fileID: 1776815541126656609}
   - component: {fileID: 1649094939010289844}
   - component: {fileID: 5524307146842976516}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BtnDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2408633712274098145}
   - component: {fileID: 248565379526773542}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: btnSceneCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -824,7 +856,7 @@ GameObject:
   - component: {fileID: 2211974764541877881}
   - component: {fileID: 3618231865773422985}
   - component: {fileID: 4093478161912230789}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DoorCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +907,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -994740599
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &3618231865773422985
 MonoBehaviour:

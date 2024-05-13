@@ -27,7 +27,7 @@ public class ManagerSoundScript : MonoBehaviour
     [SerializeField] private GameObject _thxHideFps;
     [SerializeField] private GameObject _txtFpsPrefab;
     Transform parentObject = null;
-    int showFps = 0;
+    public int showFps = 0;
 
     [Space]
     [Header("Music Buttons")]
@@ -122,9 +122,9 @@ public class ManagerSoundScript : MonoBehaviour
     {
         if (parentObject != null)
         {
-            if (showFps == 1)
+            if (showFps == 0)
             {
-                showFps = 0;
+                showFps = 1;
 
                 _thxShowFps.SetActive(false);
                 _thxHideFps.SetActive(true);
@@ -134,7 +134,7 @@ public class ManagerSoundScript : MonoBehaviour
             }
             else
             {
-                showFps = 1;
+                showFps = 0;
 
                 _thxShowFps.SetActive(true);
                 _thxHideFps.SetActive(false);
@@ -149,9 +149,12 @@ public class ManagerSoundScript : MonoBehaviour
 
     void FpsAwake()
     {
+        int FpsBool = PlayerPrefs.GetInt("FpsBool");
+        showFps = FpsBool;
+
         if (parentObject != null)
         {
-            if (showFps == 1)
+            if (showFps == 0)
             {
                 _thxShowFps.SetActive(true);
                 _thxHideFps.SetActive(false);

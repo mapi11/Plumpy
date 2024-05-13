@@ -17,6 +17,7 @@ public class KeyDoorScript : MonoBehaviour
     [SerializeField] private GameObject _canvas;
     [SerializeField] private Button _btnCanvas;
 
+
     private void Awake()
     {
         _btnCanvas.onClick.AddListener(PickUpKey);

@@ -71,14 +71,14 @@ public class ElevatorScript : MonoBehaviour
 
     void Update()
     {
-        if (isMoving)
-        {
-            _character.parent = _elevator;
-        }
-        else
-        {
-            _character.parent = null;
-        }
+        //if (isMoving)
+        //{
+        //    _character.parent = _elevator;
+        //}
+        //else
+        //{
+        //    _character.parent = null;
+        //}
     }
 
     public void MoveToFloor(int floorNumber)
@@ -87,16 +87,28 @@ public class ElevatorScript : MonoBehaviour
         {
             if (floorNumber >= 0 && floorNumber < _floors.Length)
             {
+
                 StartCoroutine(MoveElevator(_floors[floorNumber].position));
                 currentFloor = floorNumber;
 
                 _currentFloorText.text = "Floor: <color=red>" + currentFloor;
             }
         }
+
+        //if (isMoving)
+        //{
+        //    _character.parent = _elevator;
+        //}
+        //else
+        //{
+        //    _character.parent = null;
+        //}
     }
 
     IEnumerator MoveElevator(Vector3 targetPosition)
     {
+        _character.parent = _elevator;
+
         _elevatorDoor.SetActive(true);
         isMoving = true;
         while (Vector3.Distance(_elevator.position, targetPosition) > 0.01f)
@@ -106,6 +118,8 @@ public class ElevatorScript : MonoBehaviour
         }
         isMoving = false;
         _elevatorDoor.SetActive(false);
+
+        _character.parent = null;
     }
 
     private void OnTriggerEnter(Collider other)

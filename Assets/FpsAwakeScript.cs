@@ -5,7 +5,7 @@ using UnityEngine;
 public class FpsAwakeScript : MonoBehaviour
 {
     public Transform parentObject = null;
-    public int showFps = -1;
+    public int showFps = 0;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class FpsAwakeScript : MonoBehaviour
 
         if (parentObject != null)
         {
-            if (showFps == 1)
+            if (showFps == 0)
             {
                 parentObject.GetChild(0).gameObject.SetActive(false);
             }

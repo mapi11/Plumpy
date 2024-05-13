@@ -105,6 +105,10 @@ PrefabInstance:
       propertyPath: _roomEntry
       value: 
       objectReference: {fileID: 7785869640482840559}
+    - target: {fileID: 4289955840062221627, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

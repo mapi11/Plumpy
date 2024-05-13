@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class DoorEntryScript : MonoBehaviour
 {
-    MainCharacterControllerScript Char;
+    MainCharacterControllerScript _mainCharacterControllerScript;
     public bool ChangeScene = false;
     public string scene;
     private GameObject character;
@@ -28,9 +28,9 @@ public class DoorEntryScript : MonoBehaviour
 
     private void Start()
     {
-        character = GameObject.Find("Character");
+        character = GameObject.Find("CharacterContent");
         PhoneButtons = GameObject.Find("ControllerButtons");
-        Char = FindAnyObjectByType<MainCharacterControllerScript>();
+        _mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
 
         _btnDoor.onClick.AddListener(RoomEntry);
     }
@@ -63,7 +63,7 @@ public class DoorEntryScript : MonoBehaviour
             if (ChangeScene == false)
             {
                 PhoneButtons.SetActive(false);
-                Char.ButtonStop();
+                _mainCharacterControllerScript.ButtonStop();
                 Invoke("Teleport", _delayOpen);
                 _btnDoor.interactable = false;
             }
@@ -76,9 +76,10 @@ public class DoorEntryScript : MonoBehaviour
 
     public void Teleport()
     {
+
         character.transform.position = _roomEntry.transform.position;
         PhoneButtons.SetActive(true);
-        Char.ButtonStop();
+        _mainCharacterControllerScript.ButtonStop();
 
         _btnDoor.interactable = true;
     }

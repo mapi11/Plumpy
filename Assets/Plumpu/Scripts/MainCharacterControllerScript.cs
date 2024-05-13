@@ -61,7 +61,7 @@ public class MainCharacterControllerScript : MonoBehaviour
     [Header("Fall damage")]
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float fallHeight; // ¬ысота, с которой начинаетс€ урон от падени€
-    private bool isFalling = false;
+    public bool isFalling = false;
     private Vector3 lastPosition;
 
     void Awake()
@@ -143,7 +143,6 @@ public class MainCharacterControllerScript : MonoBehaviour
                 FallDamage(damage);
             }
 
-            isFalling = false;
             lastPosition = transform.position;
         }
     }
@@ -261,6 +260,9 @@ public class MainCharacterControllerScript : MonoBehaviour
         _btn1D.interactable = false;
         _btn2D.interactable = true;
         _btn3D.interactable = true;
+
+        _test.FadeObjects1D(0.7f);
+        _test.FadeObjects3D(1);
     }
     public void PlayerActive2D()
     {
@@ -340,5 +342,8 @@ public class MainCharacterControllerScript : MonoBehaviour
         _btn1D.interactable = true;
         _btn2D.interactable = true;
         _btn3D.interactable = false;
+
+        _test.FadeObjects1D(1);
+        _test.FadeObjects3D(0.7f);
     }
 }

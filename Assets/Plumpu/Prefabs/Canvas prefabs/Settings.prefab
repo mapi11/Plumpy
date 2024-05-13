@@ -171,6 +171,7 @@ MonoBehaviour:
   _thxShowFps: {fileID: 3297958195063738822}
   _thxHideFps: {fileID: 6706776585884660977}
   _txtFpsPrefab: {fileID: 5668069222261751496, guid: 556c1800fa8639d4eafcc106aacf5e70, type: 3}
+  showFps: 0
   _btnChangeGraphic: {fileID: 565816968109227459}
   _windowChangeGraphic: {fileID: 7424531749357296567}
   _btnChangeLanguage: {fileID: 4033815414849958998}

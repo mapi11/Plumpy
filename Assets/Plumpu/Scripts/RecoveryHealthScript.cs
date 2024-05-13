@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class RecoveryHealthScript : MonoBehaviour
 {
     CharacterHealthScript _healthsScript;
-    [SerializeField] private GameObject _parent;
 
     [Space]
     [Header("Canvas")]

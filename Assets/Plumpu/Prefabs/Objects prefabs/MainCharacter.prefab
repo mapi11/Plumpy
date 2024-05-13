@@ -72,7 +72,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5943
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -323,7 +323,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4005401898280240806}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -331,8 +331,8 @@ Transform:
   - {fileID: 4005401898869952073}
   - {fileID: 4005401899341333099}
   - {fileID: 5405586014123799712}
-  m_Father: {fileID: 6963222124654833638}
-  m_RootOrder: 0
+  m_Father: {fileID: 2937266745125053577}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4005401898869952072
 GameObject:
@@ -618,7 +618,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3895
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -676,6 +676,39 @@ RectTransform:
   m_AnchoredPosition: {x: -587.5, y: -147.5}
   m_SizeDelta: {x: 125, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &7387757492880480210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2937266745125053577}
+  m_Layer: 0
+  m_Name: CharacterContent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2937266745125053577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387757492880480210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4005401898280240807}
+  - {fileID: 7785415790755071032}
+  m_Father: {fileID: 6963222124654833638}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7630323174003992600
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,7 +783,7 @@ RectTransform:
   - {fileID: 7785415791875921521}
   - {fileID: 7919942014737642884}
   - {fileID: 594642515773465739}
-  m_Father: {fileID: 6963222124654833638}
+  m_Father: {fileID: 2937266745125053577}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -965,11 +998,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6963222124654833638}
-  - component: {fileID: 7058984248094257663}
-  - component: {fileID: 4423491520449140087}
-  - component: {fileID: 1794819272816615107}
-  - component: {fileID: 5242854244825655237}
-  - component: {fileID: 159372072302456289}
+  - component: {fileID: 6152088943775686490}
+  - component: {fileID: 1542545960266660529}
+  - component: {fileID: 1926165619055452206}
+  - component: {fileID: 768252671568920490}
+  - component: {fileID: 4651676254539928903}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -989,12 +1022,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4005401898280240807}
-  - {fileID: 7785415790755071032}
+  - {fileID: 2937266745125053577}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7058984248094257663
+--- !u!54 &6152088943775686490
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1002,7 +1034,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8863094768667295753}
   serializedVersion: 4
-  m_Mass: 45
+  m_Mass: 70
   m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1021,7 +1053,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &4423491520449140087
+--- !u!114 &1542545960266660529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1055,9 +1087,10 @@ MonoBehaviour:
   _btn3D: {fileID: 2103500556591344403}
   btnForwardBackward: {fileID: 7282018529826053739}
   btnLeftRight: {fileID: 7630323174003992600}
-  rb: {fileID: 7058984248094257663}
-  fallHeight: 2
---- !u!114 &1794819272816615107
+  rb: {fileID: 0}
+  fallHeight: 4
+  isFalling: 0
+--- !u!114 &1926165619055452206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1080,7 +1113,7 @@ MonoBehaviour:
   HPCanvas: {fileID: 5068000857263578816}
   FullHP: {fileID: -4709024909647346614, guid: c04091f3a8afcff48bcb550cb5eb0034, type: 3}
   EmptyHP: {fileID: -6007857137893288414, guid: bbf2ce874d6b74440bc25e0891a99d44, type: 3}
---- !u!114 &5242854244825655237
+--- !u!114 &768252671568920490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1093,8 +1126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentObject: {fileID: 0}
-  showFps: -1
---- !u!114 &159372072302456289
+  showFps: 0
+--- !u!114 &4651676254539928903
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1108,6 +1141,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taggedObjects1: []
   taggedObjects2: []
+  fade1DObjects1D: []
+  fade1DObjects3D: []
+  objectsWithTag1D: []
+  objectsWithTag3D: []
 --- !u!1001 &31302426559355430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1136,10 +1173,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4423491520449140087}
     - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1292,7 +1325,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4423491520449140087}
+        - m_Target: {fileID: 1542545960266660529}
           m_TargetAssemblyTypeName: MainCharacterControllerScript, Assembly-CSharp
           m_MethodName: ButtonRight
           m_Mode: 1
@@ -1308,7 +1341,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4423491520449140087}
+        - m_Target: {fileID: 1542545960266660529}
           m_TargetAssemblyTypeName: MainCharacterControllerScript, Assembly-CSharp
           m_MethodName: ButtonStop
           m_Mode: 1
@@ -1718,7 +1751,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4423491520449140087}
+        - m_Target: {fileID: 1542545960266660529}
           m_TargetAssemblyTypeName: MainCharacterControllerScript, Assembly-CSharp
           m_MethodName: ButtonLeft
           m_Mode: 1
@@ -1734,7 +1767,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4423491520449140087}
+        - m_Target: {fileID: 1542545960266660529}
           m_TargetAssemblyTypeName: MainCharacterControllerScript, Assembly-CSharp
           m_MethodName: ButtonStop
           m_Mode: 1
@@ -2056,7 +2089,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4423491520449140087}
+        - m_Target: {fileID: 1542545960266660529}
           m_TargetAssemblyTypeName: MainCharacterControllerScript, Assembly-CSharp
           m_MethodName: ButtonLeft
           m_Mode: 1
@@ -2072,7 +2105,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4423491520449140087}
+        - m_Target: {fileID: 1542545960266660529}
           m_TargetAssemblyTypeName: MainCharacterControllerScript, Assembly-CSharp
           m_MethodName: ButtonStop
           m_Mode: 1
@@ -2447,10 +2480,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4423491520449140087}
-    - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -2602,7 +2631,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4423491520449140087}
+        - m_Target: {fileID: 1542545960266660529}
           m_TargetAssemblyTypeName: MainCharacterControllerScript, Assembly-CSharp
           m_MethodName: ButtonRight
           m_Mode: 1
@@ -2618,7 +2647,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4423491520449140087}
+        - m_Target: {fileID: 1542545960266660529}
           m_TargetAssemblyTypeName: MainCharacterControllerScript, Assembly-CSharp
           m_MethodName: ButtonStop
           m_Mode: 1
@@ -3175,10 +3204,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4423491520449140087}
-    - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -3325,7 +3350,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4423491520449140087}
+        - m_Target: {fileID: 1542545960266660529}
           m_TargetAssemblyTypeName: MainCharacterControllerScript, Assembly-CSharp
           m_MethodName: ButtonJump
           m_Mode: 1
