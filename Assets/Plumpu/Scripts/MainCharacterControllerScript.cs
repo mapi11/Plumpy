@@ -53,10 +53,12 @@ public class MainCharacterControllerScript : MonoBehaviour
     private bool _rotate = true;
 
     ManagerObjectsScript _managerObjectsScript;
+    TEST_ _test;
 
     void Awake()
     {
         _managerObjectsScript = FindAnyObjectByType<ManagerObjectsScript>();
+        _test = FindAnyObjectByType<TEST_>();
 
         _btn1D.onClick.AddListener(PlayerActive1D);
         _btn2D.onClick.AddListener(PlayerActive2D);
@@ -93,26 +95,26 @@ public class MainCharacterControllerScript : MonoBehaviour
     public void Update()
     {
         // --------------------------------------------- For PC
-        if (Input.GetKeyDown(KeyCode.A)) //Left
-        {
-            _horSpeed = -_speed;
-        }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            _horSpeed = 0.0f;
-        }
-        if (Input.GetKeyDown(KeyCode.D)) //Right
-        {
-            _horSpeed = _speed;
-        }
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            _horSpeed = 0.0f;
-        }
-        if (Input.GetKeyDown(KeyCode.Space)) //Jump
-        {
-            ButtonJump();
-        }
+        //if (Input.GetKeyDown(KeyCode.A)) //Left
+        //{
+        //    _horSpeed = -_speed;
+        //}
+        //if (Input.GetKeyUp(KeyCode.A))
+        //{
+        //    _horSpeed = 0.0f;
+        //}
+        //if (Input.GetKeyDown(KeyCode.D)) //Right
+        //{
+        //    _horSpeed = _speed;
+        //}
+        //if (Input.GetKeyUp(KeyCode.D))
+        //{
+        //    _horSpeed = 0.0f;
+        //}
+        //if (Input.GetKeyDown(KeyCode.Space)) //Jump
+        //{
+        //    ButtonJump();
+        //}
     }
 
     public void Flip()
@@ -164,9 +166,12 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     public void PlayerActive1D()
     {
+        ButtonStop();
+
         camera1D.SetActive(true);
         camera2D.SetActive(false);
         camera3D.SetActive(false);
+
         if (_rotate == true)
         {
             player2D.transform.Rotate(0, 90, 0);
@@ -174,21 +179,23 @@ public class MainCharacterControllerScript : MonoBehaviour
         btnForwardBackward.SetActive(true);
         btnLeftRight.SetActive(false);
 
-        //Background2D.SetActive(false);
-        //Background1_3D.SetActive(true);
-
-        //Objects1D.SetActive(true);
-        //Objects2D.SetActive(false);
-
         _rotate = false;
 
-        foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Deactivate 2D
-        {
-            obj2d.SetActive(false);
-        }
-        foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
+        //foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Deactivate 2D
+        //{
+        //    obj2d.SetActive(false);
+        //}
+        //foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
+        //{
+        //    obj1d.SetActive(true);
+        //}
+        foreach (GameObject obj1d in _test.taggedObjects1) //
         {
             obj1d.SetActive(true);
+        }
+        foreach (GameObject obj2d in _test.taggedObjects2) //
+        {
+            obj2d.SetActive(false);
         }
 
         Active1D = true;
@@ -201,6 +208,8 @@ public class MainCharacterControllerScript : MonoBehaviour
     }
     public void PlayerActive2D()
     {
+        ButtonStop();
+
         camera2D.SetActive(true);
         camera3D.SetActive(false);
         camera1D.SetActive(false);
@@ -212,21 +221,15 @@ public class MainCharacterControllerScript : MonoBehaviour
         btnForwardBackward.SetActive(false);
         btnLeftRight.SetActive(true);
 
-        //Background2D.SetActive(true);
-        //Background1_3D.SetActive(false);
-
-        //Objects1D.SetActive(false);
-        //Objects2D.SetActive(true);
-
         _rotate = true;
 
-        foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Activate 2D
-        {
-            obj2d.SetActive(true);
-        }
-        foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Deactivate 1D
+        foreach (GameObject obj1d in _test.taggedObjects1) //
         {
             obj1d.SetActive(false);
+        }
+        foreach (GameObject obj2d in _test.taggedObjects2) //
+        {
+            obj2d.SetActive(true);
         }
 
         Active1D = false;
@@ -239,6 +242,8 @@ public class MainCharacterControllerScript : MonoBehaviour
     }
     public void PlayerActive3D()
     {
+        ButtonStop();
+
         camera3D.SetActive(true);
         camera2D.SetActive(false);
         camera1D.SetActive(false);
@@ -249,21 +254,27 @@ public class MainCharacterControllerScript : MonoBehaviour
         btnForwardBackward.SetActive(false);
         btnLeftRight.SetActive(true);
 
-        //Background2D.SetActive(false);
-        //Background1_3D.SetActive(true);
-
-        //Objects1D.SetActive(true);
-        //Objects2D.SetActive(true);
-
         _rotate = true;
 
-        foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Activate 2D
-        {
-            obj2d.SetActive(true);
-        }
-        foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
+        //foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Activate 2D
+        //{
+        //    obj2d.SetActive(true);
+        //}
+        //foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
+        //{
+        //    obj1d.SetActive(true);
+        //}
+        //foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
+        //{
+        //    obj1d.SetActive(true);
+        //}
+        foreach (GameObject obj1d in _test.taggedObjects1) //
         {
             obj1d.SetActive(true);
+        }
+        foreach (GameObject obj2d in _test.taggedObjects2) //
+        {
+            obj2d.SetActive(true);
         }
 
         Active1D = false;

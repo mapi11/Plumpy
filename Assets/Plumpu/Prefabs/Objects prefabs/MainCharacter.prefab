@@ -968,8 +968,8 @@ GameObject:
   - component: {fileID: 7058984248094257663}
   - component: {fileID: 4423491520449140087}
   - component: {fileID: 1794819272816615107}
-  - component: {fileID: 6535693911649358381}
   - component: {fileID: 5242854244825655237}
+  - component: {fileID: 6535693911649358381}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Player
@@ -1078,6 +1078,20 @@ MonoBehaviour:
   HPCanvas: {fileID: 5068000857263578816}
   FullHP: {fileID: -4709024909647346614, guid: c04091f3a8afcff48bcb550cb5eb0034, type: 3}
   EmptyHP: {fileID: -6007857137893288414, guid: bbf2ce874d6b74440bc25e0891a99d44, type: 3}
+--- !u!114 &5242854244825655237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863094768667295753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb84397199d4974aaaa37b07b5289da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentObject: {fileID: 0}
+  showFps: -1
 --- !u!114 &6535693911649358381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,20 +1107,6 @@ MonoBehaviour:
   _objects1D: []
   _objects2D: []
   _objects3D: []
---- !u!114 &5242854244825655237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8863094768667295753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cb84397199d4974aaaa37b07b5289da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentObject: {fileID: 0}
-  showFps: -1
 --- !u!1001 &31302426559355430
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class SettingsCharacterScript : MonoBehaviour
 
     void Awake()
     {
-        _menuMusicScript = FindAnyObjectByType<MenuMusicScript>();
+        //_menuMusicScript = FindAnyObjectByType<MenuMusicScript>();
 
         _btnMusic[0].onClick.AddListener(() => SetMusic(0));
         _btnMusic[1].onClick.AddListener(() => SetMusic(1));
@@ -49,7 +49,7 @@ public class SettingsCharacterScript : MonoBehaviour
         SetGraphic(SavePrefScript.Load(SavePrefScript.PrefTypes.Graphic));
         LocaleSelected(SavePrefScript.Load(SavePrefScript.PrefTypes.Languages));
 
-        _btnMusic[_menuMusicScript._int].interactable = false;
+        //_btnMusic[_menuMusicScript._int].interactable = false;
 
         _btnCloseSettings.onClick.AddListener(CloseSettings);
 
@@ -65,21 +65,30 @@ public class SettingsCharacterScript : MonoBehaviour
 
     private void SetMusic(int setMusic)
     {
-        SavePrefScript.Save(SavePrefScript.PrefTypes.Music, setMusic);
-        if (_menuMusicScript._int != setMusic)
-        {
-            _menuMusicScript._int = setMusic;
-            _menuMusicScript.MakeMusic(setMusic);
+        _menuMusicScript = FindAnyObjectByType<MenuMusicScript>();
 
-            _btnMusic[0].GetComponent<Button>().interactable = setMusic == 0 ? false : true;
-            _btnMusic[1].GetComponent<Button>().interactable = setMusic == 1 ? false : true;
-            _btnMusic[2].GetComponent<Button>().interactable = setMusic == 2 ? false : true;
-            _btnMusic[3].GetComponent<Button>().interactable = setMusic == 3 ? false : true;
-            _btnMusic[4].GetComponent<Button>().interactable = setMusic == 4 ? false : true;
-            _btnMusic[5].GetComponent<Button>().interactable = setMusic == 5 ? false : true;
-            _btnMusic[6].GetComponent<Button>().interactable = setMusic == 6 ? false : true;
-            _btnMusic[7].GetComponent<Button>().interactable = setMusic == 7 ? false : true;
+        if (_menuMusicScript != null)
+        {
+            SavePrefScript.Save(SavePrefScript.PrefTypes.Music, setMusic);
+            if (_menuMusicScript._int != setMusic)
+            {
+                _menuMusicScript._int = setMusic;
+                _menuMusicScript.MakeMusic(setMusic);
+
+                _btnMusic[0].GetComponent<Button>().interactable = setMusic == 0 ? false : true;
+                _btnMusic[1].GetComponent<Button>().interactable = setMusic == 1 ? false : true;
+                _btnMusic[2].GetComponent<Button>().interactable = setMusic == 2 ? false : true;
+                _btnMusic[3].GetComponent<Button>().interactable = setMusic == 3 ? false : true;
+                _btnMusic[4].GetComponent<Button>().interactable = setMusic == 4 ? false : true;
+                _btnMusic[5].GetComponent<Button>().interactable = setMusic == 5 ? false : true;
+                _btnMusic[6].GetComponent<Button>().interactable = setMusic == 6 ? false : true;
+                _btnMusic[7].GetComponent<Button>().interactable = setMusic == 7 ? false : true;
+
+
+            }
+            _btnMusic[_menuMusicScript._int].interactable = false;
         }
+
     }
 
     private void SetGraphic(int SetGraph)

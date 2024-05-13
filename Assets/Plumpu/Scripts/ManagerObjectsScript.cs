@@ -72,6 +72,11 @@ public class ManagerObjectsScript : MonoBehaviour
     public List<GameObject> _objects2D = new List<GameObject>();
     public List<GameObject> _objects3D = new List<GameObject>();
 
+    [HideInInspector]
+    public List<GameObject> taggedObjects = new List<GameObject>();
+
+    //GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("tagToTrack");
+
     private void Awake()
     {
         GameObject[] allObjects = FindObjectsOfType<GameObject>();
@@ -91,6 +96,13 @@ public class ManagerObjectsScript : MonoBehaviour
                 _objects3D.Add(obj);
             }
         }
+
+
+
+        //foreach (GameObject obj in objectsWithTag)
+        //{
+        //    taggedObjects.Add(obj);
+        //}
     }
 
     private void Start()

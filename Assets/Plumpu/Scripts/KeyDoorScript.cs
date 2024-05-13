@@ -9,8 +9,8 @@ public class KeyDoorScript : MonoBehaviour
     [Header("Door")]
     [SerializeField] private DoorEntryScript door;
 
-    [Space]
-    [SerializeField] private GameObject _keyChild;
+    //[Space]
+    //[SerializeField] private GameObject _keyChild;
 
     [Space]
     [Header("Canvas")]
@@ -41,6 +41,7 @@ public class KeyDoorScript : MonoBehaviour
     {
         door.OpenDoor();
         Debug.Log("You can open door #" + door.doorID);
-        _keyChild.SetActive(false);
+        //_keyChild.SetActive(false);
+        Destroy(gameObject);
     }
 }
