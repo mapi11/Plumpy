@@ -32,11 +32,6 @@ public class CharacterHealthScript : MonoBehaviour
 
     private void Update()
     {
-        if (_health > _maxHp)
-        {
-            _health = _maxHp;
-        }
-
         for (int i = 0; i < lives.Length; i++)
         {
             Animator animator = lives[i].GetComponent<Animator>();
@@ -52,11 +47,16 @@ public class CharacterHealthScript : MonoBehaviour
                 animator.enabled = false;
             }
         }
+
+        if (_health > _maxHp)
+        {
+            _health = _maxHp;
+        }
     }
 
-    public void Damage()
+    public void Damage(int DamageCount = 0)
     {
-        _health--;
+        _health -= DamageCount;
         HPCanvas.SetActive(true);
         Invoke("HideHealthcanvas", delay);
 

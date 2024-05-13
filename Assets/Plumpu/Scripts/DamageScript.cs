@@ -4,32 +4,24 @@ using UnityEngine;
 
 public class DamageScript : MonoBehaviour
 {
-    CharacterHealthScript _healthsScript;
-    public bool test = false;
-    [HideInInspector]
-    public int count = 0;
+    CharacterHealthScript _haracterHealthScript;
+    [SerializeField] private int _damage = 1;
+    //[SerializeField] private Collider _collider;
+    string playerTag = "Player";
 
     private void Start()
     {
-        _healthsScript = FindAnyObjectByType<CharacterHealthScript>();
+        _haracterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
+
+        //_collider = GetComponent<Collider>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        //Debug.Log(_collider);
+        if (other.CompareTag(playerTag))
         {
-            if(test == false)
-            {
-                _healthsScript.Damage();
-            }
-            else
-            {
-                if(count == 0)
-                {
-                    _healthsScript.Damage();
-                    count++;
-                }
-            } 
+            _haracterHealthScript.Damage(_damage);
         }
     }
 }

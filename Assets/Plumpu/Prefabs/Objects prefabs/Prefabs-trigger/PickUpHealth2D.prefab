@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 2076190811384793613}
   - component: {fileID: 936385300097957318}
   m_Layer: 9
-  m_Name: PickUpHealth
+  m_Name: PickUpHealth2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

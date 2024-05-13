@@ -48,17 +48,26 @@ public class MainCharacterControllerScript : MonoBehaviour
     //[SerializeField] private GameObject Objects2D;
 
     Animator _anim;
-    private Rigidbody rb;
+    private Rigidbody _rb;
     private bool _facingRight = true;
     private bool _rotate = true;
 
+    CharacterHealthScript _characterHealthScript;
     ManagerObjectsScript _managerObjectsScript;
     TEST_ _test;
+
+    [Space]
+    [Header("Fall damage")]
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private float fallHeight; // Высота, с которой начинается урон от падения
+    private bool isFalling = false;
+    private Vector3 lastPosition;
 
     void Awake()
     {
         _managerObjectsScript = FindAnyObjectByType<ManagerObjectsScript>();
         _test = FindAnyObjectByType<TEST_>();
+        _characterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
 
         _btn1D.onClick.AddListener(PlayerActive1D);
         _btn2D.onClick.AddListener(PlayerActive2D);
@@ -70,7 +79,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         Application.targetFrameRate = 165;
 
         _anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
 
         _btn2D.interactable = false;
     }
@@ -83,6 +92,9 @@ public class MainCharacterControllerScript : MonoBehaviour
         //{
         //    obj1d.SetActive(false);
         //}
+
+        rb = GetComponent<Rigidbody>();
+        lastPosition = transform.position;
     }
 
     private void FixedUpdate()
@@ -115,6 +127,46 @@ public class MainCharacterControllerScript : MonoBehaviour
         {
             ButtonJump();
         }
+
+        //if (rb.velocity.y < 0 && !isFalling) // Персонаж начинает падать
+        //{
+        //    isFalling = true;
+        //}
+        else if (rb.velocity.y >= 0 && IsGrounded == true) // Персонаж закончил падать
+        {
+            float fallDistance = lastPosition.y - transform.position.y;
+            if (fallDistance >= fallHeight) // Проверяем, с какой высоты падает персонаж
+            {
+                float damage = (fallDistance / fallHeight); // Вычисляем урон от падения
+                TakeDamage(damage);
+            }
+
+            isFalling = false;
+            lastPosition = transform.position;
+        }
+    }
+
+    void TakeDamage(float damage)
+    {
+
+        if (damage >= 3.0f)
+        {
+            // Реализация нанесения урона персонажу
+            Debug.Log("-3 health " + damage);
+            _characterHealthScript.Damage(3);
+        }
+        else if (damage >= 2.0f)
+        {
+            // Реализация нанесения урона персонажу
+            Debug.Log("-2 health " + damage);
+            _characterHealthScript.Damage(2);
+        }
+        else if (damage >= 1.0f)
+        {
+            // Реализация нанесения урона персонажу
+            Debug.Log("-1 health " + damage);
+            _characterHealthScript.Damage(1);
+        }
     }
 
     public void Flip()
@@ -140,7 +192,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         _boolJump = true;
         if (IsGrounded == true)
         {
-            rb.velocity = Vector3.up * _jump * 1.2f;
+            _rb.velocity = Vector3.up * _jump * 1.2f;
         }
     }
     public void ButtonStop()

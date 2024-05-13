@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 159372072302456289}
   m_Layer: 0
   m_Name: MainCharacter
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1055,6 +1055,8 @@ MonoBehaviour:
   _btn3D: {fileID: 2103500556591344403}
   btnForwardBackward: {fileID: 7282018529826053739}
   btnLeftRight: {fileID: 7630323174003992600}
+  rb: {fileID: 7058984248094257663}
+  fallHeight: 2
 --- !u!114 &1794819272816615107
 MonoBehaviour:
   m_ObjectHideFlags: 0
