@@ -56,6 +56,7 @@ public class MainCharacterControllerScript : MonoBehaviour
     ManagerObjectsScript _managerObjectsScript;
     ElevatorScript _elevatorScript;
     TEST_ _test;
+    float _fadeFloat = 0.6f;
 
     [Space]
     [Header("Fall damage")]
@@ -157,13 +158,13 @@ public class MainCharacterControllerScript : MonoBehaviour
                 Debug.Log("-3 health " + damage);
                 _characterHealthScript.Damage(3);
             }
-            else if (damage >= 2.0f)
+            if (damage >= 2.0f)
             {
                 // Реализация нанесения урона персонажу
                 Debug.Log("-2 health " + damage);
                 _characterHealthScript.Damage(2);
             }
-            else if (damage >= 1.0f)
+            if (damage >= 1.0f)
             {
                 // Реализация нанесения урона персонажу
                 Debug.Log("-1 health " + damage);
@@ -261,7 +262,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         _btn2D.interactable = true;
         _btn3D.interactable = true;
 
-        _test.FadeObjects1D(0.7f);
+        _test.FadeObjects1D(_fadeFloat);
         _test.FadeObjects3D(1);
     }
     public void PlayerActive2D()
@@ -344,6 +345,6 @@ public class MainCharacterControllerScript : MonoBehaviour
         _btn3D.interactable = false;
 
         _test.FadeObjects1D(1);
-        _test.FadeObjects3D(0.7f);
+        _test.FadeObjects3D(_fadeFloat);
     }
 }

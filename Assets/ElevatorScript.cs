@@ -50,14 +50,16 @@ public class ElevatorScript : MonoBehaviour
     [SerializeField] private GameObject _elevatorDoor;
 
     [SerializeField] private Transform[] _floors;
+    [SerializeField] private Button[] _button;
 
     private GameObject _btnCharJump;
 
     [SerializeField] private GameObject _canvasBtnFloors;
     [SerializeField] private TextMeshProUGUI _currentFloorText;
 
+    public bool inElevator = false;
     public bool isMoving = false;
-    [SerializeField] private int currentFloor = 0;
+    public int currentFloor = 0;
 
     private void Awake()
     {
@@ -67,6 +69,15 @@ public class ElevatorScript : MonoBehaviour
         _currentFloorText.text = "Floor: <color=red>" + currentFloor;
 
         _canvasBtnFloors.SetActive(false);
+
+        _button[0].onClick.AddListener(() => MoveToFloor(0));
+
+
+        for (int i = 0; i <= _button.Length - 1; i++)
+        {
+            int localI = i;
+            _button[i].onClick.AddListener(() => MoveToFloor(localI));
+        }
     }
 
     void Update()
@@ -87,11 +98,8 @@ public class ElevatorScript : MonoBehaviour
         {
             if (floorNumber >= 0 && floorNumber < _floors.Length)
             {
-
                 StartCoroutine(MoveElevator(_floors[floorNumber].position));
                 currentFloor = floorNumber;
-
-                _currentFloorText.text = "Floor: <color=red>" + currentFloor;
             }
         }
 
@@ -107,7 +115,11 @@ public class ElevatorScript : MonoBehaviour
 
     IEnumerator MoveElevator(Vector3 targetPosition)
     {
-        _character.parent = _elevator;
+        if (inElevator == true)
+        {
+            _character.parent = _elevator;
+        }
+
 
         _elevatorDoor.SetActive(true);
         isMoving = true;
@@ -117,6 +129,7 @@ public class ElevatorScript : MonoBehaviour
             yield return null;
         }
         isMoving = false;
+        _currentFloorText.text = "Floor: <color=red>" + currentFloor;
         _elevatorDoor.SetActive(false);
 
         _character.parent = null;
@@ -128,14 +141,19 @@ public class ElevatorScript : MonoBehaviour
         {
             _canvasBtnFloors.SetActive(true);
             _btnCharJump.SetActive(false);
+
+            inElevator = true;
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
             _canvasBtnFloors.SetActive(false);
             _btnCharJump.SetActive(true);
+
+            inElevator = false;
         }
     }
 }
