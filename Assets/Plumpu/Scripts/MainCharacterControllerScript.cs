@@ -16,6 +16,12 @@ public class MainCharacterControllerScript : MonoBehaviour
     public bool _boolJump = false;
 
     [Space]
+    [Header("Hat pivot")]
+    [SerializeField] private Transform _hatPivot;
+    public bool _lookLeft;
+    public bool _lookRight = true;
+
+    [Space]
     [Header("Jump")]
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _whatIsGround;
@@ -44,7 +50,7 @@ public class MainCharacterControllerScript : MonoBehaviour
     [SerializeField] private GameObject btnForwardBackward;
     [SerializeField] private GameObject btnLeftRight;
 
-    [Header("Objects active")]
+    //[Header("Objects active")]
     //[SerializeField] private GameObject Objects1D;
     //[SerializeField] private GameObject Objects2D;
 
@@ -53,18 +59,20 @@ public class MainCharacterControllerScript : MonoBehaviour
     private bool _facingRight = true;
     private bool _rotate = true;
 
-    CharacterHealthScript _characterHealthScript;
-    ManagerObjectsScript _managerObjectsScript;
-    ElevatorScript _elevatorScript;
-    TEST_ _test;
-    float _fadeFloat = 0.6f;
-
     [Space]
     [Header("Fall damage")]
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float fallHeight; // Высота, с которой начинается урон от падения
     public bool isFalling = false;
     public Vector3 lastPosition;
+
+    float _fadeFloat = 0.6f; // fade sprites
+
+    // ---------------------------------------------------Scripts
+    CharacterHealthScript _characterHealthScript;
+    ManagerObjectsScript _managerObjectsScript;
+    ElevatorScript _elevatorScript;
+    TEST_ _test;
 
     void Awake()
     {
@@ -143,7 +151,6 @@ public class MainCharacterControllerScript : MonoBehaviour
         {
             ButtonJump();
         }
-        
 
         //if (rb.velocity.y < 0 && !isFalling) // Персонаж начинает падать
         //{
@@ -189,12 +196,27 @@ public class MainCharacterControllerScript : MonoBehaviour
     public void ButtonRight()
     {
         _horSpeed = _speed;
+
+        if (_lookLeft == true)
+        {
+            _lookRight = true;
+            _lookLeft = false;
+            SvipeHatPivot();
+        }
     }
 
     public void ButtonLeft()
     {
         _horSpeed = -_speed;
+
+        if (_lookRight == true)
+        {
+            _lookRight = false;
+            _lookLeft = true;
+            SvipeHatPivot();
+        }
     }
+
     public void ButtonJump()
     {
         _boolJump = true;
@@ -222,6 +244,13 @@ public class MainCharacterControllerScript : MonoBehaviour
             transform.Rotate(0, 0, 0);
             _rotate = true;
         }
+    }
+
+    void SvipeHatPivot()
+    {
+        Vector3 SvipePosition = _hatPivot.localPosition;
+        SvipePosition.x *= -1;
+        _hatPivot.localPosition = SvipePosition; // hat pivot svipe
     }
 
     public void PlayerActive1D()

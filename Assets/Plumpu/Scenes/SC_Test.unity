@@ -2427,11 +2427,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6963222124654833638, guid: 96aceb4b259fca64caf2632194d69894, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: -35.5
       objectReference: {fileID: 0}
     - target: {fileID: 6963222124654833638, guid: 96aceb4b259fca64caf2632194d69894, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 29.95
       objectReference: {fileID: 0}
     - target: {fileID: 6963222124654833638, guid: 96aceb4b259fca64caf2632194d69894, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13528,7 +13528,7 @@ GameObject:
   - component: {fileID: 3651860482945369456}
   - component: {fileID: 6809119058348473007}
   m_Layer: 9
-  m_Name: Health
+  m_Name: HatSprite
   m_TagString: Obj2D
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13542,20 +13542,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3049848702981613866}
   m_CullTransparentMesh: 1
---- !u!114 &1627487947714865911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5952874011603786395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d364e777e0588047924065aa2ff1dde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _canvas: {fileID: 2796150699996421744}
-  _btnCanvas: {fileID: 926699674050242068}
 --- !u!114 &2162819462425346423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14134,8 +14120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3365219318065459141}
   - component: {fileID: 82542233428910907}
-  - component: {fileID: 1627487947714865911}
-  - component: {fileID: 5952874011603786396}
+  - component: {fileID: 5952874011603786397}
   m_Layer: 0
   m_Name: PickUpHat
   m_TagString: Untagged
@@ -14143,27 +14128,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &5952874011603786396
-BoxCollider:
+--- !u!114 &5952874011603786397
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5952874011603786395}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.6, y: 0.6, z: 0.6}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d57b284e996a049ae40a8b4f713431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hat: {fileID: 1410711392339520167}
+  _hatPivot: {fileID: 0}
+  _canvas: {fileID: 2796150699996421744}
+  _btnCanvas: {fileID: 926699674050242068}
 --- !u!212 &6809119058348473007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14204,7 +14184,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -994740599
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4172031661787985012, guid: c4a700ce57796df4ea2957d8ddffa905, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
