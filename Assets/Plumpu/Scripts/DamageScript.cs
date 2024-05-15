@@ -6,20 +6,17 @@ public class DamageScript : MonoBehaviour
 {
     CharacterHealthScript _haracterHealthScript;
     [SerializeField] private int _damage = 1;
-    //[SerializeField] private Collider _collider;
+
     string playerTag = "Player";
 
     private void Start()
     {
         _haracterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
-
-        //_collider = GetComponent<Collider>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider objCollider)
     {
-        //Debug.Log(_collider);
-        if (other.CompareTag(playerTag))
+        if (objCollider.CompareTag(playerTag))
         {
             _haracterHealthScript.Damage(_damage);
         }

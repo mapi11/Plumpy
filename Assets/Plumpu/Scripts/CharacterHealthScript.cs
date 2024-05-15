@@ -85,7 +85,7 @@ public class CharacterHealthScript : MonoBehaviour
         }
     }
 
-    void Deadth()
+    public void Deadth()
     {
         Instantiate(_DieWindow, _windowContent);
         Time.timeScale = 0f;

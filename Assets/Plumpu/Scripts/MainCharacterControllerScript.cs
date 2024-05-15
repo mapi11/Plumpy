@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.PlayerLoop;
 
 public class MainCharacterControllerScript : MonoBehaviour
 {
@@ -63,7 +64,7 @@ public class MainCharacterControllerScript : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float fallHeight; // Высота, с которой начинается урон от падения
     public bool isFalling = false;
-    private Vector3 lastPosition;
+    public Vector3 lastPosition;
 
     void Awake()
     {
@@ -97,7 +98,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         //}
 
         rb = GetComponent<Rigidbody>();
-        lastPosition = transform.position;
+        lastPosition = _groundCheck.position;
     }
 
     private void FixedUpdate()
@@ -105,6 +106,18 @@ public class MainCharacterControllerScript : MonoBehaviour
         transform.Translate(_horSpeed, 0, 0);
 
         IsGrounded = Physics.CheckSphere(_groundCheck.position, _checkRadiusGround, _whatIsGround);
+
+        if (rb.velocity.y >= 0) // Персонаж закончил падать
+        {
+            float fallDistance = lastPosition.y - transform.position.y;
+            lastPosition = transform.position;
+
+            if (fallDistance >= fallHeight) // Проверяем, с какой высоты падает персонаж
+            {
+                float damage = (fallDistance / fallHeight); // Вычисляем урон от падения
+                FallDamage(damage);
+            }
+        }
     }
 
     public void Update()
@@ -130,22 +143,13 @@ public class MainCharacterControllerScript : MonoBehaviour
         {
             ButtonJump();
         }
+        
 
         //if (rb.velocity.y < 0 && !isFalling) // Персонаж начинает падать
         //{
         //    isFalling = true;
         //}
-        else if (rb.velocity.y >= 0 && IsGrounded == true) // Персонаж закончил падать
-        {
-            float fallDistance = lastPosition.y - transform.position.y;
-            if (fallDistance >= fallHeight) // Проверяем, с какой высоты падает персонаж
-            {
-                float damage = (fallDistance / fallHeight); // Вычисляем урон от падения
-                FallDamage(damage);
-            }
 
-            lastPosition = transform.position;
-        }
     }
 
     void FallDamage(float damage)
@@ -158,13 +162,13 @@ public class MainCharacterControllerScript : MonoBehaviour
                 Debug.Log("-3 health " + damage);
                 _characterHealthScript.Damage(3);
             }
-            if (damage >= 2.0f)
+            else if (damage >= 2.0f)
             {
                 // Реализация нанесения урона персонажу
                 Debug.Log("-2 health " + damage);
                 _characterHealthScript.Damage(2);
             }
-            if (damage >= 1.0f)
+            else if (damage >= 1.0f)
             {
                 // Реализация нанесения урона персонажу
                 Debug.Log("-1 health " + damage);

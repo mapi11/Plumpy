@@ -57,12 +57,16 @@ public class ElevatorScript : MonoBehaviour
     [SerializeField] private GameObject _canvasBtnFloors;
     [SerializeField] private TextMeshProUGUI _currentFloorText;
 
+    MainCharacterControllerScript _mainCharacterControllerScript;
+
     public bool inElevator = false;
     public bool isMoving = false;
     public int currentFloor = 0;
 
     private void Awake()
     {
+        _mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
+
         _btnCharJump = GameObject.Find("BtnJump");
         _character = GameObject.Find("MainCharacter").transform;
 
@@ -131,6 +135,8 @@ public class ElevatorScript : MonoBehaviour
         isMoving = false;
         _currentFloorText.text = "Floor: <color=red>" + currentFloor;
         _elevatorDoor.SetActive(false);
+
+        _mainCharacterControllerScript.lastPosition = transform.position; // При выходе из лифта обновляется актуальная позиция персонажа
 
         _character.parent = null;
     }
