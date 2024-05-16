@@ -2029,17 +2029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &985344979 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6429203586652474323, guid: bd41c5514944efe40a335a0f2af31e87, type: 3}
-  m_PrefabInstance: {fileID: 985344954}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1002226313 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7676364997864216579, guid: bd41c5514944efe40a335a0f2af31e87, type: 3}
@@ -2239,6 +2228,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1920080887182953614, guid: bd41c5514944efe40a335a0f2af31e87, type: 3}
   m_PrefabInstance: {fileID: 985344954}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1166399736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2741856574092694347, guid: bd41c5514944efe40a335a0f2af31e87, type: 3}
+  m_PrefabInstance: {fileID: 985344954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1167337686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2570,6 +2570,7 @@ MonoBehaviour:
   _thxShowFps: {fileID: 2018545143}
   _thxHideFps: {fileID: 439314835}
   _txtFpsPrefab: {fileID: 5668069222261751496, guid: 556c1800fa8639d4eafcc106aacf5e70, type: 3}
+  showFps: 0
   _btnChangeGraphic: {fileID: 985344971}
   _windowChangeGraphic: {fileID: 985344960}
   _btnChangeLanguage: {fileID: 1002226313}
@@ -2587,7 +2588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _btnCloseSettings: {fileID: 643922400}
-  _btnDelSave: {fileID: 985344979}
+  _btnDelSave: {fileID: 1166399736}
   _btnMusic:
   - {fileID: 985344968}
   - {fileID: 985344967}

@@ -9,11 +9,13 @@ public class PickUpHatScript : MonoBehaviour
     [Header("Hat")]
     [SerializeField] private GameObject _hat;
     [SerializeField] private Transform _hatPivot;
+    public bool _hatIsPicked;
 
     [Space]
     [Header("Canvas")]
     [SerializeField] private GameObject _canvas;
     [SerializeField] private Button _btnCanvas;
+
 
     private void Awake()
     {
@@ -39,12 +41,23 @@ public class PickUpHatScript : MonoBehaviour
 
     void PickUpHat()
     {
+        if (_hatPivot.transform.childCount > 0)
+        {
+            Destroy(_hatPivot.transform.GetChild(0).gameObject);
+        }
+
+        _hatIsPicked = true;
+
         Debug.Log("Hat picket");
 
         _hat.transform.parent = _hatPivot;
         _hat.transform.position = _hatPivot.position;
 
+        gameObject.SetActive(false);
+
         Destroy(gameObject);
-        Destroy(_canvas);
+
+        //Destroy(_canvas);
+        _hatIsPicked = true;
     }
 }

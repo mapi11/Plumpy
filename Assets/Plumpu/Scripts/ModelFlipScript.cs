@@ -4,27 +4,21 @@ using UnityEngine;
 
 public class ModelFlipScript : MonoBehaviour
 {
-    MainCharacterControllerScript HorSpeed;
-    private float PSHorSpeed;
-
-    public Animator anim2D;
-
-    public SpriteRenderer SR2D;
+    MainCharacterControllerScript _mainCharacterControllerScript;
+    [SerializeField] private SpriteRenderer SR2D;
 
     void Start()
     {
-        HorSpeed = FindAnyObjectByType<MainCharacterControllerScript>();
+        _mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
     }
     
     private void Update()
     {
-        PSHorSpeed = HorSpeed._horSpeed;
-
-        if (PSHorSpeed < 0)
+        if (_mainCharacterControllerScript._horSpeed < 0)
         {
             SR2D.flipX = true;
         }
-        else if (PSHorSpeed > 0)
+        else if (_mainCharacterControllerScript._horSpeed > 0)
         {
             SR2D.flipX = false;
         }
