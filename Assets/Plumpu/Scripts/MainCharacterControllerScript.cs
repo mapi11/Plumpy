@@ -21,6 +21,7 @@ public class MainCharacterControllerScript : MonoBehaviour
     public bool _lookLeft;
     public bool _lookRight = true;
     public bool _isFliped;
+    public int _hatID;
 
     [Space]
     [Header("Jump")]
