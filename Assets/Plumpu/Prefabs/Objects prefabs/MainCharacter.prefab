@@ -399,7 +399,6 @@ GameObject:
   - component: {fileID: 5826637944699977437}
   - component: {fileID: 3735020297724542861}
   - component: {fileID: 3735020297724542860}
-  - component: {fileID: 1210627094004591331}
   m_Layer: 0
   m_Name: Character-2D
   m_TagString: Player
@@ -420,6 +419,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 597209375466493164}
+  - {fileID: 6566157604929930385}
   m_Father: {fileID: 4005401898280240807}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -532,19 +532,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57664b92ef35995469e83564a33c61ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1210627094004591331
-MonoBehaviour:
+--- !u!1 &4177310389939801376
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4005401899341333098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aca4c9c03ea0ddc4ca122d8fbc232d39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SR2D: {fileID: 4005401899341333097}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6566157604929930385}
+  m_Layer: 0
+  m_Name: DropObjectPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6566157604929930385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4177310389939801376}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7, y: 0, z: -0.11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4005401899341333099}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6730860335645265917
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +667,7 @@ GameObject:
   m_Layer: 0
   m_Name: HatPivot
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1099,7 +1117,7 @@ MonoBehaviour:
   _jump: 4
   _horSpeed: 0
   _boolJump: 0
-  _hatPivot: {fileID: 597209375466493164}
+  _flipObject: {fileID: 4005401899341333099}
   _lookLeft: 0
   _lookRight: 1
   _groundCheck: {fileID: 4005401898869952073}

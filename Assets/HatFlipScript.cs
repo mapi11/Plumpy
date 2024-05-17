@@ -7,38 +7,29 @@ public class HatFlipScript : MonoBehaviour
 {
     public PickUpHatScript _pickUpHatScript;
     [SerializeField] private SpriteRenderer _hatSpriteRenderer;
-    [SerializeField] private Button _takeOffHat;
+    [SerializeField] private Button _btnTakeOffHat;
     [SerializeField] private GameObject _hatPrefab;
 
-    MainCharacterControllerScript _mainCharacterControllerScript;
+
+
+    private Transform _DropPivot;
+
+    //MainCharacterControllerScript _mainCharacterControllerScript;
 
     void Awake()
     {
-        _mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
+        //_mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
 
-        _takeOffHat.onClick.AddListener(TakeOffHat);
-    }
-    
-    private void Update()
-    {
-        if (_pickUpHatScript._hatIsPicked == true)
-        {
-            if (_mainCharacterControllerScript._lookRight == true)
-            {
-                _hatSpriteRenderer.flipX = true;
-            }
-            else
-            {
-                _hatSpriteRenderer.flipX = false;
-            }
-        }
+        _DropPivot = GameObject.Find("DropObjectPivot").transform;
+
+        _btnTakeOffHat.onClick.AddListener(TakeOffHat);
     }
 
     private void TakeOffHat()
     {
-        if (_pickUpHatScript._hatIsPicked == true)
-        {
-            Destroy(gameObject);
-        }
+        Debug.Log("Take Off Hat");
+        Instantiate(_hatPrefab, _DropPivot);
+        _DropPivot.DetachChildren();
+        Destroy(gameObject);
     }
 }

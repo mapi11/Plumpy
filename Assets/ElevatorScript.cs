@@ -74,13 +74,14 @@ public class ElevatorScript : MonoBehaviour
 
         _canvasBtnFloors.SetActive(false);
 
-        _button[0].onClick.AddListener(() => MoveToFloor(0));
+        //_button[0].onClick.AddListener(() => MoveToFloor(0));
 
 
         for (int i = 0; i <= _button.Length - 1; i++)
         {
             int localI = i;
-            _button[i].onClick.AddListener(() => MoveToFloor(localI));
+            _button[localI].onClick.AddListener(() => MoveToFloor(localI));
+            _button[localI].interactable = true;
         }
     }
 
@@ -98,6 +99,13 @@ public class ElevatorScript : MonoBehaviour
 
     public void MoveToFloor(int floorNumber)
     {
+        for (int i = 0; i <= _button.Length - 1; i++)
+        {
+            int localI = i;
+            _button[localI].interactable = true;
+        }
+        _button[floorNumber].interactable = false;
+
         if (!isMoving)
         {
             if (floorNumber >= 0 && floorNumber < _floors.Length)

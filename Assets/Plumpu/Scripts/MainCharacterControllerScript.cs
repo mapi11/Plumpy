@@ -17,9 +17,10 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     [Space]
     [Header("Hat pivot")]
-    [SerializeField] private Transform _hatPivot;
+    [SerializeField] private Transform _flipObject;
     public bool _lookLeft;
     public bool _lookRight = true;
+    public bool _isFliped;
 
     [Space]
     [Header("Jump")]
@@ -131,25 +132,62 @@ public class MainCharacterControllerScript : MonoBehaviour
     public void Update()
     {
         // --------------------------------------------- For PC
-        if (Input.GetKeyDown(KeyCode.A)) //Left
+        if (Active1D != true)
         {
-            _horSpeed = -_speed;
+            if (Input.GetKeyDown(KeyCode.A)) //Left
+            {
+                ButtonLeft();
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                ButtonStop();
+            }
+            if (Input.GetKeyDown(KeyCode.D)) //Right
+            {
+                ButtonRight();
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                ButtonStop();
+            }
         }
-        if (Input.GetKeyUp(KeyCode.A))
+        else
         {
-            _horSpeed = 0.0f;
+            if (Input.GetKeyDown(KeyCode.S)) //Left
+            {
+                ButtonLeft();
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                ButtonStop();
+            }
+            if (Input.GetKeyDown(KeyCode.W)) //Right
+            {
+                ButtonRight();
+            }
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                ButtonStop();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.D)) //Right
-        {
-            _horSpeed = _speed;
-        }
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            _horSpeed = 0.0f;
-        }
+
+
         if (Input.GetKeyDown(KeyCode.Space)) //Jump
         {
             ButtonJump();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            PlayerActive1D();
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            PlayerActive2D();
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            PlayerActive3D();
         }
 
         //if (rb.velocity.y < 0 && !isFalling) // Персонаж начинает падать
@@ -184,14 +222,14 @@ public class MainCharacterControllerScript : MonoBehaviour
         }
     }
 
-    public void Flip()
-    {
-        _facingRight = !_facingRight;
+    //public void Flip()
+    //{
+    //    _facingRight = !_facingRight;
 
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
-    }
+    //    Vector3 Scaler = transform.localScale;
+    //    Scaler.x *= -1;
+    //    transform.localScale = Scaler;
+    //}
 
     public void ButtonRight()
     {
@@ -201,7 +239,8 @@ public class MainCharacterControllerScript : MonoBehaviour
         {
             _lookRight = true;
             _lookLeft = false;
-            SvipeHatPivot();
+            FlipModel();
+            
         }
     }
 
@@ -213,7 +252,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         {
             _lookRight = false;
             _lookLeft = true;
-            SvipeHatPivot();
+            FlipModel();
         }
     }
 
@@ -246,11 +285,16 @@ public class MainCharacterControllerScript : MonoBehaviour
         }
     }
 
-    void SvipeHatPivot()
+    void FlipModel()
     {
-        Vector3 SvipePosition = _hatPivot.localPosition;
+        _isFliped = !_isFliped;
+
+        Debug.Log("Flip");
+        Vector3 SvipePosition = _flipObject.lossyScale;
         SvipePosition.x *= -1;
-        _hatPivot.localPosition = SvipePosition; // hat pivot svipe
+        _flipObject.localScale = SvipePosition; // hat pivot svipe
+        //_objPivot
+
     }
 
     public void PlayerActive1D()

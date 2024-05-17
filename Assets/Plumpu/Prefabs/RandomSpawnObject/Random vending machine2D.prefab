@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: Random vending machine2D
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.57, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -48,4 +49,4 @@ MonoBehaviour:
   - {fileID: 4681242540064864170, guid: d8c79a4608072554082b02470c1b685b, type: 3}
   - {fileID: 2919137188391933815, guid: 51fffcd0dcb7b28409e086601c1ceab1, type: 3}
   - {fileID: 8166120439429119514, guid: 23facdfaf4d87ce48abda5f0c0324554, type: 3}
-  Raduis: 4
+  _parent: {fileID: 0}
