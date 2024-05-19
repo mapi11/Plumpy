@@ -7,6 +7,7 @@ public class ElevatorCallBackScript : MonoBehaviour
 {
     [SerializeField] private GameObject _canvas;
     [SerializeField] private Button _btnCallBack;
+    [SerializeField] private GameObject _imgInteract;
     [SerializeField] private int _callBackFloor;
 
     ElevatorScript _elevatorScript;
@@ -15,6 +16,7 @@ public class ElevatorCallBackScript : MonoBehaviour
     {
         _elevatorScript = FindAnyObjectByType<ElevatorScript>();
 
+        _imgInteract.gameObject.SetActive(false);
         _btnCallBack.interactable = false;
 
         _btnCallBack.onClick.AddListener(CallBack);
@@ -26,6 +28,7 @@ public class ElevatorCallBackScript : MonoBehaviour
         {
             if (_elevatorScript.currentFloor != _callBackFloor)
             {
+                _imgInteract.gameObject.SetActive(true);
                 _btnCallBack.interactable = true;
             }
         }
@@ -34,6 +37,7 @@ public class ElevatorCallBackScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            _imgInteract.gameObject.SetActive(false);
             _btnCallBack.interactable = false;
         }
     }
@@ -42,6 +46,7 @@ public class ElevatorCallBackScript : MonoBehaviour
     {
         _elevatorScript.MoveToFloor(_callBackFloor);
 
+        _imgInteract.gameObject.SetActive(false);
         _btnCallBack.interactable = false;
     }
 }

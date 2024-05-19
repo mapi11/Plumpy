@@ -24,7 +24,7 @@ public class PickUpHatScript : MonoBehaviour
 
     private void Awake()
     {
-        _mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
+        _mainCharacterControllerScript = MainCharacterControllerScript.instance;
 
         _btnPickUpHat.onClick.AddListener(PickUpHat);
 

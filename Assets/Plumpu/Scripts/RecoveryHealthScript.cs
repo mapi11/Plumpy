@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RecoveryHealthScript : MonoBehaviour
+public class RecoveryHealthScript : MonoBehaviour, IdisableScript
 {
+    [SerializeField] private GameObject _disbledPart;
+
     CharacterHealthScript _healthsScript;
 
     [Space]
@@ -39,6 +41,7 @@ public class RecoveryHealthScript : MonoBehaviour
             _canvas.SetActive(true);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
@@ -52,5 +55,31 @@ public class RecoveryHealthScript : MonoBehaviour
         _healthsScript.Heal();
         //_Child.SetActive(false);
         Destroy(gameObject);
+    }
+    //------------------------------------------------------------------Check player
+    private bool PlayerInTrigger()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.5f);
+
+        foreach (Collider collider in hitColliders)
+        {
+            if (collider.tag == "Player")
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void Disble()
+    {
+        _disbledPart.SetActive(false);
+    }
+
+    public void Enable()
+    {
+        _disbledPart.SetActive(true);
+
+        _canvas.SetActive(PlayerInTrigger());
     }
 }

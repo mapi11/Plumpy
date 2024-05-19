@@ -193,7 +193,7 @@ Transform:
   m_Children:
   - {fileID: 5137064578455606161}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1613600069650173926
 BoxCollider:
@@ -228,11 +228,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e11932842f978041a888a2d9f6d96ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _disbledPart: {fileID: 1613600069650173922}
   ChangeScene: 0
   scene: 
   _btnDoor: {fileID: 5524307146842976516}
   _roomEntry: {fileID: 0}
-  canvas: {fileID: 5728553230047611171}
+  _canvas: {fileID: 5728553230047611171}
   _delayOpen: 0.5
   _txtClosed: {fileID: 3726521610661087101}
   _locked: 0

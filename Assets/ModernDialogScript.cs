@@ -7,14 +7,22 @@ using UnityEngine.TextCore.Text;
 
 public class ModernDialogScript : MonoBehaviour
 {
+    [Space]
+    [Header("Prefab")]
     public GameObject dialogPrefab;
+    [Space]
+    [Header("Character")]
     public GameObject _childObject;
     public Sprite playerIcon;
-    public Sprite characterIcon;
+    [Space]
+    [Header("Animation")]
+    public RuntimeAnimatorController playerIconAnimation;
+    public RuntimeAnimatorController characterAnimation;
     public string[] dialogueLines;
 
     private bool _isTalked;
     private int currentLine = 0;
+    private Sprite characterIcon;
     private Transform _canvasPlayer;
     private GameObject dialogBox;
     private TextMeshProUGUI dialogText;
@@ -32,9 +40,8 @@ public class ModernDialogScript : MonoBehaviour
         _character = GameObject.Find("Character-2D");
     }
     private void OnTriggerEnter(Collider other)
-
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && dialogueLines.Length != 0)
         {
             StartDialogue();
         }
@@ -42,25 +49,39 @@ public class ModernDialogScript : MonoBehaviour
 
     private void StartDialogue()
     {
+
         if (_isTalked == false)
         {
             _isTalked = true;
 
             _mainCharacterControllerScript.ButtonStop();
-            _phoneButtons.SetActive(false);
-            _character.SetActive(false);
-            _childObject.SetActive(false);
 
             dialogBox = Instantiate(dialogPrefab, _canvasPlayer);
 
-            dialogBox.GetComponentInChildren<Button>().onClick.AddListener(NextLine);
+            characterIcon = _childObject.transform.GetComponent<SpriteRenderer>().sprite;
+
             dialogBox.transform.GetChild(0).GetComponent<Image>().sprite = playerIcon;
             dialogBox.transform.GetChild(1).GetComponent<Image>().sprite = characterIcon;
+            dialogBox.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(NextLine);
+            dialogBox.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(EndDialogue);
+
+            if (playerIconAnimation != null)
+            {
+                dialogBox.transform.GetChild(0).GetComponent<Animator>().runtimeAnimatorController = playerIconAnimation;
+            }
+            if (characterAnimation != null)
+            {
+                dialogBox.transform.GetChild(1).GetComponent<Animator>().runtimeAnimatorController = characterAnimation;
+            }
+
             dialogText = dialogBox.GetComponentInChildren<TextMeshProUGUI>();
 
-            //dialogBox.SetActive(true);
             currentLine = 0;
             dialogText.text = dialogueLines[currentLine];
+
+            _phoneButtons.SetActive(false);
+            _character.SetActive(false);
+            _childObject.SetActive(false);
         }
     }
 
@@ -73,15 +94,15 @@ public class ModernDialogScript : MonoBehaviour
         }
         else
         {
-            _phoneButtons.SetActive(true);
-            _character.SetActive(true);
-            _childObject.SetActive(true);
             EndDialogue();
         }
     }
 
     private void EndDialogue()
     {
+        _phoneButtons.SetActive(true);
+        _character.SetActive(true);
+        _childObject.SetActive(true);
         Destroy(dialogBox);
     }
 }

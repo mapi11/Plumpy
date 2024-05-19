@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2358538497728417638}
   - component: {fileID: 8280462495593415293}
+  - component: {fileID: 6641553097533017247}
   m_Layer: 0
   m_Name: Male-Doctor-PNG-Photo
   m_TagString: Untagged
@@ -84,6 +85,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6641553097533017247
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2172167963208452931}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3525970623336034265
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,10 +177,7 @@ MonoBehaviour:
   dialogPrefab: {fileID: 103208888167567944, guid: 7602f50bc2b398542a44b3424ab26694, type: 3}
   _childObject: {fileID: 2172167963208452931}
   playerIcon: {fileID: -7951872367350438509, guid: dccfee9e661d64d41a26632177a2ca55, type: 3}
-  characterIcon: {fileID: 21300000, guid: 1ccc653672ca37649a1cb44b797a2f9b, type: 3}
+  playerIconAnimation: {fileID: 9100000, guid: 9d2f45933cf39b44aa038de1a20f862c, type: 2}
+  characterAnimation: {fileID: 0}
   dialogueLines:
-  - Hello
-  - World
-  - '!!!'
-  - hahaha
-  - hahaha
+  - Empty

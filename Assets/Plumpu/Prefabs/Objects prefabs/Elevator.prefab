@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 5770230948386487031}
   - component: {fileID: 5555662598654285611}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImgInteract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,6 +849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvas: {fileID: 4069503825192433900}
   _btnCallBack: {fileID: 8446647624697241676}
+  _imgInteract: {fileID: 1073916844921501105}
   _callBackFloor: 0
 --- !u!1 &4069503825192433900
 GameObject:
@@ -4373,8 +4374,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Floor: <color=red>0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 17519576872245c439dc2d52c06e558b, type: 2}
+  m_sharedMaterial: {fileID: -6978752342434156130, guid: 17519576872245c439dc2d52c06e558b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4398,7 +4399,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.25
+  m_fontSize: 0.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeyDoorScript : MonoBehaviour
+public class KeyDoorScript : MonoBehaviour, IdisableScript
 {
+    [SerializeField] private GameObject _disbledPart;
+
     [Space]
     [Header("Door")]
     [SerializeField] private DoorEntryScript door;
@@ -44,5 +46,32 @@ public class KeyDoorScript : MonoBehaviour
         Debug.Log("You can open door #" + door.doorID);
         //_keyChild.SetActive(false);
         Destroy(gameObject);
+    }
+
+    //------------------------------------------------------------------Check player
+    private bool PlayerInTrigger()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.5f);
+
+        foreach (Collider collider in hitColliders)
+        {
+            if (collider.tag == "Player")
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void Disble()
+    {
+        _disbledPart.SetActive(false);
+    }
+
+    public void Enable()
+    {
+        _disbledPart.SetActive(true);
+
+        _canvas.SetActive(PlayerInTrigger());
     }
 }

@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VendingMachineScript : MonoBehaviour
+public class VendingMachineScript : MonoBehaviour, IdisableScript
 {
+    [SerializeField] private GameObject _disbledPart;
     //[SerializeField] private GameObject VendingMachine;
+    [Space]
     [SerializeField] private GameObject water;
-    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject _canvas;
     [SerializeField] private Button _btnSpawnObj;
     [SerializeField] private Transform _parent;
 
+    [Space]
     [Header("Random range")]
     [SerializeField] private int Min_int=1;
     [SerializeField] private int Max_int=3;
@@ -26,13 +29,15 @@ public class VendingMachineScript : MonoBehaviour
         _btnSpawnObj.onClick.AddListener(Spawn_water);
 
         _int = Random.Range(Min_int, Max_int+1);
+
+        TEST_.AddObject(gameObject, ObjectTags.Obj2D);
     }
 
     private void Update()
     {
         if (_int <= 0)
         {
-            canvas.SetActive(false);
+            _canvas.SetActive(false);
             //Destroy(canvas);
         }
     }
@@ -43,7 +48,7 @@ public class VendingMachineScript : MonoBehaviour
         {
             //if (Active.Active2D == true || Active.Active3D == true)
             //{
-                canvas.SetActive(true);
+                _canvas.SetActive(true);
             //}
         }
     }
@@ -51,7 +56,7 @@ public class VendingMachineScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            canvas.SetActive(false);
+            _canvas.SetActive(false);
         }
     }
 
@@ -60,5 +65,34 @@ public class VendingMachineScript : MonoBehaviour
         _int--;
         Instantiate(water, _parent.transform.position, _parent.transform.rotation, _parent.transform);
         count++;
+    }
+
+    //------------------------------------------------------------------Check player
+    private bool PlayerInTrigger()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.5f);
+
+        foreach (Collider collider in hitColliders)
+        {
+            if (collider.tag == "Player")
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void Disble()
+    {
+        _disbledPart.SetActive(false);
+
+
+    }
+
+    public void Enable()
+    {
+        _disbledPart.SetActive(true);
+
+        _canvas.SetActive(PlayerInTrigger());
     }
 }

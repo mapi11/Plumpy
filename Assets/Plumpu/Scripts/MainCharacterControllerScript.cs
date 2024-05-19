@@ -59,7 +59,10 @@ public class MainCharacterControllerScript : MonoBehaviour
     Animator _anim;
     private Rigidbody _rb;
     private bool _facingRight = true;
-    private bool _rotate = true;
+    public bool _rotate = true;
+
+    [HideInInspector]
+    public bool _isInDoor;
 
     [Space]
     [Header("Fall damage")]
@@ -72,14 +75,25 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     // ---------------------------------------------------Scripts
     CharacterHealthScript _characterHealthScript;
-    ManagerObjectsScript _managerObjectsScript;
+    //ManagerObjectsScript _managerObjectsScript;
     ElevatorScript _elevatorScript;
     TEST_ _test;
 
+    public static MainCharacterControllerScript instance;
+
     void Awake()
     {
-        _managerObjectsScript = FindAnyObjectByType<ManagerObjectsScript>();
-        _test = FindAnyObjectByType<TEST_>();
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance == this)
+        {
+            Destroy(gameObject);
+        }
+
+    //_managerObjectsScript = FindAnyObjectByType<ManagerObjectsScript>();
+    _test = FindAnyObjectByType<TEST_>();
         _characterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
         _elevatorScript = FindAnyObjectByType<ElevatorScript>();
 
@@ -100,12 +114,15 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     private void Start()
     {
-        //Objects1D.SetActive(false);
+        foreach (GameObject obj1d in _test.tags1) //
+        {
+            obj1d.SetActive(false);
 
-        //foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Deactivate 1D
-        //{
-        //    obj1d.SetActive(false);
-        //}
+            if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+            {
+                disableScript.Disble();
+            }
+        }
 
         rb = GetComponent<Rigidbody>();
         lastPosition = _groundCheck.position;
@@ -290,12 +307,9 @@ public class MainCharacterControllerScript : MonoBehaviour
     {
         _isFliped = !_isFliped;
 
-        Debug.Log("Flip");
         Vector3 SvipePosition = _flipObject.lossyScale;
         SvipePosition.x *= -1;
         _flipObject.localScale = SvipePosition; // hat pivot svipe
-        //_objPivot
-
     }
 
     public void PlayerActive1D()
@@ -315,21 +329,32 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         _rotate = false;
 
-        //foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Deactivate 2D
-        //{
-        //    obj2d.SetActive(false);
-        //}
-        //foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
+        //foreach (GameObject obj1d in _test.taggedObjects1) //
         //{
         //    obj1d.SetActive(true);
         //}
-        foreach (GameObject obj1d in _test.taggedObjects1) //
+        //foreach (GameObject obj2d in _test.taggedObjects2) //
+        //{
+        //    obj2d.SetActive(false);
+        //}
+
+        foreach (GameObject obj1d in _test.tags1) //
         {
             obj1d.SetActive(true);
+            
+            if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+            {
+                disableScript.Enable();
+            }
         }
-        foreach (GameObject obj2d in _test.taggedObjects2) //
+        foreach (GameObject obj2d in _test.tags2) //
         {
             obj2d.SetActive(false);
+
+            if (obj2d.TryGetComponent<IdisableScript>(out var disableScript))
+            {
+                disableScript.Disble();
+            }
         }
 
         Active1D = true;
@@ -360,13 +385,32 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         _rotate = true;
 
-        foreach (GameObject obj1d in _test.taggedObjects1) //
+        //foreach (GameObject obj1d in _test.taggedObjects1) //
+        //{
+        //    obj1d.SetActive(false);
+        //}
+        //foreach (GameObject obj2d in _test.taggedObjects2) //
+        //{
+        //    obj2d.SetActive(true);
+        //}
+
+        foreach (GameObject obj1d in _test.tags1) //
         {
             obj1d.SetActive(false);
+
+            if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+            {
+                disableScript.Disble();
+            }
         }
-        foreach (GameObject obj2d in _test.taggedObjects2) //
+        foreach (GameObject obj2d in _test.tags2) //
         {
             obj2d.SetActive(true);
+
+            if (obj2d.TryGetComponent<IdisableScript>(out var disableScript))
+            {
+                disableScript.Enable();
+            }
         }
 
         Active1D = false;
@@ -384,6 +428,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         camera3D.SetActive(true);
         camera2D.SetActive(false);
         camera1D.SetActive(false);
+
         if (_rotate == false)
         {
             player2D.transform.Rotate(0, -90, 0);
@@ -405,14 +450,46 @@ public class MainCharacterControllerScript : MonoBehaviour
         //{
         //    obj1d.SetActive(true);
         //}
-        foreach (GameObject obj1d in _test.taggedObjects1) //
+        //foreach (GameObject obj2d in _test.taggedObjects2) //
+        //{
+        //    obj2d.SetActive(true);
+        //}
+        //foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Activate 2D
+        //{
+        //    obj2d.SetActive(true);
+        //}
+        //foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
+        //{
+        //    obj1d.SetActive(true);
+        //}
+
+        foreach (GameObject obj1d in _test.tags1) //
         {
             obj1d.SetActive(true);
+
+            if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+            {
+                disableScript.Enable();
+            }
         }
-        foreach (GameObject obj2d in _test.taggedObjects2) //
+        foreach (GameObject obj2d in _test.tags2) //
         {
             obj2d.SetActive(true);
+
+            if (obj2d.TryGetComponent<IdisableScript>(out var disableScript))
+            {
+                disableScript.Enable();
+            }
         }
+
+        //foreach (GameObject obj1d in _test.taggedObjects1) //
+        //{
+        //    obj1d.SetActive(true);
+        //}
+        //foreach (GameObject obj2d in _test.taggedObjects2) //
+        //{
+        //    obj2d.SetActive(true);
+        //}
 
         Active1D = false;
         Active2D = false;
