@@ -117,7 +117,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         lastPosition = _groundCheck.position;
 
-        //PlayerActive2D();
+        PlayerActive2D();
     }
 
     private void FixedUpdate()
@@ -332,20 +332,26 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         foreach (GameObject obj1d in _test.tags1) //
         {
-            obj1d.SetActive(true);
-            
-            if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+            if (obj1d != null)
             {
-                disableScript.Enable();
+                obj1d.SetActive(true);
+
+                if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+                {
+                    disableScript.Enable();
+                }
             }
         }
         foreach (GameObject obj2d in _test.tags2) //
         {
-            obj2d.SetActive(false);
-
-            if (obj2d.TryGetComponent<IdisableScript>(out var disableScript))
+            if (obj2d != null)
             {
-                disableScript.Disble();
+                obj2d.SetActive(false);
+
+                if (obj2d.TryGetComponent<IdisableScript>(out var disableScript))
+                {
+                    disableScript.Disble();
+                }
             }
         }
 
@@ -388,20 +394,26 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         foreach (GameObject obj1d in _test.tags1) //
         {
-            obj1d.SetActive(false);
-
-            if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+            if (obj1d != null)
             {
-                disableScript.Disble();
+                obj1d.SetActive(false);
+
+                if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+                {
+                    disableScript.Disble();
+                }
             }
         }
         foreach (GameObject obj2d in _test.tags2) //
         {
-            obj2d.SetActive(true);
-
-            if (obj2d.TryGetComponent<IdisableScript>(out var disableScript))
+            if (obj2d !=  null)
             {
-                disableScript.Enable();
+                obj2d.SetActive(true);
+
+                if (obj2d.TryGetComponent<IdisableScript>(out var disableScript))
+                {
+                    disableScript.Enable();
+                }
             }
         }
 
@@ -457,20 +469,26 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         foreach (GameObject obj1d in _test.tags1) //
         {
-            obj1d.SetActive(true);
-
-            if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+            if (obj1d != null)
             {
-                disableScript.Enable();
+                obj1d.SetActive(true);
+
+                if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+                {
+                    disableScript.Enable();
+                }
             }
         }
         foreach (GameObject obj2d in _test.tags2) //
         {
-            obj2d.SetActive(true);
-
-            if (obj2d.TryGetComponent<IdisableScript>(out var disableScript))
+            if (obj2d != null)
             {
-                disableScript.Enable();
+                obj2d.SetActive(true);
+
+                if (obj2d.TryGetComponent<IdisableScript>(out var disableScript))
+                {
+                    disableScript.Enable();
+                }
             }
         }
 

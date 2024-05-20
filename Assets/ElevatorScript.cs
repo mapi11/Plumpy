@@ -110,6 +110,13 @@ public class ElevatorScript : MonoBehaviour
         {
             if (floorNumber >= 0 && floorNumber < _floors.Length)
             {
+
+                for (int i = 0; i <= _button.Length - 1; i++)
+                {
+                    int localI = i;
+                    _button[localI].interactable = false;
+                }
+
                 StartCoroutine(MoveElevator(_floors[floorNumber].position));
                 currentFloor = floorNumber;
             }
@@ -131,9 +138,7 @@ public class ElevatorScript : MonoBehaviour
         {
             _character.parent = _elevator;
         }
-
-
-        _elevatorDoor.SetActive(true);
+            _elevatorDoor.SetActive(true);
         isMoving = true;
         while (Vector3.Distance(_elevator.position, targetPosition) > 0.01f)
         {
@@ -147,6 +152,14 @@ public class ElevatorScript : MonoBehaviour
         _mainCharacterControllerScript.lastPosition = transform.position; // При выходе из лифта обновляется актуальная позиция персонажа
 
         _character.parent = null;
+
+
+        for (int i = 0; i <= _button.Length - 1; i++)
+        {
+            int localI = i;
+            _button[localI].interactable = true;
+            _button[currentFloor].interactable = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

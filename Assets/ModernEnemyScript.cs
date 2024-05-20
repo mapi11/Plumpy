@@ -9,12 +9,21 @@ public class ModernEnemyScript : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Animator animator;
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float patrolDistance = 10f;
+    [Space]
+    [Header("Speed")]
+    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float attackSpeed = 4f;
     [SerializeField] private bool movingRight = true;
-    [SerializeField] private float turnProbability = 0.2f;
-    private float initialPosition;
-    private float patrolRadius;
+    [Space]
+    [Header("Patrol & direction")]
+    [SerializeField] private float patrolDistance = 10f;
+    private float turnProbability = 1f;
+    [Space]
+    [SerializeField] private float timeUntilTurn; // Время до следующего разворота
+    [SerializeField] private float turnIntervalMin = 3f; // Минимальное время до разворота
+    [SerializeField] private float turnIntervalMax = 20f; // Максимальное время до разворота
+    //[SerializeField] private float initialPosition;
+    //private float patrolRadius;
 
     [Space]
     [Header("Damage & attack")]
@@ -39,10 +48,11 @@ public class ModernEnemyScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 
-        initialPosition = transform.position.x;
-        patrolRadius = initialPosition + patrolDistance;
+        //initialPosition = transform.position.x;
+        //patrolRadius = initialPosition + patrolDistance;
 
-        Patrol();
+        timeUntilTurn = Random.Range(turnIntervalMin, turnIntervalMax);
+        //Patrol();
     }
 
     void Update()
@@ -80,6 +90,21 @@ public class ModernEnemyScript : MonoBehaviour
                 Patrol();
             }
         }
+
+        if (timeUntilTurn > 0)
+        {
+            timeUntilTurn -= Time.deltaTime;
+        }
+        else
+        {
+            if (Random.Range(0f, 1f) < turnProbability && playerDetected == false)
+            {
+                Stop();
+                ChangeDirection();
+                lostPlayerPosition = transform.position;
+            }
+            timeUntilTurn = Random.Range(turnIntervalMin, turnIntervalMax);
+        }
     }
 
     void Patrol()
@@ -89,7 +114,7 @@ public class ModernEnemyScript : MonoBehaviour
             rb.velocity = new Vector3(moveSpeed, rb.velocity.y, 0);
             if (transform.position.x >= lostPlayerPosition.x + patrolDistance) // Изменяем условие для новой точки патрулирования
             {
-                if (Random.value < turnProbability)
+                if (Random.Range(0f, 0.5f) > turnProbability)
                 {
                     ChangeDirection();
                     lostPlayerPosition = transform.position; // Обновляем позицию, где был потерян игрок
@@ -99,14 +124,15 @@ public class ModernEnemyScript : MonoBehaviour
         else
         {
             rb.velocity = new Vector3(-moveSpeed, rb.velocity.y, 0);
-            //if (transform.position.x <= lostPlayerPosition.x - patrolDistance) // Изменяем условие для новой точки патрулирования
-            //{
-            //    if (Random.value < turnProbability)
-            //    {
-            //        ChangeDirection();
-            //        lostPlayerPosition = transform.position; // Обновляем позицию, где был потерян игрок
-            //    }
-            //}
+            if (transform.position.x <= lostPlayerPosition.x - patrolDistance) // Изменяем условие для новой точки патрулирования
+            {
+                if (Random.Range(0f, 1f) > turnProbability)
+                {
+                    
+                    ChangeDirection();
+                    lostPlayerPosition = transform.position; // Обновляем позицию, где был потерян игрок
+                }
+            }
         }
     }
 
@@ -114,7 +140,7 @@ public class ModernEnemyScript : MonoBehaviour
     {
         Vector3 direction = targetPosition - transform.position;
         direction.Normalize();
-        rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, 0);
+        rb.velocity = new Vector3(direction.x * attackSpeed, rb.velocity.y, 0);
 
         // Поворот персонажа в направлении движения
         if (direction.x > 0 && !movingRight)
@@ -154,149 +180,4 @@ public class ModernEnemyScript : MonoBehaviour
         movingRight = !movingRight;
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
-
-    //public Transform player;
-    //public Rigidbody rb;
-    //public Animator animator;
-    //public float moveSpeed = 5f;
-    //public float patrolDistance = 10f;
-    //public bool movingRight = true;
-    //public float turnProbability = 0.2f;
-    //private float initialPosition;
-    //private float patrolRadius;
-
-    //public float attackRange = 2f;
-    //private float attackCooldown = 2f;
-    //private float lastAttackTime = -999f;
-
-    //public float detectionRange = 5f;
-
-    //void Start()
-    //{
-    //    player = GameObject.FindGameObjectWithTag("Player").transform;
-    //    //rb = GetComponent<Rigidbody>();
-    //    //animator = GetComponent<Animator>();
-
-    //    initialPosition = transform.position.x;
-    //    patrolRadius = initialPosition + patrolDistance;
-    //}
-
-    //void Update()
-    //{
-    //    float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-    //    if (distanceToPlayer > detectionRange)
-    //    {
-    //        Patrol();
-    //    }
-    //    else
-    //    {
-    //        if (distanceToPlayer <= attackRange && Time.time - lastAttackTime >= attackCooldown)
-    //        {
-    //            Stop();
-    //            Attack();
-    //            lastAttackTime = Time.time;
-    //        }
-    //        else
-    //        {
-    //            if (!CheckObstacleInFront())
-    //            {
-    //                MoveTowards(player.position);
-    //            }
-    //            else
-    //            {
-    //                Stop();
-    //            }
-    //        }
-    //    }
-    //}
-
-    //void Patrol()
-    //{
-    //    if (movingRight)
-    //    {
-    //        rb.velocity = new Vector3(moveSpeed, rb.velocity.y, 0);
-    //        if (transform.position.x >= patrolRadius)
-    //        {
-    //            if (Random.value < turnProbability)
-    //            {
-    //                ChangeDirection();
-    //            }
-    //        }
-    //    }
-    //    else
-    //    {
-    //        rb.velocity = new Vector3(-moveSpeed, rb.velocity.y, 0);
-    //        if (transform.position.x <= initialPosition)
-    //        {
-    //            if (Random.value < turnProbability)
-    //            {
-    //                ChangeDirection();
-    //            }
-    //        }
-    //    }
-    //}
-
-    //void MoveTowards(Vector3 targetPosition)
-    //{
-    //    Vector3 direction = targetPosition - transform.position;
-    //    direction.Normalize();
-    //    rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, 0);
-
-    //    // Поворот персонажа в направлении движения
-    //    if (direction.x > 0)
-    //    {
-    //        transform.localScale = new Vector3(1, 1, 1);
-    //    }
-    //    else if (direction.x < 0)
-    //    {
-    //        transform.localScale = new Vector3(-1, 1, 1);
-    //    }
-    //}
-
-    //void Stop()
-    //{
-    //    rb.velocity = Vector2.zero;
-    //    animator.SetFloat("MoveX", 0);
-    //    //animator.SetFloat("MoveY", 0);
-    //}
-
-    //void Attack()
-    //{
-    //    // Логика атаки
-    //    Debug.Log("Attack");
-    //}
-
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Wall"))
-    //    {
-    //        ChangeDirection();
-    //    }
-    //}
-
-    //bool CheckObstacleInFront()
-    //{
-    //    Vector3 direction = movingRight ? Vector3.right : Vector3.left;
-    //    RaycastHit hit;
-    //    if (Physics.Raycast(transform.position, direction, out hit, 1f))
-    //    {
-    //        if (hit.collider.CompareTag("Wall"))
-    //        {
-    //            return true;
-    //        }
-    //    }
-    //    return false;
-    //}
-
-    //void ChangeDirection()
-    //{
-    //    movingRight = !movingRight;
-    //    Vector3 scale = transform.localScale;
-    //    scale.x *= -1;
-    //    transform.localScale = scale;
-
-    //    // Обновляем радиус патрулирования
-    //    patrolRadius = movingRight ? initialPosition + patrolDistance : initialPosition;
-    //}
 }

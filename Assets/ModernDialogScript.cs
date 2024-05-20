@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.TextCore.Text;
-using UnityEditor.VersionControl;
 
 public class ModernDialogScript : MonoBehaviour
 {
