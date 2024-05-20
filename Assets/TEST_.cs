@@ -91,15 +91,7 @@ public class TEST_ : MonoBehaviour
 
     void Start()
     {
-        //foreach (GameObject obj21 in taggedObjects1) // Off 1D
-        //{
-        //    obj21.SetActive(false);
-        //}
-        foreach (GameObject obj1d in tags1) //
-        {
-            obj1d.SetActive(false);
 
-        }
 
     }
 

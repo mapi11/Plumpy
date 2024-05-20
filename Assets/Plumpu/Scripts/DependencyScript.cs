@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class DependencyScript : MonoBehaviour
 {
-    public static DependencyScript instance; 
+    //public static DependencyScript instance; 
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance == this)
-        {
-            Destroy(gameObject);
-        }
-    }
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //    }
+    //    else if (instance == this)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 }

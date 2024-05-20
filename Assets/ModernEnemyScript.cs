@@ -4,6 +4,157 @@ using UnityEngine;
 
 public class ModernEnemyScript : MonoBehaviour
 {
+    [Space]
+    [Header("Enemy settings")]
+    [SerializeField] private Transform player;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float patrolDistance = 10f;
+    [SerializeField] private bool movingRight = true;
+    [SerializeField] private float turnProbability = 0.2f;
+    private float initialPosition;
+    private float patrolRadius;
+
+    [Space]
+    [Header("Damage & attack")]
+    [SerializeField] private int _damage = 1;
+    [SerializeField] private float attackRange = 2f;
+    private float attackCooldown = 2f;
+    private float lastAttackTime = -999f;
+
+    [SerializeField] private float detectionRange = 5f;
+
+    private bool playerDetected = false;
+
+    private Vector3 lastKnownPlayerPosition;
+    private Vector3 lostPlayerPosition;
+
+    CharacterHealthScript _haracterHealthScript;
+
+    void Start()
+    {
+        _haracterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+
+        initialPosition = transform.position.x;
+        patrolRadius = initialPosition + patrolDistance;
+
+        Patrol();
+    }
+
+    void Update()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (playerDetected)
+        {
+            if (distanceToPlayer <= attackRange && Time.time - lastAttackTime >= attackCooldown)
+            {
+                Stop();
+                Attack();
+                lastAttackTime = Time.time;
+            }
+            else if (distanceToPlayer > detectionRange)
+            {
+                playerDetected = false;
+                MoveTowards(lostPlayerPosition); // Продолжаем движение к позиции, где был потерян игрок
+            }
+            else
+            {
+                MoveTowards(player.position); // Преследуем игрока
+            }
+
+        }
+        else
+        {
+            if (distanceToPlayer <= detectionRange)
+            {
+                playerDetected = true;
+                lastKnownPlayerPosition = player.position;
+            }
+            else
+            {
+                Patrol();
+            }
+        }
+    }
+
+    void Patrol()
+    {
+        if (movingRight)
+        {
+            rb.velocity = new Vector3(moveSpeed, rb.velocity.y, 0);
+            if (transform.position.x >= lostPlayerPosition.x + patrolDistance) // Изменяем условие для новой точки патрулирования
+            {
+                if (Random.value < turnProbability)
+                {
+                    ChangeDirection();
+                    lostPlayerPosition = transform.position; // Обновляем позицию, где был потерян игрок
+                }
+            }
+        }
+        else
+        {
+            rb.velocity = new Vector3(-moveSpeed, rb.velocity.y, 0);
+            //if (transform.position.x <= lostPlayerPosition.x - patrolDistance) // Изменяем условие для новой точки патрулирования
+            //{
+            //    if (Random.value < turnProbability)
+            //    {
+            //        ChangeDirection();
+            //        lostPlayerPosition = transform.position; // Обновляем позицию, где был потерян игрок
+            //    }
+            //}
+        }
+    }
+
+    void MoveTowards(Vector3 targetPosition)
+    {
+        Vector3 direction = targetPosition - transform.position;
+        direction.Normalize();
+        rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, 0);
+
+        // Поворот персонажа в направлении движения
+        if (direction.x > 0 && !movingRight)
+        {
+            ChangeDirection();
+        }
+        else if (direction.x < 0 && movingRight)
+        {
+            ChangeDirection();
+        }
+    }
+
+    void Stop()
+    {
+        rb.velocity = Vector2.zero;
+        animator.SetFloat("MoveX", 0);
+    }
+
+    void Attack()
+    {
+        _haracterHealthScript.Damage(_damage);
+        // Логика атаки
+        Debug.Log("Attack");
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            ChangeDirection();
+        }
+    }
+
+    void ChangeDirection()
+    {
+        movingRight = !movingRight;
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+    }
+
     //public Transform player;
     //public Rigidbody rb;
     //public Animator animator;
@@ -148,143 +299,4 @@ public class ModernEnemyScript : MonoBehaviour
     //    // Обновляем радиус патрулирования
     //    patrolRadius = movingRight ? initialPosition + patrolDistance : initialPosition;
     //}
-
-    public Transform player;
-    public Rigidbody rb;
-    public Animator animator;
-    public float moveSpeed = 5f;
-    public float patrolDistance = 10f;
-    public bool movingRight = true;
-    public float turnProbability = 0.2f;
-    private float initialPosition;
-    private float patrolRadius;
-
-    public float attackRange = 2f;
-    private float attackCooldown = 2f;
-    private float lastAttackTime = -999f;
-
-    public float detectionRange = 5f;
-
-    private bool playerDetected = false;
-    private Vector3 lastKnownPlayerPosition;
-
-    private Vector3 lostPlayerPosition;
-
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
-
-        initialPosition = transform.position.x;
-        patrolRadius = initialPosition + patrolDistance;
-    }
-
-    void Update()
-    {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        if (playerDetected)
-        {
-            if (distanceToPlayer <= attackRange && Time.time - lastAttackTime >= attackCooldown)
-            {
-                Stop();
-                Attack();
-                lastAttackTime = Time.time;
-            }
-            else if (distanceToPlayer > detectionRange)
-            {
-                playerDetected = false;
-                MoveTowards(lostPlayerPosition); // Продолжаем движение к позиции, где был потерян игрок
-            }
-            else
-            {
-                MoveTowards(player.position); // Преследуем игрока
-            }
-
-        }
-        else
-        {
-            if (distanceToPlayer <= detectionRange)
-            {
-                playerDetected = true;
-                lastKnownPlayerPosition = player.position;
-            }
-            else
-            {
-                Patrol();
-            }
-        }
-    }
-
-    void Patrol()
-    {
-        if (movingRight)
-        {
-            rb.velocity = new Vector3(moveSpeed, rb.velocity.y, 0);
-            if (transform.position.x >= lostPlayerPosition.x + patrolDistance) // Изменяем условие для новой точки патрулирования
-            {
-                if (Random.value < turnProbability)
-                {
-                    ChangeDirection();
-                    lostPlayerPosition = transform.position; // Обновляем позицию, где был потерян игрок
-                }
-            }
-        }
-        else
-        {
-            rb.velocity = new Vector3(-moveSpeed, rb.velocity.y, 0);
-            if (transform.position.x <= lostPlayerPosition.x - patrolDistance) // Изменяем условие для новой точки патрулирования
-            {
-                if (Random.value < turnProbability)
-                {
-                    ChangeDirection();
-                    lostPlayerPosition = transform.position; // Обновляем позицию, где был потерян игрок
-                }
-            }
-        }
-    }
-
-    void MoveTowards(Vector3 targetPosition)
-    {
-        Vector3 direction = targetPosition - transform.position;
-        direction.Normalize();
-        rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, 0);
-
-        // Поворот персонажа в направлении движения
-        if (direction.x > 0 && !movingRight)
-        {
-            ChangeDirection();
-        }
-        else if (direction.x < 0 && movingRight)
-        {
-            ChangeDirection();
-        }
-    }
-
-    void Stop()
-    {
-        rb.velocity = Vector2.zero;
-        animator.SetFloat("MoveX", 0);
-    }
-
-    void Attack()
-    {
-        // Логика атаки
-        Debug.Log("Attack");
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            ChangeDirection();
-        }
-    }
-
-    void ChangeDirection()
-    {
-        movingRight = !movingRight;
-        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-    }
 }

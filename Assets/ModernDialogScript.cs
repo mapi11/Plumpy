@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.TextCore.Text;
+using UnityEditor.VersionControl;
 
 public class ModernDialogScript : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class ModernDialogScript : MonoBehaviour
     private bool _isTalked;
     private int currentLine = 0;
     private Sprite characterIcon;
+    private string _mainCharName;
+    private string _charName;
     private Transform _canvasPlayer;
     private GameObject dialogBox;
     private TextMeshProUGUI dialogText;
@@ -60,10 +63,16 @@ public class ModernDialogScript : MonoBehaviour
 
             characterIcon = _childObject.transform.GetComponent<SpriteRenderer>().sprite;
 
+            _mainCharName = "Plumpy";
+            _charName = _childObject.name;
+
             dialogBox.transform.GetChild(0).GetComponent<Image>().sprite = playerIcon;
             dialogBox.transform.GetChild(1).GetComponent<Image>().sprite = characterIcon;
             dialogBox.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(NextLine);
             dialogBox.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(EndDialogue);
+
+            dialogBox.transform.GetChild(4).GetChild(0).GetComponent<TextMeshProUGUI>().text = _mainCharName;
+            dialogBox.transform.GetChild(5).GetChild(0).GetComponent<TextMeshProUGUI>().text = _charName;
 
             if (playerIconAnimation != null)
             {

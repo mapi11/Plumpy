@@ -22,33 +22,42 @@ public class MBWBlockScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (_mainCharacterControllerScript.Active2D == true)
+        if (other.tag == "Player")
         {
-            _canvas1D.SetActive(false);
-            _canvas2D.SetActive(true);
+            if (_mainCharacterControllerScript.Active2D == true)
+            {
+                _canvas1D.SetActive(false);
+                _canvas2D.SetActive(true);
+            }
+            if (_mainCharacterControllerScript.Active1D == true)
+            {
+                _canvas1D.SetActive(true);
+                _canvas2D.SetActive(false);
+            }
+            InsideTrigger = true;
         }
-        if (_mainCharacterControllerScript.Active1D == true)
-        {
-            _canvas1D.SetActive(true);
-            _canvas2D.SetActive(false);
-        }
-        InsideTrigger = true;
     }
+
     private void OnTriggerExit(Collider other)
     {
-        _canvas1D.SetActive(false);
-        _canvas2D.SetActive(false);
+        if (other.tag == "Player")
+        {
+            _canvas1D.SetActive(false);
+            _canvas2D.SetActive(false);
 
-        InsideTrigger = false;
+            InsideTrigger = false;
+        }
     }
     public void Active2D()
     {
         ButtonIsClick = true;
     }
+
     public void Active1D()
     {
         ButtonIsClick = false;
     }
+
     private void Update()
     {
         if (_mainCharacterControllerScript.Active2D && ButtonIsClick == false)

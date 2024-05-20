@@ -114,18 +114,10 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     private void Start()
     {
-        //foreach (GameObject obj1d in _test.tags1) //
-        //{
-        //    obj1d.SetActive(false);
-
-        //    if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
-        //    {
-        //        disableScript.Disble();
-        //    }
-        //}
-
         rb = GetComponent<Rigidbody>();
         lastPosition = _groundCheck.position;
+
+        //PlayerActive2D();
     }
 
     private void FixedUpdate()
