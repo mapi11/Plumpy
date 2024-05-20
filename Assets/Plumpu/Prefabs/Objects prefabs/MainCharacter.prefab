@@ -384,8 +384,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.3
-  m_Center: {x: -0.05, y: 0.2, z: 0}
+  m_Radius: 0.27
+  m_Center: {x: -0.05, y: 0.17, z: 0}
 --- !u!1 &4005401899341333098
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +980,7 @@ GameObject:
   - component: {fileID: 7785415791875921521}
   - component: {fileID: 7785415791875921523}
   - component: {fileID: 7785415791875921520}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,6 +1120,8 @@ MonoBehaviour:
   _flipObject: {fileID: 4005401899341333099}
   _lookLeft: 0
   _lookRight: 1
+  _isFliped: 0
+  _hatID: 0
   _groundCheck: {fileID: 4005401898869952073}
   _whatIsGround:
     serializedVersion: 2
@@ -1138,6 +1140,8 @@ MonoBehaviour:
   _btn3D: {fileID: 2103500556591344403}
   btnForwardBackward: {fileID: 7282018529826053739}
   btnLeftRight: {fileID: 7630323174003992600}
+  _rotate: 1
+  _isInDoor: 0
   rb: {fileID: 6152088943775686490}
   fallHeight: 4
   isFalling: 0
@@ -1191,8 +1195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ca312717f31324aa7e706a9ef38bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taggedObjects1: []
-  taggedObjects2: []
   fade1DObjects1D: []
   fade1DObjects3D: []
   objectsWithTag1D: []
@@ -1212,6 +1214,10 @@ PrefabInstance:
     - target: {fileID: 2086598385601893195, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
       value: GUID:ea8d77747e3e71149adddd619e75785e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347551961010450695, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2716145696923525484, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1349,6 +1355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BtnF
       objectReference: {fileID: 0}
+    - target: {fileID: 4830940709074513588, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_text
       value: '>'
@@ -1433,6 +1443,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7919942014737642884}
     m_Modifications:
+    - target: {fileID: 2347551961010450695, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2716145696923525484, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_SizeDelta.x
       value: -16
@@ -1597,6 +1611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BtnPauseOn
       objectReference: {fileID: 0}
+    - target: {fileID: 4830940709074513588, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_text
       value: ==
@@ -1654,6 +1672,10 @@ PrefabInstance:
     - target: {fileID: 2086598385601893195, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
       value: GUID:ea8d77747e3e71149adddd619e75785e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347551961010450695, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2716145696923525484, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1811,6 +1833,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BtnB
       objectReference: {fileID: 0}
+    - target: {fileID: 4830940709074513588, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_text
       value: <
@@ -1899,6 +1925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParentFps
       objectReference: {fileID: 0}
+    - target: {fileID: 5668069222261751496, guid: 556c1800fa8639d4eafcc106aacf5e70, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7953060526134923184, guid: 556c1800fa8639d4eafcc106aacf5e70, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -1984,6 +2014,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7976165756572904884, guid: 556c1800fa8639d4eafcc106aacf5e70, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976165756572904884, guid: 556c1800fa8639d4eafcc106aacf5e70, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2012,6 +2046,10 @@ PrefabInstance:
     - target: {fileID: 2086598385601893195, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
       value: GUID:ea8d77747e3e71149adddd619e75785e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347551961010450695, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2716145696923525484, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2157,6 +2195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BtnLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 4830940709074513588, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_text
       value: <
@@ -2248,6 +2290,10 @@ PrefabInstance:
     - target: {fileID: 2086598385601893195, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
       value: GUID:ea8d77747e3e71149adddd619e75785e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347551961010450695, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
@@ -2389,6 +2435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Btn1D
       objectReference: {fileID: 0}
+    - target: {fileID: 4830940709074513588, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_text
       value: 1D
@@ -2438,6 +2488,10 @@ PrefabInstance:
     - target: {fileID: 2086598385601893195, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
       value: GUID:ea8d77747e3e71149adddd619e75785e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347551961010450695, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2716145696923525484, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2563,6 +2617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BtnRight
       objectReference: {fileID: 0}
+    - target: {fileID: 4830940709074513588, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_text
       value: '>'
@@ -2647,6 +2705,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7919942014737642884}
     m_Modifications:
+    - target: {fileID: 2347551961010450695, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
@@ -2787,6 +2849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Btn3D
       objectReference: {fileID: 0}
+    - target: {fileID: 4830940709074513588, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_text
       value: 3D
@@ -2918,12 +2984,32 @@ PrefabInstance:
       value: CanvasHP
       objectReference: {fileID: 0}
     - target: {fileID: 1575554969624901790, guid: b033629c250b25a4f9cc1b4575e9839f, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575554969624901790, guid: b033629c250b25a4f9cc1b4575e9839f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395762230928147844, guid: b033629c250b25a4f9cc1b4575e9839f, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4052813339097624445, guid: b033629c250b25a4f9cc1b4575e9839f, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629364230511430004, guid: b033629c250b25a4f9cc1b4575e9839f, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238284543625950769, guid: b033629c250b25a4f9cc1b4575e9839f, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792080807578815714, guid: b033629c250b25a4f9cc1b4575e9839f, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2981,6 +3067,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7919942014737642884}
     m_Modifications:
+    - target: {fileID: 2347551961010450695, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
@@ -3121,6 +3211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Btn2D
       objectReference: {fileID: 0}
+    - target: {fileID: 4830940709074513588, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_text
       value: 2D
@@ -3170,6 +3264,10 @@ PrefabInstance:
     - target: {fileID: 2086598385601893195, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
       value: GUID:ea8d77747e3e71149adddd619e75785e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347551961010450695, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2716145696923525484, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3322,6 +3420,10 @@ PrefabInstance:
     - target: {fileID: 4830940709074513588, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_Name
       value: BtnJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830940709074513588, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6573209762815008002, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_text

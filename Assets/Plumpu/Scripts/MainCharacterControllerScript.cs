@@ -93,7 +93,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         }
 
     //_managerObjectsScript = FindAnyObjectByType<ManagerObjectsScript>();
-    _test = FindAnyObjectByType<TEST_>();
+         _test = FindAnyObjectByType<TEST_>();
         _characterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
         _elevatorScript = FindAnyObjectByType<ElevatorScript>();
 
@@ -114,15 +114,15 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     private void Start()
     {
-        foreach (GameObject obj1d in _test.tags1) //
-        {
-            obj1d.SetActive(false);
+        //foreach (GameObject obj1d in _test.tags1) //
+        //{
+        //    obj1d.SetActive(false);
 
-            if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
-            {
-                disableScript.Disble();
-            }
-        }
+        //    if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
+        //    {
+        //        disableScript.Disble();
+        //    }
+        //}
 
         rb = GetComponent<Rigidbody>();
         lastPosition = _groundCheck.position;

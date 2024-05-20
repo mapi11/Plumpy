@@ -17,6 +17,7 @@ TagManager:
   - Obj3D
   - Fade3D
   - Fade1D
+  - Wall
   layers:
   - Default
   - TransparentFX

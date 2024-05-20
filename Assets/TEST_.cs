@@ -95,6 +95,11 @@ public class TEST_ : MonoBehaviour
         //{
         //    obj21.SetActive(false);
         //}
+        foreach (GameObject obj1d in tags1) //
+        {
+            obj1d.SetActive(false);
+
+        }
 
     }
 
