@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 public class ModernEnemyScript : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class ModernEnemyScript : MonoBehaviour
     [SerializeField] private float attackRange = 2f;
     private float attackCooldown = 2f;
     private float lastAttackTime = -999f;
+    bool isAttacking = false;
 
     [SerializeField] private float detectionRange = 5f;
 
@@ -63,9 +65,9 @@ public class ModernEnemyScript : MonoBehaviour
         {
             if (distanceToPlayer <= attackRange && Time.time - lastAttackTime >= attackCooldown)
             {
-                Stop();
                 Attack();
                 lastAttackTime = Time.time;
+                //animator.SetBool("IsAttack", false);
             }
             else if (distanceToPlayer > detectionRange)
             {
@@ -99,7 +101,7 @@ public class ModernEnemyScript : MonoBehaviour
         {
             if (Random.Range(0f, 1f) < turnProbability && playerDetected == false)
             {
-                Stop();
+                
                 ChangeDirection();
                 lostPlayerPosition = transform.position;
             }
@@ -107,11 +109,18 @@ public class ModernEnemyScript : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        //animator.SetFloat("xVelocity",Math)
+    }
+
     void Patrol()
     {
         if (movingRight)
         {
             rb.velocity = new Vector3(moveSpeed, rb.velocity.y, 0);
+            animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+
             if (transform.position.x >= lostPlayerPosition.x + patrolDistance) // Изменяем условие для новой точки патрулирования
             {
                 if (Random.Range(0f, 0.5f) > turnProbability)
@@ -124,6 +133,7 @@ public class ModernEnemyScript : MonoBehaviour
         else
         {
             rb.velocity = new Vector3(-moveSpeed, rb.velocity.y, 0);
+            animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
             if (transform.position.x <= lostPlayerPosition.x - patrolDistance) // Изменяем условие для новой точки патрулирования
             {
                 if (Random.Range(0f, 1f) > turnProbability)
@@ -138,33 +148,44 @@ public class ModernEnemyScript : MonoBehaviour
 
     void MoveTowards(Vector3 targetPosition)
     {
-        Vector3 direction = targetPosition - transform.position;
-        direction.Normalize();
-        rb.velocity = new Vector3(direction.x * attackSpeed, rb.velocity.y, 0);
+        if (!isAttacking)
+        {
+            Vector3 direction = targetPosition - transform.position;
+            direction.Normalize();
+            rb.velocity = new Vector3(direction.x * attackSpeed, rb.velocity.y, 0);
+            animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
 
-        // Поворот персонажа в направлении движения
-        if (direction.x > 0 && !movingRight)
-        {
-            ChangeDirection();
-        }
-        else if (direction.x < 0 && movingRight)
-        {
-            ChangeDirection();
+            // Поворот персонажа в направлении движения
+            if (direction.x > 0 && !movingRight)
+            {
+                ChangeDirection();
+            }
+            else if (direction.x < 0 && movingRight)
+            {
+                ChangeDirection();
+            }
         }
     }
 
-    void Stop()
-    {
-        rb.velocity = Vector2.zero;
-        animator.SetFloat("MoveX", 0);
-    }
 
     void Attack()
     {
-        _haracterHealthScript.Damage(_damage);
-        // Логика атаки
-        Debug.Log("Attack");
+        animator.SetBool("IsAttack", true);
+        if (!isAttacking)
+        {
+            isAttacking = true;
+            // Логика атаки
+            Debug.Log("Attack");
+            isAttacking = false;
 
+            Invoke("StopAttack", 1f);
+        }
+    }
+
+    private void StopAttack()
+    {
+        animator.SetBool("IsAttack", false);
+        _haracterHealthScript.Damage(_damage);
     }
 
     void OnCollisionEnter(Collision collision)

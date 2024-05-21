@@ -7,6 +7,8 @@ public class DontDestroyScript : MonoBehaviour
     private static DontDestroyScript instance;
     private void Awake()
     {
+        Time.timeScale = 1f;
+
         if (instance != null)
         {
             Destroy(gameObject);

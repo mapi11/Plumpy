@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 6474807291352564953}
   - component: {fileID: 736205336129730426}
   m_Layer: 5
-  m_Name: Peshatolka
+  m_Name: txtSkip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 0
+  m_fontSizeMin: 40
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2

@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2849353872332464299
 SpriteRenderer:
@@ -144,7 +144,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4899588708993191237}
-  m_Material: {fileID: 13400000, guid: 7e82f31af0e9c0a4f9a6fc7543bade92, type: 2}
+  m_Material: {fileID: 13400000, guid: 828cfd925575cbc4aaa747de40922362, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -182,7 +182,6 @@ MonoBehaviour:
   timeUntilTurn: 0
   turnIntervalMin: 3
   turnIntervalMax: 15
-  initialPosition: 0
   _damage: 1
   attackRange: 1.5
   detectionRange: 7

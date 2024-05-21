@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RecoveryHealthScript : MonoBehaviour, IdisableScript
 {
     [SerializeField] private GameObject _disbledPart;
+    [SerializeField] private bool _is2D = true;
 
     CharacterHealthScript _healthsScript;
 
@@ -73,12 +74,26 @@ public class RecoveryHealthScript : MonoBehaviour, IdisableScript
 
     public void Disble()
     {
-        _disbledPart.SetActive(false);
+        if (_is2D == true)
+        {
+            _disbledPart.SetActive(false);
+        }
+        else
+        {
+            _disbledPart.SetActive(true);
+        }
     }
 
     public void Enable()
     {
-        _disbledPart.SetActive(true);
+        if (_is2D == true)
+        {
+            _disbledPart.SetActive(true);
+        }
+        else
+        {
+            _disbledPart.SetActive(false);
+        }
 
         _canvas.SetActive(PlayerInTrigger());
     }
