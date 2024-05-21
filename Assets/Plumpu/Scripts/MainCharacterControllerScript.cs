@@ -78,24 +78,26 @@ public class MainCharacterControllerScript : MonoBehaviour
     //ManagerObjectsScript _managerObjectsScript;
     ElevatorScript _elevatorScript;
     TEST_ _test;
+    CameraSwitcherSctipt _cameraSwitcherSctipt;
 
     public static MainCharacterControllerScript instance;
 
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance == this)
-        {
-            Destroy(gameObject);
-        }
+        //if (instance == null)
+        //{
+        //    instance = this;
+        //}
+        //else if (instance == this)
+        //{
+        //    Destroy(gameObject);
+        //}
 
     //_managerObjectsScript = FindAnyObjectByType<ManagerObjectsScript>();
          _test = FindAnyObjectByType<TEST_>();
         _characterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
         _elevatorScript = FindAnyObjectByType<ElevatorScript>();
+        _cameraSwitcherSctipt = FindAnyObjectByType<CameraSwitcherSctipt>();
 
         _btn1D.onClick.AddListener(PlayerActive1D);
         _btn2D.onClick.AddListener(PlayerActive2D);
@@ -306,6 +308,8 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     public void PlayerActive1D()
     {
+        _cameraSwitcherSctipt.CameraSwitch1D();
+
         ButtonStop();
 
         camera1D.SetActive(true);
@@ -368,6 +372,8 @@ public class MainCharacterControllerScript : MonoBehaviour
     }
     public void PlayerActive2D()
     {
+        _cameraSwitcherSctipt.CameraSwitch2D();
+
         ButtonStop();
 
         camera2D.SetActive(true);
@@ -427,6 +433,8 @@ public class MainCharacterControllerScript : MonoBehaviour
     }
     public void PlayerActive3D()
     {
+        _cameraSwitcherSctipt.CameraSwitch3D();
+
         ButtonStop();
 
         camera3D.SetActive(true);
