@@ -5,20 +5,30 @@ using UnityEngine;
 public class CameraSwitcherSctipt : MonoBehaviour
 {
     public Camera _cameraPrefab;
-    private Camera mainCamera;
-    public Transform[] targetPoints;
-    public bool isOrthographic = false;
-    public float movementSpeed = 2.0f;
-    public float rotationSpeed = 2.0f;
 
-    public float smoothSpeed = 0.5f;
+    [Space]
+    private Camera mainCamera;
+    [SerializeField] private Transform[] targetPoints;
+    private bool isOrthographic = false;
+    private float movementSpeed = 2.0f;
+    private float rotationSpeed = 2.0f;
+
+    public float smoothSpeed = 0.025f;
     private Vector3 offset;
 
     public int currentTargetIndex = 0;
     public bool isMoving = false;
 
+    [Space]
+    [Header("Player objects")]
+    public GameObject _btnsChange;
+    public GameObject _btnsMovement;
+
+    MainCharacterControllerScript _characterControllerScript;
+
     private void Awake()
     {
+        _characterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
         mainCamera = Instantiate(_cameraPrefab);
     }
 
@@ -27,7 +37,7 @@ public class CameraSwitcherSctipt : MonoBehaviour
         offset = mainCamera.transform.position - targetPoints[currentTargetIndex].position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         //Vector3 newPosition = new Vector3(mainCamera.transform.position.x, targetPoints[currentTargetIndex].position.y + offset.y, mainCamera.transform.position.z);
         Vector3 newPosition = new Vector3(targetPoints[currentTargetIndex].position.x, targetPoints[currentTargetIndex].position.y + offset.y, mainCamera.transform.position.z);
@@ -68,6 +78,9 @@ public class CameraSwitcherSctipt : MonoBehaviour
             //currentTargetIndex = (currentTargetIndex + 1) % targetPoints.Length;
 
             isMoving = false;
+
+            _btnsChange.SetActive(true);
+            _btnsMovement.SetActive(true);
         }
     }
 
@@ -78,7 +91,10 @@ public class CameraSwitcherSctipt : MonoBehaviour
             isOrthographic = false;
             mainCamera.orthographic = false;
             currentTargetIndex = 0;
+            _btnsChange.SetActive(false);
+            _btnsMovement.SetActive(false);
             StartCoroutine(MoveCameraToTarget(targetPoints[currentTargetIndex].position));
+            
         }
     }
     public void CameraSwitch2D()
@@ -86,6 +102,8 @@ public class CameraSwitcherSctipt : MonoBehaviour
         if (isMoving != true)
         {
             currentTargetIndex = 1;
+            _btnsChange.SetActive(false);
+            _btnsMovement.SetActive(false);
             StartCoroutine(MoveCameraToTarget(targetPoints[currentTargetIndex].position));
             isOrthographic = true;
         }
@@ -95,8 +113,11 @@ public class CameraSwitcherSctipt : MonoBehaviour
         if (isMoving != true)
         {
             isOrthographic = false;
+
             mainCamera.orthographic = false;
             currentTargetIndex = 2;
+            _btnsChange.SetActive(false);
+            _btnsMovement.SetActive(false);
             StartCoroutine(MoveCameraToTarget(targetPoints[currentTargetIndex].position));
         }
     }

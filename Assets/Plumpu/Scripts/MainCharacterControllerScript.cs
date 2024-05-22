@@ -43,9 +43,9 @@ public class MainCharacterControllerScript : MonoBehaviour
     public bool Active2D;
     public bool Active3D;
 
-    [SerializeField] private Button _btn1D;
-    [SerializeField] private Button _btn2D;
-    [SerializeField] private Button _btn3D;
+    [SerializeField] public Button _btn1D;
+    [SerializeField] public Button _btn2D;
+    [SerializeField] public Button _btn3D;
 
     [Space]
     [Header("Music Buttons")]
