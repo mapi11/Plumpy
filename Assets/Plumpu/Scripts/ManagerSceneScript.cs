@@ -26,7 +26,7 @@ public class ManagerSceneScript : MonoBehaviour
         //    DontDestroyOnLoad(gameObject);
         //}
 
-        Application.targetFrameRate = 80;
+        Application.targetFrameRate = -1;
 
         LoadingPanel.SetActive(false);
         FadeImage.gameObject.SetActive(false);

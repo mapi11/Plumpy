@@ -69,9 +69,14 @@ public class ManagerSoundScript : MonoBehaviour
         LoadValues();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float volumeValue = volumeSlider.value;
+    }
+
+    private void Update()
+    {
+        
         LoadValues();
     }
 

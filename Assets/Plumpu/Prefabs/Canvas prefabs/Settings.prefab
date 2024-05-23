@@ -3699,6 +3699,14 @@ PrefabInstance:
       value: 2.5000153
       objectReference: {fileID: 0}
     - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 90779917628911064, guid: 00d90b6bbcf24ba43bbe79c02a055647, type: 3}
+    - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 90779917628911064, guid: 00d90b6bbcf24ba43bbe79c02a055647, type: 3}
+    - target: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3826,6 +3834,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7645621342374854226, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3451835506203746226, guid: 23640b238315e68479dc190c7ddd71f3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
