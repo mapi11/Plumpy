@@ -9,9 +9,9 @@ public class CameraSwitcherSctipt : MonoBehaviour
     [Space]
     private Camera mainCamera;
     [SerializeField] private Transform[] targetPoints;
-    private bool isOrthographic = false;
+    private bool isOrthographic = false; private bool is2d = true;
     private float movementSpeed = 2.0f;
-    private float rotationSpeed = 2.0f;
+    private float rotationSpeed = 1f;
 
     public float smoothSpeed = 0.025f;
     private Vector3 offset;
@@ -54,7 +54,7 @@ public class CameraSwitcherSctipt : MonoBehaviour
             Quaternion startRotation = mainCamera.transform.rotation;
 
             float elapsedTime = 0f;
-            float rotationTime = 1f; // Время, за которое камера повернется к точке
+            float rotationTime = rotationSpeed; // Время, за которое камера повернется к точке
 
             while (elapsedTime < 1f)
             {
@@ -88,13 +88,17 @@ public class CameraSwitcherSctipt : MonoBehaviour
     {
         if (isMoving != true) 
         {
-            isOrthographic = false;
             mainCamera.orthographic = false;
+            mainCamera.orthographic = isOrthographic;
             currentTargetIndex = 0;
             _btnsChange.SetActive(false);
             _btnsMovement.SetActive(false);
+            rotationSpeed = 1.0f; movementSpeed = 2.0f;
+
             StartCoroutine(MoveCameraToTarget(targetPoints[currentTargetIndex].position));
-            
+
+            isOrthographic = false;
+            mainCamera.orthographic = isOrthographic;
         }
     }
     public void CameraSwitch2D()
@@ -104,8 +108,12 @@ public class CameraSwitcherSctipt : MonoBehaviour
             currentTargetIndex = 1;
             _btnsChange.SetActive(false);
             _btnsMovement.SetActive(false);
+            rotationSpeed = 0.5f; movementSpeed = 2.5f;
+
             StartCoroutine(MoveCameraToTarget(targetPoints[currentTargetIndex].position));
+
             isOrthographic = true;
+            //mainCamera.orthographic = isOrthographic;
         }
     }
     public void CameraSwitch3D()
@@ -115,9 +123,12 @@ public class CameraSwitcherSctipt : MonoBehaviour
             isOrthographic = false;
 
             mainCamera.orthographic = false;
+            mainCamera.orthographic = isOrthographic;
             currentTargetIndex = 2;
             _btnsChange.SetActive(false);
             _btnsMovement.SetActive(false);
+            rotationSpeed = 1.0f; movementSpeed = 2.0f;
+
             StartCoroutine(MoveCameraToTarget(targetPoints[currentTargetIndex].position));
         }
     }

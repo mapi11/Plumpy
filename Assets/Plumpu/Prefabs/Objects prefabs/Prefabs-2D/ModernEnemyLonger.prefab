@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2849353872332464299
 SpriteRenderer:
@@ -150,7 +150,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -175,8 +175,8 @@ MonoBehaviour:
   player: {fileID: 0}
   rb: {fileID: 8431201353063714447}
   animator: {fileID: 7548179588854823312}
-  moveSpeed: 3
-  attackSpeed: 4.25
+  moveSpeed: 2.75
+  attackSpeed: 3.5
   movingRight: 1
   patrolDistance: 15
   timeUntilTurn: 0

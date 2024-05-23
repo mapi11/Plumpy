@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1613600068933726086}
   - component: {fileID: 1613600068933726085}
   m_Layer: 0
-  m_Name: Door_image-1
+  m_Name: DoorSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ SpriteRenderer:
   m_SortingLayerID: -994740599
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 334591071, guid: 613f4aa0caedb5c4692b11f8a836c9e0, type: 3}
+  m_Sprite: {fileID: -123783184, guid: 1f1bfd3ff9be0bc4585db0a1ccd1fc5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -844,7 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69e29c5010df174cb4d03cd87e98565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameras: []
+  _camera: {fileID: 0}
 --- !u!1 &6245648972472331088
 GameObject:
   m_ObjectHideFlags: 0

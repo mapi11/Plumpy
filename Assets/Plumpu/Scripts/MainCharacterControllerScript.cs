@@ -32,17 +32,13 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     [Space]
     [Header("Player`s active")]
-    public GameObject camera1D;
-    [Header(" ")]
-    public GameObject player2D;
-    public GameObject camera2D;
-    [Header(" ")]
-    public GameObject camera3D;
 
+    public GameObject player2D;
     public bool Active1D;
     public bool Active2D;
     public bool Active3D;
 
+    [Space]
     [SerializeField] public Button _btn1D;
     [SerializeField] public Button _btn2D;
     [SerializeField] public Button _btn3D;
@@ -312,10 +308,6 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         ButtonStop();
 
-        camera1D.SetActive(true);
-        camera2D.SetActive(false);
-        camera3D.SetActive(false);
-
         if (_rotate == true)
         {
             player2D.transform.Rotate(0, 90, 0);
@@ -376,9 +368,6 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         ButtonStop();
 
-        camera2D.SetActive(true);
-        camera3D.SetActive(false);
-        camera1D.SetActive(false);
         if (_rotate == false)
         {
             player2D.transform.Rotate(0, -90, 0);
@@ -436,10 +425,6 @@ public class MainCharacterControllerScript : MonoBehaviour
         _cameraSwitcherSctipt.CameraSwitch3D();
 
         ButtonStop();
-
-        camera3D.SetActive(true);
-        camera2D.SetActive(false);
-        camera1D.SetActive(false);
 
         if (_rotate == false)
         {

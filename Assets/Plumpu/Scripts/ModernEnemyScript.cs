@@ -184,8 +184,12 @@ public class ModernEnemyScript : MonoBehaviour
 
     private void StopAttack()
     {
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        if (distanceToPlayer <= attackRange)
+        {
+            _haracterHealthScript.Damage(_damage);
+        }
         animator.SetBool("IsAttack", false);
-        _haracterHealthScript.Damage(_damage);
     }
 
     void OnCollisionEnter(Collision collision)
