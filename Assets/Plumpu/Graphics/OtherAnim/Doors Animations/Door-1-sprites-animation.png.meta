@@ -21,7 +21,7 @@ TextureImporter:
       213: 9056522988996113685
     second: Door-1-sprites-animation_5
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -38,11 +38,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -81,6 +82,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -122,36 +125,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Door-1
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 10
-        width: 28
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04c3e75968f911670800000000000000
-      internalID: 8507756571462089792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Door-1-sprites-animation_1
       rect:
         serializedVersion: 2
         x: 83
         y: 10
         width: 28
-        height: 51
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,9 +152,9 @@ TextureImporter:
         x: 147
         y: 10
         width: 28
-        height: 51
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,9 +173,9 @@ TextureImporter:
         x: 211
         y: 10
         width: 28
-        height: 51
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,9 +194,9 @@ TextureImporter:
         x: 275
         y: 10
         width: 28
-        height: 51
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -233,9 +215,9 @@ TextureImporter:
         x: 339
         y: 10
         width: 28
-        height: 51
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -243,6 +225,27 @@ TextureImporter:
       bones: []
       spriteID: 515b54bccab3fad70800000000000000
       internalID: 9056522988996113685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door-1-sprites-animation_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 9
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6cb59073de62f845b3a400ae250df21
+      internalID: -907276689
       vertices: []
       indices: 
       edges: []
@@ -258,15 +261,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Door-1-sprites-animation_4: -5129896596872884393
-      Door-1: 8507756571462089792
+      Door-1-sprites-animation_0: -907276689
+      Door-1-sprites-animation_1: -7098811812301699876
       Door-1-sprites-animation_2: -3491108471819344748
       Door-1-sprites-animation_3: 8214525170361487268
-      Door-1-sprites-animation_1: -7098811812301699876
+      Door-1-sprites-animation_4: -5129896596872884393
       Door-1-sprites-animation_5: 9056522988996113685
-  spritePackingTag: 
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

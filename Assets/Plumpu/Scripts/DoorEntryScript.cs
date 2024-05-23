@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DoorEntryScript : MonoBehaviour, IdisableScript
 {
     [SerializeField] private GameObject _disbledPart;
+    [SerializeField] private Animator animator;
 
     [Space]
     [Header("Change scene")]
@@ -70,6 +71,7 @@ public class DoorEntryScript : MonoBehaviour, IdisableScript
 
                 if (ChangeScene == false)
                 {
+                    animator.SetBool("IsOpen", true);
                     PhoneButtons.SetActive(false);
                     _mainCharacterControllerScript.ButtonStop();
                     Invoke("Teleport", _delayOpen);
@@ -90,6 +92,7 @@ public class DoorEntryScript : MonoBehaviour, IdisableScript
         PhoneButtons.SetActive(true);
         _mainCharacterControllerScript.ButtonStop();
 
+        animator.SetBool("IsOpen", false);
         _btnDoor.interactable = true;
         _mainCharacterControllerScript._isInDoor = false;
 

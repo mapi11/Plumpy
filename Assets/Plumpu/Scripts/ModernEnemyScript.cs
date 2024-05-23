@@ -10,6 +10,7 @@ public class ModernEnemyScript : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Animator animator;
+
     [Space]
     [Header("Speed")]
     [SerializeField] private float moveSpeed = 3f;
@@ -42,10 +43,13 @@ public class ModernEnemyScript : MonoBehaviour
     private Vector3 lostPlayerPosition;
 
     CharacterHealthScript _haracterHealthScript;
+    MainCharacterControllerScript _characterControllerScript;
 
     void Start()
     {
         _haracterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
+        _characterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
@@ -185,7 +189,7 @@ public class ModernEnemyScript : MonoBehaviour
     private void StopAttack()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer <= attackRange)
+        if (distanceToPlayer <= attackRange && _characterControllerScript._change_D != true)
         {
             _haracterHealthScript.Damage(_damage);
         }

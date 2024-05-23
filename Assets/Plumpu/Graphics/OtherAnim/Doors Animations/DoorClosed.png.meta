@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 38062ac33492309468cdbb52a18e342f
+guid: 6c0bfdd966f4d9d4b935806abb4ecdbf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,25 +93,25 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 50
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DoorTest_0
+      name: DoorClosed_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 6
+        x: 3
+        y: 3
         width: 28
         height: 52
       alignment: 0
@@ -121,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c026d94eb67a04c49ad046e63b7b54ed
-      internalID: 1159820681
+      spriteID: c6b2a3a131acf7d449408d325dc11c02
+      internalID: -1347544290
       vertices: []
       indices: 
       edges: []
@@ -130,7 +130,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8e126ed7538bdb944b5151615d42e131
+    spriteID: 074fc7dc117069748a782ef2610c7686
     internalID: 0
     vertices: []
     indices: 
@@ -138,7 +138,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DoorTest_0: 1159820681
+      DoorClosed_0: -1347544290
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

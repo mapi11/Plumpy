@@ -37,6 +37,8 @@ public class MainCharacterControllerScript : MonoBehaviour
     public bool Active1D;
     public bool Active2D;
     public bool Active3D;
+    [Space]
+    public bool _change_D;
 
     [Space]
     [SerializeField] public Button _btn1D;
@@ -355,6 +357,9 @@ public class MainCharacterControllerScript : MonoBehaviour
         Active2D = false;
         Active3D = false;
 
+        _change_D = true;
+        Invoke("Change_D", 2f);
+
         _btn1D.interactable = false;
         _btn2D.interactable = true;
         _btn3D.interactable = true;
@@ -415,6 +420,9 @@ public class MainCharacterControllerScript : MonoBehaviour
         Active1D = false;
         Active2D = true;
         Active3D = false;
+
+        _change_D = true;
+        Invoke("Change_D", 2f);
 
         _btn1D.interactable = true;
         _btn2D.interactable = false;
@@ -498,11 +506,19 @@ public class MainCharacterControllerScript : MonoBehaviour
         Active2D = false;
         Active3D = true;
 
+        _change_D = true;
+        Invoke("Change_D", 2f);
+
         _btn1D.interactable = true;
         _btn2D.interactable = true;
         _btn3D.interactable = false;
 
         _test.FadeObjects1D(1);
         _test.FadeObjects3D(_fadeFloat);
+    }
+
+    public void Change_D()
+    {
+        _change_D = false;
     }
 }
