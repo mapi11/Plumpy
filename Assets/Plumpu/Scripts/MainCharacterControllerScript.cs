@@ -50,10 +50,6 @@ public class MainCharacterControllerScript : MonoBehaviour
     [SerializeField] private GameObject btnForwardBackward;
     [SerializeField] private GameObject btnLeftRight;
 
-    //[Header("Objects active")]
-    //[SerializeField] private GameObject Objects1D;
-    //[SerializeField] private GameObject Objects2D;
-
     Animator _anim;
     private Rigidbody _rb;
     private bool _facingRight = true;
@@ -82,16 +78,6 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     void Awake()
     {
-        //if (instance == null)
-        //{
-        //    instance = this;
-        //}
-        //else if (instance == this)
-        //{
-        //    Destroy(gameObject);
-        //}
-
-    //_managerObjectsScript = FindAnyObjectByType<ManagerObjectsScript>();
          _test = FindAnyObjectByType<TEST_>();
         _characterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
         _elevatorScript = FindAnyObjectByType<ElevatorScript>();
@@ -100,9 +86,6 @@ public class MainCharacterControllerScript : MonoBehaviour
         _btn1D.onClick.AddListener(PlayerActive1D);
         _btn2D.onClick.AddListener(PlayerActive2D);
         _btn3D.onClick.AddListener(PlayerActive3D);
-
-        //Objects1D = GameObject.Find("Objects-1D");
-        //Objects2D = GameObject.Find("Objects-2D");
 
         Application.targetFrameRate = 165;
 
@@ -199,12 +182,6 @@ public class MainCharacterControllerScript : MonoBehaviour
         {
             PlayerActive3D();
         }
-
-        //if (rb.velocity.y < 0 && !isFalling) // Персонаж начинает падать
-        //{
-        //    isFalling = true;
-        //}
-
     }
 
     void FallDamage(float damage)
@@ -231,15 +208,6 @@ public class MainCharacterControllerScript : MonoBehaviour
             }
         }
     }
-
-    //public void Flip()
-    //{
-    //    _facingRight = !_facingRight;
-
-    //    Vector3 Scaler = transform.localScale;
-    //    Scaler.x *= -1;
-    //    transform.localScale = Scaler;
-    //}
 
     public void ButtonRight()
     {
@@ -319,15 +287,6 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         _rotate = false;
 
-        //foreach (GameObject obj1d in _test.taggedObjects1) //
-        //{
-        //    obj1d.SetActive(true);
-        //}
-        //foreach (GameObject obj2d in _test.taggedObjects2) //
-        //{
-        //    obj2d.SetActive(false);
-        //}
-
         foreach (GameObject obj1d in _test.tags1) //
         {
             if (obj1d != null)
@@ -383,15 +342,6 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         _rotate = true;
 
-        //foreach (GameObject obj1d in _test.taggedObjects1) //
-        //{
-        //    obj1d.SetActive(false);
-        //}
-        //foreach (GameObject obj2d in _test.taggedObjects2) //
-        //{
-        //    obj2d.SetActive(true);
-        //}
-
         foreach (GameObject obj1d in _test.tags1) //
         {
             if (obj1d != null)
@@ -443,31 +393,6 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         _rotate = true;
 
-        //foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Activate 2D
-        //{
-        //    obj2d.SetActive(true);
-        //}
-        //foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
-        //{
-        //    obj1d.SetActive(true);
-        //}
-        //foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
-        //{
-        //    obj1d.SetActive(true);
-        //}
-        //foreach (GameObject obj2d in _test.taggedObjects2) //
-        //{
-        //    obj2d.SetActive(true);
-        //}
-        //foreach (GameObject obj2d in _managerObjectsScript._objects2D) //Activate 2D
-        //{
-        //    obj2d.SetActive(true);
-        //}
-        //foreach (GameObject obj1d in _managerObjectsScript._objects1D) //Activate 1D
-        //{
-        //    obj1d.SetActive(true);
-        //}
-
         foreach (GameObject obj1d in _test.tags1) //
         {
             if (obj1d != null)
@@ -492,15 +417,6 @@ public class MainCharacterControllerScript : MonoBehaviour
                 }
             }
         }
-
-        //foreach (GameObject obj1d in _test.taggedObjects1) //
-        //{
-        //    obj1d.SetActive(true);
-        //}
-        //foreach (GameObject obj2d in _test.taggedObjects2) //
-        //{
-        //    obj2d.SetActive(true);
-        //}
 
         Active1D = false;
         Active2D = false;
