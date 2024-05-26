@@ -7,6 +7,7 @@ public class DontDestroyScript : MonoBehaviour
     private static DontDestroyScript instance;
     private void Awake()
     {
+        Application.targetFrameRate = 400;
         Time.timeScale = 1f;
 
         if (instance != null)

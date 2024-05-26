@@ -87,8 +87,6 @@ public class MainCharacterControllerScript : MonoBehaviour
         _btn2D.onClick.AddListener(PlayerActive2D);
         _btn3D.onClick.AddListener(PlayerActive3D);
 
-        Application.targetFrameRate = -1;
-
         _anim = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
 
