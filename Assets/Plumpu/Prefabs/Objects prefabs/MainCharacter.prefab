@@ -261,9 +261,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4005401898280240807}
   - component: {fileID: 8360766505964806693}
+  - component: {fileID: 6664042364177901148}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,7 +282,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4005401899341333099}
-  - {fileID: 4005401898869952073}
   - {fileID: 494029319890570773}
   m_Father: {fileID: 2937266745125053577}
   m_RootOrder: -1
@@ -308,6 +308,29 @@ MonoBehaviour:
   isMoving: 0
   _btnsChange: {fileID: 43217756696635594}
   _btnsMovement: {fileID: 3010389488318967505}
+--- !u!136 &6664042364177901148
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005401898280240806}
+  m_Material: {fileID: 13400000, guid: 828cfd925575cbc4aaa747de40922362, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.43
+  m_Height: 1.915
+  m_Direction: 1
+  m_Center: {x: -0.05, y: 0.46, z: 0}
 --- !u!1 &4005401898869952072
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,12 +356,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4005401898869952072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalPosition: {x: 0, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4005401898280240807}
-  m_RootOrder: 2
+  m_Father: {fileID: 4005401899341333099}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &6291797256436642681
 SphereCollider:
@@ -371,12 +394,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4005401899341333099}
   - component: {fileID: 4005401899341333097}
-  - component: {fileID: 5826637944699977437}
   - component: {fileID: 3735020297724542861}
   - component: {fileID: 3735020297724542860}
   m_Layer: 0
   m_Name: Character-2D
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -395,6 +417,7 @@ Transform:
   m_Children:
   - {fileID: 597209375466493164}
   - {fileID: 6566157604929930385}
+  - {fileID: 4005401898869952073}
   m_Father: {fileID: 4005401898280240807}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -407,7 +430,7 @@ SpriteRenderer:
   m_GameObject: {fileID: 4005401899341333098}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -450,29 +473,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!136 &5826637944699977437
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4005401899341333098}
-  m_Material: {fileID: 13400000, guid: 828cfd925575cbc4aaa747de40922362, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.43
-  m_Height: 1.915
-  m_Direction: 1
-  m_Center: {x: -0.05, y: -0.04, z: 0}
 --- !u!95 &3735020297724542861
 Animator:
   serializedVersion: 7
@@ -986,7 +986,7 @@ Transform:
   m_Children:
   - {fileID: 2937266745125053577}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6152088943775686490
 Rigidbody:
@@ -1046,6 +1046,7 @@ MonoBehaviour:
   Active1D: 0
   Active2D: 1
   Active3D: 0
+  _change_D: 0
   _btn1D: {fileID: 1892265650714654101}
   _btn2D: {fileID: 4768466154494717826}
   _btn3D: {fileID: 2103500556591344403}

@@ -120,71 +120,71 @@ public class MainCharacterControllerScript : MonoBehaviour
         }
     }
 
-    //public void Update()
-    //{
-    //    // --------------------------------------------- For PC
-    //    if (Active1D != true)
-    //    {
-    //        if (Input.GetKeyDown(KeyCode.A)) //Left
-    //        {
-    //            ButtonLeft();
-    //        }
-    //        if (Input.GetKeyUp(KeyCode.A))
-    //        {
-    //            ButtonStop();
-    //        }
-    //        if (Input.GetKeyDown(KeyCode.D)) //Right
-    //        {
-    //            ButtonRight();
-    //        }
-    //        if (Input.GetKeyUp(KeyCode.D))
-    //        {
-    //            ButtonStop();
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (Input.GetKeyDown(KeyCode.S)) //Left
-    //        {
-    //            ButtonLeft();
-    //        }
-    //        if (Input.GetKeyUp(KeyCode.S))
-    //        {
-    //            ButtonStop();
-    //        }
-    //        if (Input.GetKeyDown(KeyCode.W)) //Right
-    //        {
-    //            ButtonRight();
-    //        }
-    //        if (Input.GetKeyUp(KeyCode.W))
-    //        {
-    //            ButtonStop();
-    //        }
-    //    }
+    public void Update()
+    {
+        // --------------------------------------------- For PC
+        if (Active1D != true)
+        {
+            if (Input.GetKeyDown(KeyCode.A)) //Left
+            {
+                ButtonLeft();
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                ButtonStop();
+            }
+            if (Input.GetKeyDown(KeyCode.D)) //Right
+            {
+                ButtonRight();
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                ButtonStop();
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.S)) //Left
+            {
+                ButtonLeft();
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                ButtonStop();
+            }
+            if (Input.GetKeyDown(KeyCode.W)) //Right
+            {
+                ButtonRight();
+            }
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                ButtonStop();
+            }
+        }
 
 
-    //    if (Input.GetKeyDown(KeyCode.Space)) //Jump
-    //    {
-    //        ButtonJump();
-    //    }
+        if (Input.GetKeyDown(KeyCode.Space)) //Jump
+        {
+            ButtonJump();
+        }
 
-    //    if (Input.GetKeyDown(KeyCode.F1))
-    //    {
-    //        PlayerActive1D();
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.F2))
-    //    {
-    //        PlayerActive2D();
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.F3))
-    //    {
-    //        PlayerActive3D();
-    //    }
-    //}
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            PlayerActive1D();
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            PlayerActive2D();
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            PlayerActive3D();
+        }
+    }
 
     void FallDamage(float damage)
     {
-        if (_elevatorScript.isMoving != true)
+        if (_elevatorScript != null && _elevatorScript.isMoving != true)
         {
             if (damage >= 3.0f)
             {
