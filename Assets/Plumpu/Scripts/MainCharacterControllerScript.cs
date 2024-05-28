@@ -62,7 +62,7 @@ public class MainCharacterControllerScript : MonoBehaviour
     [Header("Fall damage")]
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float fallHeight; // Высота, с которой начинается урон от падения
-    public bool isFalling = false;
+    //public bool isFalling = false;
     public Vector3 lastPosition;
 
     float _fadeFloat = 0.6f; // fade sprites
@@ -105,11 +105,11 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         IsGrounded = Physics.CheckSphere(_groundCheck.position, _checkRadiusGround, _whatIsGround);
 
-        if (rb.velocity.y >= 0) // Персонаж закончил падать
+
+        if (rb.velocity.y >= -0.01) // Персонаж закончил падать
         {
-            lastPosition = transform.position;
             float fallDistance = lastPosition.y - transform.position.y;
-            
+            lastPosition = transform.position;
 
             if (fallDistance >= fallHeight) // Проверяем, с какой высоты падает персонаж
             {
@@ -121,7 +121,7 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     public void Update()
     {
-        lastPosition = transform.position;
+        //lastPosition = transform.position;
         // --------------------------------------------- For PC
         if (Active1D != true)
         {
