@@ -71,6 +71,9 @@
         },
         {
             "m_Id": "ad77489f3cd84acba0f152e23e3cf241"
+        },
+        {
+            "m_Id": "0f9c184b47c44e8cb5c5c4ef477747a7"
         }
     ],
     "m_GroupDatas": [],
@@ -128,6 +131,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "b35f8b8c85bb4973937dc261703aeac2"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "64451f60605d4577a5a606a0c215e4cb"
+                },
+                "m_SlotId": 2
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "0f9c184b47c44e8cb5c5c4ef477747a7"
                 },
                 "m_SlotId": 0
             }
@@ -252,6 +269,9 @@
             },
             {
                 "m_Id": "ad77489f3cd84acba0f152e23e3cf241"
+            },
+            {
+                "m_Id": "0f9c184b47c44e8cb5c5c4ef477747a7"
             }
         ]
     },
@@ -346,6 +366,40 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "SurfaceDescription.AlphaClipThreshold"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "0f9c184b47c44e8cb5c5c4ef477747a7",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": ".Color",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "27db03c2009e411caf0b70a4e0dcc976"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": ".Color"
 }
 
 {
@@ -471,6 +525,31 @@
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.ColorRGBAMaterialSlot",
+    "m_ObjectId": "27db03c2009e411caf0b70a4e0dcc976",
+    "m_Id": 0,
+    "m_DisplayName": "Color",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Color",
+    "m_StageCapability": 2,
+    "m_Value": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
     "m_Labels": []
 }
 
@@ -828,10 +907,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 29.00006103515625,
-            "y": 298.0,
-            "width": 208.0,
-            "height": 302.0
+            "x": -130.0,
+            "y": 296.0000305175781,
+            "width": 125.99999237060547,
+            "height": 117.99996948242188
         }
     },
     "m_Slots": [
@@ -1201,7 +1280,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Occlusion",
     "m_StageCapability": 2,
-    "m_Value": 1.0,
+    "m_Value": 1.2999999523162842,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
@@ -1244,7 +1323,7 @@
         "m_Id": "f16d1c23bf3f41ccaf905c97845aaa67"
     },
     "m_AllowMaterialOverride": true,
-    "m_SurfaceType": 1,
+    "m_SurfaceType": 0,
     "m_ZWriteControl": 0,
     "m_ZTestMode": 4,
     "m_AlphaMode": 0,
@@ -1784,8 +1863,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 337.0,
-            "y": 418.0,
+            "x": 219.0,
+            "y": 437.0,
             "width": 126.0,
             "height": 77.0
         }
@@ -1834,9 +1913,9 @@
     "m_ShaderOutputName": "Specular",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.5,
-        "y": 0.5,
-        "z": 0.5
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
     },
     "m_DefaultValue": {
         "x": 0.0,

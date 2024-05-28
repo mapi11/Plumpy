@@ -146,9 +146,9 @@ public class TEST_ : MonoBehaviour
             material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha); // устанавливаем целевой альфа канал
             material.SetInt("_ZWrite", 0); // включаем запись в буфер глубины
 
-            Color color = material.color; // получаем цвет материала
-            color.a = _transparencyAmount1D; // устанавливаем уровень прозрачности
-            material.color = color; // сохраняем изменения
+            Color _Color = material.color; // получаем цвет материала
+            _Color.a = _transparencyAmount1D; // устанавливаем уровень прозрачности
+            material.color = _Color; // сохраняем изменения
         }
     }
 
@@ -163,9 +163,9 @@ public class TEST_ : MonoBehaviour
             material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha); // устанавливаем целевой альфа канал
             material.SetInt("_ZWrite", 0); // включаем запись в буфер глубины
 
-            Color color = material.color; // получаем цвет материала
-            color.a = _transparencyAmount3D; // устанавливаем уровень прозрачности
-            material.color = color; // сохраняем изменения
+            Color _Color = material.color; // получаем цвет материала
+            _Color.a = _transparencyAmount3D; // устанавливаем уровень прозрачности
+            material.color = _Color; // сохраняем изменения
         }
     }
 

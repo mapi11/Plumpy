@@ -441,7 +441,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e511124a8a75c504dad40cf6f5b19a8c, type: 2}
+  - {fileID: 2100000, guid: 9a7b7af6393add944ac9ce24400f6911, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -986,7 +986,7 @@ Transform:
   m_Children:
   - {fileID: 2937266745125053577}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6152088943775686490
 Rigidbody:
