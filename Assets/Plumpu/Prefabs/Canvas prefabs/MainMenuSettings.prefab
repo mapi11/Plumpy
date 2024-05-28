@@ -631,6 +631,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Morning-Routine
       objectReference: {fileID: 0}
+    - target: {fileID: 874457473246415124, guid: 43fafdf018d70c241a445574906d5f56, type: 3}
+      propertyPath: _btnCheatsOn
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 939384918226363332, guid: 43fafdf018d70c241a445574906d5f56, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1041,6 +1045,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604277109442109959, guid: 43fafdf018d70c241a445574906d5f56, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638267432630269660, guid: 43fafdf018d70c241a445574906d5f56, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3645597549701997423, guid: 43fafdf018d70c241a445574906d5f56, type: 3}

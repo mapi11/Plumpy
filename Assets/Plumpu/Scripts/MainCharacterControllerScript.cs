@@ -10,8 +10,8 @@ public class MainCharacterControllerScript : MonoBehaviour
 {
     [Space]
     [Header("Player`s settings")]
-    [SerializeField] private float _speed = 0.1f;
-    [SerializeField] private float _jump = 4f;
+    [SerializeField] public float _speed = 0.1f;
+    [SerializeField] public float _jump = 4f;
     public float _horSpeed;
     public bool _boolJump = false;
 
@@ -74,8 +74,6 @@ public class MainCharacterControllerScript : MonoBehaviour
     TEST_ _test;
     CameraSwitcherSctipt _cameraSwitcherSctipt;
 
-    public static MainCharacterControllerScript instance;
-
     void Awake()
     {
          _test = FindAnyObjectByType<TEST_>();
@@ -109,8 +107,9 @@ public class MainCharacterControllerScript : MonoBehaviour
 
         if (rb.velocity.y >= 0) // Персонаж закончил падать
         {
-            float fallDistance = lastPosition.y - transform.position.y;
             lastPosition = transform.position;
+            float fallDistance = lastPosition.y - transform.position.y;
+            
 
             if (fallDistance >= fallHeight) // Проверяем, с какой высоты падает персонаж
             {
@@ -122,6 +121,7 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     public void Update()
     {
+        lastPosition = transform.position;
         // --------------------------------------------- For PC
         if (Active1D != true)
         {
@@ -184,8 +184,8 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     void FallDamage(float damage)
     {
-        if (_elevatorScript != null && _elevatorScript.isMoving != true)
-        {
+        //if (_elevatorScript != null && _elevatorScript.isMoving != true)
+        //{
             if (damage >= 3.0f)
             {
                 // Реализация нанесения урона персонажу
@@ -204,7 +204,7 @@ public class MainCharacterControllerScript : MonoBehaviour
                 Debug.Log("-1 health " + damage);
                 _characterHealthScript.Damage(1);
             }
-        }
+        //}
     }
 
     public void ButtonRight()

@@ -138,15 +138,32 @@ public class ElevatorScript : MonoBehaviour
         {
             _character.parent = _elevator;
         }
-            _elevatorDoor.SetActive(true);
+
+        _elevatorDoor.SetActive(true);
         isMoving = true;
         while (Vector3.Distance(_elevator.position, targetPosition) > 0.01f)
         {
             _elevator.position = Vector3.MoveTowards(_elevator.position, targetPosition, Time.deltaTime * 3.5f);
             yield return null;
+
+            if (inElevator == true)
+            {
+                _character.parent = _elevator;
+            }
+
+            for (int i = 0; i <= _floors.Length - 1; i++)
+            {
+                int localI = i;
+                if (((int)_elevator.transform.position.y) == ((int)_floors[localI].transform.position.y))
+                {
+                    currentFloor = localI;
+                
+                    _currentFloorText.text = "Floor: <color=red>" + currentFloor;
+                }
+            }
         }
         isMoving = false;
-        _currentFloorText.text = "Floor: <color=red>" + currentFloor;
+        //_currentFloorText.text = "Floor: <color=red>" + currentFloor;
         _elevatorDoor.SetActive(false);
 
         _mainCharacterControllerScript.lastPosition = transform.position; // При выходе из лифта обновляется актуальная позиция персонажа

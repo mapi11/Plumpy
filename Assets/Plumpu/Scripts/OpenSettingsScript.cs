@@ -7,25 +7,36 @@ using TMPro;
 
 public class OpenSettingsScript : MonoBehaviour
 {
-    [Space]
-    [Header("Buttons")]
-    [SerializeField] private Button _btnPauseOn;
-
-    [Space]
-    [Header("Windows")]
     [SerializeField] private Transform WindowsContent;
-    [SerializeField] private GameObject Settings;
+    [Space]
+    [Header("Pause")]
+    [SerializeField] private Button _btnPauseOn;
+    [SerializeField] private GameObject SettingsWindow;
+
+    //[Space]
+    //[Header("Settings")]
+    //[SerializeField] private Button _btnCheatsOn;
+    //[SerializeField] private GameObject CheatsWindow;
 
     private void Awake()
     {
         _btnPauseOn.onClick.AddListener(OpenSettings);
+        //_btnCheatsOn.onClick.AddListener(OpenCheats);
     }
 
     void OpenSettings()
     {
-        Settings.gameObject.SetActive(true);
-        Instantiate(Settings, WindowsContent);
+        SettingsWindow.gameObject.SetActive(true);
+        Instantiate(SettingsWindow, WindowsContent);
 
         Time.timeScale = 0;
     }
+
+    //void OpenCheats()
+    //{
+    //    CheatsWindow.gameObject.SetActive(true);
+    //    Instantiate(CheatsWindow, WindowsContent);
+
+    //    Time.timeScale = 0;
+    //}
 }
