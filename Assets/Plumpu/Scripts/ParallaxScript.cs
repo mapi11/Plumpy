@@ -11,7 +11,7 @@ public class ParallaxScript : MonoBehaviour
 
     private void Start()
     {
-        _cam = GameObject.Find("MainCameraPrefab(Clone)");
+        _cam = GameObject.Find("MainCameraPrefab");
 
         _startPos = transform.position.x;
         _lenght = GetComponent<SpriteRenderer>().bounds.size.x;

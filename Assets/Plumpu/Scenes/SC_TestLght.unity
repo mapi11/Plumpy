@@ -216,6 +216,26 @@ PrefabInstance:
       propertyPath: ChangeScene
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1753349468063342307, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753349468063342307, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.30070576
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753349468063342307, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.953717
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753349468063342307, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753349468063342307, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 3726521610661087101, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -234,6 +254,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5704128361926507750, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728553230047611171, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5728553230047611171, guid: eff8156705d2c634786b02ad8493376c, type: 3}

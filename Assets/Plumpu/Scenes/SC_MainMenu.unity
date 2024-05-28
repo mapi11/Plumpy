@@ -4439,7 +4439,7 @@ GameObject:
   - component: {fileID: 7939068106372400932}
   - component: {fileID: 7939068106372400936}
   m_Layer: 0
-  m_Name: MainCameraPrefab(Clone)
+  m_Name: MainCameraPrefab
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

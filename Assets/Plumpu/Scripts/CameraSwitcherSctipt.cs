@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class CameraSwitcherSctipt : MonoBehaviour
 {
-    public Camera _cameraPrefab;
+    public Camera mainCamera;
 
     [Space]
-    private Camera mainCamera;
     [SerializeField] private Transform[] targetPoints;
     private bool isOrthographic = false; private bool is2d = true;
     private float movementSpeed = 2.0f;
@@ -29,7 +28,9 @@ public class CameraSwitcherSctipt : MonoBehaviour
     private void Awake()
     {
         _characterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
-        mainCamera = Instantiate(_cameraPrefab);
+        //mainCamera = Instantiate(_cameraPrefab);
+
+        mainCamera.transform.parent = null;
     }
 
     private void Start()
@@ -40,7 +41,7 @@ public class CameraSwitcherSctipt : MonoBehaviour
     void FixedUpdate()
     {
         //Vector3 newPosition = new Vector3(mainCamera.transform.position.x, targetPoints[currentTargetIndex].position.y + offset.y, mainCamera.transform.position.z);
-        Vector3 newPosition = new Vector3(targetPoints[currentTargetIndex].position.x, targetPoints[currentTargetIndex].position.y + offset.y, mainCamera.transform.position.z);
+        Vector3 newPosition = new Vector3(targetPoints[currentTargetIndex].position.x, targetPoints[currentTargetIndex].position.y, mainCamera.transform.position.z);
         mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, newPosition, smoothSpeed);
     }
 
