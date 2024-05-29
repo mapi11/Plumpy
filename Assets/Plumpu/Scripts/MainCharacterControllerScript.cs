@@ -57,6 +57,8 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     [HideInInspector]
     public bool _isInDoor;
+    //[HideInInspector]
+    public bool _movementRight = true;
 
     [Space]
     [Header("Fall damage")]
@@ -186,6 +188,8 @@ public class MainCharacterControllerScript : MonoBehaviour
     {
         //if (_elevatorScript != null && _elevatorScript.isMoving != true)
         //{
+        if (_isInDoor == false)
+        {
             if (damage >= 3.0f)
             {
                 // Реализация нанесения урона персонажу
@@ -204,6 +208,8 @@ public class MainCharacterControllerScript : MonoBehaviour
                 Debug.Log("-1 health " + damage);
                 _characterHealthScript.Damage(1);
             }
+        }
+
         //}
     }
 
@@ -290,7 +296,6 @@ public class MainCharacterControllerScript : MonoBehaviour
             if (obj1d != null)
             {
                 obj1d.SetActive(true);
-
                 if (obj1d.TryGetComponent<IdisableScript>(out var disableScript))
                 {
                     disableScript.Enable();
@@ -309,6 +314,8 @@ public class MainCharacterControllerScript : MonoBehaviour
                 }
             }
         }
+        _test.FadeOn1D();
+        _test.FadeOff3D();
 
         Active1D = true;
         Active2D = false;
@@ -354,7 +361,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         }
         foreach (GameObject obj2d in _test.tags2) //
         {
-            if (obj2d !=  null)
+            if (obj2d != null)
             {
                 obj2d.SetActive(true);
 
@@ -364,6 +371,8 @@ public class MainCharacterControllerScript : MonoBehaviour
                 }
             }
         }
+        _test.FadeOn1D();
+        _test.FadeOn3D();
 
         Active1D = false;
         Active2D = true;
@@ -415,6 +424,8 @@ public class MainCharacterControllerScript : MonoBehaviour
                 }
             }
         }
+        _test.FadeOff1D();
+        _test.FadeOn3D();
 
         Active1D = false;
         Active2D = false;

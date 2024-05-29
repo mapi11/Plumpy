@@ -17,6 +17,20 @@ public class TEST_ : MonoBehaviour
     //public Renderer[] renderers1D;
     //public Renderer[] renderers3D;
 
+    public Material shaderMaterial_1D;
+    public Material shaderMaterial_3D;
+    public float minAlpha = 0.3f;
+    public float maxAlpha = 1f;
+    public float fadeDuration = 2f;
+
+    private float currentAlpha_1D;
+    private float targetAlpha_1D;
+    private float currentAlpha_3D;
+    private float targetAlpha_3D;
+    private float fadeTimer_1D;
+    private float fadeTimer_3D;
+
+    [Space]
     public List<Renderer> fade1DObjects1D = new List<Renderer>();
     public List<Renderer> fade1DObjects3D = new List<Renderer>();
 
@@ -64,7 +78,7 @@ public class TEST_ : MonoBehaviour
         }
 
 
-        // ----------------------------------------------------------------------------------Fade
+        // ----------------------------------------------------------------------------------Fade objects
 
         objectsWithTag1D = GameObject.FindGameObjectsWithTag("Fade1D");
         objectsWithTag3D = GameObject.FindGameObjectsWithTag("Fade3D");
@@ -87,6 +101,18 @@ public class TEST_ : MonoBehaviour
             }
         }
         Debug.Log("elements 1d: " + fade1DObjects1D.Count + " Elements 3d: " + fade1DObjects3D.Count);
+
+        //----------------------------------------------------------------------------------Fade sprite
+        currentAlpha_1D = 1;
+        currentAlpha_3D = 1;
+
+        currentAlpha_1D = maxAlpha;
+        targetAlpha_1D = maxAlpha;
+        fadeTimer_1D = 0f;
+
+        currentAlpha_3D = maxAlpha;
+        targetAlpha_3D = maxAlpha;
+        fadeTimer_3D = 0f;
     }
 
     void Start()
@@ -133,22 +159,40 @@ public class TEST_ : MonoBehaviour
         //        taggedObjects2.RemoveAll(item => item == null);
         //    }
         //}
+        if (fadeTimer_1D < fadeDuration)
+        {
+            fadeTimer_1D += Time.deltaTime;
+
+            float t = fadeTimer_1D / fadeDuration;
+            currentAlpha_1D = Mathf.Lerp(currentAlpha_1D, targetAlpha_1D, t);
+
+            shaderMaterial_1D.SetFloat("_AlphaValue", currentAlpha_1D);
+        }
+        if (fadeTimer_3D < fadeDuration)
+        {
+            fadeTimer_3D += Time.deltaTime;
+
+            float t = fadeTimer_3D / fadeDuration;
+            currentAlpha_3D = Mathf.Lerp(currentAlpha_3D, targetAlpha_3D, t);
+
+            shaderMaterial_3D.SetFloat("_AlphaValue", currentAlpha_3D);
+        }
     }
 
     public void FadeObjects1D(float _transparencyAmount1D)
     {
         foreach (Renderer renderer in fade1DObjects1D)
         {
-            Material material = renderer.material; // получаем материал объекта
+            //Material material = renderer.material; // получаем материал объекта
 
-            material.SetFloat("_Mode", 2); // устанавливаем прозрачный режим
-            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha); // устанавливаем альфа канал
-            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha); // устанавливаем целевой альфа канал
-            material.SetInt("_ZWrite", 0); // включаем запись в буфер глубины
+            //material.SetFloat("_Mode", 2); // устанавливаем прозрачный режим
+            //material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha); // устанавливаем альфа канал
+            //material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha); // устанавливаем целевой альфа канал
+            //material.SetInt("_ZWrite", 0); // включаем запись в буфер глубины
 
-            Color _Color = material.color; // получаем цвет материала
-            _Color.a = _transparencyAmount1D; // устанавливаем уровень прозрачности
-            material.color = _Color; // сохраняем изменения
+            //Color _Color = material.color; // получаем цвет материала
+            //_Color.a = _transparencyAmount1D; // устанавливаем уровень прозрачности
+            //material.color = _Color; // сохраняем изменения
         }
     }
 
@@ -156,37 +200,41 @@ public class TEST_ : MonoBehaviour
     {
         foreach (Renderer renderer in fade1DObjects3D)
         {
-            Material material = renderer.material; // получаем материал объекта
+            //Material material = renderer.material; // получаем материал объекта
 
-            material.SetFloat("_Mode", 2); // устанавливаем прозрачный режим
-            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha); // устанавливаем альфа канал
-            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha); // устанавливаем целевой альфа канал
-            material.SetInt("_ZWrite", 0); // включаем запись в буфер глубины
+            //material.SetFloat("_Mode", 2); // устанавливаем прозрачный режим
+            //material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha); // устанавливаем альфа канал
+            //material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha); // устанавливаем целевой альфа канал
+            //material.SetInt("_ZWrite", 0); // включаем запись в буфер глубины
 
-            Color _Color = material.color; // получаем цвет материала
-            _Color.a = _transparencyAmount3D; // устанавливаем уровень прозрачности
-            material.color = _Color; // сохраняем изменения
+            //Color _Color = material.color; // получаем цвет материала
+            //_Color.a = _transparencyAmount3D; // устанавливаем уровень прозрачности
+            //material.color = _Color; // сохраняем изменения
         }
     }
 
-    //public void MoveObjectsFromListToArray()
-    //{
-    //    // Проверяем, достаточно ли места в массиве для переноса всех объектов
-    //    if (fade1DObjects1D.Count > renderers1D.Length)
-    //    {
-    //        Debug.LogError("Not enough space in the array to move all objects");
-    //        return;
-    //    }
+    public void FadeOn1D()
+    {
+        targetAlpha_1D = minAlpha;
+        fadeTimer_1D = 0f;
+    }
 
-    //    // Копируем объекты из списка в массив
-    //    for (int i = 0; i < fade1DObjects1D.Count; i++)
-    //    {
-    //        renderers1D[i] = fade1DObjects1D[i];
-    //    }
+    public void FadeOff1D()
+    {
+        targetAlpha_1D = maxAlpha;
+        fadeTimer_1D = 0f;
+    }
+    public void FadeOn3D()
+    {
+        targetAlpha_3D = minAlpha;
+        fadeTimer_3D = 0f;
+    }
 
-    //    // Очищаем список после переноса объектов
-    //    fade1DObjects1D.Clear();
-    //}
+    public void FadeOff3D()
+    {
+        targetAlpha_3D = maxAlpha;
+        fadeTimer_3D = 0f;
+    }
 }
 
 public enum ObjectTags

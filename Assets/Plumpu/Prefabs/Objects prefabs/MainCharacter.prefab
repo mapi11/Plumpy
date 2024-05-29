@@ -1082,6 +1082,7 @@ MonoBehaviour:
   btnLeftRight: {fileID: 7630323174003992600}
   _rotate: 1
   _isInDoor: 0
+  _movementRight: 1
   rb: {fileID: 6152088943775686490}
   fallHeight: 4
   lastPosition: {x: 0, y: 0, z: 0}
@@ -1134,6 +1135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ca312717f31324aa7e706a9ef38bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaderMaterial_1D: {fileID: 2100000, guid: bcd2c100a242cb045a8889498c223cee, type: 2}
+  shaderMaterial_3D: {fileID: 2100000, guid: fcd548a380cc3164cbc825c89bf7e3a3, type: 2}
+  minAlpha: 0.3
+  maxAlpha: 1
+  fadeDuration: 2
   fade1DObjects1D: []
   fade1DObjects3D: []
   objectsWithTag1D: []

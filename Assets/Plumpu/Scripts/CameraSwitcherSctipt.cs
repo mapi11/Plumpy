@@ -41,7 +41,7 @@ public class CameraSwitcherSctipt : MonoBehaviour
     void FixedUpdate()
     {
         //Vector3 newPosition = new Vector3(mainCamera.transform.position.x, targetPoints[currentTargetIndex].position.y + offset.y, mainCamera.transform.position.z);
-        Vector3 newPosition = new Vector3(targetPoints[currentTargetIndex].position.x, targetPoints[currentTargetIndex].position.y, mainCamera.transform.position.z);
+        Vector3 newPosition = new Vector3(targetPoints[currentTargetIndex].position.x, targetPoints[currentTargetIndex].position.y, targetPoints[currentTargetIndex].position.z);
         mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, newPosition, smoothSpeed);
     }
 
