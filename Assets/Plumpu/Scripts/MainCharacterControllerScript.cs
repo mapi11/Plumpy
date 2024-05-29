@@ -66,6 +66,8 @@ public class MainCharacterControllerScript : MonoBehaviour
     [SerializeField] private float fallHeight; // ¬ысота, с которой начинаетс€ урон от падени€
     //public bool isFalling = false;
     public Vector3 lastPosition;
+    //[HideInInspector]
+    public bool _canDamage = true;
 
     float _fadeFloat = 0.6f; // fade sprites
 
@@ -188,7 +190,9 @@ public class MainCharacterControllerScript : MonoBehaviour
     {
         //if (_elevatorScript != null && _elevatorScript.isMoving != true)
         //{
-        if (_isInDoor == false)
+
+
+        if (_isInDoor == false && _canDamage == true)
         {
             if (damage >= 3.0f)
             {
@@ -209,6 +213,8 @@ public class MainCharacterControllerScript : MonoBehaviour
                 _characterHealthScript.Damage(1);
             }
         }
+
+
 
         //}
     }

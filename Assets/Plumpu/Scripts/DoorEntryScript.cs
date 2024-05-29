@@ -33,7 +33,7 @@ public class DoorEntryScript : MonoBehaviour, IdisableScript
 
     private void Awake()
     {
-        character = GameObject.Find("CharacterContent");
+        character = GameObject.Find("MainCharacter");
         PhoneButtons = GameObject.Find("ControllerButtons");
         _mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
 
@@ -75,7 +75,9 @@ public class DoorEntryScript : MonoBehaviour, IdisableScript
                     PhoneButtons.SetActive(false);
                     _mainCharacterControllerScript.ButtonStop();
                     Invoke("Teleport", _delayOpen);
+                    Invoke("CanDamage", 1);
                     _btnDoor.interactable = false;
+                    _mainCharacterControllerScript._canDamage = false;
                 }
                 else
                 {
@@ -95,10 +97,13 @@ public class DoorEntryScript : MonoBehaviour, IdisableScript
         animator.SetBool("IsOpen", false);
         _btnDoor.interactable = true;
         _mainCharacterControllerScript._isInDoor = false;
-
+    }
+    public void CanDamage()
+    {
+        _mainCharacterControllerScript._canDamage = true;
     }
 
-    public void OpenDoor()
+        public void OpenDoor()
     {
         _locked = false;
     }
