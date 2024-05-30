@@ -146,10 +146,10 @@ public class ElevatorScript : MonoBehaviour
             _elevator.position = Vector3.MoveTowards(_elevator.position, targetPosition, Time.deltaTime * 3.5f);
             yield return null;
 
-            if (inElevator == true)
-            {
-                _character.parent = _elevator;
-            }
+            //if (inElevator == true)
+            //{
+            //    _character.parent = _elevator;
+            //}
 
             for (int i = 0; i <= _floors.Length - 1; i++)
             {

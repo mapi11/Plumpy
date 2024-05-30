@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -94,7 +94,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 705cacc6cc6b4a444a18ee14b89d50ae, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 99fb76fc608a72142a47d6224fd84fea, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -2569,6 +2569,8 @@ MonoBehaviour:
   WindowsContent: {fileID: 0}
   _btnCheatsOn: {fileID: 700345315}
   CheatsWindow: {fileID: 7631593895142040541, guid: 08a0e6cbf71e12841bf57032ab72eddb, type: 3}
+  _imgPressed: {fileID: 0}
+  _ingUnPressed: {fileID: 0}
 --- !u!114 &1414395273
 MonoBehaviour:
   m_ObjectHideFlags: 0

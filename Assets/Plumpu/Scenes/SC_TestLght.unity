@@ -948,6 +948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 2438991390915826987, guid: 675d37fda9c60c14f9ec3005411b53f8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e511124a8a75c504dad40cf6f5b19a8c, type: 2}
     - target: {fileID: 3389369834114282123, guid: 675d37fda9c60c14f9ec3005411b53f8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

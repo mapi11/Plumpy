@@ -80,18 +80,19 @@ public class ChangeMovementScript : MonoBehaviour
 
         lastInvokeTime = Time.time; // Запоминаем время последнего вызова
 
+        Vector3 newPosition = new Vector3(transform.position.x, _mainCharacter.transform.position.y, transform.position.z);
 
         if (_mainCharacterControllerScript._movementRight)
         {
             _mainCharacter.transform.rotation = Quaternion.Euler(0, 90, 0);
-            _mainCharacter.transform.position = transform.position;
+            _mainCharacter.transform.position = newPosition;
             _mainCharacterControllerScript._movementRight = false;
 
         }
         else
         {
             _mainCharacter.transform.rotation = initialRotation;
-            _mainCharacter.transform.position = initialPosition;
+            _mainCharacter.transform.position = newPosition;
             _mainCharacterControllerScript._movementRight = true;
 
         }

@@ -46,6 +46,11 @@ public class ManagerSoundScript : MonoBehaviour
     [SerializeField] private Button _btnCheatsOn;
     [SerializeField] private GameObject CheatsWindow;
 
+    [Space]
+    [Header("btns sprites")]
+    [SerializeField] private Image _imgPressed;
+    [SerializeField] private Image _ingUnPressed;
+
     private bool MusicBool = true;
     private bool GraphicBool = true;
     private bool LanguageBool = true;
@@ -73,6 +78,9 @@ public class ManagerSoundScript : MonoBehaviour
         {
             volumeText.text = V.ToString("0.00");
             PlayerPrefs.SetFloat("volumeValue", V);
+
+            //volumeSlider.value = V;
+            AudioListener.volume = V;
         });
 
         AudioListener.volume = 0.5f;
@@ -84,11 +92,10 @@ public class ManagerSoundScript : MonoBehaviour
     //    float volumeValue = volumeSlider.value;
     //}
 
-    private void Update()
-    {
-        
-        LoadValues();
-    }
+    //private void Update()
+    //{
+    //    LoadValues();
+    //}
 
     void LoadValues()
     {

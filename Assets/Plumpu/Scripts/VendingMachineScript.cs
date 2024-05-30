@@ -20,6 +20,8 @@ public class VendingMachineScript : MonoBehaviour, IdisableScript
     [SerializeField] private int Max_int=3;
     private int _int;
 
+    MainCharacterControllerScript _mainCharacterControllerScript;
+
     //public bool test;
 
     [HideInInspector]
@@ -27,6 +29,9 @@ public class VendingMachineScript : MonoBehaviour, IdisableScript
 
     private void Awake()
     {
+
+        _mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
+
         _btnSpawnObj.onClick.AddListener(Spawn_water);
 
         _int = Random.Range(Min_int, Max_int+1);
@@ -97,14 +102,22 @@ public class VendingMachineScript : MonoBehaviour, IdisableScript
 
     public void Enable()
     {
-        if (_is2D == true)
+        if (_mainCharacterControllerScript == false)
         {
-            _disbledPart.SetActive(true);
+            if (_is2D == true)
+            {
+                _disbledPart.SetActive(true);
+            }
+            else
+            {
+                _disbledPart.SetActive(false);
+            }
         }
         else
         {
-            _disbledPart.SetActive(false);
+            _disbledPart.SetActive(true);
         }
+
         _canvas.SetActive(PlayerInTrigger());
     }
 }
