@@ -26,10 +26,12 @@ public class SettingsCharacterScript : MonoBehaviour
     //private int _intGraphic;
 
     MenuMusicScript _menuMusicScript;
+    ManagerSceneScript _managerSceneScript;
 
     void Awake()
     {
         //_menuMusicScript = FindAnyObjectByType<MenuMusicScript>();
+        _managerSceneScript = FindAnyObjectByType<ManagerSceneScript>();
 
         _btnMusic[0].onClick.AddListener(() => SetMusic(0));
         _btnMusic[1].onClick.AddListener(() => SetMusic(1));
@@ -107,6 +109,7 @@ public class SettingsCharacterScript : MonoBehaviour
     private void DelSave()
     {
         PlayerPrefs.DeleteAll();
+        _managerSceneScript.ReloadScene();
         Debug.Log("Save deleted");
     }
 
