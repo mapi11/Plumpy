@@ -107,7 +107,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074085127004023423}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -116,7 +116,7 @@ Transform:
   - {fileID: 1774470612036461726}
   - {fileID: 500131218922610885}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6962721836578898043
 Rigidbody:
@@ -756,7 +756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WindowsContent: {fileID: 5684782603748768065}
   _btnPauseOn: {fileID: 4772481471924605561}
-  SettingsWindow: {fileID: 213387487635601315, guid: 43fafdf018d70c241a445574906d5f56, type: 3}
+  SettingsWindow: {fileID: 9154085223998025388, guid: 43fafdf018d70c241a445574906d5f56, type: 3}
 --- !u!1 &5394335078640913038
 GameObject:
   m_ObjectHideFlags: 0
