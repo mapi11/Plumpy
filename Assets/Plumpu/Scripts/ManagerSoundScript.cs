@@ -11,26 +11,37 @@ public class ManagerSoundScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI volumeText = null;
 
     [Space]
-    [Header("Music Buttons")]
-    [SerializeField] private Button _btnOffMusic;
-    [SerializeField] private Button _btnChangeMusic;
-    [SerializeField] private GameObject _windowChangeMusic;
-    [Header("Image Buttons")]
-    [SerializeField] private GameObject ImgOn;
-    [SerializeField] private GameObject ImgOff;
-    int muted = 1;
-
-    [Space]
     [Header("Fps Buttons")]
     [SerializeField] private Button _btnShowFps;
     [SerializeField] private GameObject _thxShowFps;
     [SerializeField] private GameObject _thxHideFps;
     [SerializeField] private GameObject _txtFpsPrefab;
     Transform parentObject = null;
+
+    [HideInInspector]
     public int showFps = 0;
 
     [Space]
+    [SerializeField] private Transform _windowsContent;
+
+    [Space]
+    [Header("Second content")]
+    [SerializeField] private Button _btnSecondContent;
+    [SerializeField] private GameObject _windowSecondContent;
+    [SerializeField] private GameObject _imgSecondOn;
+    [SerializeField] private GameObject _imgSecondOff;
+
+    [Space]
     [Header("Music Buttons")]
+    [SerializeField] private Button _btnOffMusic;
+    [SerializeField] private Button _btnChangeMusic;
+    [SerializeField] private GameObject _windowChangeMusic;
+    [SerializeField] private GameObject ImgOn;
+    [SerializeField] private GameObject ImgOff;
+    int muted = 1;
+
+    [Space]
+    [Header("Graphic Buttons")]
     [SerializeField] private Button _btnChangeGraphic;
     [SerializeField] private GameObject _windowChangeGraphic;
 
@@ -46,11 +57,7 @@ public class ManagerSoundScript : MonoBehaviour
     [SerializeField] private Button _btnCheatsOn;
     [SerializeField] private GameObject CheatsWindow;
 
-    [Space]
-    [Header("btns sprites")]
-    [SerializeField] private Image _imgPressed;
-    [SerializeField] private Image _ingUnPressed;
-
+    private bool SecondContentBool = true;
     private bool MusicBool = true;
     private bool GraphicBool = true;
     private bool LanguageBool = true;
@@ -65,6 +72,7 @@ public class ManagerSoundScript : MonoBehaviour
         LoadFps();
         FpsAwake();
 
+        _btnSecondContent.onClick.AddListener(ChangeSecondContent);
         _btnChangeMusic.onClick.AddListener(ChangeMusic);
         _btnChangeGraphic.onClick.AddListener(ChangeGraphic);
         _btnChangeLanguage.onClick.AddListener(ChangeLanguage);
@@ -79,24 +87,12 @@ public class ManagerSoundScript : MonoBehaviour
             volumeText.text = V.ToString("0.00");
             PlayerPrefs.SetFloat("volumeValue", V);
 
-            //volumeSlider.value = V;
             AudioListener.volume = V;
         });
 
         AudioListener.volume = 0.5f;
         LoadValues();
     }
-
-    //private void FixedUpdate()
-    //{
-    //    float volumeValue = volumeSlider.value;
-    //}
-
-    //private void Update()
-    //{
-    //    LoadValues();
-    //}
-
     void LoadValues()
     {
         float volumeValue = PlayerPrefs.GetFloat("volumeValue", 0.1f);
@@ -201,16 +197,30 @@ public class ManagerSoundScript : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    void ChangeSecondContent()
+    {
+        if (SecondContentBool != false)
+        {
+            _windowSecondContent.gameObject.SetActive(true);
+            SecondContentBool = false;
+            _imgSecondOn.SetActive(false);
+            _imgSecondOff.SetActive(true);
+        }
+        else
+        {
+            _windowSecondContent.gameObject.SetActive(false);
+            SecondContentBool = true;
+            _imgSecondOn.SetActive(true);
+            _imgSecondOff.SetActive(false);
+        }
+    }
+
     void ChangeMusic()
     {
         if (MusicBool != false)
         {
             _windowChangeMusic.gameObject.SetActive(true);
-            _windowChangeGraphic.gameObject.SetActive(false);
-            _windowChangeLanguag.gameObject.SetActive(false);
-            GraphicBool = true;
             MusicBool = false;
-            LanguageBool = true;
         }
         else
         {
@@ -224,11 +234,9 @@ public class ManagerSoundScript : MonoBehaviour
         if (GraphicBool != false)
         {
             _windowChangeGraphic.gameObject.SetActive(true);
-            _windowChangeMusic.gameObject.SetActive(false);
-            _windowChangeLanguag.gameObject.SetActive(false);
+
             GraphicBool = false;
-            MusicBool = true;
-            LanguageBool = true;
+
         }
         else
         {
@@ -242,11 +250,8 @@ public class ManagerSoundScript : MonoBehaviour
         if (LanguageBool != false)
         {
             _windowChangeLanguag.gameObject.SetActive(true);
-            _windowChangeMusic.gameObject.SetActive(false);
-            _windowChangeGraphic.gameObject.SetActive(false);
+
             LanguageBool = false;
-            MusicBool = true;
-            GraphicBool = true;
         }
         else
         {
