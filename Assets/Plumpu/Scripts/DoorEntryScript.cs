@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class DoorEntryScript : MonoBehaviour, IdisableScript
 {
     [SerializeField] private GameObject _disbledPart;
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator _animDoor;
+
+    public Transform _camera;
 
     [Space]
     [Header("Change scene")]
@@ -19,6 +21,7 @@ public class DoorEntryScript : MonoBehaviour, IdisableScript
     [Header("Canvas")]
     [SerializeField] private Button _btnDoor;
     [SerializeField] private GameObject _roomEntry;
+    [SerializeField] private Animator _animRoomEntry;
     [SerializeField] private GameObject _canvas;
 
     private GameObject PhoneButtons;
@@ -71,13 +74,17 @@ public class DoorEntryScript : MonoBehaviour, IdisableScript
 
                 if (ChangeScene == false)
                 {
-                    animator.SetBool("IsOpen", true);
+                    _camera = GameObject.Find("MainCameraPrefab").transform;
+
+                    _animRoomEntry.SetBool("IsOpen", true);
+                    _animDoor.SetBool("IsOpen", true);
                     PhoneButtons.SetActive(false);
+
                     _mainCharacterControllerScript.ButtonStop();
+
                     Invoke("Teleport", _delayOpen);
-                    Invoke("CanDamage", 1);
+
                     _btnDoor.interactable = false;
-                    _mainCharacterControllerScript._canDamage = false;
                 }
                 else
                 {
@@ -89,21 +96,27 @@ public class DoorEntryScript : MonoBehaviour, IdisableScript
 
     public void Teleport()
     {
-
         character.transform.position = _roomEntry.transform.position;
+        _camera.transform.position = character.transform.position;
+        _mainCharacterControllerScript.lastPosition = transform.position; // При выходе из лифта обновляется актуальная позиция персонажа
+
         PhoneButtons.SetActive(true);
         _mainCharacterControllerScript.ButtonStop();
 
-        animator.SetBool("IsOpen", false);
+        _animRoomEntry.SetBool("IsOpen", false);
+
+        _animDoor.SetBool("IsOpen", false);
+        _animRoomEntry.SetBool("IsOpen", false);
         _btnDoor.interactable = true;
-        _mainCharacterControllerScript._isInDoor = false;
+
+        Invoke("CanDamage", _delayOpen/2); // Чтобы игрок не разбился при переходе
     }
     public void CanDamage()
     {
-        _mainCharacterControllerScript._canDamage = true;
+        _mainCharacterControllerScript._isInDoor = false;
     }
 
-        public void OpenDoor()
+    public void OpenDoor()
     {
         _locked = false;
     }

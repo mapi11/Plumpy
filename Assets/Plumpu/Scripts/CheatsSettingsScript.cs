@@ -44,7 +44,7 @@ public class CheatsSettingsScript : MonoBehaviour
 
     private void CloseCheats()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
 
         Destroy(gameObject);
     }

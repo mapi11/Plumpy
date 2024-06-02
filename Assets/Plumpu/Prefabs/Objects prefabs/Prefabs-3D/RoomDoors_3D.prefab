@@ -113,6 +113,10 @@ PrefabInstance:
       propertyPath: _disbledPart
       value: 
       objectReference: {fileID: 2745365010058263917}
+    - target: {fileID: 1613600069650173927, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: _animRoomEntry
+      value: 
+      objectReference: {fileID: 6130236034646069313}
     - target: {fileID: 1753349468063342307, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -162,6 +166,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+--- !u!95 &2235879916733575875 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3421230110363205708, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+  m_PrefabInstance: {fileID: 3494184561674580623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2745365010058263917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1613600069650173922, guid: eff8156705d2c634786b02ad8493376c, type: 3}
@@ -245,6 +254,10 @@ PrefabInstance:
       value: Obj3D
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173927, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: _animDoor
+      value: 
+      objectReference: {fileID: 6130236034646069313}
+    - target: {fileID: 1613600069650173927, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: _delayOpen
       value: 0.5
       objectReference: {fileID: 0}
@@ -256,6 +269,10 @@ PrefabInstance:
       propertyPath: _disbledPart
       value: 
       objectReference: {fileID: 7785869640482840559}
+    - target: {fileID: 1613600069650173927, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+      propertyPath: _animRoomEntry
+      value: 
+      objectReference: {fileID: 2235879916733575875}
     - target: {fileID: 1753349468063342307, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -301,6 +318,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+--- !u!95 &6130236034646069313 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3421230110363205708, guid: eff8156705d2c634786b02ad8493376c, type: 3}
+  m_PrefabInstance: {fileID: 8820404981433700365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7785869640482840557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1613600069650173920, guid: eff8156705d2c634786b02ad8493376c, type: 3}

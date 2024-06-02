@@ -116,7 +116,7 @@ Transform:
   - {fileID: 1774470612036461726}
   - {fileID: 500131218922610885}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6962721836578898043
 Rigidbody:
@@ -291,7 +291,6 @@ MonoBehaviour:
   rb: {fileID: 6962721836578898043}
   fallHeight: 4
   lastPosition: {x: 0, y: 0, z: 0}
-  _canDamage: 1
 --- !u!1 &2104922757449905104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3240,6 +3239,18 @@ PrefabInstance:
     - target: {fileID: 1217840138643737881, guid: 137144476524ecf4bb6699fc1279dad5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718850928263712608, guid: 137144476524ecf4bb6699fc1279dad5, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718850928263712608, guid: 137144476524ecf4bb6699fc1279dad5, type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718850928263712608, guid: 137144476524ecf4bb6699fc1279dad5, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7311405776992344995, guid: 137144476524ecf4bb6699fc1279dad5, type: 3}
       propertyPath: m_Name

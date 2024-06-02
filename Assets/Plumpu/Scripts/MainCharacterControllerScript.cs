@@ -55,9 +55,9 @@ public class MainCharacterControllerScript : MonoBehaviour
     private bool _facingRight = true;
     public bool _rotate = true;
 
-    [HideInInspector]
-    public bool _isInDoor;
     //[HideInInspector]
+    public bool _isInDoor;
+    [HideInInspector]
     public bool _movementRight = true;
 
     [Space]
@@ -67,7 +67,6 @@ public class MainCharacterControllerScript : MonoBehaviour
     //public bool isFalling = false;
     public Vector3 lastPosition;
     //[HideInInspector]
-    public bool _canDamage = true;
 
     float _fadeFloat = 0.6f; // fade sprites
 
@@ -192,7 +191,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         //{
 
 
-        if (_isInDoor == false && _canDamage == true)
+        if (_isInDoor == false)
         {
             if (damage >= 3.0f)
             {

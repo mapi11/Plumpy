@@ -491,7 +491,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:ea8d77747e3e71149adddd619e75785e
     m_TableEntryReference:
-      m_KeyId: 42563682304
+      m_KeyId: 8194203041284096
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -1088,9 +1088,9 @@ RectTransform:
   m_Father: {fileID: 6189401755276229760}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 270}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 300, y: 280}
   m_SizeDelta: {x: 460, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753297025004142617
@@ -1719,8 +1719,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 0.38431373}
+  m_Material: {fileID: 2100000, guid: 15a2e8dcee4efbe4aa2ea0e37ccde455, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2017,10 +2017,10 @@ RectTransform:
   m_Father: {fileID: 8272812713928340581}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -217.71002, y: -29.799988}
-  m_SizeDelta: {x: 633.9474, y: 579.9999}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -32.5}
+  m_SizeDelta: {x: -170, y: -115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &600181454762278999
 CanvasRenderer:

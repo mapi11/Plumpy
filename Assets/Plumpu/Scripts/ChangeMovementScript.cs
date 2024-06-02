@@ -21,7 +21,6 @@ public class ChangeMovementScript : MonoBehaviour
     private float lastInvokeTime = 0f;
 
     [Space]
-    [Header("Auto change duration")]
     [SerializeField] private bool _AutoChange;
 
     [Space]

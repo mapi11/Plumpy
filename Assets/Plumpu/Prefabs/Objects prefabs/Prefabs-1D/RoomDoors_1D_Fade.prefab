@@ -32,6 +32,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e511124a8a75c504dad40cf6f5b19a8c, type: 2}
+    - target: {fileID: 2745365010058263912, guid: c2241523524047b40a1023230501a4a5, type: 3}
+      propertyPath: _animDoor
+      value: 
+      objectReference: {fileID: 5570443344674839924}
+    - target: {fileID: 2745365010058263912, guid: c2241523524047b40a1023230501a4a5, type: 3}
+      propertyPath: _animRoomEntry
+      value: 
+      objectReference: {fileID: 530221293174079478}
     - target: {fileID: 2893827011557289068, guid: c2241523524047b40a1023230501a4a5, type: 3}
       propertyPath: m_LocalScale.y
       value: -1
@@ -148,6 +156,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Fade3D
       objectReference: {fileID: 0}
+    - target: {fileID: 7785869640482840554, guid: c2241523524047b40a1023230501a4a5, type: 3}
+      propertyPath: _animRoomEntry
+      value: 
+      objectReference: {fileID: 5570443344674839924}
     - target: {fileID: 9151946212300290988, guid: c2241523524047b40a1023230501a4a5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -157,3 +169,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2241523524047b40a1023230501a4a5, type: 3}
+--- !u!95 &530221293174079478 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6130236034646069313, guid: c2241523524047b40a1023230501a4a5, type: 3}
+  m_PrefabInstance: {fileID: 5929341050674868151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5570443344674839924 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2235879916733575875, guid: c2241523524047b40a1023230501a4a5, type: 3}
+  m_PrefabInstance: {fileID: 5929341050674868151}
+  m_PrefabAsset: {fileID: 0}

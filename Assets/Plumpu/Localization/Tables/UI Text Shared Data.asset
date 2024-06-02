@@ -95,6 +95,10 @@ MonoBehaviour:
     m_Key: Title/DoorLocked
     m_Metadata:
       m_Items: []
+  - m_Id: 8194203041284096
+    m_Key: TitleCheats
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
