@@ -98,6 +98,30 @@ MonoBehaviour:
     m_Localized: Cheats
     m_Metadata:
       m_Items: []
+  - m_Id: 8210836602372096
+    m_Localized: Loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8216102559432704
+    m_Localized: Hats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8216240610754560
+    m_Localized: Enemys
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8216428901449728
+    m_Localized: Bacement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8216547939991552
+    m_Localized: Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8216679536279552
+    m_Localized: Test outside
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -2362,11 +2362,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 267223677709989791, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
-      value: 0
+      value: 8216679536279552
       objectReference: {fileID: 0}
     - target: {fileID: 267223677709989791, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
-      value: 
+      value: GUID:ea8d77747e3e71149adddd619e75785e
       objectReference: {fileID: 0}
     - target: {fileID: 1271284201154591881, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_Layer
