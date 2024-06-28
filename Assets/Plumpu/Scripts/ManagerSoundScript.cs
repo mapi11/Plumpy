@@ -50,13 +50,6 @@ public class ManagerSoundScript : MonoBehaviour
     [SerializeField] private Button _btnChangeLanguage;
     [SerializeField] private GameObject _windowChangeLanguag;
 
-    [Space]
-    [Header("Cheats")]
-    [SerializeField] private Transform WindowsContent;
-
-    [SerializeField] private Button _btnCheatsOn;
-    [SerializeField] private GameObject CheatsWindow;
-
     private bool SecondContentBool = true;
     private bool MusicBool = true;
     private bool GraphicBool = true;
@@ -65,7 +58,6 @@ public class ManagerSoundScript : MonoBehaviour
     private void Awake()
     {
         parentObject = GameObject.Find("ParentFps").transform;
-        WindowsContent = GameObject.Find("WindowsContent").transform;
 
         LoadMusic();
         MusicController();
@@ -79,8 +71,6 @@ public class ManagerSoundScript : MonoBehaviour
 
         _btnOffMusic.onClick.AddListener(MusicController);
         _btnShowFps.onClick.AddListener(FpsController);
-
-        _btnCheatsOn.onClick.AddListener(OpenCheats);
 
         volumeSlider.onValueChanged.AddListener((V) =>
         {
@@ -187,14 +177,6 @@ public class ManagerSoundScript : MonoBehaviour
 
             return;
         }
-    }
-
-    void OpenCheats()
-    {
-        CheatsWindow.gameObject.SetActive(true);
-        Instantiate(CheatsWindow, WindowsContent);
-
-        Time.timeScale = 0;
     }
 
     void ChangeSecondContent()

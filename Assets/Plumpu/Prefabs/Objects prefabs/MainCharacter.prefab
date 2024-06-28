@@ -3086,6 +3086,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5668069222261751496, guid: 556c1800fa8639d4eafcc106aacf5e70, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7953060526134923184, guid: 556c1800fa8639d4eafcc106aacf5e70, type: 3}
       propertyPath: m_Pivot.x
       value: 1

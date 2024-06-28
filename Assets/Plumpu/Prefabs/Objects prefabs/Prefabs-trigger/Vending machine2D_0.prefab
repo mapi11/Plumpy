@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69e29c5010df174cb4d03cd87e98565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameras: []
+  _camera: {fileID: 0}
 --- !u!1 &5518369169637701401
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +400,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.52, y: 2.16, z: 3}
+  m_Size: {x: 1.52, y: 2.16, z: 2.18}
   m_Center: {x: 0, y: -0.42, z: 0}
 --- !u!114 &5601217226809756692
 MonoBehaviour:
@@ -415,12 +415,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _disbledPart: {fileID: 6923099441650234419}
+  _is2D: 1
   water: {fileID: 162802906295678653, guid: 98cbea2c26b734948ad2b0c100818de4, type: 3}
   _canvas: {fileID: 5187313902790547640}
   _btnSpawnObj: {fileID: 5815777382613337955}
   _parent: {fileID: 3221882818783515292}
   Min_int: 1
   Max_int: 3
+  _int: 0
   count: 0
 --- !u!1 &7553838429664926271
 GameObject:
@@ -448,7 +450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7553838429664926271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.42, z: 1}
+  m_LocalPosition: {x: 0, y: -0.42, z: 0.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -476,7 +478,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e511124a8a75c504dad40cf6f5b19a8c, type: 2}
+  - {fileID: 2100000, guid: 9a7b7af6393add944ac9ce24400f6911, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

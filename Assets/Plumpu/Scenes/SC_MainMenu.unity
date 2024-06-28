@@ -3075,6 +3075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3ee4322e4ba33458eb843b63d1f860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pause: 0
   _settingsButton: {fileID: 1967602432}
   _settingsWindow: {fileID: 2482830257508172537, guid: bd41c5514944efe40a335a0f2af31e87, type: 3}
   SettingsContent: {fileID: 1414395271}

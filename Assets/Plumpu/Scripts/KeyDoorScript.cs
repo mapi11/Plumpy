@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class KeyDoorScript : MonoBehaviour, IdisableScript
 {
-    [SerializeField] private GameObject _disbledPart;
-    [SerializeField] private bool _is2D = true;
+    //[SerializeField] private GameObject _disbledPart;
+    //[SerializeField] private bool _is2D = true;
 
     [Space]
     [Header("Door")]
@@ -52,7 +52,7 @@ public class KeyDoorScript : MonoBehaviour, IdisableScript
     //------------------------------------------------------------------Check player
     private bool PlayerInTrigger()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.5f);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1f);
 
         foreach (Collider collider in hitColliders)
         {
@@ -66,26 +66,26 @@ public class KeyDoorScript : MonoBehaviour, IdisableScript
 
     public void Disble()
     {
-        if (_is2D == true)
-        {
-            _disbledPart.SetActive(false);
-        }
-        else
-        {
-            _disbledPart.SetActive(true);
-        }
+        //if (_is2D == true)
+        //{
+        //    _disbledPart.SetActive(false);
+        //}
+        //else
+        //{
+        //    _disbledPart.SetActive(true);
+        //}
     }
 
     public void Enable()
     {
-        if (_is2D == true)
-        {
-            _disbledPart.SetActive(true);
-        }
-        else
-        {
-            _disbledPart.SetActive(false);
-        }
+        //if (_is2D == true)
+        //{
+        //    _disbledPart.SetActive(true);
+        //}
+        //else
+        //{
+        //    _disbledPart.SetActive(false);
+        //}
 
         _canvas.SetActive(PlayerInTrigger());
     }

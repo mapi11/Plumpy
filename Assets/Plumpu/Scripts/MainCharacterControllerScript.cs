@@ -50,7 +50,6 @@ public class MainCharacterControllerScript : MonoBehaviour
     [SerializeField] private GameObject btnForwardBackward;
     [SerializeField] private GameObject btnLeftRight;
 
-    Animator _anim;
     private Rigidbody _rb;
     private bool _facingRight = true;
     public bool _rotate = true;
@@ -88,7 +87,6 @@ public class MainCharacterControllerScript : MonoBehaviour
         _btn2D.onClick.AddListener(PlayerActive2D);
         _btn3D.onClick.AddListener(PlayerActive3D);
 
-        _anim = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
 
         _btn2D.interactable = false;

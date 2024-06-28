@@ -47,7 +47,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 0
-    - _AlphaValue: 0.30000004
+    - _AlphaValue: 0.3
     - _BUILTIN_AlphaClip: 1
     - _BUILTIN_Blend: 0
     - _BUILTIN_CullMode: 0

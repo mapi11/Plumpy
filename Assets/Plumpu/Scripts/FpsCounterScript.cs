@@ -13,7 +13,7 @@ public class FpsCounterScript : MonoBehaviour
 
     private void Awake()
     {
-        InvokeRepeating("GetFps", 0.1f, 0.1f);
+        InvokeRepeating("GetFps", 0.5f, 0.5f);
     }
 
     void GetFps()

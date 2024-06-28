@@ -1187,82 +1187,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &2800286242233658033
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5494887153249155432}
-  - component: {fileID: 8122033283821370168}
-  - component: {fileID: 146338643774329257}
-  m_Layer: 5
-  m_Name: Blur
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &5494887153249155432
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2800286242233658033}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 471396882646900588}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8122033283821370168
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2800286242233658033}
-  m_CullTransparentMesh: 1
---- !u!114 &146338643774329257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2800286242233658033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 15a2e8dcee4efbe4aa2ea0e37ccde455, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3073288308724445962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,10 +2888,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 25
-    m_Right: 25
+    m_Left: 40
+    m_Right: 40
     m_Top: 25
-    m_Bottom: 30
+    m_Bottom: 40
   m_ChildAlignment: 4
   m_Spacing: 15
   m_ChildForceExpandWidth: 1
@@ -3732,7 +3656,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5494887153249155432}
   - {fileID: 1086562232749892865}
   - {fileID: 7863085954590383849}
   - {fileID: 2846385261893592936}
@@ -3808,9 +3731,6 @@ MonoBehaviour:
   _windowChangeGraphic: {fileID: 6484384382167290963}
   _btnChangeLanguage: {fileID: 5970193374023425713}
   _windowChangeLanguag: {fileID: 5139041964182112807}
-  WindowsContent: {fileID: 471396882646900588}
-  _btnCheatsOn: {fileID: 2728204426056188060}
-  CheatsWindow: {fileID: 7631593895142040541, guid: 08a0e6cbf71e12841bf57032ab72eddb, type: 3}
 --- !u!1001 &316807822467859787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4311,17 +4231,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3275086864936564671, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
   m_PrefabInstance: {fileID: 959827533423124850}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2728204426056188060 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2922125284954694126, guid: b700fcb11327a2e45a3392817f354a31, type: 3}
-  m_PrefabInstance: {fileID: 959827533423124850}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1756577113008967892
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ using TMPro;
 
 public class MainMenuCanvas : MonoBehaviour
 {
+    [SerializeField] private bool _pause = true;
+
+    [Space]
     [Header("Settings")]
     [SerializeField] private Button _settingsButton;
     [SerializeField] private GameObject _settingsWindow;
@@ -22,7 +25,9 @@ public class MainMenuCanvas : MonoBehaviour
         _settingsWindow.gameObject.SetActive(true);
         Instantiate(_settingsWindow, SettingsContent);
 
-        Time.timeScale = 0;
+        if (_pause == true)
+        {
+            Time.timeScale = 0;
+        }
     }
-
 }

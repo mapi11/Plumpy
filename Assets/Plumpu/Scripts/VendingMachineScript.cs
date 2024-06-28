@@ -7,7 +7,7 @@ public class VendingMachineScript : MonoBehaviour, IdisableScript
 {
     [SerializeField] private GameObject _disbledPart;
     [SerializeField] private bool _is2D = true;
-    //[SerializeField] private GameObject VendingMachine;
+
     [Space]
     [SerializeField] private GameObject water;
     [SerializeField] private GameObject _canvas;
@@ -18,16 +18,15 @@ public class VendingMachineScript : MonoBehaviour, IdisableScript
     [Header("Random range")]
     [SerializeField] private int Min_int=1;
     [SerializeField] private int Max_int=3;
-    private int _int;
+    [SerializeField] private int _int; // просто для меня
 
     MainCharacterControllerScript _mainCharacterControllerScript;
 
-    //public bool test;
 
     [HideInInspector]
     public int count = 0;
 
-    private void Awake()
+    private void Start()
     {
 
         _mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
@@ -36,7 +35,7 @@ public class VendingMachineScript : MonoBehaviour, IdisableScript
 
         _int = Random.Range(Min_int, Max_int+1);
 
-        TEST_.AddObject(gameObject, ObjectTags.Obj2D);
+        //TEST_.AddObject(gameObject, ObjectTags.Obj2D);
     }
 
     private void Update()
@@ -69,6 +68,11 @@ public class VendingMachineScript : MonoBehaviour, IdisableScript
     public void Spawn_water()
     {
         _int--;
+        if (_int <= 0)
+        {
+            Destroy(_canvas);
+        }
+
         Instantiate(water, _parent.transform.position, _parent.transform.rotation, _parent.transform);
         count++;
     }
@@ -90,33 +94,28 @@ public class VendingMachineScript : MonoBehaviour, IdisableScript
 
     public void Disble()
     {
-        if (_is2D == true)
-        {
-            _disbledPart.SetActive(false);
-        }
-        else
-        {
-            _disbledPart.SetActive(true);
-        }
+        //if (_is2D == true)
+        //{
+        //    _disbledPart.SetActive(false);
+        //}
+        //else
+        //{
+        //    _disbledPart.SetActive(true);
+        //}
     }
 
     public void Enable()
     {
-        if (_mainCharacterControllerScript == false)
-        {
-            if (_is2D == true)
-            {
-                _disbledPart.SetActive(true);
-            }
-            else
-            {
-                _disbledPart.SetActive(false);
-            }
-        }
-        else
-        {
-            _disbledPart.SetActive(true);
-        }
+
+            //if (_is2D == true)
+            //{
+            //    _disbledPart.SetActive(true);
+            //}
+            //else
+            //{
+            //    _disbledPart.SetActive(false);
+            //}
+
 
         _canvas.SetActive(PlayerInTrigger());
     }

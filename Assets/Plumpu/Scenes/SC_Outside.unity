@@ -2446,7 +2446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173922, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_Name
-      value: DoorTestScene (1)
+      value: DoorTestScene
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173922, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2612,7 +2612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173920, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173920, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2652,11 +2652,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173922, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_Name
-      value: DoorTestScene
+      value: DoorEmpty
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173922, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173922, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2664,7 +2664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173927, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: scene
-      value: SC_Test
+      value: SC_Empty
       objectReference: {fileID: 0}
     - target: {fileID: 1613600069650173927, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: doorID
@@ -2748,7 +2748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7173978065889665737, guid: eff8156705d2c634786b02ad8493376c, type: 3}
       propertyPath: m_text
-      value: Test scene
+      value: Empty
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
