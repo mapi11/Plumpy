@@ -15,13 +15,13 @@ public class MainCharacterControllerScript : MonoBehaviour
     public float _horSpeed;
     public bool _boolJump = false;
 
-    [Space]
-    [Header("Hat pivot")]
+    //[Space]
+    //[Header("Hat pivot")]
     [SerializeField] private Transform _flipObject;
     public bool _lookLeft;
     public bool _lookRight = true;
     public bool _isFliped;
-    public int _hatID;
+    //public int _hatID;
 
     [Space]
     [Header("Jump")]
