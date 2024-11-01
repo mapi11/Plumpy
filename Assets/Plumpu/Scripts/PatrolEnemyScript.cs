@@ -23,7 +23,7 @@ public class PatrolEnemyScript : MonoBehaviour
     {
         if (movingRight)
         {
-            rb.velocity = new Vector3(moveSpeed, rb.velocity.y, 0);
+            rb.linearVelocity = new Vector3(moveSpeed, rb.linearVelocity.y, 0);
             if (transform.position.x >= patrolRadius)
             {
                 if (Random.value < turnProbability)
@@ -34,7 +34,7 @@ public class PatrolEnemyScript : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector3(-moveSpeed, rb.velocity.y, 0);
+            rb.linearVelocity = new Vector3(-moveSpeed, rb.linearVelocity.y, 0);
             if (transform.position.x <= initialPosition)
             {
                 if (Random.value < turnProbability)
@@ -60,7 +60,7 @@ public class PatrolEnemyScript : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
 
-        // Обновляем радиус патрулирования
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         patrolRadius = movingRight ? initialPosition + patrolDistance : initialPosition;
     }
 }

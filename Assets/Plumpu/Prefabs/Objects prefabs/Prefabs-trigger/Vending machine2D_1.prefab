@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 7095343260130481429, guid: da6430291341b08459ee4aa2108889b9, type: 3}
+    - target: {fileID: 989385218399128302, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3221882818783515292, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -20,6 +24,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5187313902790547640, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518369169637701401, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996156039346342529, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6923099441650234418, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -27,6 +43,10 @@ PrefabInstance:
     - target: {fileID: 6923099441650234419, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
       propertyPath: m_Name
       value: Vending machine2D_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923099441650234419, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6923099441650234429, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
       propertyPath: m_RootOrder
@@ -70,6 +90,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6923099441650234429, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553838429664926271, guid: 1ea6b3969d1122c4b88c1f7f6aff867f, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

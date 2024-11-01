@@ -74,26 +74,28 @@ public class RecoveryHealthScript : MonoBehaviour, IdisableScript
 
     public void Disble()
     {
-        if (_is2D == true)
-        {
-            _disbledPart.SetActive(false);
-        }
-        else
-        {
-            _disbledPart.SetActive(true);
-        }
+        //if (_is2D == true)
+        //{
+        //    _disbledPart.SetActive(false);
+        //}
+        //else
+        //{
+        //    _disbledPart.SetActive(true);
+        //}
     }
 
     public void Enable()
     {
-        if (_is2D == true)
-        {
-            _disbledPart.SetActive(true);
-        }
-        else
-        {
-            _disbledPart.SetActive(false);
-        }
+
+        //if (_is2D == true)
+        //{
+        //    _disbledPart.SetActive(true);
+        //}
+        //else
+        //{
+        //    _disbledPart.SetActive(false);
+        //}
+
 
         _canvas.SetActive(PlayerInTrigger());
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.PlayerLoop;
 
 public class MainCharacterControllerScript : MonoBehaviour
 {
@@ -62,7 +61,7 @@ public class MainCharacterControllerScript : MonoBehaviour
     [Space]
     [Header("Fall damage")]
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float fallHeight; // Высота, с которой начинается урон от падения
+    [SerializeField] private float fallHeight; // пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     //public bool isFalling = false;
     public Vector3 lastPosition;
     //[HideInInspector]
@@ -107,14 +106,14 @@ public class MainCharacterControllerScript : MonoBehaviour
         IsGrounded = Physics.CheckSphere(_groundCheck.position, _checkRadiusGround, _whatIsGround);
 
 
-        if (rb.velocity.y >= -0.01) // Персонаж закончил падать
+        if (rb.linearVelocity.y >= -0.01) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         {
             float fallDistance = lastPosition.y - transform.position.y;
             lastPosition = transform.position;
 
-            if (fallDistance >= fallHeight) // Проверяем, с какой высоты падает персонаж
+            if (fallDistance >= fallHeight) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             {
-                float damage = (fallDistance / fallHeight); // Вычисляем урон от падения
+                float damage = (fallDistance / fallHeight); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 FallDamage(damage);
             }
         }
@@ -193,19 +192,19 @@ public class MainCharacterControllerScript : MonoBehaviour
         {
             if (damage >= 3.0f)
             {
-                // Реализация нанесения урона персонажу
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 Debug.Log("-3 health " + damage);
                 _characterHealthScript.Damage(3);
             }
             else if (damage >= 2.0f)
             {
-                // Реализация нанесения урона персонажу
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 Debug.Log("-2 health " + damage);
                 _characterHealthScript.Damage(2);
             }
             else if (damage >= 1.0f)
             {
-                // Реализация нанесения урона персонажу
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 Debug.Log("-1 health " + damage);
                 _characterHealthScript.Damage(1);
             }
@@ -246,7 +245,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         _boolJump = true;
         if (IsGrounded == true)
         {
-            _rb.velocity = Vector3.up * _jump * 1.2f;
+            _rb.linearVelocity = Vector3.up * _jump * 1.2f;
         }
     }
     public void ButtonStop()

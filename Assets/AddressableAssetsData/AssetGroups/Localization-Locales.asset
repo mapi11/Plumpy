@@ -13,16 +13,8 @@ MonoBehaviour:
   m_Name: Localization-Locales
   m_EditorClassIdentifier: 
   m_GroupName: Localization-Locales
-  m_Data:
-    m_SerializedData: []
   m_GUID: d10d9767d6a3e43478bd2954d6dc5b57
   m_SerializeEntries:
-  - m_GUID: baa1b18991d6d654ea4a9f0f63743ee9
-    m_Address: English (en)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 74282b0dc9c464f4c89d160b8a2a211f
     m_Address: Russian (ru)
     m_ReadOnly: 1
@@ -31,6 +23,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8620a4076b9000b42812c398191ec950
     m_Address: Kyrgyz (Kyrgyzstan) (ky-KG)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: baa1b18991d6d654ea4a9f0f63743ee9
+    m_Address: English (en)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale

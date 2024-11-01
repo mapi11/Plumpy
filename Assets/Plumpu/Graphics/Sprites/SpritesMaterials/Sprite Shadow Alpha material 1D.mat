@@ -61,3 +61,4 @@ Material:
     - _BUILTIN_ZWriteControl: 0
     m_Colors: []
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

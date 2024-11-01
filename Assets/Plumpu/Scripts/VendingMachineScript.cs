@@ -49,7 +49,7 @@ public class VendingMachineScript : MonoBehaviour, IdisableScript
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && _int != 0)
         {
             //if (Active.Active2D == true || Active.Active3D == true)
             //{
@@ -68,13 +68,12 @@ public class VendingMachineScript : MonoBehaviour, IdisableScript
     public void Spawn_water()
     {
         _int--;
-        if (_int <= 0)
-        {
-            Destroy(_canvas);
-        }
 
-        Instantiate(water, _parent.transform.position, _parent.transform.rotation, _parent.transform);
-        count++;
+        if (_int >= 0)
+        {
+            Instantiate(water, _parent.transform.position, _parent.transform.rotation, _parent.transform);
+            count++;
+        }
     }
 
     //------------------------------------------------------------------Check player

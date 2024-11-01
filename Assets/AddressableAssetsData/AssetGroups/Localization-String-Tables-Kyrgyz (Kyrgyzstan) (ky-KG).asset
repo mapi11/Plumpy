@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Localization-String-Tables-Kyrgyz (Kyrgyzstan) (ky-KG)
   m_EditorClassIdentifier: 
   m_GroupName: Localization-String-Tables-Kyrgyz (Kyrgyzstan) (ky-KG)
-  m_Data:
-    m_SerializedData: []
   m_GUID: 906e78d05b1fed7429aed954c5d0fd2a
   m_SerializeEntries:
   - m_GUID: b3d348d05a2c04a41b9dbdb09cb2737d

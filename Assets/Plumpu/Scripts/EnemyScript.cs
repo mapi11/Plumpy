@@ -89,7 +89,7 @@ public class EnemyScript : MonoBehaviour
 
         if (distanceToPlayer > detectionRange)
         {
-            // Логика для дальнего действия
+            // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         }
         else
         {
@@ -113,14 +113,14 @@ public class EnemyScript : MonoBehaviour
 
     void Stop()
     {
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         animator.SetFloat("MoveX", 0);
         //animator.SetFloat("MoveY", 0);
     }
 
     void Attack()
     {
-        // Логика атаки
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         Debug.Log("Attack");
     }
 }

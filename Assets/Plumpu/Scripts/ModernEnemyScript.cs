@@ -21,9 +21,9 @@ public class ModernEnemyScript : MonoBehaviour
     [SerializeField] private float patrolDistance = 10f;
     private float turnProbability = 1f;
     [Space]
-    [SerializeField] private float timeUntilTurn; // Время до следующего разворота
-    [SerializeField] private float turnIntervalMin = 3f; // Минимальное время до разворота
-    [SerializeField] private float turnIntervalMax = 20f; // Максимальное время до разворота
+    [SerializeField] private float timeUntilTurn; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    [SerializeField] private float turnIntervalMin = 3f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    [SerializeField] private float turnIntervalMax = 20f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     //[SerializeField] private float initialPosition;
     //private float patrolRadius;
 
@@ -76,11 +76,11 @@ public class ModernEnemyScript : MonoBehaviour
             else if (distanceToPlayer > detectionRange)
             {
                 playerDetected = false;
-                MoveTowards(lostPlayerPosition); // Продолжаем движение к позиции, где был потерян игрок
+                MoveTowards(lostPlayerPosition); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             }
             else
             {
-                MoveTowards(player.position); // Преследуем игрока
+                MoveTowards(player.position); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             }
 
         }
@@ -122,29 +122,29 @@ public class ModernEnemyScript : MonoBehaviour
     {
         if (movingRight)
         {
-            rb.velocity = new Vector3(moveSpeed, rb.velocity.y, 0);
-            animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+            rb.linearVelocity = new Vector3(moveSpeed, rb.linearVelocity.y, 0);
+            animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
 
-            if (transform.position.x >= lostPlayerPosition.x + patrolDistance) // Изменяем условие для новой точки патрулирования
+            if (transform.position.x >= lostPlayerPosition.x + patrolDistance) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             {
                 if (Random.Range(0f, 0.5f) > turnProbability)
                 {
                     ChangeDirection();
-                    lostPlayerPosition = transform.position; // Обновляем позицию, где был потерян игрок
+                    lostPlayerPosition = transform.position; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                 }
             }
         }
         else
         {
-            rb.velocity = new Vector3(-moveSpeed, rb.velocity.y, 0);
-            animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
-            if (transform.position.x <= lostPlayerPosition.x - patrolDistance) // Изменяем условие для новой точки патрулирования
+            rb.linearVelocity = new Vector3(-moveSpeed, rb.linearVelocity.y, 0);
+            animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
+            if (transform.position.x <= lostPlayerPosition.x - patrolDistance) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             {
                 if (Random.Range(0f, 1f) > turnProbability)
                 {
                     
                     ChangeDirection();
-                    lostPlayerPosition = transform.position; // Обновляем позицию, где был потерян игрок
+                    lostPlayerPosition = transform.position; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                 }
             }
         }
@@ -156,10 +156,10 @@ public class ModernEnemyScript : MonoBehaviour
         {
             Vector3 direction = targetPosition - transform.position;
             direction.Normalize();
-            rb.velocity = new Vector3(direction.x * attackSpeed, rb.velocity.y, 0);
-            animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+            rb.linearVelocity = new Vector3(direction.x * attackSpeed, rb.linearVelocity.y, 0);
+            animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
 
-            // Поворот персонажа в направлении движения
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if (direction.x > 0 && !movingRight)
             {
                 ChangeDirection();
@@ -178,7 +178,7 @@ public class ModernEnemyScript : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
-            // Логика атаки
+            // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             Debug.Log("Attack");
             isAttacking = false;
 

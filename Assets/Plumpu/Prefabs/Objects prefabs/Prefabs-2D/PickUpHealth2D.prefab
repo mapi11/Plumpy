@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Obj2D
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1839481734991884001
 Transform:
@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162802906295678653}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 248ae783d3b8546448598a7d7627243c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -134,12 +134,12 @@ GameObject:
   - component: {fileID: 1884066112963441429}
   - component: {fileID: 7927212304968940422}
   - component: {fileID: 5056311963634508992}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 0
 --- !u!224 &5279853634980991948
 RectTransform:
@@ -250,12 +250,12 @@ GameObject:
   - component: {fileID: 3945842521979484362}
   - component: {fileID: 5877093513829492097}
   - component: {fileID: 8607556176673814927}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: ActiveImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &3945842521979484362
 RectTransform:
@@ -326,12 +326,12 @@ GameObject:
   - component: {fileID: 1049652702888771101}
   - component: {fileID: 2819850534711833129}
   - component: {fileID: 5388482653450610985}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &1049652702888771101
 RectTransform:
@@ -405,12 +405,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4679606662058200177}
   - component: {fileID: 5660630045154671610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4679606662058200177
 Transform:
@@ -491,12 +491,12 @@ GameObject:
   - component: {fileID: 2477465444499175093}
   - component: {fileID: 9001428917867503130}
   - component: {fileID: 8924085192768253318}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: BtnPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &2477465444499175093
 RectTransform:
