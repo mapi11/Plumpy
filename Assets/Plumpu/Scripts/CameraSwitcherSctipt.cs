@@ -72,7 +72,7 @@ public class CameraSwitcherSctipt : MonoBehaviour
             mainCamera.transform.rotation = targetPoints[currentTargetIndex].rotation;
 
             // Установка параметров проекции
-            //mainCamera.orthographic = isOrthographic;
+            mainCamera.orthographic = isOrthographic;
 
             isMoving = false;
 
@@ -107,19 +107,16 @@ public class CameraSwitcherSctipt : MonoBehaviour
     {
         if (isMoving != true)
         {
-            isOrthographic = true;
 
+            isOrthographic = true;
             currentTargetIndex = 1;
             _btnsChange.SetActive(false);
             _btnsMovement.SetActive(false);
-            rotationSpeed = 0.5f; movementSpeed = 2.5f;
-
-            
+            rotationSpeed = 0.5f; movementSpeed = 2.0f;
 
             StartCoroutine(MoveCameraToTarget(targetPoints[currentTargetIndex].position));
 
-
-            //mainCamera.orthographic = isOrthographic;
+            mainCamera.orthographic = isOrthographic;
         }
     }
     public void CameraSwitch3D()

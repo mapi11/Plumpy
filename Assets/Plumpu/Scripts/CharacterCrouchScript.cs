@@ -5,37 +5,86 @@ public class CharacterCrouchScript : MonoBehaviour
 {
     public Animator _anim; // Ссылка на компонент Animator
     public CapsuleCollider capsuleCollider; // Ссылка на Capsule Collider
-    public Button crouchButton; // Ссылка на кнопку в канвасе
+    public Button btnCrouch; // Ссылка на кнопку в канвасе
+    public GameObject btnJump;
 
     public float crouchHeight = 0.5f; // Высота коллайдера при приседании (в долях от оригинальной высоты)
 
-    private bool isCrouching = false;
+    public bool isCrouching = false;
     private float originalHeight; // Исходная высота коллайдера
     private Vector3 originalCenter; // Исходный центр коллайдера
 
-    private void Start()
+    CharacterCanUpScript characterCanUpScript;
+    MainCharacterControllerScript mainCharacterControllerScript;
+
+    private void Awake()
     {
         // Запоминаем исходные значения высоты и центра коллайдера
         originalHeight = capsuleCollider.height;
         originalCenter = capsuleCollider.center;
 
         // Привязываем метод к событию нажатия на кнопку
-        crouchButton.onClick.AddListener(ToggleCrouch);
+        btnCrouch.onClick.AddListener(ToggleCrouch);
+
+        characterCanUpScript = FindAnyObjectByType<CharacterCanUpScript>();
+        mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
     }
 
-    private void ToggleCrouch()
+    private void Update()
     {
-        isCrouching = !isCrouching; // Переключаем состояние пригибания
-
         if (isCrouching)
         {
-            _anim.SetBool("Crouch", true); // Включаем анимацию пригибания
-            AdjustColliderForCrouch(true); // Сжимаем коллайдер
+            btnJump.SetActive(false);
+        }
+
+        if (mainCharacterControllerScript.IsGrounded != true || characterCanUpScript.canUp != true)
+        {
+            btnCrouch.gameObject.SetActive(false);
         }
         else
         {
-            _anim.SetBool("Crouch", false); // Выключаем анимацию пригибания
-            AdjustColliderForCrouch(false); // Возвращаем коллайдер в исходное состояние
+            btnCrouch.gameObject.SetActive(true);
+        }
+    }
+
+    public void ToggleCrouch()
+    {
+        if (characterCanUpScript.canUp == true && mainCharacterControllerScript.IsGrounded == true)
+        {
+            isCrouching = !isCrouching; // Переключаем состояние пригибания
+
+            if (isCrouching)
+            {
+                AdjustColliderForCrouch(true); // Сжимаем коллайдер
+                btnJump.SetActive(false);
+
+                mainCharacterControllerScript._speed = mainCharacterControllerScript._speed / 2;
+
+                if (mainCharacterControllerScript._horSpeed > 0)
+                {
+                    mainCharacterControllerScript._horSpeed = mainCharacterControllerScript._speed;
+                }
+                else if (mainCharacterControllerScript._horSpeed < 0)
+                {
+                    mainCharacterControllerScript._horSpeed = -mainCharacterControllerScript._speed;
+                }
+
+            }
+            else
+            {
+                AdjustColliderForCrouch(false); // Возвращаем коллайдер в исходное состояние
+                btnJump.SetActive(true);
+                mainCharacterControllerScript._speed = mainCharacterControllerScript._speed * 2;
+
+                if (mainCharacterControllerScript._horSpeed > 0)
+                {
+                    mainCharacterControllerScript._horSpeed = mainCharacterControllerScript._speed;
+                }
+                else if (mainCharacterControllerScript._horSpeed < 0)
+                {
+                    mainCharacterControllerScript._horSpeed = -mainCharacterControllerScript._speed;
+                }
+            }
         }
     }
 

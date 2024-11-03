@@ -45,7 +45,7 @@ public class MainCharacterControllerScript : MonoBehaviour
     [SerializeField] public Button _btn3D;
 
     [Space]
-    [Header("Music Buttons")]
+    [Header("Buttons")]
     [SerializeField] private GameObject btnForwardBackward;
     [SerializeField] private GameObject btnLeftRight;
 
@@ -74,6 +74,7 @@ public class MainCharacterControllerScript : MonoBehaviour
     ElevatorScript _elevatorScript;
     TEST_ _test;
     CameraSwitcherSctipt _cameraSwitcherSctipt;
+    CharacterCrouchScript characterCrouchScript;
 
     void Awake()
     {
@@ -81,6 +82,7 @@ public class MainCharacterControllerScript : MonoBehaviour
         _characterHealthScript = FindAnyObjectByType<CharacterHealthScript>();
         _elevatorScript = FindAnyObjectByType<ElevatorScript>();
         _cameraSwitcherSctipt = FindAnyObjectByType<CameraSwitcherSctipt>();
+        characterCrouchScript = FindAnyObjectByType<CharacterCrouchScript>();
 
         _btn1D.onClick.AddListener(PlayerActive1D);
         _btn2D.onClick.AddListener(PlayerActive2D);
@@ -167,6 +169,10 @@ public class MainCharacterControllerScript : MonoBehaviour
         {
             ButtonJump();
         }
+        if (Input.GetKeyDown(KeyCode.LeftControl)) //Crouch
+        {
+            characterCrouchScript.ToggleCrouch();
+        }
 
         if (Input.GetKeyDown(KeyCode.F1))
         {
@@ -243,7 +249,7 @@ public class MainCharacterControllerScript : MonoBehaviour
     public void ButtonJump()
     {
         _boolJump = true;
-        if (IsGrounded == true)
+        if (IsGrounded == true && characterCrouchScript.isCrouching == false)
         {
             _rb.linearVelocity = Vector3.up * _jump * 1.2f;
         }

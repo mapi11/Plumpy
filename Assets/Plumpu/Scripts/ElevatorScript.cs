@@ -52,7 +52,7 @@ public class ElevatorScript : MonoBehaviour
     [SerializeField] private Transform[] _floors;
     [SerializeField] private Button[] _button;
 
-    private GameObject _btnCharJump;
+    //private GameObject _btnCharJump;
 
     [SerializeField] private GameObject _canvasBtnFloors;
     [SerializeField] private TextMeshProUGUI _currentFloorText;
@@ -67,7 +67,7 @@ public class ElevatorScript : MonoBehaviour
     {
         _mainCharacterControllerScript = FindAnyObjectByType<MainCharacterControllerScript>();
 
-        _btnCharJump = GameObject.Find("BtnJump");
+        //_btnCharJump = GameObject.Find("BtnJump");
         _character = GameObject.Find("MainCharacter").transform;
 
         _currentFloorText.text = "Floor: <color=red>" + currentFloor;
@@ -184,7 +184,7 @@ public class ElevatorScript : MonoBehaviour
         if (other.tag == "Player")
         {
             _canvasBtnFloors.SetActive(true);
-            _btnCharJump.SetActive(false);
+            //_btnCharJump.SetActive(false);
 
             inElevator = true;
         }
@@ -195,7 +195,7 @@ public class ElevatorScript : MonoBehaviour
         if (other.tag == "Player")
         {
             _canvasBtnFloors.SetActive(false);
-            _btnCharJump.SetActive(true);
+            //_btnCharJump.SetActive(true);
 
             inElevator = false;
         }
