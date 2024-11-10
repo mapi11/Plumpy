@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2172167963208452931}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.089999996, z: 0.5}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3274375044579766964}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8280462495593415293
 SpriteRenderer:
@@ -50,10 +50,13 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e511124a8a75c504dad40cf6f5b19a8c, type: 2}
+  - {fileID: 2100000, guid: 9a7b7af6393add944ac9ce24400f6911, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -132,6 +135,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3525970623336034265}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 2}
@@ -139,7 +143,6 @@ Transform:
   m_Children:
   - {fileID: 2358538497728417638}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8544153186828790947
 BoxCollider:
@@ -176,8 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogPrefab: {fileID: 103208888167567944, guid: 7602f50bc2b398542a44b3424ab26694, type: 3}
   _childObject: {fileID: 2172167963208452931}
-  playerIcon: {fileID: -7951872367350438509, guid: dccfee9e661d64d41a26632177a2ca55, type: 3}
-  playerIconAnimation: {fileID: 9100000, guid: 9d2f45933cf39b44aa038de1a20f862c, type: 2}
+  playerIcon: {fileID: 1919581152, guid: ed8ec9af6ad259d4ba57cedfb9a1617b, type: 3}
+  playerIconAnimation: {fileID: 9100000, guid: 009ff93a25517454d9ea60f7ee4f1c23, type: 2}
   characterAnimation: {fileID: 0}
   dialogueLines:
   - Empty

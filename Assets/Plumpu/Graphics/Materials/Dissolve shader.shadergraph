@@ -322,6 +322,7 @@
     "m_OutputNode": {
         "m_Id": ""
     },
+    "m_SubDatas": [],
     "m_ActiveTargets": [
         {
             "m_Id": "6d9dae353ae949f6970756c5594fe0c3"
@@ -812,7 +813,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -1152,6 +1153,7 @@
     "m_SGVersion": 2,
     "m_Type": "UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInTarget",
     "m_ObjectId": "6d9dae353ae949f6970756c5594fe0c3",
+    "m_Datas": [],
     "m_ActiveSubTarget": {
         "m_Id": "10b19179fe4c47e68a7c6b8440ae9835"
     },

@@ -165,9 +165,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.43
-  m_Height: 1.915
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: -0.05, y: 0.46, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!114 &3974980184021356523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
   capsuleCollider: {fileID: 2851350286557841823}
   btnCrouch: {fileID: 542565641751680616}
   btnJump: {fileID: 1785110083193792336}
-  crouchHeight: 0.5
+  crouchHeight: 0.65
   isCrouching: 0
 --- !u!1 &2104922757449905104
 GameObject:
@@ -338,7 +338,7 @@ Transform:
   m_GameObject: {fileID: 2104922757449905104}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -453,8 +453,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 1.45, z: 0.5}
-  m_Center: {x: -0.05, y: 0.2, z: 0}
+  m_Size: {x: 0.5, y: 1.18, z: 0.5}
+  m_Center: {x: 0, y: 0.065, z: 0}
 --- !u!114 &6513122970993639305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,7 +836,7 @@ Transform:
   m_GameObject: {fileID: 6404185139723762519}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: 0}
+  m_LocalPosition: {x: 0, y: -0.701, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -861,8 +861,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.27
-  m_Center: {x: -0.05, y: 0.171, z: 0}
+  m_Radius: 0.41
+  m_Center: {x: 0, y: 0.307, z: 0}
 --- !u!1 &7648731713523341336
 GameObject:
   m_ObjectHideFlags: 0

@@ -236,7 +236,9 @@ public class MainCharacterControllerScript : MonoBehaviour
 
     public void ButtonLeft()
     {
+
         _horSpeed = -_speed;
+
 
         if (_lookRight == true)
         {
